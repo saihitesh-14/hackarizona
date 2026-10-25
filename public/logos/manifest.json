@@ -1,0 +1,197 @@
+[
+  {
+    "id": "general-dynamics-mission-systems",
+    "name": "General Dynamics Mission Systems",
+    "files": {
+      "light": {
+        "svg": "logos/general-dynamics-mission-systems.svg"
+      }
+    },
+    "width": 1073,
+    "height": 128,
+    "aspect": 8.383,
+    "needsPlate": true,
+    "source": "03 Sponsors/Sponsor Logos/General_Dynamics_Mission_Systems_logo.svg",
+    "notes": "SVG chosen over GeneralDynamicsLogo.png (stacked) and general-dynamics-1.png (one line); both PNGs read \"General Dynamics\" without \"Mission Systems\". Sai to confirm which name the sponsor uses. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 37%."
+  },
+  {
+    "id": "amazon",
+    "name": "Amazon Tempe Town Lake Campus",
+    "files": {
+      "light": {
+        "png": "logos/amazon.png",
+        "webp": "logos/amazon.webp"
+      },
+      "dark": {
+        "png": "logos/amazon-dark.png",
+        "webp": "logos/amazon-dark.webp"
+      }
+    },
+    "width": 360,
+    "height": 128,
+    "aspect": 2.813,
+    "needsPlate": false,
+    "source": "03 Sponsors/Sponsor Logos/amazon_tempe_town_lake_logo_-_transparent.png + amazon_tempe_town_lake_campus_logo_-_white_and_orange_-_transparent.png",
+    "notes": "Campus lockup, not the plain Amazon logo. dark = the supplied white-and-orange version. amazon.png.png and amazon.webp are small copies on white, not used. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 63%; dark file on navy 0%."
+  },
+  {
+    "id": "nuclearn",
+    "name": "Nuclearn",
+    "files": {
+      "light": {
+        "png": "logos/nuclearn.png",
+        "webp": "logos/nuclearn.webp"
+      }
+    },
+    "width": 548,
+    "height": 128,
+    "aspect": 4.281,
+    "needsPlate": false,
+    "source": "03 Sponsors/Sponsor Logos/2025 Logo Horizontal(1).png",
+    "notes": "Source \"2025 Logo Horizontal(1).png\" is the Nuclearn logo (transparent). \"Nuclearn Logo 2x1.jpg\" is an older copy on white, not used. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 0%."
+  },
+  {
+    "id": "ending-pandemics-academy",
+    "name": "Ending Pandemics Academy",
+    "files": {
+      "light": {
+        "png": "logos/ending-pandemics-academy.png",
+        "webp": "logos/ending-pandemics-academy.webp"
+      }
+    },
+    "width": 421,
+    "height": 128,
+    "aspect": 3.289,
+    "needsPlate": true,
+    "source": "03 Sponsors/Sponsor Logos/NEW-EP-ACADEMY-LOGO.png",
+    "notes": "Lockup with \"The University of Arizona Mel & Enid Zuckerman College of Public Health Global Health Institute\". Supplied on white only; only the white around the logo was removed, so the block A's white band and the letter counters stay white: keep it on a light surface (paper or plate). Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 62%."
+  },
+  {
+    "id": "rtx",
+    "name": "Raytheon Technologies (RTX)",
+    "files": {
+      "light": {
+        "png": "logos/rtx.png",
+        "webp": "logos/rtx.webp"
+      }
+    },
+    "width": 334,
+    "height": 128,
+    "aspect": 2.609,
+    "needsPlate": true,
+    "source": "03 Sponsors/Sponsor Logos/RTX_Raytheon_Technologies_logo.svg.png",
+    "notes": "The logo itself reads \"RTX\"; the name comes from the file name. Black only; no white version supplied. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 100%."
+  },
+  {
+    "id": "asua",
+    "name": "ASUA",
+    "files": {
+      "light": {
+        "png": "logos/asua.png",
+        "webp": "logos/asua.webp"
+      }
+    },
+    "width": 310,
+    "height": 128,
+    "aspect": 2.422,
+    "needsPlate": false,
+    "source": "03 Sponsors/Sponsor Logos/ASUA.png",
+    "notes": "ASUA-logo.png is the same file. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 0%."
+  },
+  {
+    "id": "ua-computer-science",
+    "name": "University of Arizona Computer Science",
+    "files": {
+      "light": {
+        "png": "logos/ua-computer-science.png",
+        "webp": "logos/ua-computer-science.webp"
+      }
+    },
+    "width": 452,
+    "height": 128,
+    "aspect": 3.531,
+    "needsPlate": true,
+    "source": "03 Sponsors/Sponsor Logos/uacs.png",
+    "notes": "Logo reads \"Computer Science\" with the block A. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 83%."
+  },
+  {
+    "id": "github",
+    "name": "GitHub",
+    "files": {
+      "light": {
+        "png": "logos/github.png",
+        "webp": "logos/github.webp"
+      }
+    },
+    "width": 447,
+    "height": 128,
+    "aspect": 3.492,
+    "needsPlate": true,
+    "source": "03 Sponsors/Sponsor Logos/Git-hub.png",
+    "notes": "Horizontal lockup chosen over GitHub-logo.png (stacked, mostly empty canvas). Black only; no white version supplied. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 100%."
+  },
+  {
+    "id": "mlh",
+    "name": "Major League Hacking",
+    "files": {
+      "light": {
+        "png": "logos/mlh.png",
+        "webp": "logos/mlh.webp"
+      }
+    },
+    "width": 303,
+    "height": 128,
+    "aspect": 2.367,
+    "needsPlate": true,
+    "source": "03 Sponsors/Sponsor Logos/mlh-logo-color.png",
+    "notes": "No white version supplied. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 18%, on navy 44%."
+  },
+  {
+    "id": "responsible-ai",
+    "name": "Responsible Artificial Intelligence",
+    "files": {
+      "light": {
+        "png": "logos/responsible-ai.png",
+        "webp": "logos/responsible-ai.webp"
+      }
+    },
+    "width": 740,
+    "height": 128,
+    "aspect": 5.781,
+    "needsPlate": true,
+    "source": "03 Sponsors/Sponsor Logos/Responsible-Artificial-Intelligence_WEB.png",
+    "notes": "University of Arizona block A lockup. Responsible-Artificial-Intelligence.png is the same file. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 90%."
+  },
+  {
+    "id": "center-philosophy-of-freedom",
+    "name": "Center for the Philosophy of Freedom",
+    "files": {
+      "light": {
+        "png": "logos/center-philosophy-of-freedom.png",
+        "webp": "logos/center-philosophy-of-freedom.webp"
+      }
+    },
+    "width": 548,
+    "height": 128,
+    "aspect": 4.281,
+    "needsPlate": true,
+    "source": "03 Sponsors/Sponsor Logos/PROVOST_Center-for-the-Philosophy-of-Freedom_PRIMARY.png",
+    "notes": "Lockup with \"The University of Arizona Office of the Provost\". Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 93%."
+  },
+  {
+    "id": "banner-health",
+    "name": "Banner Health",
+    "files": {
+      "light": {
+        "png": "logos/banner-health.png",
+        "webp": "logos/banner-health.webp"
+      }
+    },
+    "width": 315,
+    "height": 128,
+    "aspect": 2.461,
+    "needsPlate": true,
+    "source": "03 Sponsors/Sponsor Logos/Banner.png",
+    "notes": "Low resolution (337x149) web copy with a fake transparency checkerboard baked in; checkerboard removed. Not in the plan's sponsor list: Sai to confirm, and ideally supply a vector file. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 97%."
+  }
+]

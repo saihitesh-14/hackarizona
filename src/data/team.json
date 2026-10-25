@@ -1,0 +1,26 @@
+{
+  "source": "Sai, in chat, 25 Oct 2026 (confirmed-by-sai). Full names come from the headshot filenames in 05 Organizers/current_organizres_headshots.",
+  "current": [
+    { "name": "Sai Hitesh", "role": "President", "headshot": "sai-hitesh", "headshotSource": "05 Organizers/Headshot .jpeg", "notes": "Sai confirmed this headshot is theirs; optimise it into public/team after round 1 (that folder is owned by the running logos+team stage)" },
+    { "name": "Nandika Barjatya", "role": "Director of Marketing", "headshot": "nandika-barjatya" },
+    { "name": "Thrupthi Ananth Byadarahalli", "role": "Director of Technology", "headshot": "thrupthi-ananth-byadarahalli" },
+    { "name": "Deevanshi Malhotra", "role": "Director of Operations", "headshot": "deevanshi-malhotra" },
+    { "name": "Luis Fernando Angulo", "role": "Director of Sponsorships", "headshot": "luis-fernando-angulo" },
+    { "name": "Eva Jarvis", "role": "Director of Industry Relations", "headshot": "eva-jarvis" },
+    { "name": "Eramus Poleate", "role": "Director of Industry Relations", "headshot": "eramus-poleate" },
+    { "name": "Santiago Vargas Roldan", "role": "Director of Judging", "headshot": "santiago-vargas-roldan" },
+    { "name": "Fatih Bozdogan", "role": "Director of Judging", "headshot": "fatih-bozdogan", "notes": "Sai wrote 'Faith'; the headshot file says 'Fatih Bozdogan' (unconfirmed spelling)" },
+    { "name": "Naomi", "role": "Organizer", "headshot": null },
+    { "name": "Fabiola", "role": "Organizer", "headshot": null },
+    { "name": "Jesus Manuel Mercado", "role": "Organizer", "headshot": "jesus-manuel-mercado" },
+    { "name": "Arfan", "role": "Organizer", "headshot": null, "notes": "Sai's words: 'The OG organizer'. Not stated as a founder." },
+    { "name": "Siddhartha Singh", "role": "Organizer", "headshot": "siddhartha-singh" }
+  ],
+  "previous": [
+    { "name": "Om Jariwala", "role": null, "headshot": "om-jariwala" },
+    { "name": "Hidoyat Odilbek o'g'li Ruzmetov", "role": null, "headshot": "hidoyat-odilbek-ogli-ruzmetov" },
+    { "name": "Olivia Grace Sobczak", "role": null, "headshot": "olivia-grace-sobczak" },
+    { "name": "Dongyoung Yang", "role": null, "headshot": "dongyoung-yang" },
+    { "name": "Kory M Smith", "role": null, "headshot": "kory-m-smith" }
+  ]
+}

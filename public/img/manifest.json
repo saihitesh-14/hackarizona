@@ -1,0 +1,616 @@
+[
+  {
+    "id": "early-auditorium",
+    "slots": [
+      "story:early",
+      "events:early-years"
+    ],
+    "year": null,
+    "event": "Hack Arizona (early years)",
+    "width": 1600,
+    "height": 686,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A packed auditorium seen from the balcony, with the Hack Arizona logo on the big screen and a sound desk in the foreground.",
+    "caption": "Hack Arizona, early years",
+    "source": "01 Branding/hackaz.jpg.webp",
+    "focal": {
+      "x": 0.5,
+      "y": 0.35
+    }
+  },
+  {
+    "id": "ha26-team-red-wall",
+    "slots": [
+      "home-about",
+      "og"
+    ],
+    "year": 2026,
+    "event": "Hack Arizona 2026",
+    "width": 1600,
+    "height": 1067,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "Three people work together at two laptops on a white table in front of a red wall.",
+    "caption": "Hack Arizona 2026",
+    "source": "04 Event Photos & Video/HACKARIZONA 2026/IMG_6271.JPG",
+    "focal": {
+      "x": 0.45,
+      "y": 0.4
+    }
+  },
+  {
+    "id": "ha26-countdown",
+    "slots": [
+      "board"
+    ],
+    "year": 2026,
+    "event": "Hack Arizona 2026",
+    "width": 960,
+    "height": 1280,
+    "widths": [
+      480,
+      960
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A projected clock reading 23:21:49 under the words 'Hacking ends in' fills the wall above a red band, with people working at tables below.",
+    "caption": "Hack Arizona 2026",
+    "source": "04 Event Photos & Video/HackAZImages/Hacker Space/IMG_2827.jpeg",
+    "focal": {
+      "x": 0.5,
+      "y": 0.4
+    }
+  },
+  {
+    "id": "ha26-judge-demo",
+    "slots": [
+      "board"
+    ],
+    "year": 2026,
+    "event": "Hack Arizona 2026",
+    "width": 960,
+    "height": 640,
+    "widths": [
+      480,
+      960
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A person in a red polo holds a clipboard and a phone while others gather round a laptop, a projected clock on the wall behind them.",
+    "caption": "Hack Arizona 2026",
+    "source": "04 Event Photos & Video/HACKARIZONA 2026/HackArizona/DSCF5471.JPG",
+    "focal": {
+      "x": 0.45,
+      "y": 0.45
+    }
+  },
+  {
+    "id": "ha26-mlh-mentor",
+    "slots": [
+      "board"
+    ],
+    "year": 2026,
+    "event": "Hack Arizona 2026",
+    "width": 960,
+    "height": 640,
+    "widths": [
+      480,
+      960
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A person in an MLH cap and T-shirt looks on from behind a monitor as one person leans over to a seated teammate.",
+    "caption": "Hack Arizona 2026",
+    "source": "04 Event Photos & Video/HACKARIZONA 2026/IMG_6249.JPG",
+    "focal": {
+      "x": 0.55,
+      "y": 0.4
+    }
+  },
+  {
+    "id": "ha26-laptop",
+    "slots": [
+      "board"
+    ],
+    "year": 2026,
+    "event": "Hack Arizona 2026",
+    "width": 960,
+    "height": 1420,
+    "widths": [
+      480,
+      960
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A person in glasses stands at a table and types on a laptop with a backlit keyboard.",
+    "caption": "Hack Arizona 2026",
+    "source": "04 Event Photos & Video/HACKARIZONA 2026/IMG_6201.JPG",
+    "focal": {
+      "x": 0.45,
+      "y": 0.45
+    }
+  },
+  {
+    "id": "ha25-logo-wall",
+    "slots": [
+      "board"
+    ],
+    "year": 2025,
+    "event": "Hack Arizona 2025",
+    "width": 960,
+    "height": 720,
+    "widths": [
+      480,
+      960
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A group, most in maroon Hack Arizona T-shirts, poses in front of a giant lit-up Hack Arizona logo, one person lying on the floor in front.",
+    "caption": "Hack Arizona 2025",
+    "source": "04 Event Photos & Video/2025 Photos/Organizer Team Photos/IMG_1059.jpeg",
+    "focal": {
+      "x": 0.5,
+      "y": 0.55
+    }
+  },
+  {
+    "id": "ha26-speaker",
+    "slots": [
+      "board"
+    ],
+    "year": 2026,
+    "event": "Hack Arizona 2026",
+    "width": 960,
+    "height": 640,
+    "widths": [
+      480,
+      960
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A speaker in an MLH cap and denim jacket talks into a microphone next to a podium with the Arizona 'A' on it.",
+    "caption": "Hack Arizona 2026",
+    "source": "04 Event Photos & Video/HACKARIZONA 2026/IMG_6016.JPG",
+    "focal": {
+      "x": 0.3,
+      "y": 0.45
+    }
+  },
+  {
+    "id": "ha25-amazon-table",
+    "slots": [
+      "board"
+    ],
+    "year": 2025,
+    "event": "Hack Arizona 2025",
+    "width": 960,
+    "height": 720,
+    "widths": [
+      480,
+      960
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "Four people sit with laptops behind a table covered with a black Amazon cloth, next to an Amazon banner.",
+    "caption": "Hack Arizona 2025",
+    "source": "04 Event Photos & Video/2025 Photos/Miscellaneous/IMG_7542.JPEG",
+    "focal": {
+      "x": 0.5,
+      "y": 0.45
+    }
+  },
+  {
+    "id": "ha25-award-handshake",
+    "slots": [
+      "board"
+    ],
+    "year": 2025,
+    "event": "Hack Arizona 2025",
+    "width": 960,
+    "height": 657,
+    "widths": [
+      480,
+      960
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "People shake hands in front of a screen that reads 'Amazon Prime Marketing Challenge Winners'.",
+    "caption": "Hack Arizona 2025",
+    "source": "04 Event Photos & Video/2025 Photos/2025 Closing Ceremony/Award Ceremony/DSC00116.jpg",
+    "focal": {
+      "x": 0.5,
+      "y": 0.5
+    }
+  },
+  {
+    "id": "ha25-coding",
+    "slots": [
+      "board"
+    ],
+    "year": 2025,
+    "event": "Hack Arizona 2025",
+    "width": 960,
+    "height": 1280,
+    "widths": [
+      480,
+      960
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A person types on a laptop at a desk by a window, a drink can next to the laptop.",
+    "caption": "Hack Arizona 2025",
+    "source": "04 Event Photos & Video/2025 Photos/Miscellaneous/IMG_7531.JPEG",
+    "focal": {
+      "x": 0.45,
+      "y": 0.45
+    }
+  },
+  {
+    "id": "ha26-award-stage",
+    "slots": [
+      "board"
+    ],
+    "year": 2026,
+    "event": "Hack Arizona 2026",
+    "width": 960,
+    "height": 640,
+    "widths": [
+      480,
+      960
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A row of people stands in front of tall windows, several of them holding certificates.",
+    "caption": "Hack Arizona 2026",
+    "source": "04 Event Photos & Video/HACKARIZONA 2026/IMG_6456.JPG",
+    "focal": {
+      "x": 0.5,
+      "y": 0.5
+    }
+  },
+  {
+    "id": "ha26-team-pose",
+    "slots": [
+      "board"
+    ],
+    "year": 2026,
+    "event": "Hack Arizona 2026",
+    "width": 960,
+    "height": 640,
+    "widths": [
+      480,
+      960
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "Four people stand side by side and smile at the camera, two with arms round each other, projected clocks on the wall behind them.",
+    "caption": "Hack Arizona 2026",
+    "source": "04 Event Photos & Video/HACKARIZONA 2026/IMG_6195.JPG",
+    "focal": {
+      "x": 0.5,
+      "y": 0.45
+    }
+  },
+  {
+    "id": "ha25-table-talk",
+    "slots": [
+      "board"
+    ],
+    "year": 2025,
+    "event": "Hack Arizona 2025",
+    "width": 960,
+    "height": 673,
+    "widths": [
+      480,
+      960
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "People talk across a long table of laptops and drinks in a busy room, one resting a chin on a hand while listening.",
+    "caption": "Hack Arizona 2025",
+    "source": "04 Event Photos & Video/2025 Photos/Judging and Presentation/Judging/DSC00061.jpg",
+    "focal": {
+      "x": 0.55,
+      "y": 0.45
+    }
+  },
+  {
+    "id": "ha25-team-logo-wall",
+    "slots": [
+      "story:2025"
+    ],
+    "year": 2025,
+    "event": "Hack Arizona 2025",
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A group, most in maroon Hack Arizona T-shirts, stands in front of a giant lit-up Hack Arizona logo.",
+    "caption": "Hack Arizona 2025",
+    "source": "04 Event Photos & Video/2025 Photos/Organizer Team Photos/IMG_1043.jpeg",
+    "focal": {
+      "x": 0.5,
+      "y": 0.5
+    }
+  },
+  {
+    "id": "ha26-red-wall-room",
+    "slots": [
+      "story:2026"
+    ],
+    "year": 2026,
+    "event": "Hack Arizona 2026",
+    "width": 1600,
+    "height": 1067,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A team works at laptops around white tables in a bright room with a red wall.",
+    "caption": "Hack Arizona 2026",
+    "source": "04 Event Photos & Video/HACKARIZONA 2026/IMG_6060.JPG",
+    "focal": {
+      "x": 0.45,
+      "y": 0.5
+    }
+  },
+  {
+    "id": "ha25-crowd-screen",
+    "slots": [
+      "story:extra"
+    ],
+    "year": 2025,
+    "event": "Hack Arizona 2025",
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A crowd stands and talks in front of a large screen showing the Hack Arizona logo and the dates March 22-23.",
+    "caption": "Hack Arizona 2025",
+    "source": "04 Event Photos & Video/2025 Photos/Judging and Presentation/IMG_0991.jpeg",
+    "focal": {
+      "x": 0.5,
+      "y": 0.55
+    }
+  },
+  {
+    "id": "ha26-crowd-above",
+    "slots": [
+      "story:extra"
+    ],
+    "year": 2026,
+    "event": "Hack Arizona 2026",
+    "width": 1600,
+    "height": 1067,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "Rows of seated people seen from above, facing a speaker at a podium.",
+    "caption": "Hack Arizona 2026",
+    "source": "04 Event Photos & Video/HACKARIZONA 2026/IMG_6423.JPG",
+    "focal": {
+      "x": 0.6,
+      "y": 0.5
+    }
+  },
+  {
+    "id": "ha26-group-photo",
+    "slots": [
+      "events:hack-arizona-2026"
+    ],
+    "year": 2026,
+    "event": "Hack Arizona 2026",
+    "width": 1600,
+    "height": 734,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A large group poses at the front of a hall under a big screen showing the Hack Arizona 2026 title, rows of empty chairs in front of them.",
+    "caption": "Hack Arizona 2026",
+    "source": "04 Event Photos & Video/HACKARIZONA 2026/IMG_6619.JPG",
+    "focal": {
+      "x": 0.5,
+      "y": 0.55
+    }
+  },
+  {
+    "id": "hackday-team",
+    "slots": [
+      "events:mlh-hackday"
+    ],
+    "year": 2026,
+    "event": "MLH HackDay",
+    "width": 1600,
+    "height": 1069,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A group, most in maroon Hack Arizona T-shirts and some sitting on the floor, poses next to a screen reading 'Welcome to Hack Day'.",
+    "caption": "MLH HackDay",
+    "source": "04 Event Photos & Video/MLH-HackDay/DSC03471.jpeg",
+    "focal": {
+      "x": 0.5,
+      "y": 0.6
+    }
+  },
+  {
+    "id": "ha25-hacking-room",
+    "slots": [
+      "events:hack-arizona-2025"
+    ],
+    "year": 2025,
+    "event": "Hack Arizona 2025",
+    "width": 1600,
+    "height": 900,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A crowded room of tables and laptops, with the Hack Arizona logo on the screens at the front.",
+    "caption": "Hack Arizona 2025",
+    "source": "04 Event Photos & Video/2025 Photos/Judging and Presentation/IMG_0999.jpeg",
+    "focal": {
+      "x": 0.5,
+      "y": 0.5
+    }
+  },
+  {
+    "id": "ha26-sponsor-table",
+    "slots": [
+      "sponsor"
+    ],
+    "year": 2026,
+    "event": "Hack Arizona 2026",
+    "width": 1600,
+    "height": 1067,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "People gather at a table under a Center for the Philosophy of Freedom banner, where two people sit handing out materials.",
+    "caption": "Hack Arizona 2026",
+    "source": "04 Event Photos & Video/HACKARIZONA 2026/IMG_5902.JPG",
+    "focal": {
+      "x": 0.6,
+      "y": 0.5
+    }
+  },
+  {
+    "id": "ha26-judging",
+    "slots": [
+      "sponsor"
+    ],
+    "year": 2026,
+    "event": "Hack Arizona 2026",
+    "width": 1600,
+    "height": 1067,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "People in grey polo shirts, one with a Nuclearn logo, hold clipboards and look at a team's laptop.",
+    "caption": "Hack Arizona 2026",
+    "source": "04 Event Photos & Video/HACKARIZONA 2026/IMG_6181.JPG",
+    "focal": {
+      "x": 0.5,
+      "y": 0.4
+    }
+  },
+  {
+    "id": "ha25-aws-winners",
+    "slots": [
+      "sponsor"
+    ],
+    "year": 2025,
+    "event": "Hack Arizona 2025",
+    "width": 1600,
+    "height": 1107,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A group stands in a row under a screen that reads 'Amazon AWS Challenge Winners'.",
+    "caption": "Hack Arizona 2025",
+    "source": "04 Event Photos & Video/2025 Photos/2025 Closing Ceremony/Award Ceremony/DSC00105.jpg",
+    "focal": {
+      "x": 0.5,
+      "y": 0.55
+    }
+  }
+]

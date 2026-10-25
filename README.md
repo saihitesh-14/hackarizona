@@ -1,0 +1,64 @@
+# Hack Arizona website
+
+The new Hack Arizona site: five static pages (Home, Story, Events, Sponsor, Team) built with Vite from plain HTML, CSS and JavaScript modules. The plan is in `PLAN.md`; the component catalogue for page builders is `src/COMPONENTS.md`.
+
+## Preview on your Mac
+
+```sh
+cd ~/Desktop/HackAZ/website
+npm install
+npm run dev -- --host 127.0.0.1 --port 4301      # live editing: http://127.0.0.1:4301/
+npm run build && npm run preview -- --host 127.0.0.1 --port 4301   # the built site
+```
+
+## Checks
+
+```sh
+node scripts/qa.mjs 4301            # build, serve dist from a subfolder, link check, browser QA per page, contrast
+node scripts/check-site.mjs         # statusFor() self-check (status pill and dock action logic)
+npm run check:placeholders          # every [TBC] placeholder and unconfirmed fact; add -- --strict before launch
+python3 scripts/contrast.py src/styles/tokens.css
+```
+
+`scripts/qa.mjs` serves `dist` at `http://127.0.0.1:<port>/hackaz/`, the way a GitHub Pages project site serves it, checks that every link, script, stylesheet, font and image in the built HTML and CSS loads from there, then runs `scripts/qa-site.cjs` (from the minimal-motion-web skill) on each page: console errors, failed requests, horizontal overflow at 320, 375, 768 and 1440px, content left invisible, reduced motion, no JavaScript, the pause control, and focus styles. Screenshots and light and dark contact sheets land in `qa-output/<page>/` (ignored by git).
+
+## How it fits together
+
+| Path | What it is |
+| --- | --- |
+| `index.html`, `story/`, `events/`, `sponsor/`, `team/` | The pages. Each includes the shared partials and loads `base.css`, its page CSS, `shell.js` and its page module. |
+| `vite.config.js` | Multi-page build, `base: './'`. A small plugin replaces `<!-- @include partials/NAME.html -->` with `src/partials/NAME.html`, `{{root}}` with the path to the site root (`./` or `../`) and marks the current page in the dock. It also preloads the display font. |
+| `src/partials/` | `head-meta.html` (inline head script: theme without a flash, saved pause, loader decision, safety timeout), `header.html`, `dock.html`, `footer.html`, `loader.html`. |
+| `src/styles/tokens.css` | Every colour, as role tokens, light and dark ("desert night"). Nothing else names a colour. |
+| `src/styles/base.css` | Fonts, layout, type, all shared components, motion, reveals, cursor, dock, loader, view transitions, print, reduced motion. |
+| `src/js/shell.js` and `src/js/shell/` | Loader, theme, pause, reveals and count-ups, cursor (magnetic, tilt), signal spine, dock, word band, tabs, copy buttons, external links. |
+| `src/data/site.js` | Event config (dates, venue, registration, links; `null` means not known yet) and `statusFor(now)`. |
+| `public/` | Files served as they are: `brand/` (the mark, favicon, touch icon), `grain.png`, photos, logos, team photos. |
+
+All internal links are relative, so the built site works at a domain root or in any subfolder.
+
+## Brand assets
+
+- `public/brand/hackaz-mark.svg` is the traced circle logo (identical to `brand/hackaz-mark.svg`); `favicon.svg` is the same file.
+- `favicon-32.png` and `apple-touch-icon.png` (180px, on the logo's own white) were generated from it with sharp:
+  ```sh
+  node -e "const s=require('sharp'),m='public/brand/hackaz-mark.svg';s(m,{density:384}).resize(32,32).png().toFile('public/brand/favicon-32.png');s(m,{density:384}).resize(160,160).extend({top:10,bottom:10,left:10,right:10,background:'#FFFFFF'}).flatten({background:'#FFFFFF'}).png().toFile('public/brand/apple-touch-icon.png')"
+  ```
+- `public/grain.png` is the paper grain tile from the minimal-motion-web starter (sparse specks on transparency).
+- The "Hack Arizona" wordmark in the header is HTML text in the site sans until the official text lockup font or a vector lockup is supplied.
+
+## Fonts and licences
+
+Self-hosted from npm (Fontsource), imported at the top of `base.css`. All three are under the SIL Open Font License 1.1, which allows use, bundling and redistribution with the site; the licence texts ship in each package's `LICENSE` file.
+
+| Role | Font | Package | Licence |
+| --- | --- | --- | --- |
+| Sans (everything) | Schibsted Grotesk, variable weight | `@fontsource-variable/schibsted-grotesk` | OFL-1.1, Copyright 2023 The Schibsted-Grotesk Project Authors |
+| Italic serif (years, names, the italic turn) | Newsreader Italic, variable weight | `@fontsource-variable/newsreader` (`wght-italic.css` only) | OFL-1.1, Copyright 2020 The Newsreader Project Authors |
+| Hand (one note per screen) | Kalam 400 | `@fontsource/kalam` | OFL-1.1, Copyright (c) 2014 Indian Type Foundry |
+
+Every face uses `font-display: swap`; the Latin Schibsted Grotesk file is preloaded in the built pages.
+
+## Not done here
+
+Nothing is pushed or deployed. Placeholders (`[TBC: ...]`) must be resolved or removed before launch; `npm run check:placeholders -- --strict` fails while any remain.

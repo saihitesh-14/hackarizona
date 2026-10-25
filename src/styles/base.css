@@ -1,0 +1,381 @@
+/* Hack Arizona base styles: fonts, layout, type, every shared component, motion, reveal system, cursor, dock, loader,
+   print and reduced motion. Adapted from the minimal-motion-web starter. Colours come only from tokens.css (no literal
+   colours here). Page styles live in src/styles/pages/<page>.css. The component catalogue is src/COMPONENTS.md. */
+@import '@fontsource-variable/schibsted-grotesk/wght.css';
+@import '@fontsource-variable/newsreader/wght-italic.css';
+@import '@fontsource/kalam/400.css';
+@import './tokens.css';
+
+:root{--page-inset:max(clamp(20px,4.5vw,64px),calc((100vw - 1240px)/2));--header-h:84px;--sans:'Schibsted Grotesk Variable',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;--serif:'Newsreader Variable',Georgia,'Times New Roman',serif;--hand:'Kalam','Bradley Hand',cursive;--ease-out:cubic-bezier(.22,1,.36,1);--ease-out-expo:cubic-bezier(.16,1,.3,1);--ease-in-out:cubic-bezier(.65,0,.35,1);font-family:var(--sans);color:var(--ink);background:var(--paper);font-synthesis:none;scroll-behavior:smooth;scroll-padding-top:24px;interpolate-size:allow-keywords;-webkit-text-size-adjust:100%}
+*{box-sizing:border-box}
+/* The paper colour sits on the root only: a body background would paint over the construction lines, spine and grain (z-index -1). */
+body{margin:0;min-height:100vh;color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+/* Construction lines frame the content column (the left one doubles as the signal spine), over a faint paper grain. */
+body:before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(var(--grid),var(--grid)) var(--page-inset) 0/1px 100% no-repeat,linear-gradient(var(--grid),var(--grid)) calc(100% - var(--page-inset)) 0/1px 100% no-repeat}
+body:after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:url('/grain.png');opacity:.35;mix-blend-mode:multiply}
+:root[data-theme='dark'] body:after{filter:invert(1);mix-blend-mode:screen;opacity:.22}
+@media(prefers-color-scheme:dark){:root:not([data-theme='light']) body:after{filter:invert(1);mix-blend-mode:screen;opacity:.22}}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+button,a{-webkit-tap-highlight-color:transparent}
+img{max-width:100%;height:auto}
+:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+::selection{background:var(--accent-soft);color:var(--ink)}
+p,h1,h2,h3,h4,figure,dl,dd,blockquote{margin:0}
+p{line-height:1.7}
+h1,h2,h3,h4{font-weight:500;letter-spacing:-.045em}
+/* The italic turn: one to three words of a heading in the serif, in the accent. */
+h1 em,h2 em,h3 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.03em;color:var(--accent)}
+[hidden]{display:none!important}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.section-shell{position:relative;padding-inline:var(--page-inset)}
+.skip-link{position:fixed;left:20px;top:-90px;z-index:2147483200;padding:12px 20px;border-radius:0 0 10px 10px;background:var(--ink);color:var(--paper)}
+.skip-link:focus-visible{top:0}
+.micro{font-size:11px;font-weight:500;letter-spacing:.16em;line-height:1.5;text-transform:uppercase;color:var(--muted)}
+.tabular{font-variant-numeric:tabular-nums}
+/* Hand note: at most one per screen, always aria-hidden, under six words. */
+.note{font-family:var(--hand);font-weight:400;font-size:clamp(21px,1.9vw,27px);line-height:1.1;color:var(--muted-2);margin:0}
+.arrow{display:inline-block;line-height:1;transition:transform .25s var(--ease-out)}
+
+/* Signal spine: a pulse travels down the left construction line with the scroll position, and the pad on each
+   section's top rule lights when the pulse reaches it (src/js/shell/spine.js). */
+.spine{position:fixed;top:0;left:var(--page-inset);z-index:-1;width:0;height:100%;pointer-events:none}
+.spine-pulse{position:absolute;left:-3.5px;top:0;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 14%,transparent),0 0 12px 1px color-mix(in srgb,var(--accent) 45%,transparent);opacity:0;transition:opacity .4s ease;will-change:transform}
+.spine-pulse:before{content:'';position:absolute;bottom:50%;left:50%;width:1px;height:48px;margin-left:-.5px;background:linear-gradient(transparent,color-mix(in srgb,var(--accent) 70%,transparent))}
+.spine.is-live .spine-pulse{opacity:1}
+
+/* Header and dock */
+.site-header{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:20px;height:var(--header-h);padding-inline:var(--page-inset);view-transition-name:site-header}
+.identity{display:inline-flex;align-items:center;gap:12px;min-height:44px}
+.identity-mark{flex:none;width:38px;height:38px;transition:rotate .5s var(--ease-out-expo)}
+.wordmark{font-size:21px;font-weight:600;letter-spacing:-.045em;line-height:1;white-space:nowrap}
+.header-action{display:inline-flex;align-items:center;gap:16px;min-height:44px;padding:10px 18px;border:1px solid var(--line-strong);border-radius:999px;background:var(--card);font-size:13px;white-space:nowrap;transition:background .2s ease,border-color .2s ease}
+.dock{position:fixed;left:50%;bottom:18px;z-index:40;translate:-50% 0;display:flex;align-items:center;gap:2px;max-width:calc(100vw - 16px);padding:5px;border:1px solid var(--line-strong);border-radius:999px;background:color-mix(in srgb,var(--card) 84%,transparent);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);box-shadow:0 12px 32px var(--soft-shadow);view-transition-name:dock}
+.dock>a{position:relative;display:flex;align-items:center;gap:8px;min-height:40px;padding:0 15px;border-radius:999px;font-size:13px;color:var(--muted);white-space:nowrap;transition:background .25s ease,color .25s ease,box-shadow .25s ease}
+/* The current page is a raised pill with a dot; a section that belongs to another page's item shows the dot only. */
+.dock>a[aria-current]{background:var(--node);color:var(--ink);box-shadow:0 1px 2px var(--soft-shadow),inset 0 0 0 1px var(--line)}
+.dock>a[aria-current]:after,.dock>a.is-here:after{content:'';position:absolute;top:7px;right:8px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+.dock>a.dock-action{margin-left:4px;padding:0 17px;background:var(--ink);color:var(--paper);font-weight:500}
+.dock-divider{flex:none;width:1px;height:22px;margin:0 6px;background:var(--line-strong)}
+.theme-toggle,.dock-motion{display:grid;place-items:center;flex:none;width:40px;height:40px;padding:0;border:0;border-radius:50%;background:none;color:var(--ink);transition:background .2s ease}
+.theme-toggle svg,.dock-motion svg{width:19px;height:19px;overflow:visible}
+.theme-core{fill:currentColor;transform-origin:12px 12px;transition:transform .6s var(--ease-out-expo)}
+.theme-cut{transition:transform .6s var(--ease-out-expo)}
+.theme-rays{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;transform-origin:12px 12px;transition:transform .6s var(--ease-out-expo),opacity .3s ease}
+/* Dark: the sun grows, a shadow disc slides across it into a crescent, and the rays fold away. */
+:root[data-theme='dark'] .theme-core{transform:scale(1.62)}
+:root[data-theme='dark'] .theme-cut{transform:translate(-6px,5px)}
+:root[data-theme='dark'] .theme-rays{transform:rotate(-90deg) scale(.4);opacity:0}
+/* Pause motion: two bars, a play triangle once paused. */
+.motion-toggle svg{flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.motion-toggle .icon-play{display:none;fill:currentColor;stroke-width:1.2}
+.motion-toggle[aria-pressed='true'] .icon-play{display:inline}
+.motion-toggle[aria-pressed='true'] .icon-pause{display:none}
+
+/* Page intro: the first block of a page. .display is the headline; each .line rises from a mask on load. */
+.page-intro{padding-top:clamp(28px,6vw,80px);padding-bottom:clamp(36px,5vw,72px)}
+.display{margin:22px 0 0 -4px;font-size:clamp(54px,6.3vw,100px);font-weight:500;line-height:1;letter-spacing:-.065em;white-space:nowrap}
+.display .line{display:block;overflow:hidden;padding:0 .06em .14em;margin:0 -.06em -.14em}
+.display .line>span{display:block}
+.display em{letter-spacing:-.04em;padding-right:.05em}
+.lead{max-width:560px;margin-top:26px;font-size:clamp(17px,1.4vw,20px);line-height:1.6;letter-spacing:-.015em;color:var(--text-strong)}
+.facts{display:flex;flex-wrap:wrap;gap:6px 0;margin:18px 0 0;padding:0;list-style:none;font-size:13px;color:var(--muted)}
+.facts li+li:before{content:'•';margin:0 12px;color:var(--line-accent)}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 26px;margin-top:30px}
+
+/* Status pill */
+.status-pill{display:inline-flex;align-items:center;gap:10px;padding:8px 15px 8px 12px;border:1px solid var(--line-strong);border-radius:999px;background:var(--card);font-size:13px;line-height:1.4;color:var(--text-strong)}
+.status-dot{position:relative;flex:none;width:8px;height:8px;border-radius:50%;background:var(--live)}
+.status-dot:after{content:'';position:absolute;inset:0;border-radius:50%;background:var(--live);animation:live-ping 2.4s var(--ease-out) infinite}
+
+/* Buttons. Arrows: ↘ in-page, ↗ external or new context, ↓ download. */
+.button{display:inline-flex;align-items:center;gap:22px;min-height:50px;padding:14px 22px;border:0;border-radius:999px;background:var(--ink);color:var(--paper);font-size:14px;font-weight:500;white-space:nowrap;transition:background .18s ease}
+.button .arrow{font-size:18px}
+.text-link{display:inline-flex;align-items:center;gap:14px;min-height:44px;border-bottom:1px solid var(--line-accent);font-size:14px;white-space:nowrap;transition:color .18s ease,border-color .18s ease}
+.metric-chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none}
+.metric-chips li{display:flex;align-items:baseline;gap:7px;padding:7px 13px;border:1px solid var(--line);border-radius:999px;background:var(--node);font-size:12px;line-height:1.4;color:var(--muted)}
+.metric-chips strong{font-size:13px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* Sections: a full-width top rule, a spine pad where it meets the left construction line, a cross on the right. */
+.section{position:relative;margin-top:80px;padding-top:100px;padding-bottom:20px;border-top:1px solid var(--grid)}
+.section:before{content:'';position:absolute;top:-6px;left:calc(var(--page-inset) - 5.5px);width:11px;height:11px;border:1.5px solid var(--line-accent);border-radius:50%;background:var(--paper);transition:border-color .35s ease,background .35s ease,box-shadow .35s ease}
+.section:after{content:'';position:absolute;top:-5px;right:calc(var(--page-inset) - 5px);width:9px;height:9px;background:linear-gradient(var(--line-accent),var(--line-accent)) center/9px 1px no-repeat,linear-gradient(var(--line-accent),var(--line-accent)) center/1px 9px no-repeat}
+.section.is-reached:before{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 22%,var(--paper))}
+.section.is-current:before{background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 12%,transparent)}
+.section.is-arriving:before{animation:pad-ping .9s var(--ease-out) both}
+.section-heading{position:relative;margin-bottom:46px}
+.section-name{margin-bottom:18px;font-size:11px;font-weight:500;letter-spacing:.16em;line-height:1.5;text-transform:uppercase;color:var(--muted)}
+.section-name span{color:var(--accent)}
+h2{font-size:clamp(40px,4.8vw,70px);line-height:1.06;letter-spacing:-.06em}
+.section-intro{max-width:560px;margin-top:20px;font-size:17px;color:var(--text-strong)}
+.scribble{position:relative;display:inline-block;white-space:nowrap}
+.scribble-line{position:absolute;left:-2%;bottom:-.08em;width:104%;height:.22em;overflow:visible;fill:none;stroke:var(--accent);stroke-width:2.4;stroke-linecap:round;opacity:.6}
+.js [data-reveal='children'] .scribble-line path{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.1s var(--ease-out) .5s}
+.js [data-reveal='children'].is-revealed .scribble-line path{stroke-dashoffset:0}
+
+/* Cards: only for things you can open or hover. Equal structure so a grid reads as a set. */
+.card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;perspective:1400px}
+.card{display:flex;flex-direction:column;min-width:0;padding:26px 26px 22px;border:1px solid var(--line);border-radius:18px;background:var(--card);scroll-margin-top:30px;transition:border-color .3s ease,box-shadow .4s ease}
+.card-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.card-label{font-size:13px;font-weight:500;color:var(--accent-ink)}
+.card-date{font-size:12px;color:var(--muted)}
+.card h3{margin-top:14px;font-size:clamp(24px,2.1vw,30px);line-height:1.15;letter-spacing:-.045em}
+.card-summary{margin-top:12px;font-size:15px;line-height:1.65;color:var(--text-strong)}
+.card-detail{margin:18px 0;font-size:13px;line-height:1.7;color:var(--muted)}
+.card-detail span{display:inline-block;margin-right:10px;font-weight:500;color:var(--ink)}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
+.small-print{font-size:11.5px;line-height:1.7;color:var(--muted)}
+.card-link{display:inline-flex;align-items:center;gap:14px;min-height:40px;border-bottom:1px solid var(--line-accent);font-size:13px;white-space:nowrap;transition:color .18s ease}
+
+/* Timeline: horizontal on desktop, vertical on phones. --journey-progress (0 to 1) fills the line. */
+.timeline-track{--journey-progress:0;position:relative;margin-top:60px}
+.timeline-line{position:absolute;top:0;left:0;right:0;height:1px;background:var(--line-strong)}
+.timeline-line span{position:absolute;inset:0;background:var(--accent);transform:scaleX(max(var(--journey-progress),.0001));transform-origin:left center;transition:transform .8s var(--ease-out)}
+.timeline-entries{display:grid;grid-auto-columns:minmax(0,1fr);grid-auto-flow:column;gap:28px}
+.timeline-entry{position:relative;min-width:0;padding-top:29px;scroll-margin-top:60px}
+.timeline-dot{position:absolute;top:-4px;left:0;width:9px;height:9px;border:1px solid var(--line-accent);border-radius:50%;background:var(--paper);transition:background .3s ease,border-color .3s ease,box-shadow .3s ease}
+.timeline-dot:after{content:'';position:absolute;inset:-1px;border:1px solid var(--accent);border-radius:50%;opacity:0;--ping-scale:3}
+.timeline-entry.is-reached .timeline-dot{border-color:var(--accent);background:var(--accent-soft)}
+.timeline-entry.is-current .timeline-dot{border-color:var(--accent);background:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 8%,transparent)}
+.timeline-entry.is-current .timeline-dot:after{animation:node-ping 1.2s var(--ease-out) both}
+.timeline-date{font-size:11px;font-weight:500;letter-spacing:.14em;line-height:1.6;text-transform:uppercase;color:var(--muted-2);font-variant-numeric:tabular-nums}
+.timeline-entry h3{margin-top:9px;font-size:25px;line-height:1.2}
+.timeline-entry>p:not(.timeline-date){margin-top:12px;font-size:14px;line-height:1.75;color:var(--muted)}
+
+/* Tabs: role=tablist of .tab buttons controlling .tab-panel elements (src/js/shell/tabs.js). Without JavaScript the
+   list is hidden and every panel shows in turn. */
+.tab-list{display:flex;gap:4px;width:max-content;max-width:100%;padding:4px;overflow-x:auto;border:1px solid var(--line);border-radius:999px;background:var(--panel);scrollbar-width:none}
+.tab{flex:none;min-height:40px;padding:0 18px;border:0;border-radius:999px;background:none;font-size:13px;color:var(--muted);white-space:nowrap;transition:background .2s ease,color .2s ease,box-shadow .2s ease}
+.tab[aria-selected='true']{background:var(--node);color:var(--ink);box-shadow:0 1px 2px var(--soft-shadow),inset 0 0 0 1px var(--line)}
+.tab-panel{margin-top:28px}
+html:not(.js) .tab-list{display:none}
+html:not(.js) .tab-panel+.tab-panel{margin-top:56px}
+
+/* Questions: native details and summary, a plus that turns into a cross. */
+.faq-list{display:grid;gap:10px;max-width:900px}
+.faq-list details{border:1px solid var(--line);border-radius:15px;background:var(--card);transition:border-color .25s ease}
+.faq-list details[open]{border-color:var(--line-strong)}
+.faq-list summary{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:62px;padding:14px 18px 14px 24px;font-size:17px;font-weight:500;letter-spacing:-.02em;list-style:none;cursor:pointer}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-icon{position:relative;flex:none;width:30px;height:30px;border:1px solid var(--line-strong);border-radius:50%;transition:transform .35s var(--ease-out),background .2s ease}
+.faq-icon:before,.faq-icon:after{content:'';position:absolute;left:50%;top:50%;width:11px;height:1.5px;margin:-.75px 0 0 -5.5px;background:currentColor}
+.faq-icon:after{transform:rotate(90deg)}
+.faq-list details[open] .faq-icon{transform:rotate(45deg)}
+.faq-list details>:not(summary){max-width:720px;padding:0 24px 22px;font-size:15px;line-height:1.75;color:var(--text-strong)}
+.faq-list details a{border-bottom:1px solid var(--line-accent)}
+.faq-list details::details-content{height:0;overflow:clip;transition:height .45s var(--ease-out),content-visibility .45s allow-discrete}
+.faq-list details[open]::details-content{height:auto}
+
+/* Call to action: the logo's own gradient with grain, the same in both themes. */
+.grain{position:relative;isolation:isolate;overflow:hidden}
+.grain:after{content:'';position:absolute;inset:0;z-index:-1;background:url('/grain.png');filter:invert(1);mix-blend-mode:screen;opacity:.28;pointer-events:none}
+.cta{margin:110px var(--page-inset) 0;padding:clamp(32px,5vw,72px);border-radius:26px;background:var(--brand-fill);color:var(--on-fill)}
+.cta :focus-visible{outline-color:var(--on-fill)}
+.cta .section-name,.cta .section-name span{color:color-mix(in srgb,var(--on-fill) 80%,transparent)}
+.cta-main{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:6%;align-items:end;margin-top:30px}
+.cta h2{font-size:clamp(46px,6.4vw,96px);line-height:1;letter-spacing:-.065em;color:var(--on-fill)}
+.cta h2 em{color:var(--on-fill)}
+.cta-main p{margin-bottom:22px;font-size:16px;color:color-mix(in srgb,var(--on-fill) 90%,transparent)}
+.cta .button{background:var(--on-fill);color:var(--logo-navy)}
+.cta .text-link,.cta .copy-button{border-color:color-mix(in srgb,var(--on-fill) 45%,transparent);color:var(--on-fill)}
+.cta .copy-status{color:var(--on-fill)}
+.cta .note{position:absolute;top:clamp(26px,4vw,56px);right:clamp(26px,5vw,72px);color:color-mix(in srgb,var(--on-fill) 80%,transparent);font-size:clamp(24px,2.4vw,32px);transform:rotate(-5deg)}
+
+/* Word band: one line of oversized words that slides sideways with scroll (decorative, aria-hidden). */
+.marquee{overflow:hidden;padding:clamp(18px,2.6vw,36px) 0;border-block:1px solid var(--grid);user-select:none}
+.marquee-track{display:flex;align-items:baseline;gap:.38em;width:max-content;font-size:clamp(70px,10.5vw,164px);line-height:1;letter-spacing:-.065em;white-space:nowrap;color:var(--marquee);will-change:transform}
+.marquee-track em{font-family:var(--serif);font-style:italic;letter-spacing:-.03em;color:color-mix(in srgb,var(--accent) 30%,var(--marquee))}
+
+/* Draggable board: a dotted surface to drag with a mouse; a plain grid without JavaScript, a swipe row on touch.
+   The page module adds .is-draggable (see the starter's sections.js initBoard). Cards are placed with --x --y --r. */
+.playground{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--card) radial-gradient(circle,var(--line-strong) 1px,transparent 1.3px) 0 0/24px 24px}
+.playground-surface{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;padding:22px}
+.play-card{position:relative;padding:14px;border:1px solid var(--line-strong);border-radius:15px;background:var(--node);box-shadow:0 1px 2px var(--soft-shadow)}
+.play-card figure{overflow:hidden;border-radius:10px;background:var(--panel)}
+.play-card img{display:block;width:100%;height:auto;pointer-events:none}
+.play-card figcaption,.play-card>p{margin-top:10px;font-size:13px;line-height:1.6;color:var(--muted)}
+.play-note,.playground-hint{display:none}
+.playground.is-draggable{height:clamp(500px,64vh,640px);cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none}
+.playground.is-draggable.is-dragging{cursor:grabbing}
+.playground.is-draggable .playground-surface{position:absolute;left:0;top:0;display:block;width:1520px;height:820px;padding:0;will-change:transform}
+.playground.is-draggable .play-card{position:absolute;left:var(--x);top:var(--y);width:340px;rotate:var(--r,0deg);box-shadow:0 14px 34px var(--soft-shadow)}
+.playground.is-draggable .play-note{position:absolute;left:var(--x);top:var(--y);display:block;rotate:var(--r,0deg)}
+.playground.is-draggable .playground-hint{position:absolute;left:50%;bottom:16px;z-index:2;display:block;margin:0;padding:9px 16px;translate:-50% 0;border:1px solid var(--line-strong);border-radius:999px;background:color-mix(in srgb,var(--node) 88%,transparent);font-size:12px;color:var(--muted);pointer-events:none;transition:opacity .4s ease}
+.playground.has-moved .playground-hint{opacity:0}
+/* Sticky note: on the board, or alone. A note that looks like a link must be one. */
+.sticky-note,.playground.is-draggable .play-note{margin:0;padding:12px 18px 14px;background:var(--note-bg);color:var(--note-ink);font-family:var(--hand);font-size:24px;line-height:1.1;white-space:nowrap;box-shadow:0 8px 18px var(--soft-shadow)}
+.sticky-note{display:inline-block;rotate:var(--r,-3deg)}
+
+/* Footer: the "Get updates" block every page shares. */
+.site-footer{margin-top:110px;padding-top:64px;padding-bottom:116px}
+.footer-main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:40px}
+.footer-title{font-size:clamp(34px,3.8vw,52px);line-height:1.06;letter-spacing:-.055em}
+.footer-intro p{max-width:380px;margin-top:14px;font-size:15px;color:var(--text-strong)}
+.footer-links{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.footer-links li{display:grid;grid-template-columns:150px minmax(0,1fr);align-items:center;gap:16px;min-height:62px;padding:10px 0;border-bottom:1px solid var(--line)}
+.footer-label{font-size:12px;color:var(--muted)}
+.footer-value{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;min-width:0;font-size:15px}
+.footer-value a{display:inline-flex;align-items:center;gap:10px;min-height:40px;border-bottom:1px solid var(--line-accent);overflow-wrap:anywhere}
+.copy-button{min-height:36px;padding:0 14px;border:1px solid var(--line-strong);border-radius:999px;background:none;font-size:12px;color:var(--muted);transition:background .2s ease,color .2s ease}
+.copy-status{font-size:12px;color:var(--muted)}
+.copy-status:empty{display:none}
+.footer-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;margin-top:44px;font-size:12px;color:var(--muted)}
+.footer-motion{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0;border:0;background:none;font-size:12px;color:var(--muted)}
+.footer-motion svg{width:16px;height:16px}
+.back-top{display:inline-flex;align-items:center;gap:12px;min-height:44px}
+
+/* Placeholders: loud on purpose so nobody mistakes them for content. npm run check:placeholders lists them. */
+[data-placeholder]{border-radius:4px;outline:1.5px dashed var(--placeholder-line);outline-offset:2px;background:var(--placeholder-bg);color:var(--placeholder-ink)}
+:is(div,section,figure,ul,ol,article)[data-placeholder]{padding:20px}
+/* A real fact that still waits for Sai's confirmation. */
+[data-unconfirmed]{text-decoration:underline dotted var(--placeholder-line) 2px;text-underline-offset:.2em;cursor:help}
+
+/* Pointer play: only switched on for mice and trackpads, with motion allowed (src/js/shell/cursor.js). */
+.cursor{position:fixed;left:0;top:0;z-index:2147483000;pointer-events:none;opacity:0;transition:opacity .3s ease}
+.cursor.is-visible{opacity:1}
+.cursor-ring{position:absolute;left:0;top:0;display:grid;place-items:center;width:30px;height:30px;border:1.5px solid color-mix(in srgb,var(--ink) 55%,transparent);border-radius:999px;transition:background-color .25s ease,border-color .25s ease;will-change:transform}
+.cursor-dot{position:absolute;left:-3px;top:-3px;width:6px;height:6px;border-radius:50%;background:var(--ink);transition:opacity .2s ease;will-change:transform}
+.cursor-label{font-size:12px;font-weight:500;letter-spacing:-.01em;color:var(--on-accent);white-space:nowrap;opacity:0;transform:scale(.5);transition:opacity .2s ease,transform .35s var(--ease-out-expo)}
+.cursor.is-link .cursor-ring{background:color-mix(in srgb,var(--accent) 14%,transparent);border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+.cursor.is-stuck .cursor-ring{background:color-mix(in srgb,var(--accent) 9%,transparent);border-color:var(--accent)}
+.cursor.is-label .cursor-ring{background:var(--accent-fill);border-color:var(--accent-fill)}
+.cursor.is-label .cursor-label{opacity:1;transform:none}
+.cursor.is-lens .cursor-ring{background:transparent;border-color:color-mix(in srgb,var(--ink) 70%,transparent)}
+.cursor.is-lens .cursor-label{position:absolute;top:100%;margin-top:9px;color:var(--ink);font-size:11px}
+.cursor.is-link .cursor-dot,.cursor.is-stuck .cursor-dot,.cursor.is-label .cursor-dot{opacity:0}
+.cursor-glow{position:fixed;left:-300px;top:-300px;z-index:-1;width:600px;height:600px;border-radius:50%;background:radial-gradient(closest-side,var(--glow),transparent);pointer-events:none;opacity:0;transition:opacity .6s ease;will-change:transform}
+.cursor-glow.is-visible{opacity:1}
+html.has-cursor,html.has-cursor *{cursor:none!important}
+html:has(dialog[open]) .cursor{opacity:0}
+html.has-cursor:has(dialog[open]),html.has-cursor:has(dialog[open]) *{cursor:auto!important}
+/* Tilt and spotlight: rotate (axis-angle) composes with the reveal transform; the spotlight sits under the text. */
+[data-tilt]{position:relative}
+[data-tilt]:before{content:'';position:absolute;inset:0;z-index:0;border-radius:inherit;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),var(--spot),transparent 70%);opacity:0;transition:opacity .45s ease;pointer-events:none}
+[data-tilt].is-lit:before{opacity:1}
+[data-tilt]>*{position:relative;z-index:1}
+.card.is-lit{border-color:var(--line-strong);box-shadow:0 22px 50px var(--soft-shadow)}
+
+/* Loader: the mark draws itself on the brand fill, once per session (src/js/shell/loader.js). */
+.loader{display:none}
+html.is-loading{overflow:hidden}
+html.is-loading .loader{position:fixed;inset:0;z-index:2147483100;display:grid;grid-template-rows:auto minmax(0,1fr) auto;padding:28px var(--page-inset);background:var(--brand-fill);color:var(--on-fill);clip-path:inset(0 0 0 0);transition:clip-path .8s cubic-bezier(.76,0,.24,1)}
+html.is-loading.is-leaving .loader{clip-path:inset(0 0 100% 0)}
+.loader-meta{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:color-mix(in srgb,var(--on-fill) 78%,transparent)}
+.loader-mark{place-self:center;width:min(46vmin,380px);height:auto;overflow:visible}
+.logo-white{fill:var(--logo-white)}
+.logo-stop-top{stop-color:var(--logo-red)}
+.logo-stop-bottom{stop-color:var(--logo-navy)}
+.loader-signal circle{fill:var(--pulse)}
+/* First frame before the script runs: nothing drawn yet. */
+.loader-mark [data-ring-arc],.loader-mark [data-grow],.loader-mark [data-pad-arc]{stroke-dasharray:1 1;stroke-dashoffset:1}
+.loader-mark [data-part='disc']{opacity:0;transform-origin:600px 600px}
+
+/* Entrances wait for the loader to lift, when there is one. Arriving by a page transition, header and dock stay put. */
+html:not(.is-loading) .site-header,html.is-leaving .site-header{animation:fade-in .8s ease both}
+html:not(.is-loading) .dock,html.is-leaving .dock{animation:dock-in .9s var(--ease-out-expo) .6s both}
+html.vt-nav .site-header,html.vt-nav .dock{animation:none}
+html:not(.is-loading) .entrance>:not(.display),html.is-leaving .entrance>:not(.display){animation:fade-rise .9s var(--ease-out) both}
+html:not(.is-loading) .display .line>span,html.is-leaving .display .line>span{animation:line-rise 1.15s var(--ease-out-expo) .06s both}
+.display .line:nth-child(2)>span{animation-delay:.15s!important}
+.entrance>:nth-child(2){animation-delay:.3s!important}.entrance>:nth-child(3){animation-delay:.38s!important}.entrance>:nth-child(4){animation-delay:.46s!important}.entrance>:nth-child(n+5){animation-delay:.54s!important}
+@keyframes line-rise{from{transform:translate3d(0,120%,0)}to{transform:none}}
+@keyframes fade-rise{from{transform:translate3d(0,18px,0);opacity:0}to{transform:none;opacity:1}}
+@keyframes fade-in{from{opacity:0}}
+@keyframes dock-in{from{transform:translateY(140%);opacity:0}to{transform:none;opacity:1}}
+@keyframes node-ping{from{opacity:.6;transform:scale(1)}to{opacity:0;transform:scale(var(--ping-scale,1.55))}}
+@keyframes live-ping{0%{opacity:.6;transform:scale(1)}70%,100%{opacity:0;transform:scale(2.6)}}
+@keyframes pad-ping{from{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 55%,transparent)}to{box-shadow:0 0 0 12px transparent}}
+@keyframes vt-out{to{opacity:0}}
+@keyframes vt-in{from{opacity:0;transform:translate3d(0,24px,0)}}
+
+/* Reveals: content is only held back once the inline script confirms JavaScript, so nothing hides without it. */
+.js [data-reveal]{opacity:0;transform:translate3d(0,36px,0);transition:opacity .9s var(--ease-out) var(--reveal-delay,0s),transform 1.1s var(--ease-out-expo) var(--reveal-delay,0s)}
+.js [data-reveal='children']{opacity:1;transform:none;transition:none}
+.js [data-reveal='children']>*{opacity:0;transform:translate3d(0,32px,0);transition:opacity .9s var(--ease-out),transform 1.1s var(--ease-out-expo)}
+.js [data-reveal='children']>:nth-child(2){transition-delay:.09s}.js [data-reveal='children']>:nth-child(3){transition-delay:.18s}.js [data-reveal='children']>:nth-child(n+4){transition-delay:.27s}
+.js [data-reveal].is-revealed,.js [data-reveal='children'].is-revealed>*{opacity:1;transform:none}
+.js .card[data-reveal]{transition:opacity .9s var(--ease-out) var(--reveal-delay,0s),transform 1.1s var(--ease-out-expo) var(--reveal-delay,0s),border-color .3s ease,box-shadow .4s ease}
+
+/* Paused motion (the Pause motion button, a saved choice, or reduced motion): everything still and visible. */
+:root[data-motion='paused'] *,:root[data-motion='paused'] *:before,:root[data-motion='paused'] *:after{animation:none!important;transition:none!important}
+:root[data-motion='paused'] [data-reveal],:root[data-motion='paused'] [data-reveal]>*{opacity:1!important;transform:none!important}
+:root[data-motion='paused'] .scribble-line path{stroke-dashoffset:0!important}
+:root[data-motion='paused'] .spine-pulse{display:none}
+@media print{[data-reveal],[data-reveal]>*{opacity:1!important;transform:none!important}.dock,.loader,.spine,.cursor,.cursor-glow{display:none!important}}
+
+/* Page changes: a native cross-document view transition. Header and dock keep their place; main fades and rises.
+   The theme switch drops the names (html.is-theming) so its circle reveals the whole page at once. */
+@view-transition{navigation:auto}
+main{view-transition-name:main}
+html.is-theming .site-header,html.is-theming .dock,html.is-theming main{view-transition-name:none}
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+::view-transition-group(main){animation:none}
+::view-transition-old(main){animation:vt-out .18s ease both}
+::view-transition-new(main){animation:vt-in .5s var(--ease-out-expo) both}
+
+@media(hover:hover) and (pointer:fine){
+  .identity:hover .identity-mark{rotate:-8deg}
+  .theme-toggle:hover,.dock-motion:hover{background:var(--tint)}
+  .dock>a:not([aria-current]):not(.dock-action):hover{color:var(--ink)}
+  .header-action:hover,.copy-button:hover{background:var(--tint)}
+  .button:hover{background:var(--ink-hover)}
+  .cta .button:hover{background:color-mix(in srgb,var(--on-fill) 88%,transparent)}
+  .cta .copy-button:hover{background:color-mix(in srgb,var(--on-fill) 14%,transparent)}
+  .text-link:hover,.card-link:hover,.footer-value a:hover,.back-top:hover{color:var(--accent-ink)}
+  .cta .text-link:hover{color:var(--on-fill);border-color:var(--on-fill)}
+  .footer-motion:hover{color:var(--ink)}
+  :hover>.arrow-se{transform:translate(2px,2px)}
+  :hover>.arrow-ne{transform:translate(2px,-2px)}
+  :hover>.arrow-down{transform:translateY(3px)}
+  :hover>.arrow-up{transform:translateY(-3px)}
+  .faq-list summary:hover .faq-icon,.tab[aria-selected='false']:hover{background:var(--tint)}
+  .tab[aria-selected='false']:hover{color:var(--ink)}
+}
+button:active,.button:active{transform:scale(.98)}
+
+@media(max-width:1100px){.lead{font-size:16px}.card{padding:22px 22px 18px}.timeline-entries{gap:20px}.timeline-entry h3{font-size:23px}}
+@media(max-width:900px){.card-grid{grid-template-columns:1fr}.cta-main{grid-template-columns:1fr;gap:32px}.footer-main{grid-template-columns:1fr}}
+@media(max-width:767px){
+  :root{--page-inset:22px;--header-h:72px;scroll-padding-top:20px}
+  .identity{gap:10px}.identity-mark{width:34px;height:34px}.wordmark{font-size:19px}
+  .display{margin-left:-3px;font-size:clamp(42px,11vw,72px);white-space:normal}
+  .lead{margin-top:20px;font-size:15px}
+  .facts{flex-direction:column;gap:2px;font-size:12px}.facts li+li:before{display:none}
+  .actions{gap:14px 20px;margin-top:24px}
+  .button{gap:18px;min-height:46px;padding:13px 18px}
+  .section{margin-top:56px;padding-top:64px}
+  .section-heading{margin-bottom:30px}
+  h2{font-size:clamp(36px,10vw,46px)}
+  .section-intro{font-size:15px}
+  .card{padding:20px 18px 16px;border-radius:16px}.card h3{font-size:24px}.card-summary{font-size:14px}
+  .card-foot{flex-direction:column;align-items:flex-start;gap:6px}
+  .marquee-track{font-size:68px}
+  .playground-surface{display:flex;gap:14px;overflow-x:auto;padding:16px;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .play-card{flex:0 0 84%;scroll-snap-align:center}
+  .timeline-track{margin-top:38px}
+  .timeline-entries{grid-template-columns:1fr;grid-auto-flow:row;gap:34px}
+  .timeline-line{left:5px;right:auto;top:5px;bottom:12px;width:1px;height:auto}
+  .timeline-line span{transform:scaleY(max(var(--journey-progress),.0001));transform-origin:top center}
+  .timeline-entry{padding:0 0 0 32px}.timeline-dot{left:1px;top:5px}
+  .faq-list summary{min-height:58px;padding:12px 14px 12px 18px;font-size:15px}
+  .faq-list details>:not(summary){padding:0 18px 18px;font-size:14px}
+  .cta{margin-top:72px;border-radius:20px}.cta h2{font-size:clamp(40px,11vw,56px)}.cta .note{position:static;margin-top:28px}
+  .site-footer{margin-top:72px;padding-top:48px;padding-bottom:104px}
+  .footer-links li{grid-template-columns:1fr;gap:2px;padding:12px 0}
+  .dock{bottom:12px}.dock>a{padding:0 12px;font-size:12px}.dock-divider{margin:0 3px}
+  /* Phones: the logo goes home, the header carries the action, and the footer carries Pause motion. */
+  .dock>a[data-dock='home'],.dock>a.dock-action,.dock-motion{display:none}
+  /* The spine keeps its pads; the travelling pulse would sit on the text edge. */
+  .spine{display:none}
+}
+@media(max-width:420px){.header-action{width:44px;height:44px;padding:0;justify-content:center}.header-action-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.header-action .arrow{font-size:18px}}
+@media(max-width:370px){:root{--page-inset:18px}.wordmark{font-size:18px}.dock>a{padding:0 10px}.button{gap:12px;padding:12px 15px}}
+@media(prefers-reduced-motion:reduce){
+  :root{scroll-behavior:auto}
+  *,*:before,*:after{animation:none!important;transition:none!important}
+  .js [data-reveal],.js [data-reveal]>*{opacity:1!important;transform:none!important}
+  .scribble-line path{stroke-dashoffset:0!important}
+  .marquee-track{transform:none!important}
+  .spine-pulse{display:none}
+  @view-transition{navigation:none}
+}

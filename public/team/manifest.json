@@ -1,0 +1,332 @@
+[
+  {
+    "id": "deevanshi-malhotra",
+    "name": "Deevanshi Malhotra",
+    "group": "current",
+    "files": {
+      "avif": {
+        "400": "team/deevanshi-malhotra-400.avif",
+        "800": "team/deevanshi-malhotra-800.avif"
+      },
+      "webp": {
+        "400": "team/deevanshi-malhotra-400.webp",
+        "800": "team/deevanshi-malhotra-800.webp"
+      },
+      "jpg": {
+        "400": "team/deevanshi-malhotra-400.jpg",
+        "800": "team/deevanshi-malhotra-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "05 Organizers/current_organizres_headshots/Deevanshi Malhotra Hack Arizona.png",
+    "nativePx": 247
+  },
+  {
+    "id": "eramus-poleate",
+    "name": "Eramus Poleate",
+    "group": "current",
+    "files": {
+      "avif": {
+        "400": "team/eramus-poleate-400.avif",
+        "800": "team/eramus-poleate-800.avif"
+      },
+      "webp": {
+        "400": "team/eramus-poleate-400.webp",
+        "800": "team/eramus-poleate-800.webp"
+      },
+      "jpg": {
+        "400": "team/eramus-poleate-400.jpg",
+        "800": "team/eramus-poleate-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "05 Organizers/current_organizres_headshots/ Eramus Poleate Hack Arizona.png",
+    "nativePx": 414
+  },
+  {
+    "id": "eva-jarvis",
+    "name": "Eva Jarvis",
+    "group": "current",
+    "files": {
+      "avif": {
+        "400": "team/eva-jarvis-400.avif",
+        "800": "team/eva-jarvis-800.avif"
+      },
+      "webp": {
+        "400": "team/eva-jarvis-400.webp",
+        "800": "team/eva-jarvis-800.webp"
+      },
+      "jpg": {
+        "400": "team/eva-jarvis-400.jpg",
+        "800": "team/eva-jarvis-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "05 Organizers/current_organizres_headshots/Eva Jarvis Hack Arizona.png",
+    "nativePx": 367
+  },
+  {
+    "id": "fatih-bozdogan",
+    "name": "Fatih Bozdogan",
+    "group": "current",
+    "files": {
+      "avif": {
+        "400": "team/fatih-bozdogan-400.avif",
+        "800": "team/fatih-bozdogan-800.avif"
+      },
+      "webp": {
+        "400": "team/fatih-bozdogan-400.webp",
+        "800": "team/fatih-bozdogan-800.webp"
+      },
+      "jpg": {
+        "400": "team/fatih-bozdogan-400.jpg",
+        "800": "team/fatih-bozdogan-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "05 Organizers/current_organizres_headshots/Fatih Bozdogan Hack Arizona.png",
+    "nativePx": 414
+  },
+  {
+    "id": "jesus-manuel-mercado",
+    "name": "Jesus Manuel Mercado",
+    "group": "current",
+    "files": {
+      "avif": {
+        "400": "team/jesus-manuel-mercado-400.avif",
+        "800": "team/jesus-manuel-mercado-800.avif"
+      },
+      "webp": {
+        "400": "team/jesus-manuel-mercado-400.webp",
+        "800": "team/jesus-manuel-mercado-800.webp"
+      },
+      "jpg": {
+        "400": "team/jesus-manuel-mercado-400.jpg",
+        "800": "team/jesus-manuel-mercado-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "05 Organizers/current_organizres_headshots/Jesus Manuel Mercado Hack Arizona.png",
+    "nativePx": 414
+  },
+  {
+    "id": "luis-fernando-angulo",
+    "name": "Luis Fernando Angulo",
+    "group": "current",
+    "files": {
+      "avif": {
+        "400": "team/luis-fernando-angulo-400.avif",
+        "800": "team/luis-fernando-angulo-800.avif"
+      },
+      "webp": {
+        "400": "team/luis-fernando-angulo-400.webp",
+        "800": "team/luis-fernando-angulo-800.webp"
+      },
+      "jpg": {
+        "400": "team/luis-fernando-angulo-400.jpg",
+        "800": "team/luis-fernando-angulo-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "05 Organizers/current_organizres_headshots/Luis Fernando Angulo Hack Arizona.png",
+    "nativePx": 414
+  },
+  {
+    "id": "nandika-barjatya",
+    "name": "Nandika Barjatya",
+    "group": "current",
+    "files": {
+      "avif": {
+        "400": "team/nandika-barjatya-400.avif",
+        "800": "team/nandika-barjatya-800.avif"
+      },
+      "webp": {
+        "400": "team/nandika-barjatya-400.webp",
+        "800": "team/nandika-barjatya-800.webp"
+      },
+      "jpg": {
+        "400": "team/nandika-barjatya-400.jpg",
+        "800": "team/nandika-barjatya-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "05 Organizers/current_organizres_headshots/Nandika Barjatya Hack Arizona.png",
+    "nativePx": 181
+  },
+  {
+    "id": "santiago-vargas-roldan",
+    "name": "Santiago Vargas Roldan",
+    "group": "current",
+    "files": {
+      "avif": {
+        "400": "team/santiago-vargas-roldan-400.avif",
+        "800": "team/santiago-vargas-roldan-800.avif"
+      },
+      "webp": {
+        "400": "team/santiago-vargas-roldan-400.webp",
+        "800": "team/santiago-vargas-roldan-800.webp"
+      },
+      "jpg": {
+        "400": "team/santiago-vargas-roldan-400.jpg",
+        "800": "team/santiago-vargas-roldan-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "05 Organizers/current_organizres_headshots/Santiago Vargas Roldan Hack Arizona.png",
+    "nativePx": 243
+  },
+  {
+    "id": "siddhartha-singh",
+    "name": "Siddhartha Singh",
+    "group": "current",
+    "files": {
+      "avif": {
+        "400": "team/siddhartha-singh-400.avif",
+        "800": "team/siddhartha-singh-800.avif"
+      },
+      "webp": {
+        "400": "team/siddhartha-singh-400.webp",
+        "800": "team/siddhartha-singh-800.webp"
+      },
+      "jpg": {
+        "400": "team/siddhartha-singh-400.jpg",
+        "800": "team/siddhartha-singh-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "05 Organizers/current_organizres_headshots/ Siddhartha Singh Hack Arizona.png",
+    "nativePx": 376
+  },
+  {
+    "id": "thrupthi-ananth-byadarahalli",
+    "name": "Thrupthi Ananth Byadarahalli",
+    "group": "current",
+    "files": {
+      "avif": {
+        "400": "team/thrupthi-ananth-byadarahalli-400.avif",
+        "800": "team/thrupthi-ananth-byadarahalli-800.avif"
+      },
+      "webp": {
+        "400": "team/thrupthi-ananth-byadarahalli-400.webp",
+        "800": "team/thrupthi-ananth-byadarahalli-800.webp"
+      },
+      "jpg": {
+        "400": "team/thrupthi-ananth-byadarahalli-400.jpg",
+        "800": "team/thrupthi-ananth-byadarahalli-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "05 Organizers/current_organizres_headshots/Thrupthi Ananth Byadarahalli Hack Arizona.png",
+    "nativePx": 260
+  },
+  {
+    "id": "dongyoung-yang",
+    "name": "Dongyoung Yang",
+    "group": "previous",
+    "files": {
+      "avif": {
+        "400": "team/dongyoung-yang-400.avif",
+        "800": "team/dongyoung-yang-800.avif"
+      },
+      "webp": {
+        "400": "team/dongyoung-yang-400.webp",
+        "800": "team/dongyoung-yang-800.webp"
+      },
+      "jpg": {
+        "400": "team/dongyoung-yang-400.jpg",
+        "800": "team/dongyoung-yang-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "05 Organizers/previous-organizers-headshots/Screenshot 2026-10-24 at 19-17-25 Dongyoung Yang Hack Arizona.png",
+    "nativePx": 323
+  },
+  {
+    "id": "hidoyat-odilbek-ogli-ruzmetov",
+    "name": "Hidoyat Odilbek o'g'li Ruzmetov",
+    "group": "previous",
+    "files": {
+      "avif": {
+        "400": "team/hidoyat-odilbek-ogli-ruzmetov-400.avif",
+        "800": "team/hidoyat-odilbek-ogli-ruzmetov-800.avif"
+      },
+      "webp": {
+        "400": "team/hidoyat-odilbek-ogli-ruzmetov-400.webp",
+        "800": "team/hidoyat-odilbek-ogli-ruzmetov-800.webp"
+      },
+      "jpg": {
+        "400": "team/hidoyat-odilbek-ogli-ruzmetov-400.jpg",
+        "800": "team/hidoyat-odilbek-ogli-ruzmetov-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "05 Organizers/previous-organizers-headshots/Screenshot 2026-10-24 at 19-17-04 Hidoyat Odilbek o'g'li Ruzmetov Hack Arizona.png",
+    "nativePx": 238
+  },
+  {
+    "id": "kory-m-smith",
+    "name": "Kory M Smith",
+    "group": "previous",
+    "files": {
+      "avif": {
+        "400": "team/kory-m-smith-400.avif",
+        "800": "team/kory-m-smith-800.avif"
+      },
+      "webp": {
+        "400": "team/kory-m-smith-400.webp",
+        "800": "team/kory-m-smith-800.webp"
+      },
+      "jpg": {
+        "400": "team/kory-m-smith-400.jpg",
+        "800": "team/kory-m-smith-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "05 Organizers/previous-organizers-headshots/Screenshot 2026-10-24 at 19-17-36 Kory M Smith Hack Arizona.png",
+    "nativePx": 414
+  },
+  {
+    "id": "olivia-grace-sobczak",
+    "name": "Olivia Grace Sobczak",
+    "group": "previous",
+    "files": {
+      "avif": {
+        "400": "team/olivia-grace-sobczak-400.avif",
+        "800": "team/olivia-grace-sobczak-800.avif"
+      },
+      "webp": {
+        "400": "team/olivia-grace-sobczak-400.webp",
+        "800": "team/olivia-grace-sobczak-800.webp"
+      },
+      "jpg": {
+        "400": "team/olivia-grace-sobczak-400.jpg",
+        "800": "team/olivia-grace-sobczak-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "05 Organizers/previous-organizers-headshots/Screenshot 2026-10-24 at 19-17-17 Olivia Grace Sobczak Hack Arizona.png",
+    "nativePx": 167
+  },
+  {
+    "id": "om-jariwala",
+    "name": "Om Jariwala",
+    "group": "previous",
+    "files": {
+      "avif": {
+        "400": "team/om-jariwala-400.avif",
+        "800": "team/om-jariwala-800.avif"
+      },
+      "webp": {
+        "400": "team/om-jariwala-400.webp",
+        "800": "team/om-jariwala-800.webp"
+      },
+      "jpg": {
+        "400": "team/om-jariwala-400.jpg",
+        "800": "team/om-jariwala-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "05 Organizers/previous-organizers-headshots/Screenshot 2026-10-24 at 19-07-04 Om Jariwala Hack Arizona.png",
+    "nativePx": 253
+  }
+]

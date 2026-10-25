@@ -1,0 +1,12 @@
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="">
+  <meta name="site-root" content="{{root}}">
+  <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/brand/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
+  <!-- Before first paint: mark JavaScript as present (so reveals may hide content), apply the saved or system theme
+       (no flash), apply a saved pause or reduced motion, decide whether the once-per-session loader runs (never with
+       reduced motion, paused motion or a #hash), skip page-change transitions while paused (or mark html.vt-nav so header and dock do not replay their entrance), and undo it all after 4s
+       if the modules never load. Keep the 'intro-seen' key: scripts/qa-site.cjs sets it to skip the loader. -->
+  <script>(function(){var d=document.documentElement,t,p,s,m=function(q){return matchMedia(q).matches};d.classList.add('js');try{t=localStorage.getItem('theme');p=localStorage.getItem('motion')==='paused'}catch(e){}if(t!=='dark'&&t!=='light')t=m('(prefers-color-scheme: dark)')?'dark':'light';d.dataset.theme=t;d.dataset.motion=p||m('(prefers-reduced-motion: reduce)')?'paused':'running';try{s=sessionStorage.getItem('intro-seen')}catch(e){s='1'}if(!s&&!location.hash&&d.dataset.motion!=='paused')d.classList.add('is-loading');addEventListener('pagereveal',function(e){if(!e.viewTransition)return;if(d.dataset.motion==='paused')e.viewTransition.skipTransition();else d.classList.add('vt-nav')});setTimeout(function(){d.classList.remove('is-loading','is-leaving');if(!d.classList.contains('motion-ready'))d.classList.remove('js')},4000)})()</script>
