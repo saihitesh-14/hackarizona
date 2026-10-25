@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hack Arizona motion prototypes</title>
+<meta name="color-scheme" content="light dark">
+<style>
+:root
+{
+    --paper: #f3f5f9;
+    --card: #ffffff;
+    --ink: #0c234b;
+    --muted: #4a5878;
+    --line: rgba(12, 35, 75, 0.14);
+    --accent: #ab0520;
+    --stage: #e8ecf3;
+    --stage-dark: #0c234b;
+    --pulse: #ff2a3d;
+    --focus: #ab0520;
+    --ease-out: cubic-bezier(.22, 1, .36, 1);
+    --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark)
+{
+    :root:not([data-theme="light"])
+    {
+        --paper: #081936;
+        --card: #0d2246;
+        --ink: #eef2fa;
+        --muted: #a9b6d1;
+        --line: rgba(238, 242, 250, 0.14);
+        --accent: #ff6b78;
+        --stage: #0b1f40;
+        --focus: #ff8a94;
+    }
+}
+:root[data-theme="dark"]
+{
+    --paper: #081936;
+    --card: #0d2246;
+    --ink: #eef2fa;
+    --muted: #a9b6d1;
+    --line: rgba(238, 242, 250, 0.14);
+    --accent: #ff6b78;
+    --stage: #0b1f40;
+    --focus: #ff8a94;
+}
+*
+{
+    box-sizing: border-box;
+}
+html
+{
+    background: var(--paper);
+    color: var(--ink);
+}
+body
+{
+    margin: 0;
+    font-family: var(--sans);
+    line-height: 1.6;
+    background: var(--paper);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+}
+.wrap
+{
+    width: min(1180px, 100% - 32px);
+    margin-inline: auto;
+}
+header.top
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+}
+.brand
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+}
+.brand svg
+{
+    width: 30px;
+    height: 30px;
+}
+.controls
+{
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+button
+{
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: border-color 200ms var(--ease-out), background-color 200ms var(--ease-out);
+}
+button:hover
+{
+    border-color: var(--ink);
+}
+button.primary
+{
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+}
+button:focus-visible
+{
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+}
+h1
+{
+    font-size: clamp(34px, 5vw, 60px);
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+    font-weight: 650;
+    margin: 56px 0 14px;
+    max-width: 16ch;
+}
+.lead
+{
+    font-size: clamp(17px, 1.6vw, 20px);
+    color: var(--muted);
+    max-width: 60ch;
+    margin: 0 0 40px;
+}
+.panel
+{
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: clamp(20px, 4vw, 56px);
+    align-items: center;
+    padding: 40px 0;
+    border-top: 1px solid var(--line);
+}
+.panel h2
+{
+    font-size: clamp(26px, 3vw, 38px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: 650;
+    margin: 0 0 12px;
+}
+.panel p, .panel li
+{
+    color: var(--muted);
+    max-width: 52ch;
+}
+.panel ul
+{
+    padding-left: 18px;
+    margin: 0 0 20px;
+}
+.stage
+{
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    background: var(--stage-dark);
+    display: grid;
+    place-items: center;
+}
+.stage svg.drawon
+{
+    width: 72%;
+    height: auto;
+    overflow: visible;
+}
+.drawon [data-part="disc"]
+{
+    transform-origin: 600px 600px;
+    transform-box: view-box;
+}
+.hero-stage
+{
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    aspect-ratio: 5 / 4;
+    background: var(--stage);
+    border: 1px solid var(--line);
+}
+.hero-stage canvas
+{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: grab;
+    touch-action: pan-y;
+}
+.hero-stage canvas:active
+{
+    cursor: grabbing;
+}
+.hero-stage .fallback
+{
+    display: none;
+}
+.hero-stage.no-webgl canvas
+{
+    display: none;
+}
+.hero-stage.no-webgl .fallback
+{
+    display: grid;
+    place-items: center;
+    position: absolute;
+    inset: 0;
+}
+.hero-stage.no-webgl .fallback svg
+{
+    width: 46%;
+}
+.hint
+{
+    position: absolute;
+    left: 16px;
+    top: 12px;
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+    pointer-events: none;
+}
+.row
+{
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.notes
+{
+    border-top: 1px solid var(--line);
+    padding: 32px 0 80px;
+    color: var(--muted);
+}
+.notes h2
+{
+    font-size: 20px;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+}
+.notes ul
+{
+    padding-left: 18px;
+    margin: 0;
+    max-width: 70ch;
+}
+.sr-only
+{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+@media (max-width: 860px)
+{
+    .panel
+    {
+        grid-template-columns: 1fr;
+    }
+    h1
+    {
+        margin-top: 36px;
+    }
+}
+::view-transition-old(root)
+{
+    animation: none;
+}
+::view-transition-new(root)
+{
+    animation: theme-reveal 700ms var(--ease-in-out);
+}
+@keyframes theme-reveal
+{
+    from
+    {
+        clip-path: circle(0 at var(--reveal-x, 50%) var(--reveal-y, 0));
+    }
+    to
+    {
+        clip-path: circle(150vmax at var(--reveal-x, 50%) var(--reveal-y, 0));
+    }
+}
+:root[data-motion="paused"] *,
+:root[data-motion="paused"] *::before,
+:root[data-motion="paused"] *::after
+{
+    transition: none !important;
+    animation: none !important;
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="hackaz-fill" gradientUnits="userSpaceOnUse" x1="0" y1="318.7" x2="0" y2="884.7">
+      <stop offset="0" stop-color="#AA1F23"/>
+      <stop offset="1" stop-color="#15244A"/>
+    </linearGradient>
+    <path id="hackaz-cactus" fill-rule="evenodd" d="{{CACTUS}}"/>
+    <symbol id="hackaz-mark" viewBox="0 0 1200 1200">
+      <circle cx="600" cy="600" r="588.6" fill="#FFFFFF"/>
+      <circle cx="600" cy="600.3" r="527.05" fill="url(#hackaz-fill)"/>
+      <use href="#hackaz-cactus" fill="#FFFFFF"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <svg viewBox="0 0 1200 1200" aria-hidden="true"><use href="#hackaz-mark"/></svg>
+      <span>Hack Arizona</span>
+    </div>
+    <div class="controls">
+      <button type="button" data-action="theme" aria-pressed="false">Dark theme</button>
+      <button type="button" data-action="pause" aria-pressed="false">Pause motion</button>
+    </div>
+  </header>
+
+  <main>
+    <h1>Motion prototypes for the new site</h1>
+    <p class="lead">Two pieces built from the Hack Arizona mark: the logo as a vector that draws itself, and a 3D saguaro made of circuit traces. Both follow the same idea: a signal leaves the base of the trunk and lights everything it reaches.</p>
+
+    <section class="panel" aria-labelledby="logo-title">
+      <div class="stage">
+        <svg id="mark-drawon" class="drawon" viewBox="0 0 1200 1200" role="img" aria-labelledby="mark-title">
+          <title id="mark-title">Hack Arizona logo</title>
+          <defs>
+            <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="14" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <mask id="reveal-ring" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="1200">
+              <path data-ring-arc d="M600 1157.8 A557.8 557.8 0 0 1 600 42.2" fill="none" stroke="#fff" stroke-width="84" stroke-linecap="round"/>
+              <path data-ring-arc d="M600 1157.8 A557.8 557.8 0 0 0 600 42.2" fill="none" stroke="#fff" stroke-width="84" stroke-linecap="round"/>
+            </mask>
+            <mask id="reveal-cactus" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="1200">
+              <g fill="none" stroke="#fff" stroke-linecap="round">
+                <path data-reveal="trunk" d="M592.8 1145 L592.8 361.8" stroke-width="150"/>
+                <path data-reveal="arm-left" d="M592.8 699.2 C494.1 699.2 396.1 689.1 370.7 594.7 L359.9 563.4" stroke-width="170"/>
+                <path data-reveal="arm-right" d="M592.8 886.5 C696.9 886.5 805.8 852.7 825.7 778.7 L837.6 747.4" stroke-width="200"/>
+                <path data-pad-arc="top" d="M592.8 361.8 A79.4 79.4 0 0 1 592.8 203" stroke-width="84"/>
+                <path data-pad-arc="top" d="M592.8 361.8 A79.4 79.4 0 0 0 592.8 203" stroke-width="84"/>
+                <path data-pad-arc="left" d="M359.9 563.4 A79.4 79.4 0 0 1 308.1 413.4" stroke-width="84"/>
+                <path data-pad-arc="left" d="M359.9 563.4 A79.4 79.4 0 0 0 308.1 413.4" stroke-width="84"/>
+                <path data-pad-arc="right" d="M837.6 747.4 A79.4 79.4 0 0 1 894.2 599" stroke-width="84"/>
+                <path data-pad-arc="right" d="M837.6 747.4 A79.4 79.4 0 0 0 894.2 599" stroke-width="84"/>
+              </g>
+            </mask>
+          </defs>
+          <circle data-masked="url(#reveal-ring)" cx="600" cy="600" r="588.6" fill="#FFFFFF" mask="url(#reveal-ring)"/>
+          <circle data-part="disc" cx="600" cy="600.3" r="527.05" fill="url(#hackaz-fill)"/>
+          <use data-masked="url(#reveal-cactus)" href="#hackaz-cactus" fill="#FFFFFF" mask="url(#reveal-cactus)"/>
+          <g filter="url(#glow)">
+            <circle data-flash="top" cx="592.8" cy="282.4" r="50.7" style="fill: var(--pulse)" opacity="0"/>
+            <circle data-flash="left" cx="334" cy="488.4" r="50.7" style="fill: var(--pulse)" opacity="0"/>
+            <circle data-flash="right" cx="865.9" cy="673.2" r="50.7" style="fill: var(--pulse)" opacity="0"/>
+            <circle data-pulse cx="0" cy="0" r="24" style="fill: var(--pulse)" opacity="0"/>
+            <circle data-pulse cx="0" cy="0" r="24" style="fill: var(--pulse)" opacity="0"/>
+            <circle data-pulse cx="0" cy="0" r="24" style="fill: var(--pulse)" opacity="0"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 id="logo-title">The logo, as a vector</h2>
+        <ul>
+          <li>Traced from your circle logo PNG. Same shape and colours, now sharp at any size.</li>
+          <li>The draw-on is the site's loader idea: the ring powers on, the signal grows the saguaro from its base, then a pulse runs up and each pad lights up.</li>
+          <li>The last frame is the logo exactly as it is. Nothing is redrawn or recoloured.</li>
+        </ul>
+        <div class="row">
+          <button type="button" class="primary" data-action="replay-logo">Replay</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="saguaro-title">
+      <div class="hero-stage">
+        <canvas id="saguaro" aria-label="A 3D saguaro made of circuit traces, turning slowly"></canvas>
+        <div class="fallback"><svg viewBox="0 0 1200 1200" role="img" aria-label="Hack Arizona logo"><use href="#hackaz-mark"/></svg></div>
+        <p class="hint" aria-hidden="true">Drag to turn it. Click it to send a signal.</p>
+      </div>
+      <div>
+        <h2 id="saguaro-title">The 3D circuit saguaro</h2>
+        <ul>
+          <li>Built from the logo's own measurements: trunk, arms and ring pads, with each arm turned into its own plane so it reads as a real cactus.</li>
+          <li>It grows in like the logo does, then turns slowly, floats, and leans toward your cursor. Flick it to spin it.</li>
+          <li>Every few seconds a signal runs up the traces and the pads light up.</li>
+          <li>Light theme uses the logo's red to navy gradient; dark theme turns it white with red signals.</li>
+        </ul>
+        <div class="row">
+          <button type="button" class="primary" data-action="pulse">Send a signal</button>
+          <button type="button" data-action="replay-saguaro">Replay intro</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="notes" aria-labelledby="notes-title">
+      <h2 id="notes-title">Not in this prototype yet</h2>
+      <ul>
+        <li>Fonts, the hero layout and the rest of the page. These two pieces get dropped into the real hero.</li>
+        <li>Scroll linking (the saguaro turning as you scroll the hero) and the touch-device version.</li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+<script>{{SCRIPT}}</script>
+</body>
+</html>
