@@ -356,6 +356,7 @@
   {
     "id": "ha25-team-logo-wall",
     "slots": [
+      "home-hero",
       "story:2025"
     ],
     "year": 2025,
@@ -611,6 +612,82 @@
     "focal": {
       "x": 0.5,
       "y": 0.55
+    }
+  },
+  {
+    "id": "ha25-workshop-room",
+    "slots": [
+      "home-about"
+    ],
+    "year": 2025,
+    "event": "Hack Arizona 2025",
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A bright classroom of students at laptops around tables, code on the wall screens, and one person standing in the middle of the room talking to the group.",
+    "caption": "Hack Arizona 2025",
+    "source": "refs/photos-sai/ha25-workshop-room.jpg",
+    "focal": {
+      "x": 0.45,
+      "y": 0.6
+    }
+  },
+  {
+    "id": "ha26-team-countdown",
+    "slots": [
+      "board"
+    ],
+    "year": 2026,
+    "event": "Hack Arizona 2026",
+    "width": 960,
+    "height": 640,
+    "widths": [
+      480,
+      960
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "Four people stand side by side and grin at the camera, one throwing both arms wide, under a projected countdown that reads 00 39 24.",
+    "caption": "Hack Arizona 2026",
+    "source": "refs/photos-sai/ha26-team-countdown.jpg",
+    "focal": {
+      "x": 0.5,
+      "y": 0.5
+    }
+  },
+  {
+    "id": "ha26-pitch",
+    "slots": [
+      "board"
+    ],
+    "year": 2026,
+    "event": "Hack Arizona 2026",
+    "width": 960,
+    "height": 640,
+    "widths": [
+      480,
+      960
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A person explains a project with both hands to a small group gathered round a table of laptops, while an organizer in a black ORGANIZER shirt takes notes.",
+    "caption": "Hack Arizona 2026",
+    "source": "refs/photos-sai/ha26-pitch.jpg",
+    "focal": {
+      "x": 0.45,
+      "y": 0.5
     }
   }
 ]

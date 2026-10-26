@@ -34,7 +34,7 @@ Everything here is styled by `src/styles/base.css` and wired by `src/js/shell.js
 ```js
 // src/js/pages/<page>.js
 import { isPaused, prefersReducedMotion, onMotionChange, onThemeChange, currentTheme, countUp, enhance, asset } from '../shell.js';
-import { site, statusFor } from '../data/site.js';
+import { site, statusFor } from '../../data/site.js';
 
 const stop = onMotionChange(paused => { /* stop loops and show final states when paused; resume otherwise */ });
 onThemeChange(theme => { /* 'light' | 'dark': redraw anything that read a token */ });

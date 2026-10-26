@@ -1,5 +1,6 @@
-/* Event config. Every value comes from Sai (PLAN.md "Confirmed by Sai" and the build contract); null means not given
-   yet, and whatever renders it must show a placeholder. Arizona keeps MST all year (no daylight saving). */
+/* Event config. Every value comes from Sai (PLAN.md "Confirmed by Sai" and the build contract) or from the official site
+   https://hack.arizona.edu/, which Sai said to use; null means not given yet, and whatever renders it must show a
+   placeholder. Arizona keeps MST all year (no daylight saving). */
 export const site = {
   event: {
     name: 'Hack Arizona 2027',
@@ -12,7 +13,7 @@ export const site = {
     city: 'Tucson, AZ',
   },
   registration: { opensMonth: '2027-01', url: null, platform: null },
-  links: { email: 'hackaz@arizona.edu', instagram: 'https://www.instagram.com/hack.arizona/', discord: null, codeOfConduct: null },
+  links: { email: 'hackaz@arizona.edu', instagram: 'https://www.instagram.com/hack.arizona/', discord: 'https://discord.gg/8BkZftYGWp', codeOfConduct: 'https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md' },
   mlhMember: null,
 };
 

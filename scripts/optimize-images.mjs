@@ -1,5 +1,7 @@
 // Builds public/img/ (AVIF + WebP + JPEG at several widths, og.jpg, manifest.json) from scripts/photo-selection.json.
-// Run: npm run images   (re-run after changing the selection; public/img is wiped and rebuilt)
+// Run: npm run images   (re-run after changing the selection; files no photo uses any more are removed)
+// A source under refs/ is in this repository; any other is in Sai's HackAZ folder. Without that folder (a cloud
+// checkout), the photos built from it are kept as last built.
 import sharp from 'sharp';
 import assert from 'node:assert/strict';
 import { mkdir, readFile, readdir, rm, stat, writeFile } from 'node:fs/promises';
@@ -14,7 +16,7 @@ const BOARD_WIDTHS = [480, 960]; // board cards render small; 960 covers them at
 const JPG_MAX = 960; // JPEG is only the fallback for browsers without AVIF/WebP; capped to stay under the budget
 const QUALITY = { avif: { quality: 50 }, webp: { quality: 72 }, jpg: { quality: 78, mozjpeg: true } };
 const OG = { width: 1200, height: 630 };
-const BUDGET = 8 * 1024 * 1024;
+const BUDGET = 12 * 1024 * 1024; // the whole folder; a page loads only the few photos it shows (8 MB until Sai's 26 Oct photos)
 
 // Crop box of aspect w:h, as large as fits, centred on the focal point and kept inside the image.
 function focalBox(srcW, srcH, w, h, { x, y }) {
@@ -30,14 +32,25 @@ const { photos } = JSON.parse(await readFile(path.join(WEB, 'scripts/photo-selec
 assert.equal(new Set(photos.map(p => p.id)).size, photos.length, 'duplicate photo id');
 assert.equal(photos.filter(p => p.slots.includes('og')).length, 1, 'exactly one photo needs the og slot');
 
-await rm(OUT, { recursive: true, force: true });
 await mkdir(OUT, { recursive: true });
+const exists = file => stat(file).then(() => true, () => false);
+const previous = (await exists(path.join(OUT, 'manifest.json'))) ? JSON.parse(await readFile(path.join(OUT, 'manifest.json'), 'utf8')) : [];
+const sourcePath = source => path.join(source.startsWith('refs/') ? WEB : HACKAZ, source);
+const outputs = entry => [...entry.widths.flatMap(w => ['avif', 'webp'].map(ext => `${entry.id}-${w}.${ext}`)), ...entry.jpgWidths.map(w => `${entry.id}-${w}.jpg`)];
 
-const manifest = [];
+const manifest = [], kept = [];
 for (const p of photos) {
   assert.ok(p.alt && p.caption && p.focal, `${p.id}: alt, caption and focal are required`);
+  if (!(await exists(sourcePath(p.source)))) {
+    const old = previous.find(entry => entry.id === p.id && entry.source === p.source);
+    assert.ok(old, `${p.id}: ${p.source} not found, and there is no earlier build of it to keep`);
+    for (const f of outputs(old)) assert.ok(await exists(path.join(OUT, f)), `${p.id}: kept build is missing ${f}`);
+    manifest.push({ ...old, slots: p.slots, year: p.year, event: p.event, alt: p.alt, caption: p.caption, focal: p.focal });
+    kept.push(p.id);
+    continue;
+  }
   // rotate() applies EXIF orientation; sharp drops all metadata (EXIF, GPS, ICC) unless asked to keep it.
-  const base = sharp(path.join(HACKAZ, p.source), { failOn: 'none' }).rotate().toColorspace('srgb');
+  const base = sharp(sourcePath(p.source), { failOn: 'none' }).rotate().toColorspace('srgb');
   const { data: src, info } = await base.raw().toBuffer({ resolveWithObject: true });
   const onlyBoard = p.slots.every(s => s === 'board');
   const widths = (p.widths ?? (onlyBoard ? BOARD_WIDTHS : DEFAULT_WIDTHS)).filter(w => w <= info.width);
@@ -62,7 +75,10 @@ for (const p of photos) {
   });
   console.log(`${p.id}: ${info.width}x${info.height} -> ${widths.join(', ')}`);
 }
+if (kept.length) console.log(`kept as last built (source not found): ${kept.join(', ')}`);
 await writeFile(path.join(OUT, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
+const used = new Set([...manifest.flatMap(outputs), 'og.jpg', 'manifest.json']);
+for (const f of await readdir(OUT)) if (!used.has(f)) await rm(path.join(OUT, f));
 
 // Self-check: every output opens, carries no EXIF/GPS, and the folder fits the budget.
 let total = 0;
