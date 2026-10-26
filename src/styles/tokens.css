@@ -10,6 +10,10 @@
 
 :root{--paper:#F3F5F9;--card:#FAFBFD;--panel:#E9EDF4;--tint:#E4E9F1;--node:#FFFFFF;--ink:#0C234B;--ink-hover:#1D3A6B;--text-strong:#26385A;--accent-ink:#8F0A1E;--muted:#4A5878;--muted-2:#54617F;--line:#0C234B1F;--line-strong:#0C234B33;--line-accent:#0C234B5C;--grid:#0C234B14;--accent:#AB0520;--accent-fill:#AB0520;--accent-soft:#F4D9DE;--on-accent:#FFFFFF;--live:#AB0520;--soft-shadow:#0C234B1A;--knot-shadow:#0C234B29;--dialog-shadow:#0C234B40;--backdrop:#0C234B73;--spot:#FFFFFFB3;--glow:#0C234B0F;--note-bg:#F6E1E5;--note-ink:#6B0716;--marquee:#DCE2EC;--placeholder-line:#AB0520;--placeholder-bg:#AB052012;--placeholder-ink:#8F0A1E;--plate:#FFFFFF;color-scheme:light}
 
+/* The home hero banner is dark in both themes (a photo under a navy wash), so it has its own constants; the hero and
+   the header over it swap them in for their usual roles. Values match the dark theme's, which pass contrast.py. */
+:root{--banner-bg:#07152E;--banner-card:#0B1C3B;--banner-ink:#EEF2FA;--banner-text:#CBD5E8;--banner-muted:#A6B3CE;--banner-accent:#FF7581;--banner-line:#EEF2FA33;--banner-line-soft:#EEF2FA1F}
+
 /* --plate is the surface sponsor logos sit on: logos are drawn for white, so it stays light in the dark theme too. */
 
 /* Dark tokens apply when chosen, or by system preference until the visitor chooses (mirrored below for no-JS). */

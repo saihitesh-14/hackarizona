@@ -145,7 +145,7 @@
     {
       "id": "ha25-team-logo-wall",
       "source": "04 Event Photos & Video/2025 Photos/Organizer Team Photos/IMG_1043.jpeg",
-      "slots": ["home-hero", "story:2025"],
+      "slots": ["story:2025"],
       "year": 2025,
       "event": "Hack Arizona 2025",
       "alt": "A group, most in maroon Hack Arizona T-shirts, stands in front of a giant lit-up Hack Arizona logo.",
@@ -271,6 +271,17 @@
       "alt": "A person explains a project with both hands to a small group gathered round a table of laptops, while an organizer in a black ORGANIZER shirt takes notes.",
       "caption": "Hack Arizona 2026",
       "focal": { "x": 0.45, "y": 0.5 }
+    },
+    {
+      "id": "auditorium-banner",
+      "source": "refs/photos-sai/auditorium-banner.webp",
+      "slots": ["home-hero"],
+      "year": null,
+      "event": "Hack Arizona (early years)",
+      "alt": "A packed auditorium seen from the balcony, with the Hack Arizona logo on the big screen and a sound desk in the foreground.",
+      "caption": "Hack Arizona, early years",
+      "focal": { "x": 0.5, "y": 0.3 },
+      "widths": [960, 1600, 1920]
     }
   ]
 }

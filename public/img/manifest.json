@@ -356,7 +356,6 @@
   {
     "id": "ha25-team-logo-wall",
     "slots": [
-      "home-hero",
       "story:2025"
     ],
     "year": 2025,
@@ -688,6 +687,31 @@
     "focal": {
       "x": 0.45,
       "y": 0.5
+    }
+  },
+  {
+    "id": "auditorium-banner",
+    "slots": [
+      "home-hero"
+    ],
+    "year": null,
+    "event": "Hack Arizona (early years)",
+    "width": 1920,
+    "height": 823,
+    "widths": [
+      960,
+      1600,
+      1920
+    ],
+    "jpgWidths": [
+      960
+    ],
+    "alt": "A packed auditorium seen from the balcony, with the Hack Arizona logo on the big screen and a sound desk in the foreground.",
+    "caption": "Hack Arizona, early years",
+    "source": "refs/photos-sai/auditorium-banner.webp",
+    "focal": {
+      "x": 0.5,
+      "y": 0.3
     }
   }
 ]
