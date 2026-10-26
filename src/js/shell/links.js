@@ -46,7 +46,7 @@ export function initCopyButtons(scope = document) {
         if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
         await navigator.clipboard.writeText(button.dataset.copy);
         if (status) status.textContent = 'Copied.';
-        button.textContent = 'Copied ✓';
+        button.textContent = 'Copied';
       } catch {
         // Without clipboard access, select the text so the visitor can copy it themselves.
         if (status) {

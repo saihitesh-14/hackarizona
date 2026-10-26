@@ -28,14 +28,14 @@ function includes() {
       order: 'pre',
       handler(html, ctx) {
         const file = pageFile(ctx.filename);
-        const page = Object.keys(pages).find(key => pages[key] === file);
-        if (!page) throw new Error(`hackaz-includes: ${file} is not listed in vite.config.js pages`);
+        // Pages outside the five (dev/medallion.html, say) still get includes and {{root}}, just no current dock item.
+        const page = Object.keys(pages).find(key => pages[key] === file) || '';
         const up = '../'.repeat(file.split('/').length - 1) || './';
-        return html
+        const out = html
           .replace(/<!--\s*@include\s+partials\/([\w-]+)\.html\s*-->/g, (_, name) => readFileSync(resolve(partials, `${name}.html`), 'utf8'))
           .replaceAll('{{root}}', up)
-          .replaceAll('{{page}}', page)
-          .replace(`data-dock="${page}"`, `data-dock="${page}" aria-current="page"`);
+          .replaceAll('{{page}}', page);
+        return page ? out.replace(`data-dock="${page}"`, `data-dock="${page}" aria-current="page"`) : out;
       },
     },
     configureServer(server) {

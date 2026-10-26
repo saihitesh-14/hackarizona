@@ -25,6 +25,7 @@ export function initTheme(button) {
   const meta = document.querySelector('meta[name="theme-color"]');
   const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
   let chosen = readStored();
+  let latest = null;
   const current = () => (root.dataset.theme === 'dark' ? 'dark' : 'light');
 
   function apply(theme) {
@@ -52,7 +53,11 @@ export function initTheme(button) {
         { duration: 700, easing: 'cubic-bezier(.65,0,.35,1)', pseudoElement: '::view-transition-new(root)' },
       );
     }, () => {});
-    transition.finished.finally(() => root.classList.remove('is-theming'));
+    latest = transition;
+    // A quick second click skips this transition; only the newest one may restore the names.
+    transition.finished.finally(() => {
+      if (latest === transition) root.classList.remove('is-theming');
+    });
   }
 
   if (!root.dataset.theme) root.dataset.theme = chosen || (systemDark.matches ? 'dark' : 'light');

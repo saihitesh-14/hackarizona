@@ -1,5 +1,10 @@
 {
   "generated": "2026-10-25",
+  "checked": {
+    "verified": 150,
+    "corrected": 33,
+    "removed": 0
+  },
   "facts": [
     {
       "id": "hackaz-2027-dates",
@@ -220,9 +225,9 @@
       "statement": "The first Hack Arizona hackathon was in 2016.",
       "value": 2016,
       "year": 2016,
-      "source": "/Users/saihitesh/Desktop/HackAZ/website/PLAN.md (\"Confirmed by Sai\"); /private/tmp/claude-501/-Users-saihitesh-Desktop-HackAZ/0228f4a8-2752-4ac2-8f98-271cb6d677a8/scratchpad/spec.md (build contract, \"Confirmed facts (from Sai)\")",
+      "source": "Sai, in chat, 25 Oct 2026 (\"Keep 2016 as the first hackathon year; the 2015 sources are wrong or refer to something else.\"); /Users/saihitesh/Desktop/HackAZ/website/PLAN.md (\"Confirmed by Sai\"); /private/tmp/claude-501/-Users-saihitesh-Desktop-HackAZ/0228f4a8-2752-4ac2-8f98-271cb6d677a8/scratchpad/spec.md (build contract, \"Confirmed facts (from Sai)\")",
       "confidence": "confirmed-by-sai",
-      "notes": "Conflicts with several sources that put a first event in March 2015; see conflicts."
+      "notes": "Sai ruled on the 2015-vs-2016 conflict: 2016 stands. Sources that put a first event in 2015 are kept in conflicts for the record only; facts that depend on them carry a \"Conflicts with Sai's ruling\" note."
     },
     {
       "id": "history-origin-units",
@@ -251,7 +256,7 @@
       "year": 2015,
       "source": "/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack AZ - SSF Presentation.pptx, slide 3 (\"History of Hack Arizona\")",
       "confidence": "owner-document",
-      "notes": ""
+      "notes": "Fact check: \"Founded in 2015\" agrees with Sai; \"(400 participants)\" implies a 2015 event. Conflicts with Sai's ruling (first hackathon 2016; Sai, 25 Oct 2026: \"the 2015 sources are wrong or refer to something else\"): do not use the 2015 event date or the edition count on the site. SSF deck file: created 2021-02-22, last modified 2024-02-09 (docProps/core.xml)."
     },
     {
       "id": "history-southwest-largest",
@@ -285,7 +290,7 @@
       "year": 2015,
       "source": "https://web.archive.org/web/20150302103719/http://hackarizona.org/ (also 20150102142130, 20150403190910)",
       "confidence": "public-web",
-      "notes": "Public web; needs Sai's confirmation. An October 2014 capture (https://web.archive.org/web/20141031015822/http://hackarizona.org/) showed \"February 13th, 2015\" instead. Post-event captures (April and July 2015) add \"Live\" and \"Media Galleries\" pages but keep the same date text."
+      "notes": "Public web; needs Sai's confirmation. An October 2014 capture (https://web.archive.org/web/20141031015822/http://hackarizona.org/) showed \"February 13th, 2015\" instead. Post-event captures (April and July 2015) add \"Live\" and \"Media Galleries\" pages but keep the same date text. Fact check: Conflicts with Sai's ruling (first hackathon 2016; Sai, 25 Oct 2026: \"the 2015 sources are wrong or refer to something else\"): do not use the 2015 event date or the edition count on the site."
     },
     {
       "id": "event-2016",
@@ -405,7 +410,7 @@
       "year": 2018,
       "source": "https://web.archive.org/web/20180106010247/http://hackarizona.org/; https://cs.arizona.edu/news/2018/01/csc-436-students-create-hack-arizona-mobile-app; banner in the slide 1 photo of /Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack AZ - SSF Presentation.pptx",
       "confidence": "public-web",
-      "notes": "Public web; needs Sai's confirmation. The SSF slide 1 panorama shows the banner \"January 12th - 14th, 2018 / 900+ Hackers / hackarizona.org\", so that photo is from 2018 (derived)."
+      "notes": "Public web; needs Sai's confirmation. The SSF slide 1 panorama shows the banner \"January 12th - 14th, 2018 / 900+ Hackers / hackarizona.org\", so that photo is from 2018 (derived). Fact check: Banner text in full: \"January 12th - 14th, 2018 / 900+ Hackers / The University of Arizona / hackarizona.org\"."
     },
     {
       "id": "event-2018-libraries",
@@ -456,7 +461,7 @@
       "year": 2018,
       "source": "https://originals.azpm.org/s/53105-hack-arizona-looks-to-connect-local-tech-companies-with-new-talent; https://cs.arizona.edu/news/2018/01/csc-436-students-create-hack-arizona-mobile-app",
       "confidence": "public-web",
-      "notes": "Public web; needs Sai's confirmation."
+      "notes": "Public web; needs Sai's confirmation. Fact check: \"Fourth edition\" counts a 2015 event. Conflicts with Sai's ruling (first hackathon 2016; Sai, 25 Oct 2026: \"the 2015 sources are wrong or refer to something else\"): do not use the 2015 event date or the edition count on the site."
     },
     {
       "id": "event-2019",
@@ -484,7 +489,7 @@
       "year": 2019,
       "source": "https://web.archive.org/web/20200113170058/https://hackaz.io/",
       "confidence": "public-web",
-      "notes": "Public web; needs Sai's confirmation."
+      "notes": "Public web; needs Sai's confirmation. Fact check: The same page says \"Since our first hackathon in 2015\". Conflicts with Sai's ruling (first hackathon 2016; Sai, 25 Oct 2026: \"the 2015 sources are wrong or refer to something else\"): do not use the 2015 event date or the edition count on the site."
     },
     {
       "id": "event-2020",
@@ -500,7 +505,7 @@
       "year": 2020,
       "source": "https://web.archive.org/web/20200113170058/https://hackaz.io/; https://hack-arizona.devpost.com/",
       "confidence": "public-web",
-      "notes": "Public web; needs Sai's confirmation. \"6.0\" counts six events up to 2020."
+      "notes": "Public web; needs Sai's confirmation. \"6.0\" counts six events up to 2020. Fact check: \"6.0\" counts a 2015 event. Conflicts with Sai's ruling (first hackathon 2016; Sai, 25 Oct 2026: \"the 2015 sources are wrong or refer to something else\"): do not use the 2015 event date or the edition count on the site."
     },
     {
       "id": "event-2020-devpost",
@@ -527,17 +532,17 @@
       "year": 2020,
       "source": "/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack AZ - SSF Presentation.pptx, slide 3",
       "confidence": "owner-document",
-      "notes": ""
+      "notes": "Fact check: SSF deck file: created 2021-02-22, last modified 2024-02-09 (docProps/core.xml). \"Last year in operation\" is as of that time. No other 2020 source gives 1,200 (Devpost 2020: 144)."
     },
     {
       "id": "last-event-before-pandemic",
       "topic": "history",
-      "statement": "The last Hack Arizona before the pandemic was in 2020 (Hack Arizona 6.0, January 17-19, 2020); COVID-19 brought the event to a halt in 2020.",
+      "statement": "The last Hack Arizona before the pandemic was in 2020 (January 17-19, 2020); COVID-19 brought the event to a halt in 2020.",
       "value": 2020,
       "year": 2020,
       "source": "/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack AZ - SSF Presentation.pptx, slide 3; https://www.sie.engineering.arizona.edu/news-events/student-leads-charge-revival-breakout-hackathon; https://web.archive.org/web/20210121052559/https://hackaz.io/ (still showing the 2020 event in Jan 2021)",
       "confidence": "owner-document",
-      "notes": "Year from the SSF deck; the January dates are public web."
+      "notes": "Year from the SSF deck; the January dates are public web. Fact check: Dropped the edition name \"Hack Arizona 6.0\" from the statement (it counts a 2015 event; conflicts with Sai's ruling)."
     },
     {
       "id": "pause-and-return",
@@ -547,7 +552,7 @@
       "year": 2025,
       "source": "https://hack.arizona.edu/about/history",
       "confidence": "public-web",
-      "notes": "Public web, Hack Arizona's own current site; needs Sai's confirmation."
+      "notes": "Public web, Hack Arizona's own current site; needs Sai's confirmation. Fact check: \"Ten years since the hackathon was first held\" dates the first event to 2015. Conflicts with Sai's ruling (first hackathon 2016; Sai, 25 Oct 2026: \"the 2015 sources are wrong or refer to something else\"): do not use the 2015 event date or the edition count on the site."
     },
     {
       "id": "restart-2025",
@@ -572,7 +577,7 @@
       "year": 2025,
       "source": "https://www.sie.engineering.arizona.edu/news-events/student-leads-charge-revival-breakout-hackathon",
       "confidence": "public-web",
-      "notes": "Public web; needs Sai's confirmation."
+      "notes": "Public web; needs Sai's confirmation. Fact check: \"The inaugural 2015 event\": Conflicts with Sai's ruling (first hackathon 2016; Sai, 25 Oct 2026: \"the 2015 sources are wrong or refer to something else\"): do not use the 2015 event date or the edition count on the site."
     },
     {
       "id": "peak-875",
@@ -673,9 +678,9 @@
         "Major League Hacking 2020 Hackathon Season"
       ],
       "year": null,
-      "source": "https://web.archive.org/web/20160110053422/http://hackarizona.org/; https://web.archive.org/web/20161215000000/http://hackarizona.org/; https://web.archive.org/web/2020/https://hackaz.io/team.html",
+      "source": "https://web.archive.org/web/20160110053422/http://hackarizona.org/; https://web.archive.org/web/20161215000000/http://hackarizona.org/; https://web.archive.org/web/20200113170058/https://hackaz.io/",
       "confidence": "public-web",
-      "notes": "Public web; needs Sai's confirmation."
+      "notes": "Public web; needs Sai's confirmation. Fact check: The 2020 badge is on the home page capture (the cited team page capture also shows it). The January 2018 capture still showed the 2017 season badge."
     },
     {
       "id": "event-2015-2016-grand-prize-hire",
@@ -768,7 +773,7 @@
       "year": 2026,
       "source": "/Users/saihitesh/Desktop/HackAZ/03 Sponsors/2027 Sponsorship Packets/2027-Hack-Arizona-2026-Event-Recap.pptx, slide 2; /Users/saihitesh/Desktop/HackAZ/03 Sponsors/2027 Sponsorship Packets/Hack-Arizona-Sponsorship-2026-27.pptx, slide 3",
       "confidence": "owner-document",
-      "notes": ""
+      "notes": "Fact check: The 2026 recap's speaker notes say its figures were copied from the sponsorship deck (\"Attendance figures: finalized Hack-Arizona-Sponsorship-Sample_1.pptx, slide 3\"), so the two documents count as one source, not two."
     },
     {
       "id": "2026-participants-on-site",
@@ -778,7 +783,7 @@
       "year": 2026,
       "source": "/Users/saihitesh/Desktop/HackAZ/03 Sponsors/2027 Sponsorship Packets/2027-Hack-Arizona-2026-Event-Recap.pptx, slide 2; /Users/saihitesh/Desktop/HackAZ/03 Sponsors/2027 Sponsorship Packets/Hack-Arizona-Sponsorship-2026-27.pptx, slide 3",
       "confidence": "owner-document",
-      "notes": "See conflicts."
+      "notes": "See conflicts. Fact check: The 2026 recap's speaker notes say its figures were copied from the sponsorship deck (\"Attendance figures: finalized Hack-Arizona-Sponsorship-Sample_1.pptx, slide 3\"), so the two documents count as one source, not two."
     },
     {
       "id": "2026-sponsors-count",
@@ -788,7 +793,7 @@
       "year": 2026,
       "source": "/Users/saihitesh/Desktop/HackAZ/03 Sponsors/2027 Sponsorship Packets/2027-Hack-Arizona-2026-Event-Recap.pptx, slide 2; /Users/saihitesh/Desktop/HackAZ/03 Sponsors/2027 Sponsorship Packets/Hack-Arizona-Sponsorship-2026-27.pptx, slide 3",
       "confidence": "owner-document",
-      "notes": "See conflicts: other 2026 lists are longer."
+      "notes": "See conflicts: other 2026 lists are longer. Fact check: The 2026 recap's speaker notes say its figures were copied from the sponsorship deck (\"Attendance figures: finalized Hack-Arizona-Sponsorship-Sample_1.pptx, slide 3\"), so the two documents count as one source, not two."
     },
     {
       "id": "2026-devpost",
@@ -822,12 +827,12 @@
     {
       "id": "packet-500-students",
       "topic": "numbers",
-      "statement": "Sponsor packets: \"Each year, over 500 students\" / \"500+ Students Participating annually\".",
+      "statement": "Sponsor packets: \"Each year, over 500 students\" / \"500+ Students Participating annually\" (2026 packet and internal packet, page 2); \"Each spring, 500+ students from universities across the region\" (2026 prospectus page 1) and \"500+ students from across the Southwest region\" (page 2).",
       "value": "500+",
       "year": null,
       "source": "/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack-Arizona-2026-Packet.pdf, page 2; /Users/saihitesh/Desktop/HackAZ/03 Sponsors/2027 Sponsorship Packets/2027-Hack-Arizona-Internal-Sponsorship-Packet.pdf, page 2; /Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack_Arizona_2026_SponsershipPackage.pdf, pages 1-2",
       "confidence": "owner-document",
-      "notes": "Not matched by the 2025 and 2026 counts; see conflicts."
+      "notes": "Not matched by the 2025 and 2026 counts; see conflicts. Fact check: The prospectus wording differs from the packets; both are now quoted."
     },
     {
       "id": "packet-100-projects",
@@ -939,9 +944,9 @@
       "notes": "Amazon logo is the Amazon Tempe Town Lake Campus mark; Ending Pandemics logo is \"Global Health Institute / Ending Pandemics Academy\" (Mel & Enid Zuckerman College of Public Health)."
     },
     {
-      "id": "sponsors-2026-closing-slide",
+      "id": "sponsors-2026-opening-slide",
       "topic": "sponsors",
-      "statement": "The 2026 \"Thank you so much to our sponsors\" slide shows 12 logos.",
+      "statement": "At the 2026 opening ceremony (25 April, about 10:53 AM) a \"Thank you so much to our sponsors\" slide showed 12 logos.",
       "value": [
         "Amazon (Tempe Town Lake Campus)",
         "Nuclearn",
@@ -959,7 +964,7 @@
       "year": 2026,
       "source": "/Users/saihitesh/Desktop/HackAZ/04 Event Photos & Video/HACKARIZONA 2026/IMG_6021.JPG (also IMG_6018.JPG)",
       "confidence": "derived",
-      "notes": "Read from photos of the screen."
+      "notes": "Read from photos of the screen. Fact check: Was labelled a closing slide. Capture times (IMG_6018 10:53:18 and IMG_6021 10:53:41 on 2026-04-25, MST) put it at the end of the opening ceremony."
     },
     {
       "id": "sponsors-2026-devpost",
@@ -1021,12 +1026,12 @@
       "value": {
         "Nuclearn": "4 photos, 2026-04-25",
         "General Dynamics": "3 photos, 2026-04-25",
-        "Ending Pandemics": "5 photos + 2 videos, 2026-04-25/26"
+        "Ending Pandemics": "5 photos (4 on 2026-04-25, 1 on 2026-04-26) + 2 videos (file creation date 2026-04-28, likely an export date)"
       },
       "year": 2026,
       "source": "/Users/saihitesh/Desktop/HackAZ/03 Sponsors/Sponsor Photos/ (folders \"Nulcearn\", \"General Dynamics\", \"Ending Pandemcis \")",
       "confidence": "derived",
-      "notes": "From capture dates."
+      "notes": "From capture dates. Fact check: Ending Pandemics videos carry 28 April, not 25-26 April."
     },
     {
       "id": "sponsors-trusted-by",
@@ -1068,7 +1073,7 @@
       "year": null,
       "source": "/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack AZ - SSF Presentation.pptx, slide 4",
       "confidence": "owner-document",
-      "notes": "Logos only; refers to the 2015-2020 era. Years per sponsor not given."
+      "notes": "Logos only. Years per sponsor not given. Fact check: The slide gives no years; \"refers to the 2015-2020 era\" is an inference, not something the slide says."
     },
     {
       "id": "sponsors-ssf-campus-partners",
@@ -1246,9 +1251,9 @@
         }
       },
       "year": 2026,
-      "source": "/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack_Arizona_2026_SponsershipPackage.pdf, pages 6-7",
+      "source": "/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack_Arizona_2026_SponsershipPackage.pdf, page 6 (table)",
       "confidence": "owner-document",
-      "notes": "price: Sai decides whether public. The co-branding cell says \"Hack Arizona 2025\" inside the 2026 document."
+      "notes": "price: Sai decides whether public. The co-branding cell says \"Hack Arizona 2025\" inside the 2026 document. Fact check: The value is the page 6 table (checked against the rendered page). Page 7 words the tiers differently; see tiers-2026-prospectus-detailed."
     },
     {
       "id": "tiers-2026-packet",
@@ -1286,7 +1291,7 @@
       "year": 2026,
       "source": "/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack-Arizona-2026-Packet.pdf, page 3",
       "confidence": "owner-document",
-      "notes": "price: Sai decides whether public. The packet refers to \"Bronze\" and \"Silver\" benefits that are not defined in it."
+      "notes": "price: Sai decides whether public. The packet refers to \"Bronze\" and \"Silver\" benefits that are not defined in it. Fact check: The third tier is printed \"Bear DownPartner\" (no space)."
     },
     {
       "id": "tiers-internal-2027",
@@ -1334,7 +1339,7 @@
       "year": 2027,
       "source": "/Users/saihitesh/Desktop/HackAZ/03 Sponsors/2027 Sponsorship Packets/2027-Hack-Arizona-Internal-Sponsorship-Packet.pdf, page 3",
       "confidence": "owner-document",
-      "notes": "price: Sai decides whether public. Internal document; no event date in it."
+      "notes": "price: Sai decides whether public. Internal document; no event date in it. Fact check: The year 2027 comes only from the folder name \"2027 Sponsorship Packets\" (file dated 8 Sep 2026)."
     },
     {
       "id": "tiers-2026-27-deck",
@@ -1517,7 +1522,7 @@
     {
       "id": "audience-majors-2026-prospectus",
       "topic": "sponsors",
-      "statement": "2026 prospectus, academic diversity: Computer Science & Engineering; Data Science & Information Systems; Business & Entrepreneurship; Design, Art & Creative Technologies; Health Sciences & Biomedical Engineering. All skill levels from first-time coders to students with internship experience.",
+      "statement": "2026 prospectus, \"Academic Diversity\": Computer Science & Engineering; Data Science & Information Systems; Business & Entrepreneurship; Design, Art & Creative Technologies; Health Sciences & Biomedical Engineering. \"Experience Levels\": \"From beginners exploring coding for the first time to advanced students with internship experience at major tech firms Hack Arizona welcomes all skill levels.\"",
       "value": [
         "Computer Science & Engineering",
         "Data Science & Information Systems",
@@ -1528,7 +1533,7 @@
       "year": 2026,
       "source": "/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack_Arizona_2026_SponsershipPackage.pdf, page 4",
       "confidence": "owner-document",
-      "notes": ""
+      "notes": "Fact check: Quoted the experience line exactly instead of paraphrasing."
     },
     {
       "id": "audience-ssf",
@@ -1574,15 +1579,15 @@
       "topic": "tracks",
       "statement": "Devpost 2025 challenge judging notes: AWS (creativity, usefulness, cloud deployment of an AI app), Prime (connect Gen Z to Amazon Prime), Biosphere 2 (AI handling terrain, crop monitoring and system control in the Biosphere 2 simulation), Improve UA (improve student life at the University of Arizona).",
       "value": {
-        "Amazon AWS": "creativity, usefulness, and cloud deployment of your AI app",
-        "Amazon Prime Marketing": "how creatively and effectively your idea connects Gen Z to Amazon Prime",
-        "Biosphere 2": "how well your AI handles terrain, crop monitoring, and system control in the Biosphere 2 simulation",
-        "Improve UA": "how well they improve student life at the University of Arizona"
+        "AWS AI App Challenge - AI Application Innovation & Cloud Deployment": "creativity, usefulness, and cloud deployment of your AI app",
+        "Amazon Prime Marketing Challenge - Creative Campaign & Gen Z Relevance": "how creatively and effectively your idea connects Gen Z to Amazon Prime",
+        "Biosphere 2 Digital Twin AI - AI Model Performance & On-Device Execution": "how well your AI handles terrain, crop monitoring, and system control in the Biosphere 2 simulation",
+        "U of A Student Life Improvement - Impactful Student- Focused Tech Solution": "how well they improve student life at the University of Arizona"
       },
       "year": 2025,
       "source": "https://hack-arizona-2025.devpost.com/",
       "confidence": "public-web",
-      "notes": "Public web; needs Sai's confirmation."
+      "notes": "Public web; needs Sai's confirmation. Fact check: Criterion titles now exactly as on Devpost."
     },
     {
       "id": "judging-criteria-2025",
@@ -1955,7 +1960,7 @@
     {
       "id": "prizes-2026-closing-screens",
       "topic": "prizes",
-      "statement": "2026 closing screens: a \"Congratulations!\" screen for team 27, shown between the AI for Environmental Sustainability runner-up and winner slides, lists \"Award Certificates, Amazon Gift Cards\"; Spot the Spark prize \"Ending Pandemics Academy Internships- Paid *\" (team 30); MLH slides show ElevenLabs \"Win Beats Solo Earbuds!\" with \"Posturetir Z.E.U.S\", Backboard \"Win a Tile Essentials Pack!\" with \"EcoSort AI\", Gemma 4 \"Win some great Google Swag Kits\", GoDaddy Registry \"Win a Digital Gift Card!\".",
+      "statement": "2026 closing screens: a \"Congratulations!\" screen for team 27, shown between the AI for Environmental Sustainability runner-up and winner slides, lists \"Award Certificates, Amazon Gift Cards\"; Spot the Spark prize \"Ending Pandemics Academy Internships- Paid *\" (team 30); MLH slides show ElevenLabs \"Win Beats Solo Earbuds!\" with \"Posturetir Z.E.U.S\", Backboard \"Win a Tile Essentials Pack!\" with \"EcoSort AI\", Gemma 4 \"Win some great Google Swag Kits\" with \"Bloomy\", GoDaddy Registry \"Win a Digital Gift Card!\" with \"nuc4cast.fit\".",
       "value": {
         "aiEnvironmentalSustainability": {
           "teamNumber": 27,
@@ -1978,16 +1983,20 @@
           "photo": "IMG_6606.JPG"
         },
         "gemma4": {
+          "project": "Bloomy",
+          "reward": "Win some great Google Swag Kits",
           "photo": "IMG_6592.JPG"
         },
         "goDaddy": {
+          "project": "nuc4cast.fit",
+          "reward": "Win a Digital Gift Card!",
           "photo": "IMG_6600.JPG"
         }
       },
       "year": 2026,
       "source": "/Users/saihitesh/Desktop/HackAZ/04 Event Photos & Video/HACKARIZONA 2026/ (files listed in value)",
       "confidence": "derived",
-      "notes": "Read from photos. Project names under the MLH titles are assumed to be the winners; Devpost does not mark them."
+      "notes": "Read from photos. Project names under the MLH titles are assumed to be the winners; Devpost does not mark them. Fact check: Added what the Gemma 4 and GoDaddy Registry slides show: \"Bloomy\" and \"nuc4cast.fit\" (zoomed IMG_6600 to read it)."
     },
     {
       "id": "prizes-2016-total",
@@ -2295,7 +2304,7 @@
       "year": 2025,
       "source": "https://hack.arizona.edu/secd-resume-workshop, /aws-genai-enablement-workshop, /intro-git-github-101-workshop, /ieee-soldering-workshop, /tutorial-quantum-computing-qiskit, /building-deep-learning-models-scratch, /speeding-your-python-codes-1000x, /getting-free-gpus-your-colab-notebooks, /intro-python, /ai-club-workshop, /cyber-ready-virtual-learning-careers-and-industry-connections",
       "confidence": "public-web",
-      "notes": "Public web, Hack Arizona's own current site; needs Sai's confirmation."
+      "notes": "Public web, Hack Arizona's own current site; needs Sai's confirmation. Fact check: Only the AWS page carries a date (March 17th, 2025); the other pages are undated and are taken as 2025 from the rest of the site's 2025 content (derived)."
     },
     {
       "id": "workshops-2025-recap",
@@ -2375,7 +2384,7 @@
       "year": 2026,
       "source": "https://hack.arizona.edu/about/meet-team",
       "confidence": "public-web",
-      "notes": "Public web, Hack Arizona's own current site; needs Sai's confirmation. Personal emails are on that page; do not republish them. Director titles (which area each leads) are not given."
+      "notes": "Public web, Hack Arizona's own current site; needs Sai's confirmation. Personal emails are on that page; do not republish them. Director titles (which area each leads) are not given. Fact check: These role labels predate Sai's confirmed 2026-27 roles (fact team-roles-2026-27); use Sai's."
     },
     {
       "id": "team-current-headshots",
@@ -2396,7 +2405,7 @@
       "year": null,
       "source": "/Users/saihitesh/Desktop/HackAZ/05 Organizers/current_organizres_headshots/ (filenames)",
       "confidence": "owner-document",
-      "notes": "No headshot for Sai Hitesh Bommagani in this folder; /Users/saihitesh/Desktop/HackAZ/05 Organizers/Headshot .jpeg is unnamed."
+      "notes": "No headshot for Sai in this folder. Fact check: Sai confirmed that /Users/saihitesh/Desktop/HackAZ/05 Organizers/Headshot .jpeg is his headshot (fact sai-headshot)."
     },
     {
       "id": "team-former-site",
@@ -2476,7 +2485,7 @@
       "year": 2026,
       "source": "https://hack.arizona.edu/person/sai-hitesh-bommagani",
       "confidence": "public-web",
-      "notes": "Public web, Hack Arizona's own current site; needs Sai's confirmation."
+      "notes": "Public web, Hack Arizona's own current site; needs Sai's confirmation. Fact check: Sai's current title, confirmed in chat, is President (fact sai-president); the official site still says Lead."
     },
     {
       "id": "staff-leadership",
@@ -2639,9 +2648,9 @@
         ]
       ],
       "year": 2020,
-      "source": "https://web.archive.org/web/2020/https://hackaz.io/team.html",
+      "source": "https://web.archive.org/web/20200804194655/https://hackaz.io/team.html",
       "confidence": "public-web",
-      "notes": "Public web; needs Sai's confirmation."
+      "notes": "Public web; needs Sai's confirmation. Fact check: Source pinned to the exact capture."
     },
     {
       "id": "organizers-2017-2018-press",
@@ -2774,7 +2783,7 @@
     {
       "id": "judges-2025",
       "topic": "people",
-      "statement": "Devpost 2025 judges (19).",
+      "statement": "Devpost 2025 judges (22).",
       "value": [
         [
           "Deniz Karakay",
@@ -2851,12 +2860,24 @@
         [
           "Omkaar Shenoy",
           "sunhacks"
+        ],
+        [
+          "Asifur Rahman",
+          "U of A (Eller)"
+        ],
+        [
+          "Keerthana Gontu",
+          "sunhacks"
+        ],
+        [
+          "Riley Cohn",
+          "Amazon"
         ]
       ],
       "year": 2025,
       "source": "https://hack-arizona-2025.devpost.com/",
       "confidence": "public-web",
-      "notes": "Public web; needs Sai's confirmation."
+      "notes": "Public web; needs Sai's confirmation. Fact check: The Devpost page lists 22 judges, not 19; added Asifur Rahman, Keerthana Gontu and Riley Cohn."
     },
     {
       "id": "keynote-2019-ian-tracey",
@@ -2987,15 +3008,15 @@
     {
       "id": "past-domains",
       "topic": "links",
-      "statement": "Past sites: hackarizona.org (captured 2014-2019, e.g. on the 2018 banner) and hackaz.io (2020).",
+      "statement": "Past sites: hackarizona.org (event sites captured from October 2014 to January 2020) and hackaz.io (captured November 2019 to 2022, showing the 2020 event).",
       "value": {
-        "hackarizona.org": "2014-2019",
-        "hackaz.io": "2020"
+        "hackarizona.org": "2014 to January 2020",
+        "hackaz.io": "November 2019 to 2022 (2020 event)"
       },
       "year": null,
-      "source": "https://web.archive.org/cdx/search/cdx?url=hackarizona.org ; https://web.archive.org/cdx/search/cdx?url=hackaz.io",
+      "source": "https://web.archive.org/cdx/search/cdx?url=hackarizona.org ; https://web.archive.org/cdx/search/cdx?url=hackaz.io ; https://web.archive.org/web/20200111103854/http://hackarizona.org/",
       "confidence": "public-web",
-      "notes": "Public web; needs Sai's confirmation."
+      "notes": "Public web; needs Sai's confirmation. Fact check: Corrected the years: hackarizona.org still showed the Hack Arizona 6.0 (2020) page in January 2020; later captures are stale (2022 shows 2018 content) or empty; hackaz.io captures run November 2019 to February 2022."
     },
     {
       "id": "devpost-pages",
@@ -3020,7 +3041,7 @@
       "year": 2026,
       "source": "https://hack.arizona.edu/faq; https://hack-arizona-2026.devpost.com/; /Users/saihitesh/Desktop/HackAZ/04 Event Photos & Video/HackAZImages/Hacker Space/IMG_2827.jpeg",
       "confidence": "public-web",
-      "notes": "Public web, Hack Arizona's own current site; needs Sai's confirmation. The 2027 platform and link are not given. An older /register page points to a Trellis form (2025)."
+      "notes": "Public web, Hack Arizona's own current site; needs Sai's confirmation. The 2027 platform and link are not given. Fact check: The older /register page links a Trellis event form (events.trellis.arizona.edu); the page does not show which year it was for, so \"(2025)\" is unsupported."
     },
     {
       "id": "get-involved-form",
@@ -3382,12 +3403,325 @@
       "source": "https://hack-arizona-2026.devpost.com/",
       "confidence": "public-web",
       "notes": "Public web; needs Sai's confirmation."
+    },
+    {
+      "id": "team-roles-2026-27",
+      "topic": "people",
+      "statement": "Current Hack Arizona team and roles as confirmed by Sai: Sai Hitesh (President); Directors of Marketing, Technology, Operations, Sponsorships, Industry Relations (two) and Judging (two); and five Organizers.",
+      "value": {
+        "current": [
+          {
+            "name": "Sai Hitesh",
+            "role": "President"
+          },
+          {
+            "name": "Nandika Barjatya",
+            "role": "Director of Marketing"
+          },
+          {
+            "name": "Thrupthi Ananth Byadarahalli",
+            "role": "Director of Technology"
+          },
+          {
+            "name": "Deevanshi Malhotra",
+            "role": "Director of Operations"
+          },
+          {
+            "name": "Luis Fernando Angulo",
+            "role": "Director of Sponsorships"
+          },
+          {
+            "name": "Eva Jarvis",
+            "role": "Director of Industry Relations"
+          },
+          {
+            "name": "Eramus Poleate",
+            "role": "Director of Industry Relations"
+          },
+          {
+            "name": "Santiago Vargas Roldan",
+            "role": "Director of Judging"
+          },
+          {
+            "name": "Fatih Bozdogan",
+            "role": "Director of Judging"
+          },
+          {
+            "name": "Naomi",
+            "role": "Organizer"
+          },
+          {
+            "name": "Fabiola",
+            "role": "Organizer"
+          },
+          {
+            "name": "Jesus Manuel Mercado",
+            "role": "Organizer"
+          },
+          {
+            "name": "Arfan",
+            "role": "Organizer"
+          },
+          {
+            "name": "Siddhartha Singh",
+            "role": "Organizer"
+          }
+        ],
+        "previous": [
+          "Om Jariwala",
+          "Hidoyat Odilbek o'g'li Ruzmetov",
+          "Olivia Grace Sobczak",
+          "Dongyoung Yang",
+          "Kory M Smith"
+        ]
+      },
+      "year": 2026,
+      "source": "Sai, in chat, 25 Oct 2026; recorded in /Users/saihitesh/Desktop/HackAZ/website/src/data/team.json",
+      "confidence": "confirmed-by-sai",
+      "notes": "Full names come from the headshot filenames in /Users/saihitesh/Desktop/HackAZ/05 Organizers/current_organizres_headshots/. Sai wrote \"Faith\"; the headshot file says \"Fatih Bozdogan\" (spelling unconfirmed). Naomi, Fabiola and Arfan are first names only and have no headshot. Sai called Arfan \"The OG organizer\"; that is not a founder claim. Previous organizers have no roles here."
+    },
+    {
+      "id": "sai-president",
+      "topic": "people",
+      "statement": "Sai Hitesh (Bommagani) is President of Hack Arizona.",
+      "value": {
+        "name": "Sai Hitesh Bommagani",
+        "role": "President"
+      },
+      "year": 2026,
+      "source": "Sai, in chat, 25 Oct 2026; recorded in /Users/saihitesh/Desktop/HackAZ/website/src/data/team.json",
+      "confidence": "confirmed-by-sai",
+      "notes": "Surname from https://hack.arizona.edu/about/meet-team, which still calls the role \"Lead\"."
+    },
+    {
+      "id": "sai-headshot",
+      "topic": "people",
+      "statement": "\"05 Organizers/Headshot .jpeg\" is Sai Hitesh's headshot.",
+      "value": "/Users/saihitesh/Desktop/HackAZ/05 Organizers/Headshot .jpeg",
+      "year": null,
+      "source": "Sai, in chat, 25 Oct 2026",
+      "confidence": "confirmed-by-sai",
+      "notes": ""
+    },
+    {
+      "id": "tiers-2026-prospectus-detailed",
+      "topic": "sponsors",
+      "statement": "2026 prospectus \"Detailed Tier Benefits\" (page 7): Ignite $5,000, Elevate $10,000, Accelerate $18,000, Innovate $25,000, each with who it is \"Perfect for\" and its benefits.",
+      "value": {
+        "Ignite": {
+          "price": "$5,000",
+          "perfectFor": "Companies looking to establish initial campus presence",
+          "benefits": [
+            "Logo placement on event website",
+            "Recruiting table at career fair",
+            "Social media shoutout across our platforms",
+            "Access to general participant demographics"
+          ]
+        },
+        "Elevate": {
+          "price": "$10,000",
+          "perfectFor": "Growing your brand whilst directly engaging students",
+          "benefits": [
+            "All Ignite benefits included",
+            "Host a technical workshop or demo session",
+            "Sponsor a themed challenge with prize pool",
+            "Larger logo placement and stage recognition"
+          ]
+        },
+        "Accelerate": {
+          "price": "$18,000",
+          "perfectFor": "Active recruitment and resume collection",
+          "benefits": [
+            "All Elevate benefits included",
+            "Access to opt-in participant resumes",
+            "Private interview/meeting room on-site",
+            "Featured sponsor in opening ceremony",
+            "Dedicated email blast to participants"
+          ]
+        },
+        "Innovate": {
+          "price": "$25,000",
+          "perfectFor": "Headline partnership with maximum visibility",
+          "benefits": [
+            "All Accelerate benefits included",
+            "Keynote speaking opportunity",
+            "Grand prize challenge with company branding",
+            "Premium logo placement everywhere",
+            "Custom swag distribution to all attendees"
+          ]
+        }
+      },
+      "year": 2026,
+      "source": "/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack_Arizona_2026_SponsershipPackage.pdf, page 7",
+      "confidence": "owner-document",
+      "notes": "price: Sai decides whether public. Missed by the first pass. Wording differs from the page 6 table (e.g. \"Recruiting table at career fair\" vs \"Table at Hiring Event\")."
+    },
+    {
+      "id": "sponsor-why-partner-prospectus",
+      "topic": "sponsors",
+      "statement": "2026 prospectus, \"Why Partner with Hack Arizona?\": Access Top Talent, Brand Visibility, Support Innovation, Build Relationships; page 5 adds that every tier includes opportunities to interact with participants through workshops, challenges, or networking events.",
+      "value": [
+        {
+          "title": "Access Top Talent",
+          "text": "Connect directly with highly motivated, interdisciplinary students actively building technical skills and seeking career opportunities in technology."
+        },
+        {
+          "title": "Brand Visibility",
+          "text": "Increase your presence among students, faculty, and the broader tech community through strategic event branding and engagement opportunities."
+        },
+        {
+          "title": "Support Innovation",
+          "text": "Champion the next wave of tech creators whilst demonstrating your commitment to education, diversity, and community-driven learning."
+        },
+        {
+          "title": "Build Relationships",
+          "text": "Establish meaningful, lasting connections with the University of Arizona and create a robust pipeline for internships and full-time recruitment."
+        },
+        {
+          "title": "Direct Student Access (page 5)",
+          "text": "Every tier includes opportunities to interact with participants through workshops, challenges, or networking events."
+        }
+      ],
+      "year": 2026,
+      "source": "/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack_Arizona_2026_SponsershipPackage.pdf, pages 3 and 5",
+      "confidence": "owner-document",
+      "notes": "Missed by the first pass."
+    },
+    {
+      "id": "ssf-campus-partnerships",
+      "topic": "sponsors",
+      "statement": "SSF deck \"Campus Partnerships\": students, faculty, staff, administrators; academic units (especially non-STEM); non-academic units; CRCs and student government; other UA mini hackathons: Women's Hackathon, iSchool, CAPLA, FORGE.",
+      "value": {
+        "partners": [
+          "Students, faculty, staff, administrators",
+          "Academic units (especially non-STEM)",
+          "Non-academic units",
+          "CRCs and student government"
+        ],
+        "otherUAMiniHackathons": [
+          "Women's Hackathon",
+          "iSchool",
+          "CAPLA",
+          "FORGE"
+        ]
+      },
+      "year": null,
+      "source": "/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack AZ - SSF Presentation.pptx, slide 4",
+      "confidence": "owner-document",
+      "notes": "Missed by the first pass. SSF deck file: created 2021-02-22, last modified 2024-02-09 (docProps/core.xml)."
+    },
+    {
+      "id": "ssf-sustainability-plan",
+      "topic": "history",
+      "statement": "SSF deck \"Sustainability\" plan: campus, community and corporate partnerships to (re)establish ongoing funding; increasingly self-funded between year one and two; fully self-funded by year three; diversify the participant pool and academic disciplines.",
+      "value": [
+        "Campus, community, and corporate partnerships to (re)establish ongoing funding sources",
+        "Increasingly self-funded between year one and two",
+        "Fully self-funded by year three",
+        "Diversify participant pool and academic disciplines involved"
+      ],
+      "year": null,
+      "source": "/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack AZ - SSF Presentation.pptx, slide 4",
+      "confidence": "owner-document",
+      "notes": "Missed by the first pass. A funding plan, not an outcome. SSF deck file: created 2021-02-22, last modified 2024-02-09 (docProps/core.xml)."
+    },
+    {
+      "id": "ssf-alignment",
+      "topic": "sponsors",
+      "statement": "SSF deck \"Student Service Fee (SSF) Alignment\": on-campus jobs (graduate assistant, two undergraduate workers, stipends for 10 planning committee members); career preparation (sponsor and employer resource fair, industry skill-building workshops); career counseling (onsite employer interviews, career and internship exploration workshops); experiential learning (hacking/research with peers, mentorship with faculty and industry).",
+      "value": {
+        "On-Campus Job Opportunities (SSF Essential Initiative)": [
+          "Graduate assistant hire",
+          "Two undergraduate student worker hires",
+          "Stipends for 10 student planning committee members"
+        ],
+        "Career Preparation Opportunities; Skill-Building": [
+          "Sponsors and prospective employers resource fair",
+          "Industry partner skill-building workshops"
+        ],
+        "Career Counseling and Exploration (SSF Essential Initiative)": [
+          "Onsite employer interviews",
+          "Career and internship exploration workshops"
+        ],
+        "Experiential Learning; Mentoring Programs": [
+          "Hacking/research experience with peers",
+          "Mentorship with faculty and industry partners"
+        ]
+      },
+      "year": null,
+      "source": "/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack AZ - SSF Presentation.pptx, slide 5",
+      "confidence": "owner-document",
+      "notes": "Missed by the first pass (only the paid roles were recorded, as ssf-paid-roles). A funding proposal. SSF deck file: created 2021-02-22, last modified 2024-02-09 (docProps/core.xml)."
+    },
+    {
+      "id": "ssf-rationale",
+      "topic": "brand",
+      "statement": "SSF deck \"Rationale\": a nationally recognized, local opportunity for students who cannot or do not want to travel; a signature event in the UArizona student experience; professional networks with industry partners and mentors; a university-wide sense of community; compensate students for their labor.",
+      "value": [
+        "Provide a nationally recognized, local opportunity for UArizona students, who cannot or do not want to travel, to present their work and gain professional development opportunities.",
+        "Signature event in the UArizona student experience for students to apply the knowledge and skills they have learned in their academic journey in a live-action setting.",
+        "Build professional networks by networking with industry partners and project mentors.",
+        "Strengthen university-wide sense of community on campus by working with an interdisciplinary group of student peers and learning from other student groups.",
+        "Compensate students for their labor."
+      ],
+      "year": null,
+      "source": "/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack AZ - SSF Presentation.pptx, slide 6",
+      "confidence": "owner-document",
+      "notes": "Missed by the first pass. SSF deck file: created 2021-02-22, last modified 2024-02-09 (docProps/core.xml)."
+    },
+    {
+      "id": "sponsors-2019",
+      "topic": "sponsors",
+      "statement": "Hack Arizona 2019 was \"Powered by Jacobs\"; its prize challenges were sponsored by Jacobs, Amazon, Honeywell, Modular Mining, Microsoft, USAA, Dataforth, Hedera Hashgraph, Hexagon Mining, Pardox.ai, Sandia National Laboratories, Statefarm and the Hack Arizona Team.",
+      "value": [
+        "Jacobs",
+        "Amazon",
+        "Honeywell",
+        "Modular Mining",
+        "Microsoft",
+        "USAA",
+        "Dataforth",
+        "Hedera Hashgraph",
+        "Hexagon Mining",
+        "Pardox.ai",
+        "Sandia National Laboratories",
+        "Statefarm"
+      ],
+      "year": 2019,
+      "source": "https://web.archive.org/web/20190122160543/https://hackarizona.org/ (\"2019 Prize Challenges\", \"Sponsored by:\" lines)",
+      "confidence": "public-web",
+      "notes": "Public web; needs Sai's confirmation. Missed by the first pass. Names as written on the page (\"Pardox.ai\", \"Statefarm\"). The page says more prizes were still to be announced."
+    },
+    {
+      "id": "tagline-2025-devpost",
+      "topic": "brand",
+      "statement": "Devpost 2025 tagline: \"Innovate. Build. Transform. Join the Southwest's Premier Hackathon at Hack Arizona 2025!\"",
+      "value": "Innovate. Build. Transform. Join the Southwest’s Premier Hackathon at Hack Arizona 2025!",
+      "year": 2025,
+      "source": "https://hack-arizona-2025.devpost.com/",
+      "confidence": "public-web",
+      "notes": "Public web; needs Sai's confirmation. Missed by the first pass."
+    },
+    {
+      "id": "site-who-can-participate",
+      "topic": "events",
+      "statement": "Official home page: \"Event participation is open to undergraduate and graduate students in the state of Arizona!\"; it also calls Hack AZ \"a signature academic event at the University of Arizona\".",
+      "value": {
+        "eligibility": "Event participation is open to undergraduate and graduate students in the state of Arizona!",
+        "about": "Hack AZ is a signature academic event at the University of Arizona and the premier hackathon event in the Southwestern United States."
+      },
+      "year": null,
+      "source": "https://hack.arizona.edu/ (home, \"Who can participate?\", \"What is Hack Arizona?\")",
+      "confidence": "public-web",
+      "notes": "Public web, Hack Arizona's own current site; needs Sai's confirmation. Missed by the first pass. The FAQ words eligibility more widely (\"any institute of higher education in the state of Arizona\"); see faq-2026."
     }
   ],
   "conflicts": [
     {
       "topic": "history",
-      "detail": "First hackathon year. Sai: founded 2015, first hackathon 2016 (/Users/saihitesh/Desktop/HackAZ/website/PLAN.md \"Confirmed by Sai\"). Other sources put a first event in 2015: hackarizona.org announced \"March 6th - 8th, 2015 ... 36 Hours, 400+ Hackers\" (https://web.archive.org/web/20150302103719/http://hackarizona.org/); hackaz.io 2020 says \"Since our first hackathon in 2015\" and names the 2020 event \"Hack Arizona 6.0\" (https://web.archive.org/web/20200113170058/https://hackaz.io/); AZPM calls January 2018 the \"fourth edition\" (https://originals.azpm.org/s/53105-hack-arizona-looks-to-connect-local-tech-companies-with-new-talent); UA Engineering mentions \"the inaugural 2015 event\" (https://www.sie.engineering.arizona.edu/news-events/student-leads-charge-revival-breakout-hackathon); the official history says 2025 is \"ten years since the hackathon was first held\" (https://hack.arizona.edu/about/history); the SSF deck says \"Founded in 2015 by students in Comp Sci (400 participants)\" (/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack AZ - SSF Presentation.pptx, slide 3)."
+      "status": "resolved",
+      "resolution": "Sai, in chat, 25 Oct 2026: \"Keep 2016 as the first hackathon year; the 2015 sources are wrong or refer to something else.\" The 2015 sources below stay listed for the record only (Sai: wrong or refer to something else). Facts that depend on them carry a \"Conflicts with Sai's ruling\" note: event-2015, history-ssf-founded, pause-and-return, event-2018-firsts, event-2019-size, event-2020, restart-2025-lead.",
+      "detail": "First hackathon year. Sai: founded 2015, first hackathon 2016 (/Users/saihitesh/Desktop/HackAZ/website/PLAN.md \"Confirmed by Sai\"; Sai, in chat, 25 Oct 2026). Other sources (Sai: wrong or refer to something else) put a first event in 2015: hackarizona.org announced \"March 6th - 8th, 2015 ... 36 Hours, 400+ Hackers\" (https://web.archive.org/web/20150302103719/http://hackarizona.org/); hackaz.io 2020 says \"Since our first hackathon in 2015\" and names the 2020 event \"Hack Arizona 6.0\" (https://web.archive.org/web/20200113170058/https://hackaz.io/); AZPM calls January 2018 the \"fourth edition\" (https://originals.azpm.org/s/53105-hack-arizona-looks-to-connect-local-tech-companies-with-new-talent); UA Engineering mentions \"the inaugural 2015 event\" (https://www.sie.engineering.arizona.edu/news-events/student-leads-charge-revival-breakout-hackathon); the official history says 2025 is \"ten years since the hackathon was first held\" (https://hack.arizona.edu/about/history); the SSF deck says \"Founded in 2015 by students in Comp Sci (400 participants)\" (/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack AZ - SSF Presentation.pptx, slide 3)."
     },
     {
       "topic": "history",
@@ -3407,7 +3741,7 @@
     },
     {
       "topic": "numbers",
-      "detail": "Hack Arizona 2026 participants. \"155+ Participants on site\" and \"208 Registrations\" (/Users/saihitesh/Desktop/HackAZ/03 Sponsors/2027 Sponsorship Packets/2027-Hack-Arizona-2026-Event-Recap.pptx, slide 2; /Users/saihitesh/Desktop/HackAZ/03 Sponsors/2027 Sponsorship Packets/Hack-Arizona-Sponsorship-2026-27.pptx, slide 3) versus 126 participants on Devpost (https://hack-arizona-2026.devpost.com/). PLAN.md also mentions \"150+\" (from a note to Ian) and \"400+\" (source not in the files) (/Users/saihitesh/Desktop/HackAZ/website/PLAN.md, section 9 item 4)."
+      "detail": "Hack Arizona 2026 participants. \"155+ Participants on site\" and \"208 Registrations\" (/Users/saihitesh/Desktop/HackAZ/03 Sponsors/2027 Sponsorship Packets/2027-Hack-Arizona-2026-Event-Recap.pptx, slide 2; /Users/saihitesh/Desktop/HackAZ/03 Sponsors/2027 Sponsorship Packets/Hack-Arizona-Sponsorship-2026-27.pptx, slide 3; the recap's speaker notes say it copied these from the sponsorship deck) versus 126 participants on Devpost (https://hack-arizona-2026.devpost.com/). PLAN.md also mentions \"150+\" (from a note to Ian) and \"400+\" (source not in the files) (/Users/saihitesh/Desktop/HackAZ/website/PLAN.md, section 9 item 4)."
     },
     {
       "topic": "numbers",
@@ -3419,7 +3753,7 @@
     },
     {
       "topic": "events",
-      "detail": "Hack Arizona 2025 venue. Devpost: \"Main Library - University of Arizona\" (https://hack-arizona-2025.devpost.com/) versus \"the university's Albert B. Weaver Science-Engineering Library\" (https://www.sie.engineering.arizona.edu/news-events/student-leads-charge-revival-breakout-hackathon, written before the event)."
+      "detail": "Hack Arizona 2025 venue. Devpost: \"Main Library - University of Arizona\" (https://hack-arizona-2025.devpost.com/) and its map link to 1510 E University Blvd, versus \"the university's Albert B. Weaver Science-Engineering Library\" (https://www.sie.engineering.arizona.edu/news-events/student-leads-charge-revival-breakout-hackathon, article dated 20 March 2025, two days before the event, though its text also reports the 300-competitor result)."
     },
     {
       "topic": "numbers",
@@ -3431,7 +3765,7 @@
     },
     {
       "topic": "sponsors",
-      "detail": "Hack Arizona 2026 sponsor count. \"8 Sponsors & partners\" (/Users/saihitesh/Desktop/HackAZ/03 Sponsors/2027 Sponsorship Packets/2027-Hack-Arizona-2026-Event-Recap.pptx, slide 2) versus 12 sponsors on Devpost (https://hack-arizona-2026.devpost.com/) versus 12 names on the closing \"Thank you so much to our sponsors\" slide (/Users/saihitesh/Desktop/HackAZ/04 Event Photos & Video/HACKARIZONA 2026/IMG_6021.JPG) versus 19 entries on https://hack.arizona.edu/sponsors (includes university units)."
+      "detail": "Hack Arizona 2026 sponsor count. \"8 Sponsors & partners\" (/Users/saihitesh/Desktop/HackAZ/03 Sponsors/2027 Sponsorship Packets/2027-Hack-Arizona-2026-Event-Recap.pptx, slide 2) versus 12 sponsors on Devpost (https://hack-arizona-2026.devpost.com/) versus 12 logos on the opening-ceremony \"Thank you so much to our sponsors\" slide (/Users/saihitesh/Desktop/HackAZ/04 Event Photos & Video/HACKARIZONA 2026/IMG_6021.JPG, 25 April 10:53 AM) versus 19 entries on https://hack.arizona.edu/sponsors (includes university units)."
     },
     {
       "topic": "sponsors",
@@ -3467,7 +3801,6 @@
     "Hack Arizona 2027 eligibility, team size, cost, food, overnight and travel policies (only 2026 answers exist).",
     "Which participant figure Sai wants for 2025 (347 / 283 / 300 / 118) and 2026 (208 / 155+ / 126 / \"150+\" / \"400+\").",
     "Discord member count and Instagram follower count (no source).",
-    "Whether the first hackathon was 2015 (several sources) or 2016 (Sai); the 2015 venue and turnout as held.",
     "Founders: full list and permission to name them (only Ian Tracey is called \"a Founder\", in 2019).",
     "Biggest year and its confirmed numbers (875, 900+, ~1000, 1,200 all appear).",
     "Hack Arizona 2017 and 2019 participant and project counts (Devpost pages blocked; only press figures).",
@@ -3475,7 +3808,7 @@
     "Year and venue of the panorama in 01 Branding/hackaz.jpg.webp, and the venue of the 2018 auditorium panorama in the SSF deck.",
     "Consent to publish the 2025 recap quotes (Yash Mirani, Sharon Oneal) and any testimonials from winners who got internships or jobs.",
     "Permission to use event photos (and any people in them) on the site.",
-    "Organizer roles beyond Lead / Director / Club Member (what each director leads), and who is in 05 Organizers/Headshot .jpeg.",
+    "Full names and headshots for Naomi, Fabiola and Arfan; roles of previous organizers other than Om Jariwala (Lead on the official site); the spelling \"Fatih\" (headshot file) vs \"Faith\" (Sai's message) Bozdogan.",
     "Which sponsor logos may appear and under which year; whether tiers or prices are public.",
     "Whether \"Bear Down, Build Up!\" should be reused as a theme or tagline.",
     "The event behind the MLH dashboard screenshot dated 27 Sep 2025 (1118 / 1200 registrations, 560 check-ins).",

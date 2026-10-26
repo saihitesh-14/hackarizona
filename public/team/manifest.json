@@ -154,6 +154,28 @@
     "nativePx": 181
   },
   {
+    "id": "sai-hitesh",
+    "name": "Sai Hitesh",
+    "group": "current",
+    "files": {
+      "avif": {
+        "400": "team/sai-hitesh-400.avif",
+        "800": "team/sai-hitesh-800.avif"
+      },
+      "webp": {
+        "400": "team/sai-hitesh-400.webp",
+        "800": "team/sai-hitesh-800.webp"
+      },
+      "jpg": {
+        "400": "team/sai-hitesh-400.jpg",
+        "800": "team/sai-hitesh-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "05 Organizers/./Headshot .jpeg",
+    "nativePx": 470
+  },
+  {
     "id": "santiago-vargas-roldan",
     "name": "Santiago Vargas Roldan",
     "group": "current",

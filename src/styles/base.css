@@ -6,7 +6,7 @@
 @import '@fontsource/kalam/400.css';
 @import './tokens.css';
 
-:root{--page-inset:max(clamp(20px,4.5vw,64px),calc((100vw - 1240px)/2));--header-h:84px;--sans:'Schibsted Grotesk Variable',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;--serif:'Newsreader Variable',Georgia,'Times New Roman',serif;--hand:'Kalam','Bradley Hand',cursive;--ease-out:cubic-bezier(.22,1,.36,1);--ease-out-expo:cubic-bezier(.16,1,.3,1);--ease-in-out:cubic-bezier(.65,0,.35,1);font-family:var(--sans);color:var(--ink);background:var(--paper);font-synthesis:none;scroll-behavior:smooth;scroll-padding-top:24px;interpolate-size:allow-keywords;-webkit-text-size-adjust:100%}
+:root{--page-inset:max(clamp(20px,4.5vw,64px),calc((100vw - 1240px)/2));--header-h:84px;--sans:'Schibsted Grotesk Variable',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;--serif:'Newsreader Variable',Georgia,'Times New Roman',serif;--hand:'Kalam','Bradley Hand',cursive;--ease-out:cubic-bezier(.22,1,.36,1);--ease-out-expo:cubic-bezier(.16,1,.3,1);--ease-in-out:cubic-bezier(.65,0,.35,1);font-family:var(--sans);color:var(--ink);background:var(--paper);font-synthesis:none;scroll-behavior:smooth;scroll-padding-top:24px;scroll-padding-bottom:96px;interpolate-size:allow-keywords;-webkit-text-size-adjust:100%}
 *{box-sizing:border-box}
 /* The paper colour sits on the root only: a body background would paint over the construction lines, spine and grain (z-index -1). */
 body{margin:0;min-height:100vh;color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -33,6 +33,8 @@ h1 em,h2 em,h3 em{font-family:var(--serif);font-style:italic;font-weight:400;let
 .skip-link:focus-visible{top:0}
 .micro{font-size:11px;font-weight:500;letter-spacing:.16em;line-height:1.5;text-transform:uppercase;color:var(--muted)}
 .tabular{font-variant-numeric:tabular-nums}
+/* Count-ups lock their width while counting (reveals.js); min-width needs a box, and tabular digits do not jitter. */
+[data-count]{display:inline-block;font-variant-numeric:tabular-nums}
 /* Hand note: at most one per screen, always aria-hidden, under six words. */
 .note{font-family:var(--hand);font-weight:400;font-size:clamp(21px,1.9vw,27px);line-height:1.1;color:var(--muted-2);margin:0}
 .arrow{display:inline-block;line-height:1;transition:transform .25s var(--ease-out)}
@@ -66,11 +68,12 @@ h1 em,h2 em,h3 em{font-family:var(--serif);font-style:italic;font-weight:400;let
 :root[data-theme='dark'] .theme-core{transform:scale(1.62)}
 :root[data-theme='dark'] .theme-cut{transform:translate(-6px,5px)}
 :root[data-theme='dark'] .theme-rays{transform:rotate(-90deg) scale(.4);opacity:0}
-/* Pause motion: two bars, a play triangle once paused. */
+/* Pause motion: two bars, a play triangle once paused. The label says the action ("Pause motion" / "Play motion"),
+   so the button carries no aria-pressed: a changing name plus a pressed state would read as a contradiction. */
 .motion-toggle svg{flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .motion-toggle .icon-play{display:none;fill:currentColor;stroke-width:1.2}
-.motion-toggle[aria-pressed='true'] .icon-play{display:inline}
-.motion-toggle[aria-pressed='true'] .icon-pause{display:none}
+:root[data-motion='paused'] .motion-toggle .icon-play{display:inline}
+:root[data-motion='paused'] .motion-toggle .icon-pause{display:none}
 
 /* Page intro: the first block of a page. .display is the headline; each .line rises from a mask on load. */
 .page-intro{padding-top:clamp(28px,6vw,80px);padding-bottom:clamp(36px,5vw,72px)}
@@ -258,6 +261,8 @@ html.has-cursor:has(dialog[open]),html.has-cursor:has(dialog[open]) *{cursor:aut
 /* Loader: the mark draws itself on the brand fill, once per session (src/js/shell/loader.js). */
 .loader{display:none}
 html.is-loading{overflow:hidden}
+/* The custom cursor sits under the loader, so show a real pointer there (any click skips it). */
+html.has-cursor.is-loading .loader,html.has-cursor.is-loading .loader *{cursor:pointer!important}
 html.is-loading .loader{position:fixed;inset:0;z-index:2147483100;display:grid;grid-template-rows:auto minmax(0,1fr) auto;padding:28px var(--page-inset);background:var(--brand-fill);color:var(--on-fill);clip-path:inset(0 0 0 0);transition:clip-path .8s cubic-bezier(.76,0,.24,1)}
 html.is-loading.is-leaving .loader{clip-path:inset(0 0 100% 0)}
 .loader-meta{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:color-mix(in srgb,var(--on-fill) 78%,transparent)}
@@ -297,11 +302,20 @@ html:not(.is-loading) .display .line>span,html.is-leaving .display .line>span{an
 .js .card[data-reveal]{transition:opacity .9s var(--ease-out) var(--reveal-delay,0s),transform 1.1s var(--ease-out-expo) var(--reveal-delay,0s),border-color .3s ease,box-shadow .4s ease}
 
 /* Paused motion (the Pause motion button, a saved choice, or reduced motion): everything still and visible. */
+:root[data-motion='paused']{scroll-behavior:auto}
 :root[data-motion='paused'] *,:root[data-motion='paused'] *:before,:root[data-motion='paused'] *:after{animation:none!important;transition:none!important}
 :root[data-motion='paused'] [data-reveal],:root[data-motion='paused'] [data-reveal]>*{opacity:1!important;transform:none!important}
 :root[data-motion='paused'] .scribble-line path{stroke-dashoffset:0!important}
 :root[data-motion='paused'] .spine-pulse{display:none}
-@media print{[data-reveal],[data-reveal]>*{opacity:1!important;transform:none!important}.dock,.loader,.spine,.cursor,.cursor-glow{display:none!important}}
+/* Print: light tokens (tokens.css keeps dark on screen), colours as on screen so filled buttons and the brand-fill block
+   keep their contrast, everything at its final state, and no fixed or interactive-only layers repeating on every sheet. */
+@media print{
+  :root{print-color-adjust:exact;-webkit-print-color-adjust:exact;scroll-behavior:auto}
+  *,*:before,*:after{animation:none!important;transition:none!important}
+  [data-reveal],[data-reveal]>*{opacity:1!important;transform:none!important}
+  body:before,body:after,.skip-link,.dock,.loader,.spine,.cursor,.cursor-glow,.motion-toggle,.copy-button,.copy-status{display:none!important}
+  .card,.cta,.play-card,.faq-list details,.timeline-entry{break-inside:avoid}
+}
 
 /* Page changes: a native cross-document view transition. Header and dock keep their place; main fades and rises.
    The theme switch drops the names (html.is-theming) so its circle reveals the whole page at once. */

@@ -188,7 +188,7 @@ Slides sideways with scroll; still when paused. Decorative only.
 <p class="note" aria-hidden="true">a hand note</p>
 ```
 
-Base styles cover the plain grid (no JavaScript), the phone swipe row and the draggable look. Dragging is not in the shell: the home page module adds `.is-draggable` and the drag, throw and coast (port `initBoard` from the starter's `sections.js`; it only enables on a fine pointer). `--x`, `--y`, `--r` are the hand-placed positions (the one inline style allowed).
+Base styles cover the plain grid (no JavaScript), the phone swipe row and the draggable look. Dragging is not in the shell: the home page module adds `.is-draggable` and the drag, throw and coast (port `initBoard` from the starter's `sections.js`; it only enables on a fine pointer). It toggles `.is-dragging` while a drag is in progress and adds `.has-moved` after the first drag (hides the hint). `--x`, `--y`, `--r` are the hand-placed positions (the one inline style allowed).
 
 ## Placeholders
 
@@ -200,4 +200,6 @@ Base styles cover the plain grid (no JavaScript), the phone swipe row and the dr
 
 ## Shell pieces you get for free
 
-Loader (first visit per session, skippable), theme toggle with the circle reveal, Pause motion (dock on desktop, footer everywhere; saved), cursor ring, signal spine, dock with the current page, footer "Get updates" block (`#updates`), page-change view transitions (header and dock stay put, `main` fades and rises), print styles, reduced motion.
+Loader (first visit per session, skippable), theme toggle with the circle reveal, Pause motion (dock on desktop, footer everywhere; saved; its name says the action, "Pause motion" or "Play motion", and `:root[data-motion='paused']` is the state to style against), cursor ring, signal spine, dock with the current page, footer "Get updates" block (`#updates`), page-change view transitions (header and dock stay put, `main` fades and rises), print styles (always the light theme, colours as on screen), reduced motion.
+
+Utilities: `.sr-only` (visually hidden, still read), `.tabular` (tabular numerals for counters and clocks), `.micro` (11px all-caps label, for sequences only). Focused elements scroll clear of the dock on their own (`scroll-padding-bottom` in base.css).

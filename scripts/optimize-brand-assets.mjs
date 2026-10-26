@@ -45,6 +45,7 @@ const LOGOS = [
 
 // Square crops [left, top, side] in source pixels, set by eye: face centred, head about half the frame.
 const CROPS = {
+  'Sai Hitesh': [400, 278, 470],
   'Eramus Poleate': [0, 0, 414], 'Siddhartha Singh': [38, 0, 376], 'Deevanshi Malhotra': [101, 64, 247],
   'Eva Jarvis': [22, 53, 367], 'Fatih Bozdogan': [0, 215, 414], 'Jesus Manuel Mercado': [0, 0, 414],
   'Luis Fernando Angulo': [0, 0, 414], 'Nandika Barjatya': [120, 110, 181], 'Santiago Vargas Roldan': [85, 203, 243],
@@ -52,6 +53,8 @@ const CROPS = {
   'Om Jariwala': [89, 51, 253], "Hidoyat Odilbek o'g'li Ruzmetov": [99, 112, 238], 'Olivia Grace Sobczak': [138, 30, 167],
   'Dongyoung Yang': [44, 49, 323], 'Kory M Smith': [0, 0, 414],
 };
+// Unnamed file; Sai confirmed in chat (25 Oct 2026) that it is their headshot.
+const EXTRA_HEADSHOTS = [{ f: 'Headshot .jpeg', sub: '.', name: 'Sai Hitesh', group: 'current' }];
 const TEAM_DIRS = { current: 'current_organizres_headshots', previous: 'previous-organizers-headshots' };
 
 const slug = (s) => s.toLowerCase().replace(/'/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -194,11 +197,12 @@ async function buildTeam() {
   for (const [group, sub] of Object.entries(TEAM_DIRS)) {
     const files = (await readdir(path.join(TEAM_SRC, sub))).filter((f) => /\.(png|jpe?g)$/i.test(f));
     const people = files.map((f) => ({ f, name: f.replace(/^Screenshot \S+ at \S+ /, '').replace(/ Hack Arizona\.\w+$/, '').replace(/\s+/g, ' ').trim() }))
+      .concat(EXTRA_HEADSHOTS.filter((e) => e.group === group))
       .sort((a, b) => a.name.localeCompare(b.name));
-    for (const { f, name } of people) {
+    for (const { f, name, sub: own } of people) {
       const crop = CROPS[name]; assert.ok(crop, `no crop set for "${name}" (${f})`);
       const [left, top, side] = crop, id = slug(name);
-      const src = path.join(TEAM_SRC, sub, f), meta = await sharp(src).metadata();
+      const src = path.join(TEAM_SRC, own ?? sub, f), meta = await sharp(src).metadata();
       assert.ok(left + side <= meta.width && top + side <= meta.height, `crop outside image for ${name}`);
       // Sources are 414px wide: 800 is always an upscale of the `nativePx` crop (400 too when nativePx < 400).
       // Swap in the original photos to get real detail at 800.
@@ -211,7 +215,7 @@ async function buildTeam() {
         await base.clone().jpeg({ quality: 82, mozjpeg: true }).toFile(path.join(dir, `${id}-${w}.jpg`));
         for (const fmt of ['avif', 'webp', 'jpg']) out[fmt][w] = rel('team', `${id}-${w}.${fmt}`);
       }
-      manifest.push({ id, name, group, files: out, role: null, source: rel('05 Organizers', sub, f), nativePx: side });
+      manifest.push({ id, name, group, files: out, role: null, source: rel('05 Organizers', own ?? sub, f), nativePx: side });
     }
   }
   await writeFile(path.join(dir, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');

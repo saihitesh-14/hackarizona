@@ -32,11 +32,13 @@ runLoader();
 // Pause motion: a button in the dock (desktop) and in the footer (every width). The choice is saved, and reduced
 // motion starts the page paused (the inline head script applied both before first paint).
 const motionButtons = Array.from(document.querySelectorAll('.motion-toggle'));
+// The name says what a press will do; the icon follows :root[data-motion] in base.css.
 const showMotion = paused => motionButtons.forEach(button => {
-  button.setAttribute('aria-pressed', String(paused));
-  button.title = paused ? 'Play motion' : 'Pause motion';
+  const action = paused ? 'Play motion' : 'Pause motion';
+  button.title = action;
+  if (button.hasAttribute('aria-label')) button.setAttribute('aria-label', action);
   const label = button.querySelector('.motion-label');
-  if (label) label.textContent = paused ? 'Play motion' : 'Pause motion';
+  if (label) label.textContent = action;
 });
 setPaused(isPaused(), { save: false });
 showMotion(isPaused());

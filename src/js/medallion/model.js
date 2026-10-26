@@ -108,11 +108,17 @@ class Circle3 extends Curve {
   }
 }
 
-/** Distance along the circuit from the base of the trunk, in viewBox units, for every signal vertex. */
+/**
+ * A thin tube along a centre line, flattened to hug the surface it sits on. aDist is the distance along the circuit
+ * from the base of the trunk (viewBox units) for every vertex; the shader's moving window reads it.
+ */
 function signalTube(curve, segments, distanceAt, radius, closed = false) {
-  const radial = 8;
+  const radial = 12;
   const geometry = new TubeGeometry(curve, segments, radius, radial, closed);
-  const dist = new Float32Array(geometry.attributes.position.count);
+  const position = geometry.attributes.position;
+  const z = curve.getPoint(0).z;
+  for (let i = 0; i < position.count; i++) position.setZ(i, z + (position.getZ(i) - z) * 0.35);
+  const dist = new Float32Array(position.count);
   for (let i = 0; i <= segments; i++) dist.fill(distanceAt(i / segments), i * (radial + 1), (i + 1) * (radial + 1));
   geometry.setAttribute('aDist', new Float32BufferAttribute(dist, 1));
   geometry.deleteAttribute('uv');
@@ -120,7 +126,7 @@ function signalTube(curve, segments, distanceAt, radius, closed = false) {
 }
 
 function signalGeometry() {
-  const r = 9 * S;
+  const r = 15 * S;
   const z = Z.saguaro;
   const tubes = [];
   // Trunk: from the base (on the ring) up to the top pad.
@@ -158,32 +164,27 @@ function signalGeometry() {
 const signalVertex = /* glsl */ `
 attribute float aDist;
 varying float vDist;
-varying vec3 vNormal;
-varying vec3 vView;
+varying float vAcross;
 void main() {
   vDist = aDist;
-  vec4 mv = modelViewMatrix * vec4(position, 1.0);
-  vNormal = normalize(normalMatrix * normal);
-  vView = normalize(-mv.xyz);
-  gl_Position = projectionMatrix * mv;
+  vAcross = max(normal.z, 0.0); // 1 along the tube's crest, 0 at its edges, whatever the view
+  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
 }`;
 
-// Brightness is a moving window along the circuit: a sharp front at uHead and a tail that fades behind it.
-// Premultiplied "over" with a little left of the surface: an additive glow that still reads as red on white porcelain.
+// Brightness is a moving window along the circuit: a soft front at uHead and a tail that fades behind it.
+// Premultiplied "over" rather than pure additive: added red would vanish on white porcelain, this keeps it red.
 const signalFragment = /* glsl */ `
 uniform float uHead;
 uniform float uTail;
 uniform vec3 uColor;
 varying float vDist;
-varying vec3 vNormal;
-varying vec3 vView;
+varying float vAcross;
 void main() {
   float behind = uHead - vDist;
-  float w = behind < 0.0 ? exp(-behind * behind / 220.0) : exp(-behind / uTail);
-  float across = pow(abs(dot(normalize(vNormal), normalize(vView))), 1.6);
-  float a = clamp(w * across, 0.0, 1.0);
-  if (a < 0.003) discard;
-  gl_FragColor = vec4(uColor * a * 1.18, a * 0.9);
+  float w = behind < 0.0 ? exp(-behind * behind / 450.0) : exp(-behind / uTail);
+  float a = clamp(w * vAcross * vAcross * 1.15, 0.0, 1.0);
+  if (a < 0.004) discard;
+  gl_FragColor = vec4(uColor * a, a);
 }`;
 
 function shadowTexture() {
@@ -220,7 +221,7 @@ export function buildMedallion({ accent }) {
   const signalMaterial = new ShaderMaterial({
     vertexShader: signalVertex,
     fragmentShader: signalFragment,
-    uniforms: { uHead: { value: -1e4 }, uTail: { value: 240 }, uColor: { value: new Vector3() } },
+    uniforms: { uHead: { value: -1e4 }, uTail: { value: 200 }, uColor: { value: new Vector3() } },
     transparent: true, depthWrite: false,
     blending: CustomBlending, blendSrc: OneFactor, blendDst: OneMinusSrcAlphaFactor,
   });

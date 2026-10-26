@@ -20,9 +20,10 @@ const FLOAT_PX = 7;
 const LABEL_KEYS = new Set(['Enter', ' ']);
 
 // Studio settings per theme. Desert night dims the room but keeps the light panels, so highlights survive.
+// shadowTone darkens the logo navy for the contact shadow: on the night paper plain navy would read as a glow.
 const STUDIO = {
-  light: { porcelain: 2.2, enamel: 0.86, exposure: 1, shadow: 0.3, room: 0.3 },
-  dark: { porcelain: 1.05, enamel: 0.62, exposure: 1, shadow: 0.5, room: 0.16 },
+  light: { porcelain: 2.2, enamel: 0.86, exposure: 1, shadow: 0.3, shadowTone: 1, room: 0.3 },
+  dark: { porcelain: 1.05, enamel: 0.62, exposure: 1, shadow: 0.6, shadowTone: 0.15, room: 0.16 },
 };
 const ENV_YAW = 0.5; // turns the studio so, face-on, the bright panels reflect near the rim, not across the enamel
 
@@ -46,7 +47,10 @@ const inert = { setTheme: noop, setPaused: noop, pulse: noop, replay: noop, dest
 export function createMedallion({ canvas, container = canvas?.parentElement, theme = 'light', paused = false, reducedMotion = false, accent = LOGO.gradient.top, onFallback = noop, onReady = noop }) {
   let renderer;
   try {
-    renderer = new WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'low-power' });
+    // Ask for the context ourselves so a missing WebGL means a quiet fallback, not a console error from three.
+    const context = canvas.getContext('webgl2', { antialias: true, alpha: true, stencil: false, powerPreference: 'low-power' });
+    if (!context) throw new Error('no WebGL2');
+    renderer = new WebGLRenderer({ canvas, context, antialias: true, alpha: true });
   } catch {
     onFallback();
     return inert;
@@ -94,7 +98,7 @@ export function createMedallion({ canvas, container = canvas?.parentElement, the
   let last = 0;
 
   function studio(name) {
-    if (env[name]) return env[name];
+    if (env[name]) return env[name].texture;
     const room = new RoomEnvironment();
     const dim = STUDIO[name].room;
     if (dim !== 1) {
@@ -103,9 +107,9 @@ export function createMedallion({ canvas, container = canvas?.parentElement, the
         else if (o.material?.isMeshStandardMaterial) o.material.color.multiplyScalar(dim);
       });
     }
-    env[name] = pmrem.fromScene(room, 0.04).texture;
+    env[name] = pmrem.fromScene(room, 0.04); // the render target, so destroy frees its framebuffer too
     room.dispose();
-    return env[name];
+    return env[name].texture;
   }
 
   function applyTheme() {
@@ -114,6 +118,7 @@ export function createMedallion({ canvas, container = canvas?.parentElement, the
     porcelain.envMap = enamel.envMap = studio(s.theme);
     porcelain.envMapIntensity = t.porcelain;
     enamel.envMapIntensity = t.enamel;
+    model.shadow.material.color.set(LOGO.shadow).multiplyScalar(t.shadowTone);
     renderer.toneMappingExposure = t.exposure;
   }
 
@@ -345,7 +350,7 @@ export function createMedallion({ canvas, container = canvas?.parentElement, the
       done.add(o.material);
       for (const key of ['map', 'alphaMap']) if (o.material[key]) done.add(o.material[key]);
     });
-    for (const texture of Object.values(env)) done.add(texture);
+    for (const target of Object.values(env)) done.add(target);
     done.forEach(resource => resource.dispose());
     pmrem.dispose();
     renderer.dispose();
@@ -390,6 +395,7 @@ export function createMedallion({ canvas, container = canvas?.parentElement, the
     debug: () => ({
       intro: s.intro, yaw: s.yaw, yawVelocity: s.yawV, pitch: s.pitch, spinY: model.coin.rotation.y, tiltX: pivot.rotation.x,
       head: s.head, running: Boolean(raf), frames: s.frames, pxPerUnit: s.pxPerUnit, paused: s.paused, theme: s.theme,
+      memory: { ...renderer.info.memory }, dead: s.dead,
     }),
   };
 }
