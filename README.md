@@ -66,7 +66,7 @@ Every face uses `font-display: swap`; the Latin Schibsted Grotesk file is preloa
 
 ## Deploy (Vercel)
 
-`vercel.json` holds the build settings: `npm run build`, output `dist`, and trailing slashes (`/story` redirects to `/story/`). Connect the project once at https://vercel.com/new by importing this GitHub repository; Vercel then deploys every push, `main` to production and other branches to preview URLs (Project → Settings → Environments sets which branch counts as production).
+`vercel.json` holds the build settings: `npm run build`, output `dist`, trailing slashes (`/story` redirects to `/story/`), and an `X-Robots-Tag: noindex` header that keeps the draft out of search engines (remove it at launch). Connect the project once at https://vercel.com/new by importing this GitHub repository; Vercel then deploys every push, `main` to production and other branches to preview URLs (Project → Settings → Environments sets which branch counts as production).
 
 ## Not done here
 
