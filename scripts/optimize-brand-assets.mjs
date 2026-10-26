@@ -23,6 +23,7 @@ const NAVY = [7, 21, 46]; // ~#07152E, dark theme page
 // One entry per brand. light/dark = source file names (in dir, default LOGO_SRC). opaqueBg = the file has a baked-in
 // white background. official = listed on https://hack.arizona.edu/sponsors (Sai: show every one of them). forcePlate =
 // needs a plate on dark although the measure passes (white fringes left by background removal fool it).
+// Sai asked on 26 Oct 2026 not to use the UA Computer Science (uacs.png) and Banner Health (Banner.png) logos.
 const LOGOS = [
   { id: 'general-dynamics-mission-systems', name: 'General Dynamics Mission Systems', light: 'General_Dynamics_Mission_Systems_logo.svg', official: true,
     notes: 'SVG chosen over GeneralDynamicsLogo.png (stacked) and general-dynamics-1.png (one line); both PNGs read "General Dynamics" without "Mission Systems". Sai to confirm which name the sponsor uses.' },
@@ -36,7 +37,6 @@ const LOGOS = [
   { id: 'rtx', name: 'Raytheon Technologies (RTX)', light: 'RTX_Raytheon_Technologies_logo.svg.png',
     notes: 'The logo itself reads "RTX"; the name comes from the file name. Black only; no white version supplied.' },
   { id: 'asua', name: 'Associated Students of the University of Arizona (ASUA)', light: 'ASUA.png', official: true, notes: 'ASUA-logo.png is the same file.' },
-  { id: 'ua-computer-science', name: 'University of Arizona Computer Science', light: 'uacs.png', notes: 'Logo reads "Computer Science" with the block A.' },
   { id: 'github', name: 'GitHub', light: 'Git-hub.png', official: true,
     notes: 'Horizontal lockup chosen over GitHub-logo.png (stacked, mostly empty canvas). Black only; no white version supplied.' },
   { id: 'mlh', name: 'Major League Hacking', light: 'mlh-logo-color.png', notes: 'No white version supplied.' },
@@ -44,8 +44,6 @@ const LOGOS = [
     notes: 'University of Arizona block A lockup. Responsible-Artificial-Intelligence.png is the same file.' },
   { id: 'center-philosophy-of-freedom', name: 'Center for the Philosophy of Freedom', light: 'PROVOST_Center-for-the-Philosophy-of-Freedom_PRIMARY.png', official: true,
     notes: 'Lockup with "The University of Arizona Office of the Provost".' },
-  { id: 'banner-health', name: 'Banner Health', light: 'Banner.png', opaqueBg: 'all',
-    notes: 'Low resolution (337x149) web copy with a fake transparency checkerboard baked in; checkerboard removed. Not in the plan\'s sponsor list: Sai to confirm, and ideally supply a vector file.' },
   // From the official sponsors page. The University of Arizona units come on 1920x1080 canvases; the trim crops them.
   { id: 'university-of-arizona', name: 'University of Arizona', dir: SITE_SRC, light: 'university-of-arizona.png', official: true,
     notes: 'Block A over "The University of Arizona", stacked.' },

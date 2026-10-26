@@ -9,7 +9,9 @@ Built with: the `minimal-motion-web` skill (design language, motion, interaction
 - Registration opens in January 2027.
 - Hack Arizona was founded in 2015; the first hackathon was in 2016.
 - No 3D hero (26 Oct 2026). The hero is an image that blends into the page. For now that is the 2025 photo of the team in front of the giant lit-up logo wall, faded into the paper; Sai may supply a better image.
-- Participants: 2025, 100; 2024, 180+ (26 Oct 2026).
+- Participants: 2025, 100. There was no Hack Arizona in 2024 (26 Oct 2026).
+- Hack Arizona 2027 keeps the 2026 rules: eligibility, free entry, teams of 2 to 4, what to bring, meals, overnight (26 Oct 2026).
+- Do not use the UA Computer Science and Banner Health logos (26 Oct 2026).
 - Use the information on the official site, https://hack.arizona.edu/ (26 Oct 2026).
 - Show every sponsor listed on https://hack.arizona.edu/sponsors (26 Oct 2026).
 
@@ -19,7 +21,7 @@ Built with: the `minimal-motion-web` skill (design language, motion, interaction
 - `prototypes/motion/`: the logo draw-on (loader idea), tested in a browser.
 - The 3D logo medallion was written, then dropped at Sai's request on 26 Oct 2026 (the code is in git history, commit 7f00768).
 - The shared shell (header, dock, footer, loader, theme, pause, reveals, cursor, signal spine), colour tokens, optimised photos, logos and headshots.
-- Home page (26 Oct 2026): hero with the logo-wall photo faded into the page, numbers, what Hack Arizona is, the 2025 challenges and winners, all 19 sponsors from the official site, questions, and the join block. Answers carried over from 2026 are marked unconfirmed for 2027.
+- Home page (26 Oct 2026): hero with the logo-wall photo faded into the page, numbers, what Hack Arizona is, the 2025 challenges and winners, all 19 sponsors from the official site, questions, and the join block.
 - Story, Events, Sponsor and Team: not built yet (title and placeholder only).
 
 ---

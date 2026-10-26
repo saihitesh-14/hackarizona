@@ -105,23 +105,6 @@
     "notes": "ASUA-logo.png is the same file. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 0%."
   },
   {
-    "id": "ua-computer-science",
-    "name": "University of Arizona Computer Science",
-    "official": false,
-    "files": {
-      "light": {
-        "png": "logos/ua-computer-science.png",
-        "webp": "logos/ua-computer-science.webp"
-      }
-    },
-    "width": 452,
-    "height": 128,
-    "aspect": 3.531,
-    "needsPlate": true,
-    "source": "03 Sponsors/Sponsor Logos/uacs.png",
-    "notes": "Logo reads \"Computer Science\" with the block A. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 83%."
-  },
-  {
     "id": "github",
     "name": "GitHub",
     "official": true,
@@ -188,23 +171,6 @@
     "needsPlate": true,
     "source": "03 Sponsors/Sponsor Logos/PROVOST_Center-for-the-Philosophy-of-Freedom_PRIMARY.png",
     "notes": "Lockup with \"The University of Arizona Office of the Provost\". Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 93%."
-  },
-  {
-    "id": "banner-health",
-    "name": "Banner Health",
-    "official": false,
-    "files": {
-      "light": {
-        "png": "logos/banner-health.png",
-        "webp": "logos/banner-health.webp"
-      }
-    },
-    "width": 315,
-    "height": 128,
-    "aspect": 2.461,
-    "needsPlate": true,
-    "source": "03 Sponsors/Sponsor Logos/Banner.png",
-    "notes": "Low resolution (337x149) web copy with a fake transparency checkerboard baked in; checkerboard removed. Not in the plan's sponsor list: Sai to confirm, and ideally supply a vector file. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 97%."
   },
   {
     "id": "university-of-arizona",

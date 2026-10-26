@@ -64,6 +64,10 @@ Self-hosted from npm (Fontsource), imported at the top of `base.css`. All three 
 
 Every face uses `font-display: swap`; the Latin Schibsted Grotesk file is preloaded in the built pages.
 
+## Deploy (Vercel)
+
+`vercel.json` holds the build settings: `npm run build`, output `dist`, and trailing slashes (`/story` redirects to `/story/`). Connect the project once at https://vercel.com/new by importing this GitHub repository; Vercel then deploys every push, `main` to production and other branches to preview URLs (Project → Settings → Environments sets which branch counts as production).
+
 ## Not done here
 
-Nothing is pushed or deployed. Placeholders (`[TBC: ...]`) must be resolved or removed before launch; `npm run check:placeholders -- --strict` fails while any remain.
+Nothing is deployed from this folder by hand. Placeholders (`[TBC: ...]`) must be resolved or removed before launch; `npm run check:placeholders -- --strict` fails while any remain.

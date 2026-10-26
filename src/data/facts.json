@@ -35,6 +35,16 @@
       "notes": "No exact date, platform or link given."
     },
     {
+      "id": "rules-2027-same",
+      "topic": "event-2027",
+      "statement": "Hack Arizona 2027 keeps the 2026 rules: open to students at any institute of higher education in Arizona, free, teams of 2 to 4, the same things to bring, meals and overnight arrangements.",
+      "value": null,
+      "year": 2027,
+      "source": "Sai, in chat, 26 Oct 2026",
+      "confidence": "confirmed-by-sai",
+      "notes": "The 2026 answers are in faq-2026."
+    },
+    {
       "id": "arizona-time-mst",
       "topic": "event-2027",
       "statement": "Arizona time is MST all year (no daylight saving); say so next to every time.",
@@ -202,7 +212,7 @@
       "year": 2024,
       "source": "https://www.sie.engineering.arizona.edu/news-events/student-leads-charge-revival-breakout-hackathon",
       "confidence": "public-web",
-      "notes": "Public web; needs Sai's confirmation."
+      "notes": "Public web; needs Sai's confirmation. Sai: there was no Hack Arizona in 2024 (26 Oct 2026); do not use."
     },
     {
       "id": "founded-2015",
@@ -546,8 +556,18 @@
       "value": "paused; returned 2025",
       "year": 2025,
       "source": "https://hack.arizona.edu/about/history",
-      "confidence": "public-web",
-      "notes": "Public web, Hack Arizona's own current site; needs Sai's confirmation. Sai says 2024 had 180+ participants (26 Oct 2026), which does not fit a pause until 2025: ask before the Story page uses this."
+      "confidence": "confirmed-by-sai",
+      "notes": "Public web, Hack Arizona's own current site; needs Sai's confirmation. Sai confirmed there was no event in 2024 (26 Oct 2026)."
+    },
+    {
+      "id": "no-event-2024",
+      "topic": "history",
+      "statement": "There was no Hack Arizona in 2024.",
+      "value": null,
+      "year": 2024,
+      "source": "Sai, in chat, 26 Oct 2026",
+      "confidence": "confirmed-by-sai",
+      "notes": "Sai first gave 180+ participants for 2024, then said no event took place that year; which event the 180+ belongs to is not known. Matches the official history (paused, back in 2025); contradicts the College of Engineering article's fifty-student spring 2024 event."
     },
     {
       "id": "restart-2025",
@@ -706,16 +726,6 @@
       "source": "Sai, in chat, 26 Oct 2026",
       "confidence": "confirmed-by-sai",
       "notes": "The figure to publish for 2025, in place of the recap's 283, the news article's 300 and Devpost's 118."
-    },
-    {
-      "id": "participants-2024-sai",
-      "topic": "numbers",
-      "statement": "Hack Arizona 2024 had 180+ participants.",
-      "value": "180+",
-      "year": 2024,
-      "source": "Sai, in chat, 26 Oct 2026",
-      "confidence": "confirmed-by-sai",
-      "notes": "See conflicts: the College of Engineering article describes a smaller spring 2024 event with fifty students, and the official history says the event paused until 2025."
     },
     {
       "id": "2025-participants-recap",
@@ -1063,6 +1073,19 @@
       "source": "Sai, in chat, 26 Oct 2026; https://hack.arizona.edu/sponsors",
       "confidence": "confirmed-by-sai",
       "notes": "19 entries. The official page spells one \"Rresearch, Innovation & Impact\" (typo) and shows the Center for the Philosophy of Freedom logo without a caption."
+    },
+    {
+      "id": "logos-not-used",
+      "topic": "sponsors",
+      "statement": "Do not use the UA Computer Science and Banner Health logos.",
+      "value": [
+        "UA Computer Science",
+        "Banner Health"
+      ],
+      "year": null,
+      "source": "Sai, in chat, 26 Oct 2026",
+      "confidence": "confirmed-by-sai",
+      "notes": "Removed from public/logos."
     },
     {
       "id": "sponsors-2026-onsite-photos",
@@ -3455,10 +3478,6 @@
     },
     {
       "topic": "history",
-      "detail": "The 2024 event. Sai: 180+ participants in 2024 (Sai, in chat, 26 Oct 2026) versus \"A much smaller Hack Arizona was organized for spring 2024 ... fifty students participated\" (https://www.sie.engineering.arizona.edu/news-events/student-leads-charge-revival-breakout-hackathon) and the official history: \"The event paused due to the COVID-19 pandemic and will return in 2025\" (https://hack.arizona.edu/about/history)."
-    },
-    {
-      "topic": "history",
       "detail": "Biggest year and size. \"as many as 875 competitors\" (https://www.sie.engineering.arizona.edu/news-events/student-leads-charge-revival-breakout-hackathon); 2018: \"over 875 students\" (https://lib.arizona.edu/node/504), \"900+ Hackers\" (https://web.archive.org/web/20180106010247/http://hackarizona.org/ and the banner in the SSF slide 1 photo), \"over 900 participants\" (https://wildcat.arizona.edu/122914/news/what-the-hack-hack-arizona-brings-out-ua-students-tucson-tech-industry/); 2019: \"~1000 students from over 25 different universities\" (https://web.archive.org/web/20200113170058/https://hackaz.io/); 2020: \"1,200 participants\" (/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack AZ - SSF Presentation.pptx, slide 3) versus 144 participants on Devpost 2020 (https://hack-arizona.devpost.com/)."
     },
     {
@@ -3516,19 +3535,19 @@
     "Whether Hack Arizona 2027 is an MLH member event (and so whether to show the MLH Trust Badge).",
     "Hack Arizona 2027 tracks/challenges, prizes and prize total, judges, speakers, workshops and schedule.",
     "Hack Arizona 2027 sponsors and which may be announced (PLAN.md section 9 asks about General Dynamics and Amazon).",
-    "Hack Arizona 2027 eligibility, team size, cost, food, overnight and travel policies (only 2026 answers exist).",
+    "Hack Arizona 2027 travel policy (Sai confirmed the other 2026 rules carry over).",
     "Which participant figure Sai wants for 2026 (208 / 155+ / 126 / \"150+\" / \"400+\").",
     "Discord member count and Instagram follower count (no source).",
     "Whether the first hackathon was 2015 (several sources) or 2016 (Sai); the 2015 venue and turnout as held.",
     "Founders: full list and permission to name them (only Ian Tracey is called \"a Founder\", in 2019).",
     "Biggest year and its confirmed numbers (875, 900+, ~1000, 1,200 all appear).",
     "Hack Arizona 2017 and 2019 participant and project counts (Devpost pages blocked; only press figures).",
-    "Years 2021-2023: no source mentions any event. 2024: what the 180+ participant event was called, when and where it was held.",
+    "Years 2021-2023: no source mentions any event (Sai: none in 2024). Which event the 180+ participants figure belongs to (Sai first gave it for 2024).",
     "Year and venue of the panorama in 01 Branding/hackaz.jpg.webp, and the venue of the 2018 auditorium panorama in the SSF deck.",
     "Consent to publish the 2025 recap quotes (Yash Mirani, Sharon Oneal) and any testimonials from winners who got internships or jobs.",
     "Permission to use event photos (and any people in them) on the site.",
     "Organizer roles beyond Lead / Director / Club Member (what each director leads), and who is in 05 Organizers/Headshot .jpeg.",
-    "Whether the sponsors that are not on the official page (RTX, Ending Pandemics Academy, UA Computer Science, MLH, Banner Health) may appear, and under which year; whether tiers or prices are public.",
+    "Whether RTX, Ending Pandemics Academy and MLH (in Sai's logo folder, not on the official page) may appear, and under which year; whether tiers or prices are public.",
     "Whether \"Bear Down, Build Up!\" should be reused as a theme or tagline.",
     "The event behind the MLH dashboard screenshot dated 27 Sep 2025 (1118 / 1200 registrations, 560 check-ins).",
     "Whether the \"Fall Mini-Hack, October 2026\" is the AgX HackDay (15 Nov 2026) or a separate event, and AgX HackDay end time.",
