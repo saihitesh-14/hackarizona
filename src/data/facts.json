@@ -168,6 +168,16 @@
       "notes": ""
     },
     {
+      "id": "hackday-format",
+      "topic": "events",
+      "statement": "HackDays are Hack Arizona's mini hackathons: usually about 7 to 8 hours, not 24.",
+      "value": "7-8 hours",
+      "year": null,
+      "source": "Sai, in chat, 26 Oct 2026",
+      "confidence": "confirmed-by-sai",
+      "notes": "HackDay 2026 ran 7 hours (official site)."
+    },
+    {
       "id": "hackday-2026-results",
       "topic": "events",
       "statement": "Official site: at HackDay 2026, \"52 students built 22 projects in just 7 hours\", powered by AI and the Google Gemini API, with thanks to MLH and Google.",
@@ -567,7 +577,7 @@
       "year": 2024,
       "source": "Sai, in chat, 26 Oct 2026",
       "confidence": "confirmed-by-sai",
-      "notes": "Sai first gave 180+ participants for 2024, then said no event took place that year; which event the 180+ belongs to is not known. Matches the official history (paused, back in 2025); contradicts the College of Engineering article's fifty-student spring 2024 event."
+      "notes": "Sai first gave 180+ participants for 2024, then said no event took place that year; 180+ is the Hack Arizona 2026 count. Matches the official history (paused, back in 2025); contradicts the College of Engineering article's fifty-student spring 2024 event."
     },
     {
       "id": "restart-2025",
@@ -726,6 +736,16 @@
       "source": "Sai, in chat, 26 Oct 2026",
       "confidence": "confirmed-by-sai",
       "notes": "The figure to publish for 2025, in place of the recap's 283, the news article's 300 and Devpost's 118."
+    },
+    {
+      "id": "participants-2026-sai",
+      "topic": "numbers",
+      "statement": "Hack Arizona 2026 had more than 180 participants.",
+      "value": "180+",
+      "year": 2026,
+      "source": "Sai, in chat, 26 Oct 2026",
+      "confidence": "confirmed-by-sai",
+      "notes": "The figure to publish for 2026, in place of 208 registered, 155+ on site, 126 on Devpost, \"150+\" and \"400+\". Sai first gave 180+ for 2024 by mistake."
     },
     {
       "id": "2025-participants-recap",
@@ -3486,10 +3506,6 @@
     },
     {
       "topic": "numbers",
-      "detail": "Hack Arizona 2026 participants. \"155+ Participants on site\" and \"208 Registrations\" (/Users/saihitesh/Desktop/HackAZ/03 Sponsors/2027 Sponsorship Packets/2027-Hack-Arizona-2026-Event-Recap.pptx, slide 2; /Users/saihitesh/Desktop/HackAZ/03 Sponsors/2027 Sponsorship Packets/Hack-Arizona-Sponsorship-2026-27.pptx, slide 3) versus 126 participants on Devpost (https://hack-arizona-2026.devpost.com/). PLAN.md also mentions \"150+\" (from a note to Ian) and \"400+\" (source not in the files) (/Users/saihitesh/Desktop/HackAZ/website/PLAN.md, section 9 item 4)."
-    },
-    {
-      "topic": "numbers",
       "detail": "Hack Arizona 2025 length. \"36 hours of intensive development\" (/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack-Arizona-2025-Event-Recap .pdf, page 1) and \"Over the course of 36 hours\" (https://hack-arizona-2025.devpost.com/) versus \"24 Hours of Nonstop Creativity\" (/Users/saihitesh/Desktop/HackAZ/02 Presentations & Packets/Hack-Arizona-2025-Event-Recap .pdf, page 3) and \"24hours\" in a quote (page 8)."
     },
     {
@@ -3536,13 +3552,12 @@
     "Hack Arizona 2027 tracks/challenges, prizes and prize total, judges, speakers, workshops and schedule.",
     "Hack Arizona 2027 sponsors and which may be announced (PLAN.md section 9 asks about General Dynamics and Amazon).",
     "Hack Arizona 2027 travel policy (Sai confirmed the other 2026 rules carry over).",
-    "Which participant figure Sai wants for 2026 (208 / 155+ / 126 / \"150+\" / \"400+\").",
     "Discord member count and Instagram follower count (no source).",
     "Whether the first hackathon was 2015 (several sources) or 2016 (Sai); the 2015 venue and turnout as held.",
     "Founders: full list and permission to name them (only Ian Tracey is called \"a Founder\", in 2019).",
     "Biggest year and its confirmed numbers (875, 900+, ~1000, 1,200 all appear).",
     "Hack Arizona 2017 and 2019 participant and project counts (Devpost pages blocked; only press figures).",
-    "Years 2021-2023: no source mentions any event (Sai: none in 2024). Which event the 180+ participants figure belongs to (Sai first gave it for 2024).",
+    "Years 2021-2023: no source mentions any event (Sai: none in 2024).",
     "Year and venue of the panorama in 01 Branding/hackaz.jpg.webp, and the venue of the 2018 auditorium panorama in the SSF deck.",
     "Consent to publish the 2025 recap quotes (Yash Mirani, Sharon Oneal) and any testimonials from winners who got internships or jobs.",
     "Permission to use event photos (and any people in them) on the site.",

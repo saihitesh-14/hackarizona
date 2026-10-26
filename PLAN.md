@@ -9,7 +9,8 @@ Built with: the `minimal-motion-web` skill (design language, motion, interaction
 - Registration opens in January 2027.
 - Hack Arizona was founded in 2015; the first hackathon was in 2016.
 - No 3D hero (26 Oct 2026). The hero is an image that blends into the page. For now that is the 2025 photo of the team in front of the giant lit-up logo wall, faded into the paper; Sai may supply a better image.
-- Participants: 2025, 100. There was no Hack Arizona in 2024 (26 Oct 2026).
+- Participants: 2025, 100; 2026, more than 180. There was no Hack Arizona in 2024 (26 Oct 2026).
+- HackDays are the mini hackathons, usually 7 to 8 hours (26 Oct 2026).
 - Hack Arizona 2027 keeps the 2026 rules: eligibility, free entry, teams of 2 to 4, what to bring, meals, overnight (26 Oct 2026).
 - Do not use the UA Computer Science and Banner Health logos (26 Oct 2026).
 - Use the information on the official site, https://hack.arizona.edu/ (26 Oct 2026).
@@ -21,7 +22,7 @@ Built with: the `minimal-motion-web` skill (design language, motion, interaction
 - `prototypes/motion/`: the logo draw-on (loader idea), tested in a browser.
 - The 3D logo medallion was written, then dropped at Sai's request on 26 Oct 2026 (the code is in git history, commit 7f00768).
 - The shared shell (header, dock, footer, loader, theme, pause, reveals, cursor, signal spine), colour tokens, optimised photos, logos and headshots.
-- Home page (26 Oct 2026): hero with the logo-wall photo faded into the page, numbers, what Hack Arizona is, the 2025 challenges and winners, all 19 sponsors from the official site, questions, and the join block.
+- Home page (26 Oct 2026): hero with the logo-wall photo faded into the page over an animated signal field, numbers, what Hack Arizona is, "Real skills, polished here" with a panel for people looking for builders (replaced the 2025 challenges at Sai's request), a carousel of tilted photo cards with hand-written notes ("Good ideas. Better company.", after Sai's reference), all 19 sponsors from the official site, questions, and the join block.
 - Story, Events, Sponsor and Team: not built yet (title and placeholder only).
 
 ---
@@ -185,6 +186,8 @@ One line per moving thing. Anything that cannot say what it explains gets cut.
 | Loader | First visit only, skippable | The logo draws itself as a trace, pads pop, a pulse climbs the trunk, then a wipe, about 1.8s | This is Hack Arizona; the visual language of the site |
 | Hero headline | Page load | Lines rise from a mask, 1.15s | Where to start reading |
 | Hero photo | Load | Fades in and settles from a slight zoom, once | The real event, under the real logo |
+| Hero signal field | Always, while the hero is on screen | Circuit traces with 45° bends; red pulses travel along them and light the pad they reach; traces light up around the pointer; a slow glow in the logo's red and plum drifts underneath | The logo's circuit, alive: this is the site's visual language |
+| Moments carousel | Drag, swipe, buttons, keyboard | Tilted photo cards; drag with a short coast; a card straightens and lifts on hover | Invitation to look around |
 | Countdown | Every minute | Digits roll like the projector clock | How long until hacking starts |
 | Signal spine | Scroll | A faint vertical trace on the page edge; a small pulse tracks your position and lights a pad at each section | Where you are on the page |
 | Numbers band | First time in view | Count up once, 1.4s | Scale, at a glance |

@@ -1,5 +1,10 @@
 // Home page module, owned by the home stage. Import shared helpers from ../shell.js (see src/COMPONENTS.md).
 import { localStamp, site, statusFor } from '../../data/site.js';
+import { initField } from './home-field.js';
+import { initMoments } from './home-moments.js';
+
+initField(document.querySelector('.home-field'));
+initMoments(document.querySelector('#moments'));
 
 // The status pill and the days to go, judged on the event's own clock (America/Phoenix). The markup already says
 // "Registration opens in January", so without JavaScript the page is only stale once January arrives.
