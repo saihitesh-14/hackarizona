@@ -18,6 +18,9 @@ export const site = {
   // The sponsor contact form. Web3Forms delivers each submission to the inbox the key was created for
   // (hackaz@arizona.edu); the key is public by design. Until it is set, the form opens a pre-filled email instead.
   forms: { sponsorEndpoint: 'https://api.web3forms.com/submit', sponsorKey: null },
+  // The story film. Until src is set the Story page shows a "coming soon" frame. src may be a video file in public/
+  // (e.g. '/video/our-story.mp4') or a YouTube link; captions (WebVTT, for a file) are optional but recommended.
+  film: { src: null, captions: null },
 };
 
 /** The wall-clock time in a time zone as 'YYYY-MM-DDTHH:MM', so it compares as a string against config dates. */
