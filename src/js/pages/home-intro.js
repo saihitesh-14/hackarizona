@@ -39,7 +39,7 @@ export function initIntro(hero) {
     }
     hero.classList.add('is-scrolly');
     story = gsap.context(() => {
-      const mark = hero.querySelector('.home-mark');
+      const mark = hero.querySelector('.mark');
       // Where the logo's centre sits in the pinned hero, so it can be moved to a point on screen.
       const centre = () => {
         const h = hero.getBoundingClientRect();

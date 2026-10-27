@@ -1,6 +1,8 @@
 /* Sponsor page styles, owned by the sponsor stage. Colours only through the tokens in src/styles/tokens.css. */
 
-/* Intro: the headline, then three figures on a rule. */
+/* Intro: the headline and three figures on the left, the motion mark (base.css) on the right. */
+.sponsor-intro{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);align-items:center;gap:32px clamp(28px,5vw,72px)}
+.sponsor-intro .mark{justify-self:center;width:min(100%,clamp(240px,28vw,400px))}
 .sponsor-intro .lead{max-width:620px;font-size:clamp(18px,1.5vw,21px);color:var(--ink)}
 .sponsor-intro .status-pill{font-size:15px;color:var(--ink)}
 .sponsor-numbers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(20px,3vw,40px);max-width:880px;margin:clamp(40px,5vw,64px) 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
@@ -32,10 +34,28 @@
 
 /* Sponsor wall: every logo on the same light plate in both themes, sized for equal visual weight in the markup. */
 .sponsor-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:12px;margin:0;padding:0;list-style:none}
-.sponsor-wall li{display:grid;place-items:center;min-height:112px;padding:20px 16px;border:1px solid var(--line);border-radius:16px;background:var(--plate);transition:transform .3s var(--ease-out),box-shadow .3s ease}
+.sponsor-wall li{display:grid;place-items:center;min-height:112px;padding:20px 16px;border:1px solid var(--line);border-radius:16px;background:var(--plate);transition:opacity .7s var(--ease-out) calc(var(--i,0) * 45ms),translate .8s var(--ease-out-expo) calc(var(--i,0) * 45ms),scale .8s var(--ease-out-expo) calc(var(--i,0) * 45ms),box-shadow .3s ease,border-color .3s ease}
+/* Arrival: the tiles rise in one after another when the wall comes into view (src/js/pages/sponsor.js). */
+.js .sponsor-wall:not(.is-in) li{opacity:0;translate:0 28px;scale:.96}
+/* The tile under the pointer tilts (data-tilt, shell cursor) with a red spotlight; the others step back. */
+.sponsor-wall li:before{background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--logo-red) 14%,transparent),transparent 70%)!important}
+.sponsor-wall img{position:relative;z-index:1;transition:opacity .35s ease,filter .35s ease,scale .35s var(--ease-out)}
 .sponsor-wall picture{display:contents}
 .sponsor-wall img{display:block;max-width:100%;height:auto}
-@media(hover:hover) and (pointer:fine){.sponsor-wall li:hover{transform:translateY(-3px);box-shadow:0 12px 28px var(--soft-shadow)}}
+@media(hover:hover) and (pointer:fine){
+  .sponsor-wall li:hover{border-color:color-mix(in srgb,var(--logo-red) 45%,transparent);box-shadow:0 18px 40px var(--soft-shadow);transition-delay:0s}
+  .sponsor-wall li:hover img{scale:1.06}
+  .sponsor-wall:has(li:hover) li:not(:hover) img{opacity:.45;filter:grayscale(1)}
+}
+
+/* Logo band: two rows of every sponsor logo drifting in opposite directions; they speed up with the scroll and slow
+   under the pointer (src/js/pages/sponsor.js). Still when paused: the rows simply sit there. */
+.sponsor-marquee{display:grid;gap:12px;margin-top:clamp(8px,2vw,24px);padding:20px 0;overflow:hidden;border-block:1px solid var(--grid);-webkit-mask-image:linear-gradient(90deg,transparent,var(--mask) 8%,var(--mask) 92%,transparent);mask-image:linear-gradient(90deg,transparent,var(--mask) 8%,var(--mask) 92%,transparent)}
+.sponsor-marquee-row{overflow:hidden}
+.sponsor-marquee-track{display:flex;gap:12px;width:max-content;margin:0;padding:0;list-style:none;will-change:transform}
+.sponsor-marquee-track li{display:grid;place-items:center;flex:none;width:180px;height:76px;padding:12px 18px;border:1px solid var(--line);border-radius:14px;background:var(--plate)}
+.sponsor-marquee-track picture{display:contents}
+.sponsor-marquee-track img{display:block;max-width:100%;max-height:44px;width:auto;height:auto}
 
 /* Contact: heading beside the form. */
 .sponsor-contact{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:28px clamp(28px,5vw,80px);align-items:start}
@@ -68,6 +88,8 @@
 .sponsor-status.is-error{color:var(--accent-ink)}
 
 @media(max-width:900px){
+  .sponsor-intro{grid-template-columns:1fr}
+  .sponsor-intro .mark{grid-row:1;width:min(56vw,260px)}
   .sponsor-split,.sponsor-contact{grid-template-columns:1fr}
   .sponsor-benefits{grid-template-columns:1fr}
   .sponsor-inkind{grid-template-columns:1fr}
@@ -82,4 +104,5 @@
   .sponsor-form{grid-template-columns:1fr;padding:20px}
   .sponsor-wall{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
   .sponsor-wall li{min-height:92px;padding:16px 12px}
+  .sponsor-marquee-track li{width:150px;height:64px}
 }

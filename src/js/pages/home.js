@@ -1,10 +1,10 @@
 // Home page module, owned by the home stage. Import shared helpers from ../shell.js (see src/COMPONENTS.md).
 import { localStamp, site, statusFor } from '../../data/site.js';
 import { initIntro } from './home-intro.js';
-import { initMark } from './home-mark.js';
+import { initMark } from '../mark.js';
 import { initMoments } from './home-moments.js';
 
-initMark(document.querySelector('.home-mark'));
+initMark(document.querySelector('.home-hero .mark'));
 initIntro(document.querySelector('.home-hero'));
 initMoments(document.querySelector('#moments'));
 

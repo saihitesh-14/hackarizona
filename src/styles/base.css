@@ -296,6 +296,26 @@ html:not(.is-loading) .display .line>span,html.is-leaving .display .line>span{an
 .js [data-reveal].is-revealed,.js [data-reveal='children'].is-revealed>*{opacity:1;transform:none}
 .js .card[data-reveal]{transition:opacity .9s var(--ease-out) var(--reveal-delay,0s),transform 1.1s var(--ease-out-expo) var(--reveal-delay,0s),border-color .3s ease,box-shadow .4s ease}
 
+/* Motion mark (src/partials/mark.html, src/js/mark.js; Home hero and Sponsor intro); each page sets its width.
+   A soft brand glow, two orbit rings with travelling dots, and the logo itself, floating and leaning toward
+   the pointer (--tilt-x, --tilt-y from the module). It stays hidden until the module has set up its first frame. */
+.mark{position:relative;aspect-ratio:1;perspective:1000px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.mark:before{content:'';position:absolute;inset:10%;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--logo-red) 55%,transparent),color-mix(in srgb,var(--logo-plum) 35%,transparent) 60%,transparent);filter:blur(34px);animation:mark-breathe 5s var(--ease-in-out) infinite alternate}
+.mark-orbits{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.mark-orbit{fill:none;stroke:var(--line-strong);stroke-width:.4}
+.mark-orbit-outer{stroke-dasharray:.8 2.4;transform-origin:100px 100px;animation:mark-spin 90s linear infinite}
+.mark-orbit-inner{stroke:var(--line)}
+.mark-orbit-dots{fill:var(--pulse);transform-origin:100px 100px;animation:mark-spin 16s linear infinite}
+.mark-orbit-dots-reverse{animation-duration:24s;animation-direction:reverse}
+.mark-svg{position:absolute;inset:11%;width:78%;height:78%;overflow:visible;transform:rotateY(var(--tilt-x,0deg)) rotateX(var(--tilt-y,0deg));animation:mark-float 6s var(--ease-in-out) infinite alternate;filter:drop-shadow(0 28px 50px color-mix(in srgb,var(--banner-bg) 70%,transparent))}
+.mark-signal circle{fill:var(--pulse)}
+.js .mark:not(.is-ready) .mark-svg{visibility:hidden}
+.js .mark [data-ring-arc],.js .mark [data-grow],.js .mark [data-pad-arc]{stroke-dasharray:1 1;stroke-dashoffset:1}
+.js .mark [data-part='disc']{transform-origin:600px 600px}
+@keyframes mark-breathe{from{opacity:.65;transform:scale(.94)}to{opacity:1;transform:scale(1.04)}}
+@keyframes mark-spin{to{transform:rotate(360deg)}}
+@keyframes mark-float{to{translate:0 -12px}}
+
 /* Paused motion (the Pause motion button, a saved choice, or reduced motion): everything still and visible. */
 :root[data-motion='paused'] *,:root[data-motion='paused'] *:before,:root[data-motion='paused'] *:after{animation:none!important;transition:none!important}
 :root[data-motion='paused'] [data-reveal],:root[data-motion='paused'] [data-reveal]>*{opacity:1!important;transform:none!important}

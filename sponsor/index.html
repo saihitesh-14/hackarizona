@@ -15,20 +15,28 @@
   <!-- @include partials/dock.html -->
   <main id="main">
     <!-- PAGE CONTENT START: the sponsor stage owns everything between START and END (and src/styles/pages/sponsor.css, src/js/pages/sponsor.js). -->
-    <section class="page-intro section-shell entrance sponsor-intro" id="intro" aria-labelledby="page-title">
-      <p class="status-pill"><span class="status-dot" aria-hidden="true"></span>Hack Arizona 2027 · 27 to 28 March · Tucson</p>
-      <h1 class="display" id="page-title"><span class="line"><span>Meet the builders</span></span><span class="line"><span><em>before anyone else.</em></span></span></h1>
-      <p class="lead">Sponsor Hack Arizona and spend 24 hours with University of Arizona students from every discipline while they build something real.</p>
-      <div class="actions">
-        <a class="button" href="#contact" data-magnetic>Get in touch <span class="arrow arrow-se" aria-hidden="true">↘</span></a>
-        <a class="text-link" href="#sponsors">See who sponsors us <span class="arrow arrow-se" aria-hidden="true">↘</span></a>
+    <section class="page-intro section-shell sponsor-intro" id="intro" aria-labelledby="page-title">
+      <div class="sponsor-intro-copy entrance">
+        <p class="status-pill"><span class="status-dot" aria-hidden="true"></span>Hack Arizona 2027 · 27 to 28 March · Tucson</p>
+        <h1 class="display" id="page-title"><span class="line"><span>Meet the builders</span></span><span class="line"><span><em>before anyone else.</em></span></span></h1>
+        <p class="lead">Sponsor Hack Arizona and spend 24 hours with University of Arizona students from every discipline while they build something real.</p>
+        <div class="actions">
+          <a class="button" href="#contact" data-magnetic>Get in touch <span class="arrow arrow-se" aria-hidden="true">↘</span></a>
+          <a class="text-link" href="#sponsors">See who sponsors us <span class="arrow arrow-se" aria-hidden="true">↘</span></a>
+        </div>
+        <ul class="sponsor-numbers" aria-label="Hack Arizona in numbers">
+          <li><strong data-count>180+</strong><span>participants at Hack Arizona 2026</span></li>
+          <li><strong data-count>100</strong><span>participants at Hack Arizona 2025</span></li>
+          <li><strong data-count>24</strong><span>hours of building, mentoring and demos</span></li>
+        </ul>
       </div>
-      <ul class="sponsor-numbers" aria-label="Hack Arizona in numbers">
-        <li><strong>180+</strong><span>participants at Hack Arizona 2026</span></li>
-        <li><strong>100</strong><span>participants at Hack Arizona 2025</span></li>
-        <li><strong>24</strong><span>hours of building, mentoring and demos</span></li>
-      </ul>
+      <!-- @include partials/mark.html -->
     </section>
+
+    <div class="sponsor-marquee" aria-hidden="true" data-marquee>
+          <div class="sponsor-marquee-row"><ul class="sponsor-marquee-track"><li><picture><source type="image/webp" srcset="/logos/amazon.webp"><img src="/logos/amazon.png" alt="" width="113" height="40" loading="lazy" decoding="async"></picture></li><li><picture><source type="image/webp" srcset="/logos/nuclearn.webp"><img src="/logos/nuclearn.png" alt="" width="141" height="33" loading="lazy" decoding="async"></picture></li><li><picture><source type="image/webp" srcset="/logos/asua.webp"><img src="/logos/asua.png" alt="" width="107" height="44" loading="lazy" decoding="async"></picture></li><li><img src="/logos/general-dynamics-mission-systems.svg" alt="" width="188" height="22" loading="lazy" decoding="async"></li><li><picture><source type="image/webp" srcset="/logos/github.webp"><img src="/logos/github.png" alt="" width="126" height="36" loading="lazy" decoding="async"></picture></li><li><picture><source type="image/webp" srcset="/logos/university-of-arizona.webp"><img src="/logos/university-of-arizona.png" alt="" width="64" height="60" loading="lazy" decoding="async"></picture></li><li><picture><source type="image/webp" srcset="/logos/university-libraries.webp"><img src="/logos/university-libraries.png" alt="" width="166" height="28" loading="lazy" decoding="async"></picture></li><li><picture><source type="image/webp" srcset="/logos/center-philosophy-of-freedom.webp"><img src="/logos/center-philosophy-of-freedom.png" alt="" width="141" height="33" loading="lazy" decoding="async"></picture></li><li><picture><source type="image/webp" srcset="/logos/honors-college.webp"><img src="/logos/honors-college.png" alt="" width="134" height="35" loading="lazy" decoding="async"></picture></li><li><picture><source type="image/webp" srcset="/logos/tech-launch-arizona.webp"><img src="/logos/tech-launch-arizona.png" alt="" width="144" height="33" loading="lazy" decoding="async"></picture></li></ul></div>
+          <div class="sponsor-marquee-row"><ul class="sponsor-marquee-track"><li><picture><source type="image/webp" srcset="/logos/startup-wildcats.webp"><img src="/logos/startup-wildcats.png" alt="" width="66" height="60" loading="lazy" decoding="async"></picture></li><li><picture><source type="image/webp" srcset="/logos/information-technology.webp"><img src="/logos/information-technology.png" alt="" width="137" height="34" loading="lazy" decoding="async"></picture></li><li><picture><source type="image/webp" srcset="/logos/office-of-the-provost.webp"><img src="/logos/office-of-the-provost.png" alt="" width="161" height="28" loading="lazy" decoding="async"></picture></li><li><picture><source type="image/webp" srcset="/logos/engineering.webp"><img src="/logos/engineering.png" alt="" width="165" height="28" loading="lazy" decoding="async"></picture></li><li><picture><source type="image/webp" srcset="/logos/responsible-ai.webp"><img src="/logos/responsible-ai.png" alt="" width="162" height="28" loading="lazy" decoding="async"></picture></li><li><picture><source type="image/webp" srcset="/logos/startup-tucson.webp"><img src="/logos/startup-tucson.png" alt="" width="112" height="41" loading="lazy" decoding="async"></picture></li><li><picture><source type="image/webp" srcset="/logos/research-innovation-impact.webp"><img src="/logos/research-innovation-impact.png" alt="" width="158" height="29" loading="lazy" decoding="async"></picture></li><li><img src="/logos/veridise.svg" alt="" width="143" height="33" loading="lazy" decoding="async"></li><li><picture><source type="image/webp" srcset="/logos/general-education.webp"><img src="/logos/general-education.png" alt="" width="154" height="29" loading="lazy" decoding="async"></picture></li></ul></div>
+    </div>
 
     <section class="section section-shell" id="audience" aria-labelledby="audience-title">
       <div class="sponsor-split">
@@ -90,26 +98,26 @@
         <h2 id="sponsors-title">In good <em>company.</em></h2>
         <p class="section-intro">The companies, organisations and University of Arizona units that sponsor Hack Arizona.</p>
       </div>
-      <ul class="sponsor-wall" data-reveal>
-        <li><picture><source type="image/webp" srcset="/logos/amazon.webp"><img src="/logos/amazon.png" alt="Amazon Tempe Town Lake Campus" width="113" height="40" loading="lazy" decoding="async"></picture></li>
-        <li><picture><source type="image/webp" srcset="/logos/nuclearn.webp"><img src="/logos/nuclearn.png" alt="Nuclearn" width="141" height="33" loading="lazy" decoding="async"></picture></li>
-        <li><picture><source type="image/webp" srcset="/logos/asua.webp"><img src="/logos/asua.png" alt="Associated Students of the University of Arizona (ASUA)" width="107" height="44" loading="lazy" decoding="async"></picture></li>
-        <li><img src="/logos/general-dynamics-mission-systems.svg" alt="General Dynamics Mission Systems" width="188" height="22" loading="lazy" decoding="async"></li>
-        <li><picture><source type="image/webp" srcset="/logos/github.webp"><img src="/logos/github.png" alt="GitHub" width="126" height="36" loading="lazy" decoding="async"></picture></li>
-        <li><picture><source type="image/webp" srcset="/logos/university-of-arizona.webp"><img src="/logos/university-of-arizona.png" alt="University of Arizona" width="64" height="60" loading="lazy" decoding="async"></picture></li>
-        <li><picture><source type="image/webp" srcset="/logos/university-libraries.webp"><img src="/logos/university-libraries.png" alt="University Libraries" width="166" height="28" loading="lazy" decoding="async"></picture></li>
-        <li><picture><source type="image/webp" srcset="/logos/center-philosophy-of-freedom.webp"><img src="/logos/center-philosophy-of-freedom.png" alt="Center for the Philosophy of Freedom" width="141" height="33" loading="lazy" decoding="async"></picture></li>
-        <li><picture><source type="image/webp" srcset="/logos/honors-college.webp"><img src="/logos/honors-college.png" alt="W.A. Franke Honors College" width="134" height="35" loading="lazy" decoding="async"></picture></li>
-        <li><picture><source type="image/webp" srcset="/logos/tech-launch-arizona.webp"><img src="/logos/tech-launch-arizona.png" alt="Tech Launch Arizona" width="144" height="33" loading="lazy" decoding="async"></picture></li>
-        <li><picture><source type="image/webp" srcset="/logos/startup-wildcats.webp"><img src="/logos/startup-wildcats.png" alt="Startup Wildcats" width="66" height="60" loading="lazy" decoding="async"></picture></li>
-        <li><picture><source type="image/webp" srcset="/logos/information-technology.webp"><img src="/logos/information-technology.png" alt="Information Technology" width="137" height="34" loading="lazy" decoding="async"></picture></li>
-        <li><picture><source type="image/webp" srcset="/logos/office-of-the-provost.webp"><img src="/logos/office-of-the-provost.png" alt="Office of the Provost" width="161" height="28" loading="lazy" decoding="async"></picture></li>
-        <li><picture><source type="image/webp" srcset="/logos/engineering.webp"><img src="/logos/engineering.png" alt="Engineering" width="165" height="28" loading="lazy" decoding="async"></picture></li>
-        <li><picture><source type="image/webp" srcset="/logos/responsible-ai.webp"><img src="/logos/responsible-ai.png" alt="Responsible Artificial Intelligence" width="162" height="28" loading="lazy" decoding="async"></picture></li>
-        <li><picture><source type="image/webp" srcset="/logos/startup-tucson.webp"><img src="/logos/startup-tucson.png" alt="Startup Tucson" width="112" height="41" loading="lazy" decoding="async"></picture></li>
-        <li><picture><source type="image/webp" srcset="/logos/research-innovation-impact.webp"><img src="/logos/research-innovation-impact.png" alt="Research, Innovation &amp; Impact" width="158" height="29" loading="lazy" decoding="async"></picture></li>
-        <li><img src="/logos/veridise.svg" alt="Veridise" width="143" height="33" loading="lazy" decoding="async"></li>
-        <li><picture><source type="image/webp" srcset="/logos/general-education.webp"><img src="/logos/general-education.png" alt="General Education" width="154" height="29" loading="lazy" decoding="async"></picture></li>
+      <ul class="sponsor-wall" data-sponsor-wall>
+        <li data-tilt style="--i:0"><picture><source type="image/webp" srcset="/logos/amazon.webp"><img src="/logos/amazon.png" alt="Amazon Tempe Town Lake Campus" width="113" height="40" loading="lazy" decoding="async"></picture></li>
+        <li data-tilt style="--i:1"><picture><source type="image/webp" srcset="/logos/nuclearn.webp"><img src="/logos/nuclearn.png" alt="Nuclearn" width="141" height="33" loading="lazy" decoding="async"></picture></li>
+        <li data-tilt style="--i:2"><picture><source type="image/webp" srcset="/logos/asua.webp"><img src="/logos/asua.png" alt="Associated Students of the University of Arizona (ASUA)" width="107" height="44" loading="lazy" decoding="async"></picture></li>
+        <li data-tilt style="--i:3"><img src="/logos/general-dynamics-mission-systems.svg" alt="General Dynamics Mission Systems" width="188" height="22" loading="lazy" decoding="async"></li>
+        <li data-tilt style="--i:4"><picture><source type="image/webp" srcset="/logos/github.webp"><img src="/logos/github.png" alt="GitHub" width="126" height="36" loading="lazy" decoding="async"></picture></li>
+        <li data-tilt style="--i:5"><picture><source type="image/webp" srcset="/logos/university-of-arizona.webp"><img src="/logos/university-of-arizona.png" alt="University of Arizona" width="64" height="60" loading="lazy" decoding="async"></picture></li>
+        <li data-tilt style="--i:6"><picture><source type="image/webp" srcset="/logos/university-libraries.webp"><img src="/logos/university-libraries.png" alt="University Libraries" width="166" height="28" loading="lazy" decoding="async"></picture></li>
+        <li data-tilt style="--i:7"><picture><source type="image/webp" srcset="/logos/center-philosophy-of-freedom.webp"><img src="/logos/center-philosophy-of-freedom.png" alt="Center for the Philosophy of Freedom" width="141" height="33" loading="lazy" decoding="async"></picture></li>
+        <li data-tilt style="--i:8"><picture><source type="image/webp" srcset="/logos/honors-college.webp"><img src="/logos/honors-college.png" alt="W.A. Franke Honors College" width="134" height="35" loading="lazy" decoding="async"></picture></li>
+        <li data-tilt style="--i:9"><picture><source type="image/webp" srcset="/logos/tech-launch-arizona.webp"><img src="/logos/tech-launch-arizona.png" alt="Tech Launch Arizona" width="144" height="33" loading="lazy" decoding="async"></picture></li>
+        <li data-tilt style="--i:10"><picture><source type="image/webp" srcset="/logos/startup-wildcats.webp"><img src="/logos/startup-wildcats.png" alt="Startup Wildcats" width="66" height="60" loading="lazy" decoding="async"></picture></li>
+        <li data-tilt style="--i:11"><picture><source type="image/webp" srcset="/logos/information-technology.webp"><img src="/logos/information-technology.png" alt="Information Technology" width="137" height="34" loading="lazy" decoding="async"></picture></li>
+        <li data-tilt style="--i:12"><picture><source type="image/webp" srcset="/logos/office-of-the-provost.webp"><img src="/logos/office-of-the-provost.png" alt="Office of the Provost" width="161" height="28" loading="lazy" decoding="async"></picture></li>
+        <li data-tilt style="--i:13"><picture><source type="image/webp" srcset="/logos/engineering.webp"><img src="/logos/engineering.png" alt="Engineering" width="165" height="28" loading="lazy" decoding="async"></picture></li>
+        <li data-tilt style="--i:14"><picture><source type="image/webp" srcset="/logos/responsible-ai.webp"><img src="/logos/responsible-ai.png" alt="Responsible Artificial Intelligence" width="162" height="28" loading="lazy" decoding="async"></picture></li>
+        <li data-tilt style="--i:15"><picture><source type="image/webp" srcset="/logos/startup-tucson.webp"><img src="/logos/startup-tucson.png" alt="Startup Tucson" width="112" height="41" loading="lazy" decoding="async"></picture></li>
+        <li data-tilt style="--i:16"><picture><source type="image/webp" srcset="/logos/research-innovation-impact.webp"><img src="/logos/research-innovation-impact.png" alt="Research, Innovation &amp; Impact" width="158" height="29" loading="lazy" decoding="async"></picture></li>
+        <li data-tilt style="--i:17"><img src="/logos/veridise.svg" alt="Veridise" width="143" height="33" loading="lazy" decoding="async"></li>
+        <li data-tilt style="--i:18"><picture><source type="image/webp" srcset="/logos/general-education.webp"><img src="/logos/general-education.png" alt="General Education" width="154" height="29" loading="lazy" decoding="async"></picture></li>
       </ul>
     </section>
 

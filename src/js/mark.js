@@ -1,9 +1,9 @@
-// The hero mark: the Hack Arizona logo as a motion graphic. It draws itself the way the loader does (once the loader
+// The motion mark (src/partials/mark.html): the Hack Arizona logo as a motion graphic. It draws itself the way the loader does (once the loader
 // has lifted, on a first visit), then sends a pulse up the saguaro to the pads every few seconds. It leans toward the
 // pointer, and a click replays the whole draw-on. Paused or reduced motion shows the finished logo, still; so does a
 // visit without JavaScript (the markup has no masks until this module adds them).
-import { createDrawOn, DRAW_END, PULSE_START } from '../shell/loader.js';
-import { isPaused, onMotionChange } from '../shell.js';
+import { createDrawOn, DRAW_END, PULSE_START } from './shell/loader.js';
+import { isPaused, onMotionChange } from './shell.js';
 
 const SPEED = 1.1; // timeline seconds per second
 const AFTERGLOW = 0.6; // timeline seconds the last pad keeps glowing after a pulse
@@ -11,7 +11,7 @@ const REST = 3.4; // seconds between pulses
 const TILT = 11; // degrees, with the pointer at the edge of the mark
 
 export function initMark(mark) {
-  const svg = mark?.querySelector('.home-mark-svg');
+  const svg = mark?.querySelector('.mark-svg');
   if (!svg) return;
   const render = createDrawOn(svg);
   const root = document.documentElement;
