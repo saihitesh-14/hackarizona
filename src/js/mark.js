@@ -24,9 +24,14 @@ export function initMark(mark) {
   let last = 0;
   const tilt = { x: 0, y: 0, tx: 0, ty: 0 };
 
+  // The tilt goes straight onto the logo's transform, and only when it has moved: a style write every frame would make
+  // the browser recalculate the whole logo each frame.
+  let shown = '';
   const setTilt = () => {
-    mark.style.setProperty('--tilt-x', `${tilt.x.toFixed(2)}deg`);
-    mark.style.setProperty('--tilt-y', `${tilt.y.toFixed(2)}deg`);
+    const transform = `rotateY(${tilt.x.toFixed(2)}deg) rotateX(${tilt.y.toFixed(2)}deg)`;
+    if (transform === shown) return;
+    shown = transform;
+    svg.style.transform = transform;
   };
 
   const step = seconds => {
@@ -80,6 +85,7 @@ export function initMark(mark) {
   }).observe(root, { attributes: true, attributeFilter: ['class'] });
   new IntersectionObserver(([entry]) => {
     visible = entry.isIntersecting;
+    mark.classList.toggle('is-offscreen', !visible); // pauses its CSS animations too (base.css)
     sync();
   }).observe(mark);
   document.addEventListener('visibilitychange', sync);

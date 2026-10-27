@@ -8,7 +8,7 @@
  *   1.45 to 2.20  a red pulse runs up the traces and each pad flashes as it arrives
  */
 const SPEED = 1.25;
-const END = 2.25; // prototype seconds; the masks drop here so the last frame is the plain mark
+const END = 2.25; // prototype seconds; the loader lifts after this
 const PULSE = 1.45; // prototype seconds; the pulse leaves the base of the trunk
 // The home hero replays the same draw-on and pulse on its own copy of the mark.
 export { END as DRAW_END, PULSE as PULSE_START };
@@ -51,10 +51,16 @@ export function createDrawOn(svg) {
     { path: armRight, start: rightStart, length: rightLength, pad: 'right' },
   ];
   const pulseEnd = Math.max(...branches.map(b => b.start + b.length));
+  let masksOn = null;
 
   return function render(t) {
-    const complete = t >= END;
-    masked.forEach(el => (complete ? el.removeAttribute('mask') : el.setAttribute('mask', el.dataset.masked)));
+    // The masks only matter while the mark is still growing (until PULSE); after that it is whole, so they come off and
+    // a replayed pulse does not re-mask the logo every frame. The attribute is only touched when that changes.
+    const masking = t < PULSE;
+    if (masking !== masksOn) {
+      masksOn = masking;
+      masked.forEach(el => (masking ? el.setAttribute('mask', el.dataset.masked) : el.removeAttribute('mask')));
+    }
 
     const discT = easeOutCubic(clamp01(t / 0.6));
     disc.style.opacity = String(discT);

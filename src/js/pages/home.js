@@ -6,6 +6,10 @@ import { initMoments } from './home-moments.js';
 
 initMark(document.querySelector('.home-hero .mark'));
 initIntro(document.querySelector('.home-hero'));
+
+// The banner's slow zoom stops while the hero is off screen.
+const banner = document.querySelector('.home-banner');
+if (banner) new IntersectionObserver(([entry]) => banner.classList.toggle('is-offscreen', !entry.isIntersecting)).observe(banner);
 initMoments(document.querySelector('#moments'));
 
 // The status pill and the days to go, judged on the event's own clock (America/Phoenix). The markup already says

@@ -1,12 +1,11 @@
 <!-- The Hack Arizona logo as a motion graphic (src/js/mark.js, styles in base.css): it draws itself like the loader,
      pulses up the saguaro, leans toward the pointer and replays on click. Complete and still without JavaScript or motion. -->
 <div class="mark" role="img" aria-label="The Hack Arizona logo, a saguaro drawn as a circuit." data-cursor="Replay">
-  <svg class="mark-orbits" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-    <circle class="mark-orbit mark-orbit-outer" cx="100" cy="100" r="99"/>
-    <circle class="mark-orbit mark-orbit-inner" cx="100" cy="100" r="91"/>
-    <g class="mark-orbit-dots"><circle cx="100" cy="1" r="1.5"/><circle cx="199" cy="100" r=".9"/></g>
-    <g class="mark-orbit-dots mark-orbit-dots-reverse"><circle cx="100" cy="191" r="1.2"/><circle cx="9" cy="100" r=".8"/></g>
-  </svg>
+  <!-- Each turning part is its own svg, so the browser rotates it as a layer instead of repainting the rings. -->
+  <svg class="mark-orbits" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle class="mark-orbit mark-orbit-inner" cx="100" cy="100" r="91"/></svg>
+  <svg class="mark-orbits mark-spin-ring" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle class="mark-orbit mark-orbit-outer" cx="100" cy="100" r="99"/></svg>
+  <svg class="mark-orbits mark-spin-dots" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g class="mark-orbit-dots"><circle cx="100" cy="1" r="1.5"/><circle cx="199" cy="100" r=".9"/></g></svg>
+  <svg class="mark-orbits mark-spin-dots mark-spin-reverse" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g class="mark-orbit-dots"><circle cx="100" cy="191" r="1.2"/><circle cx="9" cy="100" r=".8"/></g></svg>
   <svg class="mark-svg" viewBox="0 0 1200 1200" aria-hidden="true" focusable="false">
     <defs>
       <linearGradient id="hm-fill" gradientUnits="userSpaceOnUse" x1="0" y1="319" x2="0" y2="885"><stop offset="0" class="logo-stop-top"/><stop offset="1" class="logo-stop-bottom"/></linearGradient>
