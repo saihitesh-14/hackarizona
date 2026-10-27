@@ -1,1 +1,85 @@
 /* Sponsor page styles, owned by the sponsor stage. Colours only through the tokens in src/styles/tokens.css. */
+
+/* Intro: the headline, then three figures on a rule. */
+.sponsor-intro .lead{max-width:620px;font-size:clamp(18px,1.5vw,21px);color:var(--ink)}
+.sponsor-intro .status-pill{font-size:15px;color:var(--ink)}
+.sponsor-numbers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(20px,3vw,40px);max-width:880px;margin:clamp(40px,5vw,64px) 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.sponsor-numbers li{display:flex;flex-direction:column;gap:8px;padding-top:22px}
+.sponsor-numbers strong{font-size:clamp(40px,4.4vw,64px);font-weight:500;line-height:1;letter-spacing:-.06em;font-variant-numeric:tabular-nums}
+.sponsor-numbers span{font-size:15.5px;line-height:1.5;color:var(--text-strong)}
+
+/* Who you'll meet: heading beside two tag lists, then three photos. */
+.sponsor-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px clamp(28px,5vw,72px);align-items:start}
+.sponsor-tags-label{margin:0 0 12px;font-size:14px;font-weight:500;color:var(--muted)}
+.sponsor-tags-label:not(:first-child){margin-top:26px}
+.sponsor-tags ul{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.sponsor-tags li{padding:9px 16px;border:1px solid var(--line-strong);border-radius:999px;background:var(--card);font-size:15.5px;color:var(--ink)}
+.sponsor-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:clamp(36px,5vw,60px)}
+.sponsor-photos figure{margin:0}
+.sponsor-photos img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:16px;background:var(--panel)}
+
+/* Benefits: four numbered points on a ruled grid, then the in-kind panel. */
+.sponsor-benefits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(28px,4vw,56px);margin:0;padding:0;list-style:none}
+.sponsor-benefits li{padding:26px 0 30px;border-top:1px solid var(--line)}
+.sponsor-num{display:block;margin-bottom:16px;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--accent)}
+.sponsor-benefits h3{font-size:clamp(24px,2.2vw,30px);line-height:1.15;letter-spacing:-.04em}
+.sponsor-benefits p{max-width:470px;margin-top:12px;font-size:16.5px;color:var(--text-strong)}
+.sponsor-inkind{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:8px 40px;margin-top:clamp(32px,4vw,52px);padding:clamp(24px,3vw,36px);border:1px solid var(--line);border-radius:20px;background:var(--card)}
+.sponsor-inkind h3{grid-row:span 2;font-size:clamp(26px,2.6vw,36px);letter-spacing:-.045em}
+.sponsor-inkind p{font-size:16.5px;color:var(--text-strong)}
+.sponsor-inkind ul{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0;padding:0;list-style:none}
+.sponsor-inkind li{padding:8px 14px;border-radius:999px;background:var(--panel);font-size:15px;color:var(--ink)}
+
+/* Sponsor wall: every logo on the same light plate in both themes, sized for equal visual weight in the markup. */
+.sponsor-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.sponsor-wall li{display:grid;place-items:center;min-height:112px;padding:20px 16px;border:1px solid var(--line);border-radius:16px;background:var(--plate);transition:transform .3s var(--ease-out),box-shadow .3s ease}
+.sponsor-wall picture{display:contents}
+.sponsor-wall img{display:block;max-width:100%;height:auto}
+@media(hover:hover) and (pointer:fine){.sponsor-wall li:hover{transform:translateY(-3px);box-shadow:0 12px 28px var(--soft-shadow)}}
+
+/* Contact: heading beside the form. */
+.sponsor-contact{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:28px clamp(28px,5vw,80px);align-items:start}
+.sponsor-direct{margin-top:22px;font-size:16px;color:var(--text-strong)}
+.sponsor-direct a{border-bottom:1px solid var(--line-accent);color:var(--ink)}
+.sponsor-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:clamp(24px,3vw,40px);border:1px solid var(--line);border-radius:22px;background:var(--card)}
+.sponsor-field{display:grid;gap:8px;min-width:0;margin:0;padding:0;border:0}
+.sponsor-field-wide{grid-column:1 / -1}
+.sponsor-field>label,.sponsor-interests legend{padding:0;font-size:15px;font-weight:500;color:var(--ink)}
+.sponsor-field>label span[aria-hidden]{color:var(--accent)}
+.sponsor-optional{margin-left:6px;font-weight:400;color:var(--muted)}
+.sponsor-field input[type='text'],.sponsor-field input[type='email'],.sponsor-field textarea{width:100%;min-height:50px;padding:13px 16px;border:1px solid var(--line-strong);border-radius:12px;background:var(--paper);color:var(--ink);font:inherit;font-size:16px;transition:border-color .2s ease,box-shadow .2s ease}
+.sponsor-field textarea{min-height:120px;resize:vertical}
+.sponsor-field input:focus-visible,.sponsor-field textarea:focus-visible{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
+.sponsor-field [aria-invalid='true']{border-color:var(--accent)}
+.sponsor-error{font-size:14px;color:var(--accent-ink)}
+.sponsor-interests legend{margin-bottom:10px}
+.sponsor-interests>div{display:flex;flex-wrap:wrap;gap:8px}
+.sponsor-chip{position:relative;cursor:pointer}
+.sponsor-chip input{position:absolute;opacity:0;pointer-events:none}
+.sponsor-chip span{display:inline-flex;align-items:center;min-height:42px;padding:9px 16px;border:1px solid var(--line-strong);border-radius:999px;font-size:15px;color:var(--text-strong);transition:background .2s ease,border-color .2s ease,color .2s ease}
+.sponsor-chip:hover span{border-color:var(--line-accent)}
+.sponsor-chip input:checked+span{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.sponsor-chip input:focus-visible+span{outline:2px solid var(--accent);outline-offset:3px}
+.sponsor-trap{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.sponsor-submit{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:4px}
+.sponsor-submit .button:disabled{opacity:.6;cursor:progress}
+.sponsor-status{font-size:15.5px;color:var(--text-strong)}
+.sponsor-status.is-done{color:var(--ink);font-weight:500}
+.sponsor-status.is-error{color:var(--accent-ink)}
+
+@media(max-width:900px){
+  .sponsor-split,.sponsor-contact{grid-template-columns:1fr}
+  .sponsor-benefits{grid-template-columns:1fr}
+  .sponsor-inkind{grid-template-columns:1fr}
+  .sponsor-inkind h3{grid-row:auto}
+}
+@media(max-width:767px){
+  .sponsor-numbers{grid-template-columns:1fr;gap:0}
+  .sponsor-numbers li{flex-direction:row;align-items:baseline;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .sponsor-numbers strong{flex:none;min-width:2.6em;font-size:40px}
+  .sponsor-photos{grid-template-columns:1fr}
+  .sponsor-photos figure:nth-child(n+2){display:none}
+  .sponsor-form{grid-template-columns:1fr;padding:20px}
+  .sponsor-wall{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .sponsor-wall li{min-height:92px;padding:16px 12px}
+}

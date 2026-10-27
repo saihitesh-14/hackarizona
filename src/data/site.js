@@ -15,6 +15,9 @@ export const site = {
   registration: { opensMonth: '2027-01', url: null, platform: null },
   links: { email: 'hackaz@arizona.edu', instagram: 'https://www.instagram.com/hack.arizona/', discord: 'https://discord.gg/8BkZftYGWp', codeOfConduct: 'https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md' },
   mlhMember: null,
+  // The sponsor contact form. Web3Forms delivers each submission to the inbox the key was created for
+  // (hackaz@arizona.edu); the key is public by design. Until it is set, the form opens a pre-filled email instead.
+  forms: { sponsorEndpoint: 'https://api.web3forms.com/submit', sponsorKey: null },
 };
 
 /** The wall-clock time in a time zone as 'YYYY-MM-DDTHH:MM', so it compares as a string against config dates. */

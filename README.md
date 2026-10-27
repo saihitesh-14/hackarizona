@@ -64,6 +64,10 @@ Self-hosted from npm (Fontsource), imported at the top of `base.css`. All three 
 
 Every face uses `font-display: swap`; the Latin Schibsted Grotesk file is preloaded in the built pages.
 
+## Sponsor contact form
+
+The form on `sponsor/` sends to [Web3Forms](https://web3forms.com/), which emails each enquiry to hackaz@arizona.edu. Create an access key there for hackaz@arizona.edu and put it in `src/data/site.js` (`forms.sponsorKey`); the key is public by design. Until then, and whenever sending fails, the form opens a pre-filled email to hackaz@arizona.edu instead.
+
 ## Deploy (Vercel)
 
 `vercel.json` holds the build settings: `npm run build`, output `dist`, trailing slashes (`/story` redirects to `/story/`), and an `X-Robots-Tag: noindex` header that keeps the draft out of search engines (remove it at launch). Connect the project once at https://vercel.com/new by importing this GitHub repository; Vercel then deploys every push, `main` to production and other branches to preview URLs (Project → Settings → Environments sets which branch counts as production).

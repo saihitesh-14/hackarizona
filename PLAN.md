@@ -23,7 +23,8 @@ Built with: the `minimal-motion-web` skill (design language, motion, interaction
 - The 3D logo medallion was written, then dropped at Sai's request on 26 Oct 2026 (the code is in git history, commit 7f00768).
 - The shared shell (header, dock, footer, loader, theme, pause, reveals, cursor, signal spine), colour tokens, optimised photos, logos and headshots.
 - Home page (26 Oct 2026): hero banner (the early-years auditorium) with the logo as a motion graphic, numbers, what Hack Arizona is, "Real skills, polished here" with a panel for people looking for builders (replaced the 2025 challenges at Sai's request), a carousel of tilted photo cards with hand-written notes ("Good ideas. Better company.", after Sai's reference), all 19 sponsors from the official site, questions, and the join block.
-- Story, Events, Sponsor and Team: not built yet (title and placeholder only).
+- Sponsor page (27 Oct 2026): who you'll meet, four ways sponsors get value and in-kind options (from the 2026-27 deck), the 19 sponsors, and a contact form (name, email, organisation, interests, message) that emails hackaz@arizona.edu through Web3Forms once its key is in src/data/site.js, and opens a pre-filled email until then.
+- Story, Events and Team: not built yet (title and placeholder only).
 
 ---
 

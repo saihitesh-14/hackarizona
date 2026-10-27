@@ -3,7 +3,7 @@
 <head>
   <!-- @include partials/head-meta.html -->
   <title>Sponsor | Hack Arizona</title>
-  <meta name="description" content="Sponsor Hack Arizona 2027, 27 to 28 March 2027 in Tucson. Contact the team at hackaz@arizona.edu.">
+  <meta name="description" content="Sponsor Hack Arizona 2027 (27 to 28 March, Tucson): meet University of Arizona builders, run a workshop, set a challenge. Leave your details and the team will be in touch.">
   <link rel="stylesheet" href="/src/styles/base.css">
   <link rel="stylesheet" href="/src/styles/pages/sponsor.css">
   <script type="module" src="/src/js/shell.js"></script>
@@ -15,11 +15,146 @@
   <!-- @include partials/dock.html -->
   <main id="main">
     <!-- PAGE CONTENT START: the sponsor stage owns everything between START and END (and src/styles/pages/sponsor.css, src/js/pages/sponsor.js). -->
-    <section class="page-intro section-shell entrance" id="intro" aria-labelledby="page-title">
-      <h1 class="display" id="page-title"><span class="line"><span>Sponsor Hack Arizona</span></span></h1>
+    <section class="page-intro section-shell entrance sponsor-intro" id="intro" aria-labelledby="page-title">
+      <p class="status-pill"><span class="status-dot" aria-hidden="true"></span>Hack Arizona 2027 · 27 to 28 March · Tucson</p>
+      <h1 class="display" id="page-title"><span class="line"><span>Meet the builders</span></span><span class="line"><span><em>before anyone else.</em></span></span></h1>
+      <p class="lead">Sponsor Hack Arizona and spend 24 hours with University of Arizona students from every discipline while they build something real.</p>
+      <div class="actions">
+        <a class="button" href="#contact" data-magnetic>Get in touch <span class="arrow arrow-se" aria-hidden="true">↘</span></a>
+        <a class="text-link" href="#sponsors">See who sponsors us <span class="arrow arrow-se" aria-hidden="true">↘</span></a>
+      </div>
+      <ul class="sponsor-numbers" aria-label="Hack Arizona in numbers">
+        <li><strong>180+</strong><span>participants at Hack Arizona 2026</span></li>
+        <li><strong>100</strong><span>participants at Hack Arizona 2025</span></li>
+        <li><strong>24</strong><span>hours of building, mentoring and demos</span></li>
+      </ul>
     </section>
-    <section class="section section-shell" id="todo" aria-label="Page content to come">
-      <p data-placeholder="sponsor page content">[TBC: the sponsor page stage fills this page]</p>
+
+    <section class="section section-shell" id="audience" aria-labelledby="audience-title">
+      <div class="sponsor-split">
+        <div class="section-heading" data-reveal="children">
+          <h2 id="audience-title">Who you&#39;ll <em>meet.</em></h2>
+          <p class="section-intro">First-years through graduating seniors and grad students, many of them looking for internships and full-time roles.</p>
+        </div>
+        <div class="sponsor-tags" data-reveal>
+          <p class="sponsor-tags-label">Majors</p>
+          <ul><li>Computer Science</li><li>Artificial Intelligence</li><li>Engineering</li><li>Data Science</li><li>Information Science</li></ul>
+          <p class="sponsor-tags-label">They build</p>
+          <ul><li>Software</li><li>AI and machine learning</li><li>Web</li><li>Hardware</li><li>Data</li><li>Design</li></ul>
+        </div>
+      </div>
+      <div class="sponsor-photos" data-reveal>
+        <figure>
+          <picture>
+            <source type="image/avif" srcset="/img/ha26-sponsor-table-480.avif 480w, /img/ha26-sponsor-table-960.avif 960w, /img/ha26-sponsor-table-1600.avif 1600w" sizes="(max-width: 767px) 100vw, 33vw">
+            <source type="image/webp" srcset="/img/ha26-sponsor-table-480.webp 480w, /img/ha26-sponsor-table-960.webp 960w, /img/ha26-sponsor-table-1600.webp 1600w" sizes="(max-width: 767px) 100vw, 33vw">
+            <img src="/img/ha26-sponsor-table-960.jpg" srcset="/img/ha26-sponsor-table-480.jpg 480w, /img/ha26-sponsor-table-960.jpg 960w" sizes="(max-width: 767px) 100vw, 33vw" alt="People gather at a table under a Center for the Philosophy of Freedom banner, where two people sit handing out materials." width="1600" height="1067" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <figure>
+          <picture>
+            <source type="image/avif" srcset="/img/ha26-judging-480.avif 480w, /img/ha26-judging-960.avif 960w, /img/ha26-judging-1600.avif 1600w" sizes="(max-width: 767px) 100vw, 33vw">
+            <source type="image/webp" srcset="/img/ha26-judging-480.webp 480w, /img/ha26-judging-960.webp 960w, /img/ha26-judging-1600.webp 1600w" sizes="(max-width: 767px) 100vw, 33vw">
+            <img src="/img/ha26-judging-960.jpg" srcset="/img/ha26-judging-480.jpg 480w, /img/ha26-judging-960.jpg 960w" sizes="(max-width: 767px) 100vw, 33vw" alt="People in grey polo shirts, one with a Nuclearn logo, hold clipboards and look at a team's laptop." width="1600" height="1067" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <figure>
+          <picture>
+            <source type="image/avif" srcset="/img/ha25-aws-winners-480.avif 480w, /img/ha25-aws-winners-960.avif 960w, /img/ha25-aws-winners-1600.avif 1600w" sizes="(max-width: 767px) 100vw, 33vw">
+            <source type="image/webp" srcset="/img/ha25-aws-winners-480.webp 480w, /img/ha25-aws-winners-960.webp 960w, /img/ha25-aws-winners-1600.webp 1600w" sizes="(max-width: 767px) 100vw, 33vw">
+            <img src="/img/ha25-aws-winners-960.jpg" srcset="/img/ha25-aws-winners-480.jpg 480w, /img/ha25-aws-winners-960.jpg 960w" sizes="(max-width: 767px) 100vw, 33vw" alt="A group stands in a row under a screen that reads 'Amazon AWS Challenge Winners'." width="1600" height="1107" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="benefits" aria-labelledby="benefits-title">
+      <div class="section-heading" data-reveal="children">
+        <h2 id="benefits-title">Four ways your <em>team gets value.</em></h2>
+      </div>
+      <ol class="sponsor-benefits" data-reveal>
+        <li><span class="sponsor-num" aria-hidden="true">01</span><h3>Recruiting and resume access</h3><p>Meet candidates directly and receive a resume book of opted-in participants: the fastest way to find interns and new grads from the University of Arizona.</p></li>
+        <li><span class="sponsor-num" aria-hidden="true">02</span><h3>A workshop or tech talk</h3><p>Run a hands-on session for an engaged audience. Last year&#39;s AWS and GitHub workshops were packed.</p></li>
+        <li><span class="sponsor-num" aria-hidden="true">03</span><h3>Brand visibility</h3><p>Your logo on the website and shirts, a table on site, and shout-outs to our student community.</p></li>
+        <li><span class="sponsor-num" aria-hidden="true">04</span><h3>Sponsor a challenge</h3><p>Set a themed track, judge it and award branded prizes, putting your product and your problems in front of every team.</p></li>
+      </ol>
+      <div class="sponsor-inkind" data-reveal>
+        <h3>Beyond cash</h3>
+        <p>In-kind support counts too, with logo placement and shout-outs to match.</p>
+        <ul><li>Cloud or API credits</li><li>Prizes and swag</li><li>Food or coffee</li><li>Mentors and judges</li></ul>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="sponsors" aria-labelledby="sponsors-title">
+      <div class="section-heading" data-reveal="children">
+        <h2 id="sponsors-title">In good <em>company.</em></h2>
+        <p class="section-intro">The companies, organisations and University of Arizona units that sponsor Hack Arizona.</p>
+      </div>
+      <ul class="sponsor-wall" data-reveal>
+        <li><picture><source type="image/webp" srcset="/logos/amazon.webp"><img src="/logos/amazon.png" alt="Amazon Tempe Town Lake Campus" width="113" height="40" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/nuclearn.webp"><img src="/logos/nuclearn.png" alt="Nuclearn" width="141" height="33" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/asua.webp"><img src="/logos/asua.png" alt="Associated Students of the University of Arizona (ASUA)" width="107" height="44" loading="lazy" decoding="async"></picture></li>
+        <li><img src="/logos/general-dynamics-mission-systems.svg" alt="General Dynamics Mission Systems" width="188" height="22" loading="lazy" decoding="async"></li>
+        <li><picture><source type="image/webp" srcset="/logos/github.webp"><img src="/logos/github.png" alt="GitHub" width="126" height="36" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/university-of-arizona.webp"><img src="/logos/university-of-arizona.png" alt="University of Arizona" width="64" height="60" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/university-libraries.webp"><img src="/logos/university-libraries.png" alt="University Libraries" width="166" height="28" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/center-philosophy-of-freedom.webp"><img src="/logos/center-philosophy-of-freedom.png" alt="Center for the Philosophy of Freedom" width="141" height="33" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/honors-college.webp"><img src="/logos/honors-college.png" alt="W.A. Franke Honors College" width="134" height="35" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/tech-launch-arizona.webp"><img src="/logos/tech-launch-arizona.png" alt="Tech Launch Arizona" width="144" height="33" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/startup-wildcats.webp"><img src="/logos/startup-wildcats.png" alt="Startup Wildcats" width="66" height="60" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/information-technology.webp"><img src="/logos/information-technology.png" alt="Information Technology" width="137" height="34" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/office-of-the-provost.webp"><img src="/logos/office-of-the-provost.png" alt="Office of the Provost" width="161" height="28" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/engineering.webp"><img src="/logos/engineering.png" alt="Engineering" width="165" height="28" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/responsible-ai.webp"><img src="/logos/responsible-ai.png" alt="Responsible Artificial Intelligence" width="162" height="28" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/startup-tucson.webp"><img src="/logos/startup-tucson.png" alt="Startup Tucson" width="112" height="41" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/research-innovation-impact.webp"><img src="/logos/research-innovation-impact.png" alt="Research, Innovation &amp; Impact" width="158" height="29" loading="lazy" decoding="async"></picture></li>
+        <li><img src="/logos/veridise.svg" alt="Veridise" width="143" height="33" loading="lazy" decoding="async"></li>
+        <li><picture><source type="image/webp" srcset="/logos/general-education.webp"><img src="/logos/general-education.png" alt="General Education" width="154" height="29" loading="lazy" decoding="async"></picture></li>
+      </ul>
+    </section>
+
+    <section class="section section-shell" id="contact" aria-labelledby="contact-title">
+      <div class="sponsor-contact">
+        <div class="section-heading" data-reveal="children">
+          <h2 id="contact-title">Let&#39;s <em>talk.</em></h2>
+          <p class="section-intro">Leave your details and the Hack Arizona team will get back to you with the sponsorship packet and next steps.</p>
+          <p class="sponsor-direct">Prefer email? <a href="mailto:hackaz@arizona.edu">hackaz@arizona.edu</a></p>
+        </div>
+        <form class="sponsor-form" data-sponsor-form action="mailto:hackaz@arizona.edu" method="post" enctype="text/plain" novalidate data-reveal>
+          <div class="sponsor-field">
+            <label for="sf-name">Your name <span aria-hidden="true">*</span></label>
+            <input id="sf-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="sponsor-field">
+            <label for="sf-email">Work email <span aria-hidden="true">*</span></label>
+            <input id="sf-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="sponsor-field sponsor-field-wide">
+            <label for="sf-org">Company or organisation</label>
+            <input id="sf-org" name="organisation" type="text" autocomplete="organization">
+          </div>
+          <fieldset class="sponsor-field sponsor-field-wide sponsor-interests">
+            <legend>Interested in</legend>
+            <div>
+              <label class="sponsor-chip"><input type="checkbox" name="interests" value="Sponsorship"><span>Sponsorship</span></label>
+              <label class="sponsor-chip"><input type="checkbox" name="interests" value="A challenge or track"><span>A challenge or track</span></label>
+              <label class="sponsor-chip"><input type="checkbox" name="interests" value="Recruiting"><span>Recruiting</span></label>
+              <label class="sponsor-chip"><input type="checkbox" name="interests" value="A workshop or tech talk"><span>A workshop or tech talk</span></label>
+              <label class="sponsor-chip"><input type="checkbox" name="interests" value="Judging or mentoring"><span>Judging or mentoring</span></label>
+              <label class="sponsor-chip"><input type="checkbox" name="interests" value="In-kind (credits, prizes, food)"><span>In-kind (credits, prizes, food)</span></label>
+            </div>
+          </fieldset>
+          <div class="sponsor-field sponsor-field-wide">
+            <label for="sf-message">Anything else? <span class="sponsor-optional">Optional</span></label>
+            <textarea id="sf-message" name="message" rows="4"></textarea>
+          </div>
+          <input class="sponsor-trap" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="sponsor-submit sponsor-field-wide">
+            <button class="button" type="submit" data-magnetic>Send <span class="arrow arrow-ne" aria-hidden="true">↗</span></button>
+            <p class="sponsor-status" data-sponsor-status role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
     </section>
     <!-- PAGE CONTENT END -->
   </main>
