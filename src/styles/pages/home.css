@@ -3,7 +3,7 @@
 /* Hero: a banner, dark in both themes: the early-years auditorium under a navy wash, the copy on the left and the
    logo as a motion graphic on the right (src/js/pages/home-mark.js). The banner runs up behind the header, so the
    header and the hero swap in the banner colours for their usual roles. */
-.home-hero,.site-header{--paper:var(--banner-bg);--card:var(--banner-card);--node:var(--banner-card);--ink:var(--banner-ink);--ink-hover:var(--banner-text);--text-strong:var(--banner-text);--muted:var(--banner-muted);--muted-2:var(--banner-muted);--accent:var(--banner-accent);--accent-ink:var(--banner-accent);--live:var(--banner-accent);--line:var(--banner-line-soft);--line-strong:var(--banner-line);--line-accent:var(--banner-line);color:var(--ink)}
+.home-hero>:not(.home-stage),.home-mission,.site-header{--paper:var(--banner-bg);--card:var(--banner-card);--node:var(--banner-card);--ink:var(--banner-ink);--ink-hover:var(--banner-text);--text-strong:var(--banner-text);--muted:var(--banner-muted);--muted-2:var(--banner-muted);--accent:var(--banner-accent);--accent-ink:var(--banner-accent);--live:var(--banner-accent);--line:var(--banner-line-soft);--line-strong:var(--banner-line);--line-accent:var(--banner-line);color:var(--ink)}
 .home-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center;gap:40px clamp(28px,5vw,80px);min-height:clamp(560px,calc(100svh - var(--header-h) - 24px),880px);padding-bottom:clamp(64px,8vw,120px)}
 .home-hero-copy>.status-pill{margin-bottom:2px}
 .home-countdown{margin-top:22px;font-size:13px;color:var(--muted)}
@@ -13,8 +13,26 @@
 .home-banner{position:absolute;inset:calc(-1 * var(--header-h)) 0 0;z-index:-1;overflow:hidden;background:var(--banner-bg)}
 .home-banner picture{position:absolute;inset:0}
 .home-banner img{width:100%;height:100%;object-fit:cover;object-position:50% 32%;opacity:.7;animation:home-pan 32s var(--ease-in-out) infinite alternate}
-.home-banner:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--banner-bg) 6%,color-mix(in srgb,var(--banner-bg) 74%,transparent) 46%,color-mix(in srgb,var(--banner-bg) 30%,transparent)),linear-gradient(to top,var(--banner-bg),transparent 38%),linear-gradient(to bottom,color-mix(in srgb,var(--banner-bg) 70%,transparent),transparent 26%)}
+.home-banner-wash{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--banner-bg) 6%,color-mix(in srgb,var(--banner-bg) 74%,transparent) 46%,color-mix(in srgb,var(--banner-bg) 30%,transparent)),linear-gradient(to top,var(--banner-bg),transparent 38%),linear-gradient(to bottom,color-mix(in srgb,var(--banner-bg) 70%,transparent),transparent 26%)}
 @keyframes home-pan{from{transform:scale(1.04)}to{transform:scale(1.12) translate3d(-1.5%,1%,0)}}
+
+/* Scroll story (src/js/pages/home-intro.js; wide screens with motion on): the hero pins for a while. The copy lifts
+   away, the photo comes into full view, the logo glides to the centre, a mission line lights up word by word, and a
+   dome in the page colour rises with words running round its edge, handing over to the next section. Without the
+   story (phones, paused or reduced motion, no JavaScript) the stage stays hidden and the hero is the plain banner. */
+.home-hero.is-scrolly{height:100vh;min-height:0}
+.home-stage{position:absolute;inset:calc(-1 * var(--header-h)) 0 0;z-index:2;display:none;overflow:hidden;pointer-events:none}
+.is-scrolly .home-stage{display:block}
+.home-mission{position:absolute;left:50%;top:64%;width:min(1040px,86vw);margin:0;translate:-50% -50%;text-align:center;font-size:clamp(38px,4.6vw,70px);font-weight:500;line-height:1.06;letter-spacing:-.055em;text-shadow:0 2px 30px var(--banner-bg);visibility:hidden}
+.home-mission span{display:inline-block;opacity:.16}
+.home-mission em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.035em;color:var(--accent)}
+.home-dome{position:absolute;left:50%;top:100%;width:max(150vw,1500px);aspect-ratio:1;translate:-50% 0;border-radius:50%;background:var(--paper);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line-strong),0 -30px 80px var(--dialog-shadow)}
+.home-dome-arc{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.home-dome-arc text{font-family:var(--sans);font-size:9.5px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;fill:var(--ink)}
+.home-dome-line{position:absolute;left:50%;top:7.5%;display:flex;align-items:center;gap:22px;margin:0;translate:-50% 0;font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.home-dome-line img{width:40px;height:40px}
+html.lenis.lenis-smooth{scroll-behavior:auto!important}
+html.lenis.lenis-stopped{overflow:hidden}
 
 /* The mark: a soft brand glow, two orbit rings with travelling dots, and the logo itself, floating and leaning toward
    the pointer (--tilt-x, --tilt-y from the module). It stays hidden until the module has set up its first frame. */
@@ -102,7 +120,7 @@
   .home-moments-aside{margin:-14px 0 30px}
 }
 @media(max-width:767px){
-  .home-banner:after{background:linear-gradient(to bottom,color-mix(in srgb,var(--banner-bg) 55%,transparent),color-mix(in srgb,var(--banner-bg) 82%,transparent) 45%,var(--banner-bg))}
+  .home-banner-wash{background:linear-gradient(to bottom,color-mix(in srgb,var(--banner-bg) 55%,transparent),color-mix(in srgb,var(--banner-bg) 82%,transparent) 45%,var(--banner-bg))}
   .home-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .home-stats li{padding:20px 14px 20px 0}
   .home-moments-track{padding-block:18px 36px}

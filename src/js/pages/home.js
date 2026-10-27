@@ -1,9 +1,11 @@
 // Home page module, owned by the home stage. Import shared helpers from ../shell.js (see src/COMPONENTS.md).
 import { localStamp, site, statusFor } from '../../data/site.js';
+import { initIntro } from './home-intro.js';
 import { initMark } from './home-mark.js';
 import { initMoments } from './home-moments.js';
 
 initMark(document.querySelector('.home-mark'));
+initIntro(document.querySelector('.home-hero'));
 initMoments(document.querySelector('#moments'));
 
 // The status pill and the days to go, judged on the event's own clock (America/Phoenix). The markup already says
