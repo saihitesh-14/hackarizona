@@ -50,7 +50,7 @@ All internal links are relative, so the built site works at a domain root or in 
   node -e "const s=require('sharp'),m='public/brand/hackaz-mark.svg';s(m,{density:384}).resize(32,32).png().toFile('public/brand/favicon-32.png');s(m,{density:384}).resize(160,160).extend({top:10,bottom:10,left:10,right:10,background:'#FFFFFF'}).flatten({background:'#FFFFFF'}).png().toFile('public/brand/apple-touch-icon.png')"
   ```
 - `public/grain.png` is the paper grain tile from the minimal-motion-web starter (sparse specks on transparency).
-- The "Hack Arizona" wordmark in the header is HTML text in the site sans until the official text lockup font or a vector lockup is supplied.
+- The "HACK ARIZONA" wordmark in the header is an inline SVG traced from the official lockup Sai supplied (`refs/brand/hackaz-lockup-white.webp`) by `scripts/trace-wordmark.py` (needs `pip install potracer numpy pillow`). It is drawn in `currentColor`, so it follows the theme.
 
 ## Fonts and licences
 
