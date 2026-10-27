@@ -9,6 +9,7 @@ applied, every bit of metadata removed (EXIF, GPS location, maker notes) and the
 | `ha25-workshop-room.jpg` | `website-10.heic` | 22 Mar 2025, 14:31 |
 | `ha26-team-countdown.jpg` | `website-22.heic` | 26 Apr 2026, 12:20 |
 | `ha26-pitch.jpg` | `website-23.heic` | 26 Apr 2026, 12:35 |
+| `ha25-screen-room.jpg` | `8.jpg` (27 Oct 2026, for "What is Hack Arizona?") | Hack Arizona 2025 (the screen reads March 22-23); no metadata in the file |
 | `auditorium-banner.webp` | `7.webp` (26 Oct 2026, as the hero banner) | early years; the same panorama as `01 Branding/hackaz.jpg.webp`, at 1920px |
 
 Sai also pasted about twenty photos straight into the chat. Pasted images are not saved as files in the build session,

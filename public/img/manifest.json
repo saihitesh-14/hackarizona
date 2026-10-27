@@ -616,16 +616,15 @@
   {
     "id": "ha25-workshop-room",
     "slots": [
-      "home-about"
+      "board"
     ],
     "year": 2025,
     "event": "Hack Arizona 2025",
-    "width": 1600,
-    "height": 1200,
+    "width": 960,
+    "height": 720,
     "widths": [
       480,
-      960,
-      1600
+      960
     ],
     "jpgWidths": [
       480,
@@ -712,6 +711,32 @@
     "focal": {
       "x": 0.5,
       "y": 0.3
+    }
+  },
+  {
+    "id": "ha25-screen-room",
+    "slots": [
+      "home-about"
+    ],
+    "year": 2025,
+    "event": "Hack Arizona 2025",
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A busy room of students at laptops and talking in groups, under a big screen that reads The University of Arizona, Hack Arizona, March 22-23.",
+    "caption": "Hack Arizona 2025",
+    "source": "refs/photos-sai/ha25-screen-room.jpg",
+    "focal": {
+      "x": 0.5,
+      "y": 0.45
     }
   }
 ]

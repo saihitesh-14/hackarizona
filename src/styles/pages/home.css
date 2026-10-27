@@ -5,9 +5,14 @@
    header and the hero swap in the banner colours for their usual roles. */
 .home-hero>:not(.home-stage),.home-mission,.site-header{--paper:var(--banner-bg);--card:var(--banner-card);--node:var(--banner-card);--ink:var(--banner-ink);--ink-hover:var(--banner-text);--text-strong:var(--banner-text);--muted:var(--banner-muted);--muted-2:var(--banner-muted);--accent:var(--banner-accent);--accent-ink:var(--banner-accent);--live:var(--banner-accent);--line:var(--banner-line-soft);--line-strong:var(--banner-line);--line-accent:var(--banner-line);color:var(--ink)}
 .home-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center;gap:40px clamp(28px,5vw,80px);min-height:clamp(560px,calc(100svh - var(--header-h) - 24px),880px);padding-bottom:clamp(64px,8vw,120px)}
-.home-hero-copy>.status-pill{margin-bottom:2px}
-.home-countdown{margin-top:22px;font-size:13px;color:var(--muted)}
-.home-countdown strong{font-size:15px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.home-hero-copy>.status-pill{margin-bottom:2px;padding:9px 18px 9px 14px;font-size:15px;color:var(--ink)}
+/* The hero copy sits on a photo, so it runs larger and brighter than the page's usual small text. */
+.home-hero-copy .lead{max-width:600px;font-size:clamp(19px,1.5vw,22px);color:var(--ink)}
+.home-hero-copy .facts{margin-top:22px;font-size:16px;color:var(--text-strong)}
+.home-hero-copy .facts li+li:before{color:var(--muted)}
+.home-hero-copy .button,.home-hero-copy .text-link{font-size:15.5px}
+.home-countdown{margin-top:24px;font-size:16px;color:var(--text-strong)}
+.home-countdown strong{font-size:19px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
 
 /* The banner photo, slowly drifting, washed darker on the left where the copy sits and at the bottom edge. */
 .home-banner{position:absolute;inset:calc(-1 * var(--header-h)) 0 0;z-index:-1;overflow:hidden;background:var(--banner-bg)}
@@ -57,39 +62,39 @@ html.lenis.lenis-stopped{overflow:hidden}
 .home-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
 .home-stats li{display:flex;flex-direction:column;gap:10px;padding:26px 22px 26px 0;border-bottom:1px solid var(--line)}
 .home-stats strong{font-size:clamp(46px,5vw,76px);font-weight:500;line-height:1;letter-spacing:-.06em;font-variant-numeric:tabular-nums}
-.home-stats span{font-size:14px;line-height:1.5;color:var(--text-strong)}
+.home-stats span{font-size:15.5px;line-height:1.5;color:var(--text-strong)}
 .home-stats .home-stat-year{margin-top:auto;font-family:var(--serif);font-style:italic;font-size:17px;color:var(--accent)}
 
 /* What it is: text beside a photo. */
 .home-about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,5vw,72px);align-items:center}
-.home-prose{display:grid;gap:18px;max-width:560px;font-size:16px;color:var(--text-strong)}
+.home-prose{display:grid;gap:18px;max-width:580px;font-size:17px;color:var(--text-strong)}
 .home-photo{margin:0}
 .home-photo img{display:block;width:100%;height:auto;border-radius:18px;background:var(--panel)}
-.home-photo figcaption{margin-top:10px;font-size:12px;color:var(--muted)}
+.home-photo figcaption{margin-top:12px;font-size:14px;color:var(--muted)}
 
 /* Skills: three steps on a ruled grid, then a panel for the people looking for builders. */
 .home-skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(24px,3.5vw,48px);margin:0;padding:0;list-style:none}
 .home-skills li{padding:26px 0 30px;border-top:1px solid var(--line)}
 .home-skills-num{display:block;margin-bottom:18px;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--accent)}
 .home-skills h3{font-size:clamp(24px,2.2vw,30px);line-height:1.15;letter-spacing:-.04em}
-.home-skills p{max-width:340px;margin-top:12px;font-size:15px;color:var(--text-strong)}
+.home-skills p{max-width:350px;margin-top:12px;font-size:16.5px;color:var(--text-strong)}
 .home-builders{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px clamp(28px,5vw,72px);align-items:end;margin-top:clamp(44px,6vw,84px);padding:clamp(28px,4vw,52px);border:1px solid var(--line);border-radius:22px;background:var(--card)}
 .home-builders h3{font-size:clamp(34px,4vw,58px);line-height:1.04;letter-spacing:-.055em}
-.home-builders p{max-width:440px;font-size:16px;color:var(--text-strong)}
+.home-builders p{max-width:460px;font-size:17px;color:var(--text-strong)}
 .home-builders .actions{margin-top:24px}
 
 /* Moments: tilted instant-photo cards with hand-written notes in a horizontal scroller. It is a native scroll area
    (swipe, trackpad, keyboard, scroll bar hidden); src/js/pages/home-moments.js adds the buttons and mouse drag.
    --r, --y (tilt and lift) and --fx, --fy (the photo's focal point) are set per card in the markup. */
 .home-moments-head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:0 48px}
-.home-kicker{margin-bottom:20px;font-size:14px;color:var(--accent-ink)}
+.home-kicker{margin-bottom:20px;font-size:15.5px;color:var(--accent-ink)}
 .home-moments-aside{display:grid;justify-items:start;gap:18px;margin-bottom:46px}
-.home-moments-aside p{font-size:15px;color:var(--text-strong)}
+.home-moments-aside p{font-size:16.5px;color:var(--text-strong)}
 .home-moments-controls{display:flex;align-items:center;gap:12px}
 .home-moments-btn{display:grid;place-items:center;width:48px;height:48px;padding:0;border:1px solid var(--line-strong);border-radius:50%;background:none;color:var(--ink);font-size:18px;transition:background .2s ease,border-color .2s ease,opacity .2s ease}
 .home-moments-btn:hover:not(:disabled){border-color:var(--line-accent);background:var(--card)}
 .home-moments-btn:disabled{opacity:.35;cursor:default}
-.home-moments-hint{margin-left:10px;font-size:13px;color:var(--muted)}
+.home-moments-hint{margin-left:10px;font-size:14px;color:var(--muted)}
 .home-moments-track{display:flex;gap:clamp(18px,2.4vw,34px);margin:0;padding:26px var(--page-inset) 48px;list-style:none;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scroll-padding-inline:var(--page-inset);scrollbar-width:none;background:radial-gradient(circle,var(--line) 1px,transparent 1.3px) 0 0/22px 22px}
 .home-moments-track::-webkit-scrollbar{display:none}
 .home-moments-track:focus-visible{outline-offset:-6px}
@@ -100,9 +105,12 @@ html.lenis.lenis-stopped{overflow:hidden}
 .home-moment img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:var(--fx,50%) var(--fy,50%);border-radius:2px;background:var(--panel);pointer-events:none;-webkit-user-drag:none}
 .home-moment figcaption{display:flex;align-items:baseline;justify-content:space-between;gap:12px;min-height:66px;padding:14px 4px 16px}
 .home-moment-note{font-family:var(--hand);font-size:clamp(19px,1.6vw,23px);line-height:1.15;color:var(--ink);rotate:-2deg}
-.home-moment-year{flex:none;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.home-moment-year{flex:none;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
 @media(hover:hover) and (pointer:fine){.home-moment:hover{rotate:0deg;translate:0 calc(var(--y,0px) - 8px)}}
 @media(hover:none){.home-moments-hint{display:none}}
+
+/* Questions: answers a little larger than the base style. */
+#faq .faq-list details>:not(summary){font-size:16.5px}
 
 /* Sponsor wall: every logo on the same light plate, in both themes, sized for equal visual weight in the markup. */
 .home-sponsors{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:12px;margin:0;padding:0;list-style:none}
