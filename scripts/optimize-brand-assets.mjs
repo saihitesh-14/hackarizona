@@ -23,7 +23,8 @@ const NAVY = [7, 21, 46]; // ~#07152E, dark theme page
 // One entry per brand. light/dark = source file names (in dir, default LOGO_SRC). opaqueBg = the file has a baked-in
 // white background. official = listed on https://hack.arizona.edu/sponsors (Sai: show every one of them). forcePlate =
 // needs a plate on dark although the measure passes (white fringes left by background removal fool it).
-// Sai asked on 26 Oct 2026 not to use the UA Computer Science (uacs.png) and Banner Health (Banner.png) logos.
+// Sai asked on 26 Oct 2026 not to use the UA Computer Science (uacs.png) and Banner Health (Banner.png) logos, and on
+// 28 Oct 2026 to drop Tech Launch Arizona and General Education although the official page lists them.
 const LOGOS = [
   { id: 'general-dynamics-mission-systems', name: 'General Dynamics Mission Systems', light: 'General_Dynamics_Mission_Systems_logo.svg', official: true,
     notes: 'SVG chosen over GeneralDynamicsLogo.png (stacked) and general-dynamics-1.png (one line); both PNGs read "General Dynamics" without "Mission Systems". Sai to confirm which name the sponsor uses.' },
@@ -50,8 +51,6 @@ const LOGOS = [
   { id: 'university-libraries', name: 'University Libraries', dir: SITE_SRC, light: 'university-libraries.png', official: true, notes: 'Block A lockup.' },
   { id: 'honors-college', name: 'W.A. Franke Honors College', dir: SITE_SRC, light: 'honors-college.png', opaqueBg: 'outside', official: true, forcePlate: true,
     notes: 'Block A lockup supplied on white; only the white around the logo was removed.' },
-  { id: 'tech-launch-arizona', name: 'Tech Launch Arizona', dir: SITE_SRC, light: 'tech-launch-arizona.png', opaqueBg: 'outside', official: true, forcePlate: true,
-    notes: 'Block A lockup supplied on white; only the white around the logo was removed.' },
   { id: 'startup-wildcats', name: 'Startup Wildcats', dir: SITE_SRC, light: 'startup-wildcats.png', opaqueBg: 'outside', official: true,
     notes: 'Supplied on white with a light grey square behind the mark; both removed.' },
   { id: 'information-technology', name: 'Information Technology', dir: SITE_SRC, light: 'information-technology.png', official: true, notes: 'Block A lockup.' },
@@ -63,7 +62,11 @@ const LOGOS = [
     notes: 'Block A lockup. The official page captions it "Rresearch, Innovation & Impact" (typo).' },
   { id: 'veridise', name: 'Veridise', dir: SITE_SRC, light: 'veridise-dark-text.svg', dark: 'veridise.svg', official: true,
     notes: 'From veridise.com (the official page shows a thank-you banner, not a logo). Veridise publishes a white wordmark only; the light file is a copy with the wordmark recoloured #0F172A. Ask Veridise for an official version.' },
-  { id: 'general-education', name: 'General Education', dir: SITE_SRC, light: 'general-education.png', official: true, notes: 'Block A lockup.' },
+  // Sai, 28 Oct 2026: add Connecto (the 2026 registration platform; not on the official page), and drop Tech Launch
+  // Arizona and General Education. Sai supplied both Connecto lockups; the sponsor plate is light in both themes,
+  // so the horizontal "on light" one is used and the stacked dark one is kept in refs/ only.
+  { id: 'connecto', name: 'Connecto', dir: SITE_SRC, light: 'connecto-horizontal-light.svg', official: false,
+    notes: 'Horizontal lockup for light backgrounds, supplied by Sai (28 Oct 2026).' },
 ];
 
 // Square crops [left, top, side] in source pixels, set by eye: face centred, head about half the frame.

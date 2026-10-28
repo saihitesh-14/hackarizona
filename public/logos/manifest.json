@@ -224,23 +224,6 @@
     "notes": "Block A lockup supplied on white; only the white around the logo was removed. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 2%."
   },
   {
-    "id": "tech-launch-arizona",
-    "name": "Tech Launch Arizona",
-    "official": true,
-    "files": {
-      "light": {
-        "png": "logos/tech-launch-arizona.png",
-        "webp": "logos/tech-launch-arizona.webp"
-      }
-    },
-    "width": 557,
-    "height": 128,
-    "aspect": 4.352,
-    "needsPlate": true,
-    "source": "refs/sponsors-site/tech-launch-arizona.png",
-    "notes": "Block A lockup supplied on white; only the white around the logo was removed. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 0%."
-  },
-  {
     "id": "startup-wildcats",
     "name": "Startup Wildcats",
     "official": true,
@@ -362,20 +345,19 @@
     "notes": "From veridise.com (the official page shows a thank-you banner, not a logo). Veridise publishes a white wordmark only; the light file is a copy with the wordmark recoloured #0F172A. Ask Veridise for an official version. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 75%; dark file on navy 0%."
   },
   {
-    "id": "general-education",
-    "name": "General Education",
-    "official": true,
+    "id": "connecto",
+    "name": "Connecto",
+    "official": false,
     "files": {
       "light": {
-        "png": "logos/general-education.png",
-        "webp": "logos/general-education.webp"
+        "svg": "logos/connecto.svg"
       }
     },
-    "width": 681,
+    "width": 426,
     "height": 128,
-    "aspect": 5.32,
+    "aspect": 3.328,
     "needsPlate": true,
-    "source": "refs/sponsors-site/general-education.png",
-    "notes": "Block A lockup. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 76%."
+    "source": "refs/sponsors-site/connecto-horizontal-light.svg",
+    "notes": "Horizontal lockup for light backgrounds, supplied by Sai (28 Oct 2026). Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 88%."
   }
 ]

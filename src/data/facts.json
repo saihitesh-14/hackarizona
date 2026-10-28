@@ -1072,7 +1072,7 @@
     {
       "id": "sponsors-show-official",
       "topic": "sponsors",
-      "statement": "Show every sponsor listed on the official sponsors page.",
+      "statement": "Show every sponsor listed on the official sponsors page, except Tech Launch Arizona and General Education, plus Connecto.",
       "value": [
         "Amazon Tempe Town Lake Campus",
         "Nuclearn",
@@ -1083,7 +1083,6 @@
         "University Libraries",
         "Center for the Philosophy of Freedom",
         "W.A. Franke Honors College",
-        "Tech Launch Arizona",
         "Startup Wildcats",
         "Information Technology",
         "Office of the Provost",
@@ -1092,23 +1091,25 @@
         "Startup Tucson",
         "Research, Innovation & Impact",
         "Veridise",
-        "General Education"
+        "Connecto"
       ],
       "year": null,
-      "source": "Sai, in chat, 26 Oct 2026; https://hack.arizona.edu/sponsors",
+      "source": "Sai, in chat, 26 Oct 2026 and 28 Oct 2026; https://hack.arizona.edu/sponsors",
       "confidence": "confirmed-by-sai",
-      "notes": "19 entries. The official page spells one \"Rresearch, Innovation & Impact\" (typo) and shows the Center for the Philosophy of Freedom logo without a caption."
+      "notes": "18 entries. On 28 Oct 2026 Sai asked to drop Tech Launch Arizona and General Education (both still on the official page) and to add Connecto (logo supplied by Sai). The official page spells one \"Rresearch, Innovation & Impact\" (typo) and shows the Center for the Philosophy of Freedom logo without a caption."
     },
     {
       "id": "logos-not-used",
       "topic": "sponsors",
-      "statement": "Do not use the UA Computer Science and Banner Health logos.",
+      "statement": "Do not use the UA Computer Science, Banner Health, Tech Launch Arizona and General Education logos.",
       "value": [
         "UA Computer Science",
-        "Banner Health"
+        "Banner Health",
+        "Tech Launch Arizona",
+        "General Education"
       ],
       "year": null,
-      "source": "Sai, in chat, 26 Oct 2026",
+      "source": "Sai, in chat, 26 Oct 2026 (UA Computer Science, Banner Health) and 28 Oct 2026 (Tech Launch Arizona, General Education)",
       "confidence": "confirmed-by-sai",
       "notes": "Removed from public/logos."
     },
