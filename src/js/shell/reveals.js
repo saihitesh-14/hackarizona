@@ -52,7 +52,7 @@ export function initReveals() {
         revealObserver.unobserve(entry.target);
         reveal(entry.target, order);
       });
-  }, { rootMargin: '0px 0px -10% 0px' });
+  }, { rootMargin: '0px 0px 15% 0px' }); // start just before content scrolls in, so a fast scroll never lands on blank space
 
   // Figures count up the first time most of them is on screen, only when motion is allowed.
   const countObserver = supported && new IntersectionObserver(entries => {

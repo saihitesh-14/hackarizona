@@ -5,9 +5,7 @@
 import { site } from '../../data/site.js';
 import { initMark } from '../mark.js';
 import { isPaused, onMotionChange } from '../shell.js';
-import { initSmoothScroll } from '../smooth-scroll.js';
 
-initSmoothScroll();
 initMark(document.querySelector('.sponsor-intro .mark'));
 
 // Logo band: each row drifts at its own pace and direction, runs faster while the page scrolls (in the direction of the

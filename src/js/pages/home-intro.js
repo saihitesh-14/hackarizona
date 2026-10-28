@@ -1,12 +1,12 @@
-// The home page's scroll story, after the ERA Residence reference Sai liked: smooth scrolling (Lenis) and, on wide
+// The home page's scroll story, after the ERA Residence reference Sai liked: on wide
 // screens, a pinned hero that changes as you scroll (GSAP ScrollTrigger, scrubbed to the scroll position):
 //   0.00 to 0.35  the copy lifts away, the auditorium comes into full view and the logo glides to the centre
 //   0.38 to 0.62  the logo rises and the mission line lights up word by word
 //   0.64 to 1.00  a dome in the page colour rises with words running round its edge, and the next section follows
-// Paused or reduced motion: no smooth scrolling, no pinning, the plain banner hero. Phones get smooth scrolling only.
+// Native scrolling throughout (a smooth-scroll layer made the page trail the wheel and trackpad, which read as lag).
+// Paused or reduced motion: no pinning, the plain banner hero. Phones get the plain hero too.
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Lenis from 'lenis';
 import { isPaused, onMotionChange } from '../shell.js';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,26 +14,13 @@ gsap.registerPlugin(ScrollTrigger);
 export function initIntro(hero) {
   if (!hero) return;
   const roomy = window.matchMedia('(min-width: 768px) and (min-height: 600px)');
-  let lenis = null;
   let story = null;
-  const raf = time => lenis?.raf(time * 1000);
 
   const build = () => {
     story?.revert();
     story = null;
-    lenis?.destroy();
-    lenis = null;
-    gsap.ticker.remove(raf);
     hero.classList.remove('is-scrolly');
-    if (isPaused()) {
-      ScrollTrigger.refresh();
-      return;
-    }
-    lenis = new Lenis({ anchors: true, lerp: 0.09 });
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add(raf);
-    gsap.ticker.lagSmoothing(0);
-    if (!roomy.matches) {
+    if (isPaused() || !roomy.matches) {
       ScrollTrigger.refresh();
       return;
     }
@@ -48,7 +35,7 @@ export function initIntro(hero) {
       };
       const timeline = gsap.timeline({
         defaults: { ease: 'power2.inOut' },
-        scrollTrigger: { trigger: hero, start: 'top top', end: '+=230%', pin: true, scrub: 0.8, invalidateOnRefresh: true },
+        scrollTrigger: { trigger: hero, start: 'top top', end: '+=230%', pin: true, anticipatePin: 1, scrub: 0.25, invalidateOnRefresh: true },
       });
       timeline
         .to('.home-hero-copy', { y: -90, autoAlpha: 0, duration: 0.3, ease: 'power2.in' }, 0)

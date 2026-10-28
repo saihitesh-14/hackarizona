@@ -3,9 +3,7 @@
 // 2020 and 2025 the trace is dashed and the pulse dims. And the film slot: "coming soon" until site.film.src is set.
 import { site } from '../../data/site.js';
 import { isPaused, onMotionChange } from '../shell.js';
-import { initSmoothScroll } from '../smooth-scroll.js';
 
-initSmoothScroll();
 
 function initTrace(track) {
   if (!track) return;

@@ -188,7 +188,7 @@ One line per moving thing. Anything that cannot say what it explains gets cut.
 | --- | --- | --- | --- |
 | Loader | First visit only, skippable | The logo draws itself as a trace, pads pop, a pulse climbs the trunk, then a wipe, about 1.8s | This is Hack Arizona; the visual language of the site |
 | Hero headline | Page load | Lines rise from a mask, 1.15s | Where to start reading |
-| Hero scroll story | Scroll (wide screens, motion on) | Smooth scrolling (Lenis); the hero pins while the copy lifts away, the logo glides to the centre, a mission line lights up word by word and a dome with words round its edge rises into the next section (after Sai's ERA Residence reference) | Who Hack Arizona is, in one gesture |
+| Hero scroll story | Scroll (wide screens, motion on) | Native scrolling; the hero pins while the copy lifts away, the logo glides to the centre, a mission line lights up word by word and a dome with words round its edge rises into the next section (after Sai's ERA Residence reference) | Who Hack Arizona is, in one gesture |
 | Hero banner | Always | The auditorium photo drifts and zooms very slowly under a navy wash | Where Hack Arizona comes from |
 | Hero mark | Load (after the loader), then every few seconds; pointer; click | The logo draws itself like the loader, then a pulse climbs the saguaro and lights the pads; orbit rings with dots turn around it; it floats and leans toward the pointer; a click replays the drawing | The brand itself, alive |
 | Moments carousel | Drag, swipe, buttons, keyboard | Tilted photo cards; drag with a short coast; a card straightens and lifts on hover | Invitation to look around |
