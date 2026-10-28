@@ -7,6 +7,10 @@
 .home-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center;gap:40px clamp(28px,5vw,80px);min-height:clamp(560px,calc(100svh - var(--header-h) - 24px),880px);padding-bottom:clamp(64px,8vw,120px)}
 .home-hero-copy>.status-pill{margin-bottom:2px;padding:9px 18px 9px 14px;font-size:15px;color:var(--ink)}
 /* The hero copy sits on a photo, so it runs larger and brighter than the page's usual small text. */
+/* The headline: "Hack Arizona" in the logo's own lettering (the traced wordmark, src/partials/wordmark.html), with
+   "is back." in the italic below. The visible lines are aria-hidden; the h1 reads its .sr-only text. */
+.home-title .home-title-mark{padding:.12em 0 .2em;margin-left:4px}
+.home-title .wordmark{width:min(100% - 4px,clamp(300px,35vw,640px));height:auto;color:var(--ink)}
 .home-hero-copy .lead{max-width:600px;font-size:clamp(19px,1.5vw,22px);color:var(--ink)}
 .home-hero-copy .facts{margin-top:22px;font-size:16px;color:var(--text-strong)}
 .home-hero-copy .facts li+li:before{color:var(--muted)}
@@ -111,6 +115,8 @@
   .home-moments-aside{margin:-14px 0 30px}
 }
 @media(max-width:767px){
+  .home-title .home-title-mark{margin-left:3px}
+  .home-title .wordmark{width:min(100% - 3px,440px)}
   .home-banner-wash{background:linear-gradient(to bottom,color-mix(in srgb,var(--banner-bg) 55%,transparent),color-mix(in srgb,var(--banner-bg) 82%,transparent) 45%,var(--banner-bg))}
   .home-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .home-stats li{padding:20px 14px 20px 0}

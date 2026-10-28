@@ -1,4 +1,4 @@
-"""Traces the "HACK ARIZONA" wordmark in the header (src/partials/header.html) from the official lockup Sai supplied
+"""Traces the "HACK ARIZONA" wordmark (src/partials/wordmark.html, used in the header and the Home hero) from the official lockup Sai supplied
 on 27 Oct 2026 (refs/brand/hackaz-lockup-white.webp: white on transparent, 2000 x 667). The text row is found by
 its alpha, upscaled, thresholded and traced with Potrace, and the outline goes inline as one path in currentColor.
 Needs: pip install potracer numpy pillow.   Run: python3 scripts/trace-wordmark.py"""
@@ -11,7 +11,7 @@ from PIL import Image
 
 WEB = Path(__file__).resolve().parent.parent
 SOURCE = WEB / 'refs/brand/hackaz-lockup-white.webp'
-HEADER = WEB / 'src/partials/header.html'
+PARTIAL = WEB / 'src/partials/wordmark.html'
 TEXT_LEFT = 540  # px: the text block starts right of the circle mark and the divider
 UPSCALE = 3  # trace a larger bitmap for smoother curves
 
@@ -41,8 +41,8 @@ width, height = right - left, bottom - top
 svg = (f'<svg class="wordmark" viewBox="0 0 {width} {height}" aria-hidden="true" focusable="false">'
        f'<path fill="currentColor" fill-rule="evenodd" d="{"".join(parts)}"/></svg>')
 
-header = HEADER.read_text(encoding='utf-8')
+partial = PARTIAL.read_text(encoding='utf-8')
 start, end = '<!-- wordmark:start -->', '<!-- wordmark:end -->'
-assert start in header and end in header, 'wordmark markers not found in the header'
-HEADER.write_text(re.sub(f'{re.escape(start)}.*?{re.escape(end)}', lambda _: start + svg + end, header, flags=re.S), encoding='utf-8')
+assert start in partial and end in partial, 'wordmark markers not found in the partial'
+PARTIAL.write_text(re.sub(f'{re.escape(start)}.*?{re.escape(end)}', lambda _: start + svg + end, partial, flags=re.S), encoding='utf-8')
 print(f'wordmark: {width} x {height} px from the lockup, {len(traced)} contours, {len(svg)} bytes')

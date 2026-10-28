@@ -31,7 +31,7 @@ If the browser step says Playwright's browser is missing (the pinned `playwright
 | --- | --- |
 | `index.html`, `story/`, `events/`, `sponsor/`, `team/` | The pages. Each includes the shared partials and loads `base.css`, its page CSS, `shell.js` and its page module. |
 | `vite.config.js` | Multi-page build, `base: './'`. A small plugin replaces `<!-- @include partials/NAME.html -->` with `src/partials/NAME.html`, `{{root}}` with the path to the site root (`./` or `../`) and marks the current page in the dock. It also preloads the display font. |
-| `src/partials/` | `head-meta.html` (inline head script: theme without a flash, saved pause, loader decision, safety timeout), `header.html`, `dock.html`, `footer.html`, `loader.html`. |
+| `src/partials/` | `head-meta.html` (inline head script: theme without a flash, saved pause, loader decision, safety timeout), `header.html`, `wordmark.html` (the traced wordmark, included by the header and the Home hero), `dock.html`, `footer.html`, `loader.html`. |
 | `src/styles/tokens.css` | Every colour, as role tokens, light and dark ("desert night"). Nothing else names a colour. |
 | `src/styles/base.css` | Fonts, layout, type, all shared components, motion, reveals, cursor, dock, loader, view transitions, print, reduced motion. |
 | `src/js/shell.js` and `src/js/shell/` | Loader, theme, pause, reveals and count-ups, cursor (magnetic, tilt), signal spine, dock, word band, tabs, copy buttons, external links. |
@@ -50,7 +50,7 @@ All internal links are relative, so the built site works at a domain root or in 
   node -e "const s=require('sharp'),m='public/brand/hackaz-mark.svg';s(m,{density:384}).resize(32,32).png().toFile('public/brand/favicon-32.png');s(m,{density:384}).resize(160,160).extend({top:10,bottom:10,left:10,right:10,background:'#FFFFFF'}).flatten({background:'#FFFFFF'}).png().toFile('public/brand/apple-touch-icon.png')"
   ```
 - `public/grain.png` is the paper grain tile from the minimal-motion-web starter (sparse specks on transparency).
-- The "HACK ARIZONA" wordmark in the header is an inline SVG traced from the official lockup Sai supplied (`refs/brand/hackaz-lockup-white.webp`) by `scripts/trace-wordmark.py` (needs `pip install potracer numpy pillow`). It is drawn in `currentColor`, so it follows the theme.
+- The "HACK ARIZONA" wordmark (the header and the Home headline, `src/partials/wordmark.html`) is an inline SVG traced from the official lockup Sai supplied (`refs/brand/hackaz-lockup-white.webp`) by `scripts/trace-wordmark.py` (needs `pip install potracer numpy pillow`). It is drawn in `currentColor`, so it follows the theme.
 
 ## Fonts and licences
 

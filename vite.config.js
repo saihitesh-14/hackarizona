@@ -31,8 +31,14 @@ function includes() {
         // Pages outside the five (dev/medallion.html, say) still get includes and {{root}}, just no current dock item.
         const page = Object.keys(pages).find(key => pages[key] === file) || '';
         const up = '../'.repeat(file.split('/').length - 1) || './';
-        const out = html
-          .replace(/<!--\s*@include\s+partials\/([\w-]+)\.html\s*-->/g, (_, name) => readFileSync(resolve(partials, `${name}.html`), 'utf8'))
+        // Partials may include partials (the header includes the wordmark), so expand until none are left.
+        const include = /<!--\s*@include\s+partials\/([\w-]+)\.html\s*-->/g;
+        let expanded = html;
+        for (let depth = 0; include.test(expanded); depth++) {
+          if (depth > 4) throw new Error(`hackaz-includes: includes nest too deep in ${file}`);
+          expanded = expanded.replace(include, (_, name) => readFileSync(resolve(partials, `${name}.html`), 'utf8'));
+        }
+        const out = expanded
           .replaceAll('{{root}}', up)
           .replaceAll('{{page}}', page);
         return page ? out.replace(`data-dock="${page}"`, `data-dock="${page}" aria-current="page"`) : out;
