@@ -14,16 +14,20 @@ export function countUp(element) {
   const start = performance.now();
   // Hold the final width so neighbouring figures do not shift while counting.
   element.style.minWidth = `${element.getBoundingClientRect().width}px`;
+  // One text node, updated in place: replacing the text every frame would insert a new node each time.
+  element.textContent = `${prefix}0${suffix}`;
+  const text = element.firstChild;
+  let shown = '';
   const tick = now => {
     const progress = Math.min(1, (now - start) / duration);
     if (progress >= 1 || !canMove()) {
-      element.textContent = prefix + digits + suffix;
+      text.nodeValue = prefix + digits + suffix;
       return;
     }
-    element.textContent = prefix + Math.round(target * (1 - Math.pow(1 - progress, 4))) + suffix;
+    const value = prefix + Math.round(target * (1 - Math.pow(1 - progress, 4))) + suffix;
+    if (value !== shown) text.nodeValue = shown = value;
     requestAnimationFrame(tick);
   };
-  element.textContent = `${prefix}0${suffix}`;
   requestAnimationFrame(tick);
 }
 

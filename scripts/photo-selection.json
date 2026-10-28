@@ -1,5 +1,5 @@
 {
-  "_about": "Photos for the site. source is relative to the HackAZ folder (read-only originals). focal is the point to keep in view when cropping, as fractions of width and height. widths are optional; default 480/960/1600 (board-only photos 480/960), never wider than the source; JPEG fallbacks stop at 960 to fit the 8 MB budget. year comes from the folder name; for MLH HackDay (no year in the folder) it is the camera date (20 Feb 2026), to confirm with Sai. All event photos need Sai's permission before launch.",
+  "_about": "Photos for the site. source is relative to the HackAZ folder (read-only originals), or to this repository when it starts with refs/ (photos Sai sent in chat; see refs/photos-sai/SOURCES.md). focal is the point to keep in view when cropping, as fractions of width and height. widths are optional; default 480/960/1600 (board-only photos 480/960), never wider than the source; JPEG fallbacks stop at 960 to fit the budget. year comes from the folder name; for MLH HackDay (no year in the folder) it is the camera date (20 Feb 2026), to confirm with Sai. All event photos need Sai's permission before launch.",
   "photos": [
     {
       "id": "early-auditorium",
@@ -241,6 +241,57 @@
       "alt": "A group stands in a row under a screen that reads 'Amazon AWS Challenge Winners'.",
       "caption": "Hack Arizona 2025",
       "focal": { "x": 0.5, "y": 0.55 }
+    },
+    {
+      "id": "ha25-workshop-room",
+      "source": "refs/photos-sai/ha25-workshop-room.jpg",
+      "slots": ["board"],
+      "year": 2025,
+      "event": "Hack Arizona 2025",
+      "alt": "A bright classroom of students at laptops around tables, code on the wall screens, and one person standing in the middle of the room talking to the group.",
+      "caption": "Hack Arizona 2025",
+      "focal": { "x": 0.45, "y": 0.6 }
+    },
+    {
+      "id": "ha26-team-countdown",
+      "source": "refs/photos-sai/ha26-team-countdown.jpg",
+      "slots": ["board"],
+      "year": 2026,
+      "event": "Hack Arizona 2026",
+      "alt": "Four people stand side by side and grin at the camera, one throwing both arms wide, under a projected countdown that reads 00 39 24.",
+      "caption": "Hack Arizona 2026",
+      "focal": { "x": 0.5, "y": 0.5 }
+    },
+    {
+      "id": "ha26-pitch",
+      "source": "refs/photos-sai/ha26-pitch.jpg",
+      "slots": ["board"],
+      "year": 2026,
+      "event": "Hack Arizona 2026",
+      "alt": "A person explains a project with both hands to a small group gathered round a table of laptops, while an organizer in a black ORGANIZER shirt takes notes.",
+      "caption": "Hack Arizona 2026",
+      "focal": { "x": 0.45, "y": 0.5 }
+    },
+    {
+      "id": "auditorium-banner",
+      "source": "refs/photos-sai/auditorium-banner.webp",
+      "slots": ["home-hero"],
+      "year": null,
+      "event": "Hack Arizona (early years)",
+      "alt": "A packed auditorium seen from the balcony, with the Hack Arizona logo on the big screen and a sound desk in the foreground.",
+      "caption": "Hack Arizona, early years",
+      "focal": { "x": 0.5, "y": 0.3 },
+      "widths": [960, 1600, 1920]
+    },
+    {
+      "id": "ha25-screen-room",
+      "source": "refs/photos-sai/ha25-screen-room.jpg",
+      "slots": ["home-about"],
+      "year": 2025,
+      "event": "Hack Arizona 2025",
+      "alt": "A busy room of students at laptops and talking in groups, under a big screen that reads The University of Arizona, Hack Arizona, March 22-23.",
+      "caption": "Hack Arizona 2025",
+      "focal": { "x": 0.5, "y": 0.45 }
     }
   ]
 }

@@ -12,9 +12,11 @@
 body{margin:0;min-height:100vh;color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 /* Construction lines frame the content column (the left one doubles as the signal spine), over a faint paper grain. */
 body:before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(var(--grid),var(--grid)) var(--page-inset) 0/1px 100% no-repeat,linear-gradient(var(--grid),var(--grid)) calc(100% - var(--page-inset)) 0/1px 100% no-repeat}
-body:after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:url('/grain.png');opacity:.35;mix-blend-mode:multiply}
-:root[data-theme='dark'] body:after{filter:invert(1);mix-blend-mode:screen;opacity:.22}
-@media(prefers-color-scheme:dark){:root:not([data-theme='light']) body:after{filter:invert(1);mix-blend-mode:screen;opacity:.22}}
+/* Grain: dark specks on light, light specks on dark, plain opacity. No blend mode or filter: either would make the
+   browser re-blend the whole screen on every scroll frame. */
+body:after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:url('/grain.png');opacity:.35}
+:root[data-theme='dark'] body:after{background-image:url('/grain-light.png');opacity:.22}
+@media(prefers-color-scheme:dark){:root:not([data-theme='light']) body:after{background-image:url('/grain-light.png');opacity:.22}}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;cursor:pointer}
 button,a{-webkit-tap-highlight-color:transparent}
@@ -50,7 +52,7 @@ h1 em,h2 em,h3 em{font-family:var(--serif);font-style:italic;font-weight:400;let
 .site-header{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:20px;height:var(--header-h);padding-inline:var(--page-inset);view-transition-name:site-header}
 .identity{display:inline-flex;align-items:center;gap:12px;min-height:44px}
 .identity-mark{flex:none;width:38px;height:38px;transition:rotate .5s var(--ease-out-expo)}
-.wordmark{font-size:21px;font-weight:600;letter-spacing:-.045em;line-height:1;white-space:nowrap}
+.wordmark{display:block;width:auto;height:15px;overflow:visible;color:var(--ink)}
 .header-action{display:inline-flex;align-items:center;gap:16px;min-height:44px;padding:10px 18px;border:1px solid var(--line-strong);border-radius:999px;background:var(--card);font-size:13px;white-space:nowrap;transition:background .2s ease,border-color .2s ease}
 .dock{position:fixed;left:50%;bottom:18px;z-index:40;translate:-50% 0;display:flex;align-items:center;gap:2px;max-width:calc(100vw - 16px);padding:5px;border:1px solid var(--line-strong);border-radius:999px;background:color-mix(in srgb,var(--card) 84%,transparent);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);box-shadow:0 12px 32px var(--soft-shadow);view-transition-name:dock}
 .dock>a{position:relative;display:flex;align-items:center;gap:8px;min-height:40px;padding:0 15px;border-radius:999px;font-size:13px;color:var(--muted);white-space:nowrap;transition:background .25s ease,color .25s ease,box-shadow .25s ease}
@@ -249,8 +251,8 @@ html:not(.js) .tab-panel+.tab-panel{margin-top:56px}
 .cursor-glow{position:fixed;left:-300px;top:-300px;z-index:-1;width:600px;height:600px;border-radius:50%;background:radial-gradient(closest-side,var(--glow),transparent);pointer-events:none;opacity:0;transition:opacity .6s ease;will-change:transform}
 .cursor-glow.is-visible{opacity:1}
 html.has-cursor,html.has-cursor *{cursor:none!important}
-html:has(dialog[open]) .cursor{opacity:0}
-html.has-cursor:has(dialog[open]),html.has-cursor:has(dialog[open]) *{cursor:auto!important}
+/* No html:has(...) rules here: the site has no dialogs, and a :has() on the root makes every DOM change anywhere
+   restyle the whole page. */
 /* Tilt and spotlight: rotate (axis-angle) composes with the reveal transform; the spotlight sits under the text. */
 [data-tilt]{position:relative}
 [data-tilt]:before{content:'';position:absolute;inset:0;z-index:0;border-radius:inherit;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),var(--spot),transparent 70%);opacity:0;transition:opacity .45s ease;pointer-events:none}
@@ -300,6 +302,31 @@ html:not(.is-loading) .display .line>span,html.is-leaving .display .line>span{an
 .js [data-reveal='children']>:nth-child(2){transition-delay:.09s}.js [data-reveal='children']>:nth-child(3){transition-delay:.18s}.js [data-reveal='children']>:nth-child(n+4){transition-delay:.27s}
 .js [data-reveal].is-revealed,.js [data-reveal='children'].is-revealed>*{opacity:1;transform:none}
 .js .card[data-reveal]{transition:opacity .9s var(--ease-out) var(--reveal-delay,0s),transform 1.1s var(--ease-out-expo) var(--reveal-delay,0s),border-color .3s ease,box-shadow .4s ease}
+
+/* Motion mark (src/partials/mark.html, src/js/mark.js; Home hero and Sponsor intro); each page sets its width.
+   A soft brand glow, two orbit rings with travelling dots, and the logo itself, floating and leaning toward
+   the pointer (--tilt-x, --tilt-y from the module). It stays hidden until the module has set up its first frame. */
+.mark{position:relative;aspect-ratio:1;perspective:1000px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.mark:before{content:'';position:absolute;inset:-4%;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--logo-red) 55%,transparent) 60%,color-mix(in srgb,var(--logo-red) 34%,transparent) 74%,color-mix(in srgb,var(--logo-plum) 16%,transparent) 88%,transparent);animation:mark-breathe 5s var(--ease-in-out) infinite alternate}
+/* Shadow under the floating logo: a gradient, not a drop-shadow filter, which would be redrawn every frame. */
+.mark:after{content:'';position:absolute;left:18%;right:18%;bottom:2%;height:14%;border-radius:50%;background:radial-gradient(closest-side,var(--soft-shadow),transparent);pointer-events:none}
+.mark-orbits{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.mark-orbit{fill:none;stroke:var(--line-strong);stroke-width:.4}
+.mark-orbit-outer{stroke-dasharray:.8 2.4}
+.mark-spin-ring,.mark-spin-dots{will-change:transform;animation:mark-spin 90s linear infinite}
+.mark-spin-dots{animation-duration:16s}
+.mark-orbit-inner{stroke:var(--line)}
+.mark-orbit-dots{fill:var(--pulse)}
+.mark-spin-reverse{animation-duration:24s;animation-direction:reverse}
+.mark-svg{position:absolute;inset:11%;width:78%;height:78%;overflow:visible;will-change:transform;animation:mark-float 6s var(--ease-in-out) infinite alternate}
+.mark-signal circle{fill:var(--pulse)}
+.js .mark:not(.is-ready) .mark-svg{visibility:hidden}
+.js .mark [data-ring-arc],.js .mark [data-grow],.js .mark [data-pad-arc]{stroke-dasharray:1 1;stroke-dashoffset:1}
+.js .mark [data-part='disc']{transform-origin:600px 600px}
+.mark.is-offscreen:before,.mark.is-offscreen *{animation-play-state:paused}
+@keyframes mark-breathe{from{opacity:.65;transform:scale(.94)}to{opacity:1;transform:scale(1.04)}}
+@keyframes mark-spin{to{transform:rotate(360deg)}}
+@keyframes mark-float{to{translate:0 -12px}}
 
 /* Paused motion (the Pause motion button, a saved choice, or reduced motion): everything still and visible. */
 :root[data-motion='paused']{scroll-behavior:auto}
@@ -351,7 +378,7 @@ button:active,.button:active{transform:scale(.98)}
 @media(max-width:900px){.card-grid{grid-template-columns:1fr}.cta-main{grid-template-columns:1fr;gap:32px}.footer-main{grid-template-columns:1fr}}
 @media(max-width:767px){
   :root{--page-inset:22px;--header-h:72px;scroll-padding-top:20px}
-  .identity{gap:10px}.identity-mark{width:34px;height:34px}.wordmark{font-size:19px}
+  .identity{gap:10px}.identity-mark{width:34px;height:34px}.wordmark{height:13.5px}
   .display{margin-left:-3px;font-size:clamp(42px,11vw,72px);white-space:normal}
   .lead{margin-top:20px;font-size:15px}
   .facts{flex-direction:column;gap:2px;font-size:12px}.facts li+li:before{display:none}
@@ -383,7 +410,7 @@ button:active,.button:active{transform:scale(.98)}
   .spine{display:none}
 }
 @media(max-width:420px){.header-action{width:44px;height:44px;padding:0;justify-content:center}.header-action-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.header-action .arrow{font-size:18px}}
-@media(max-width:370px){:root{--page-inset:18px}.wordmark{font-size:18px}.dock>a{padding:0 10px}.button{gap:12px;padding:12px 15px}}
+@media(max-width:370px){:root{--page-inset:18px}.wordmark{height:12px}.dock>a{padding:0 10px}.button{gap:12px;padding:12px 15px}}
 @media(prefers-reduced-motion:reduce){
   :root{scroll-behavior:auto}
   *,*:before,*:after{animation:none!important;transition:none!important}

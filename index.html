@@ -15,11 +15,291 @@
   <!-- @include partials/dock.html -->
   <main id="main">
     <!-- PAGE CONTENT START: the home stage owns everything between START and END (and src/styles/pages/home.css, src/js/pages/home.js). -->
-    <section class="page-intro section-shell entrance" id="intro" aria-labelledby="page-title">
-      <h1 class="display" id="page-title"><span class="line"><span>Hack Arizona 2027</span></span></h1>
+    <section class="page-intro section-shell home-hero" id="intro" aria-labelledby="page-title">
+      <div class="home-hero-copy entrance">
+        <p class="status-pill"><span class="status-dot" aria-hidden="true"></span><span data-status-text>Registration opens in January</span></p>
+        <h1 class="display" id="page-title"><span class="line"><span>Hack Arizona</span></span><span class="line"><span><em>is back.</em></span></span></h1>
+        <p class="lead">The premier hackathon in the Southwestern United States. Students from every discipline come together at the University of Arizona to build, learn and connect.</p>
+        <ul class="facts">
+          <li><time datetime="2027-03-27">27 to 28 March 2027</time></li>
+          <li>HSIB, University of Arizona</li>
+          <li>Tucson, AZ</li>
+          <li>24 hours</li>
+        </ul>
+        <div class="actions">
+          <a class="button" href="#updates" data-magnetic>Get updates <span class="arrow arrow-se" aria-hidden="true">↘</span></a>
+          <a class="text-link" href="https://discord.gg/8BkZftYGWp">Join the Discord <span class="arrow arrow-ne" aria-hidden="true">↗</span></a>
+        </div>
+        <p class="home-countdown" data-countdown hidden><strong data-countdown-days></strong> <span data-countdown-unit>days</span> until Hack Arizona 2027</p>
+      </div>
+      <!-- @include partials/mark.html -->
+      <div class="home-stage" aria-hidden="true">
+        <p class="home-mission"><span>Twenty-four</span> <span>hours.</span> <span>Every</span> <span>discipline.</span> <em><span>One</span> <span>room</span> <span>full</span> <span>of</span> <span>builders.</span></em></p>
+        <div class="home-dome">
+          <svg class="home-dome-arc" viewBox="0 0 1000 1000" focusable="false">
+            <defs><path id="home-dome-path" d="M30 500A470 470 0 1 1 970 500A470 470 0 1 1 30 500"/></defs>
+            <text><textPath href="#home-dome-path">Build · Learn · Connect · 24 hours · Tucson · March 2027 · Hack Arizona · Build · Learn · Connect · 24 hours · Tucson · March 2027 · Hack Arizona ·</textPath></text>
+          </svg>
+          <p class="home-dome-line"><span>Tucson</span><img src="/brand/hackaz-mark.svg" alt="" width="40" height="40"><span>Arizona</span></p>
+        </div>
+      </div>
+      <div class="home-banner" aria-hidden="true">
+        <span class="home-banner-wash"></span>
+        <picture>
+          <source type="image/avif" srcset="/img/auditorium-banner-960.avif 960w, /img/auditorium-banner-1600.avif 1600w, /img/auditorium-banner-1920.avif 1920w" sizes="100vw">
+          <source type="image/webp" srcset="/img/auditorium-banner-960.webp 960w, /img/auditorium-banner-1600.webp 1600w, /img/auditorium-banner-1920.webp 1920w" sizes="100vw">
+          <img src="/img/auditorium-banner-960.jpg" srcset="/img/auditorium-banner-960.jpg 960w" sizes="100vw" alt="" width="1920" height="823" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
     </section>
-    <section class="section section-shell" id="todo" aria-label="Page content to come">
-      <p data-placeholder="home page content">[TBC: the home page stage fills this page]</p>
+
+    <section class="section section-shell" id="numbers" aria-labelledby="numbers-title">
+      <div class="section-heading" data-reveal="children">
+        <h2 id="numbers-title">Since the restart, <em>in numbers.</em></h2>
+      </div>
+      <ul class="home-stats" data-reveal>
+        <li><strong data-count>100</strong><span>participants at Hack Arizona</span><span class="home-stat-year">2025</span></li>
+        <li><strong data-count>180+</strong><span>participants at Hack Arizona</span><span class="home-stat-year">2026</span></li>
+        <li><strong data-count>52</strong><span>students at HackDay, our 7-hour mini hackathon</span><span class="home-stat-year">2026</span></li>
+        <li><strong data-count>22</strong><span>projects built at HackDay</span><span class="home-stat-year">2026</span></li>
+      </ul>
+    </section>
+
+    <section class="section section-shell" id="about" aria-labelledby="about-title">
+      <div class="home-about">
+        <div class="home-about-text">
+          <div class="section-heading" data-reveal="children">
+            <h2 id="about-title">What is <em class="scribble">Hack Arizona?<svg class="scribble-line" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M3 9c30-6 62-6 96-2s68 3 98-3"/></svg></em></h2>
+          </div>
+          <div class="home-prose" data-reveal>
+            <p>A hackathon is a time-bound event where people work together in teams to build a solution to a specific problem. Hack Arizona is the University of Arizona's student-driven hackathon, and the premier hackathon in the Southwestern United States.</p>
+            <p>Teams create projects that matter, pick up new skills and take on real-world challenges in technology and beyond. Every discipline is welcome, with hands-on workshops, speaker sessions and challenges built around real problems.</p>
+            <p>Students run it, and the Division of Undergraduate Education coordinates the planning across the whole university: undergraduates, graduate students, staff, faculty and administrators from every college.</p>
+          </div>
+        </div>
+        <figure class="home-photo home-about-photo" data-reveal>
+          <picture>
+            <source type="image/avif" srcset="/img/ha25-screen-room-480.avif 480w, /img/ha25-screen-room-960.avif 960w, /img/ha25-screen-room-1600.avif 1600w" sizes="(max-width: 900px) 100vw, 44vw">
+            <source type="image/webp" srcset="/img/ha25-screen-room-480.webp 480w, /img/ha25-screen-room-960.webp 960w, /img/ha25-screen-room-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 44vw">
+            <img src="/img/ha25-screen-room-960.jpg" srcset="/img/ha25-screen-room-480.jpg 480w, /img/ha25-screen-room-960.jpg 960w" sizes="(max-width: 900px) 100vw, 44vw" alt="A busy room of students at laptops and talking in groups, under a big screen that reads The University of Arizona, Hack Arizona, March 22-23." width="1600" height="1200" loading="lazy" decoding="async">
+          </picture>
+          <figcaption>Hack Arizona 2025</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="skills" aria-labelledby="skills-title">
+      <div class="section-heading" data-reveal="children">
+        <h2 id="skills-title">Real skills, <em>polished here.</em></h2>
+        <p class="section-intro">Hack Arizona is where students sharpen what they can do, and where the people who need builders come to find them.</p>
+      </div>
+      <ol class="home-skills" data-reveal>
+        <li><span class="home-skills-num" aria-hidden="true">01</span><h3>Learn by doing</h3><p>Hands-on workshops and speaker sessions run alongside the hacking, so you leave knowing more than you came with.</p></li>
+        <li><span class="home-skills-num" aria-hidden="true">02</span><h3>Build with backup</h3><p>Mentors and tech support are on hand while you build, from the first idea to the last commit.</p></li>
+        <li><span class="home-skills-num" aria-hidden="true">03</span><h3>Show what you made</h3><p>Every team demos its project to the judges, and the best walk away with prizes.</p></li>
+      </ol>
+      <div class="home-builders" data-reveal>
+        <h3>Looking for builders? <em>They&#39;re here.</em></h3>
+        <div>
+          <p>Students from every discipline, building something real in 24 hours. Sponsor, judge or mentor, and meet them while they work.</p>
+          <div class="actions">
+            <a class="button" href="https://uarizona.co1.qualtrics.com/jfe/form/SV_4Gfk4n0YAVmLR7E" data-magnetic>Get involved <span class="arrow arrow-ne" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section home-moments" id="moments" aria-labelledby="moments-title">
+      <div class="section-shell home-moments-head">
+        <div class="section-heading" data-reveal="children">
+          <p class="home-kicker">You had to be there</p>
+          <h2 id="moments-title">Good ideas.<br><em>Better company.</em></h2>
+        </div>
+        <div class="home-moments-aside" data-reveal>
+          <p>Little moments from 2025 and 2026.</p>
+          <div class="home-moments-controls" data-moments-controls hidden>
+            <button class="home-moments-btn" type="button" data-moments-prev aria-label="Previous photos"><span aria-hidden="true">←</span></button>
+            <button class="home-moments-btn" type="button" data-moments-next aria-label="Next photos"><span aria-hidden="true">→</span></button>
+            <span class="home-moments-hint" aria-hidden="true">Drag to explore</span>
+          </div>
+        </div>
+      </div>
+      <ul class="home-moments-track" data-moments-track tabindex="0" aria-label="Photos from Hack Arizona 2025 and 2026" data-cursor="Drag" data-reveal>
+        <li class="home-moment" style="--r:-2.5deg;--y:6px;--fx:50%;--fy:55%">
+          <figure>
+            <picture>
+              <source type="image/avif" srcset="/img/ha25-logo-wall-480.avif 480w, /img/ha25-logo-wall-960.avif 960w" sizes="(max-width: 767px) 78vw, 340px">
+              <source type="image/webp" srcset="/img/ha25-logo-wall-480.webp 480w, /img/ha25-logo-wall-960.webp 960w" sizes="(max-width: 767px) 78vw, 340px">
+              <img src="/img/ha25-logo-wall-960.jpg" srcset="/img/ha25-logo-wall-480.jpg 480w, /img/ha25-logo-wall-960.jpg 960w" sizes="(max-width: 767px) 78vw, 340px" alt="A group, most in maroon Hack Arizona T-shirts, poses in front of a giant lit-up Hack Arizona logo, one person lying on the floor in front." width="960" height="720" loading="lazy" decoding="async">
+            </picture>
+            <figcaption><span class="home-moment-note">The people behind the projects.</span><span class="home-moment-year">2025</span></figcaption>
+          </figure>
+        </li>
+        <li class="home-moment" style="--r:2deg;--y:-4px;--fx:45%;--fy:50%">
+          <figure>
+            <picture>
+              <source type="image/avif" srcset="/img/ha26-pitch-480.avif 480w, /img/ha26-pitch-960.avif 960w" sizes="(max-width: 767px) 78vw, 340px">
+              <source type="image/webp" srcset="/img/ha26-pitch-480.webp 480w, /img/ha26-pitch-960.webp 960w" sizes="(max-width: 767px) 78vw, 340px">
+              <img src="/img/ha26-pitch-960.jpg" srcset="/img/ha26-pitch-480.jpg 480w, /img/ha26-pitch-960.jpg 960w" sizes="(max-width: 767px) 78vw, 340px" alt="A person explains a project with both hands to a small group gathered round a table of laptops, while an organizer in a black ORGANIZER shirt takes notes." width="960" height="640" loading="lazy" decoding="async">
+            </picture>
+            <figcaption><span class="home-moment-note">A little show-and-tell.</span><span class="home-moment-year">2026</span></figcaption>
+          </figure>
+        </li>
+        <li class="home-moment" style="--r:-1.5deg;--y:10px;--fx:45%;--fy:50%">
+          <figure>
+            <picture>
+              <source type="image/avif" srcset="/img/ha26-red-wall-room-480.avif 480w, /img/ha26-red-wall-room-960.avif 960w, /img/ha26-red-wall-room-1600.avif 1600w" sizes="(max-width: 767px) 78vw, 340px">
+              <source type="image/webp" srcset="/img/ha26-red-wall-room-480.webp 480w, /img/ha26-red-wall-room-960.webp 960w, /img/ha26-red-wall-room-1600.webp 1600w" sizes="(max-width: 767px) 78vw, 340px">
+              <img src="/img/ha26-red-wall-room-960.jpg" srcset="/img/ha26-red-wall-room-480.jpg 480w, /img/ha26-red-wall-room-960.jpg 960w" sizes="(max-width: 767px) 78vw, 340px" alt="A team works at laptops around white tables in a bright room with a red wall." width="1600" height="1067" loading="lazy" decoding="async">
+            </picture>
+            <figcaption><span class="home-moment-note">Deep in the build.</span><span class="home-moment-year">2026</span></figcaption>
+          </figure>
+        </li>
+        <li class="home-moment" style="--r:2.5deg;--y:0px;--fx:55%;--fy:45%">
+          <figure>
+            <picture>
+              <source type="image/avif" srcset="/img/ha25-table-talk-480.avif 480w, /img/ha25-table-talk-960.avif 960w" sizes="(max-width: 767px) 78vw, 340px">
+              <source type="image/webp" srcset="/img/ha25-table-talk-480.webp 480w, /img/ha25-table-talk-960.webp 960w" sizes="(max-width: 767px) 78vw, 340px">
+              <img src="/img/ha25-table-talk-960.jpg" srcset="/img/ha25-table-talk-480.jpg 480w, /img/ha25-table-talk-960.jpg 960w" sizes="(max-width: 767px) 78vw, 340px" alt="People talk across a long table of laptops and drinks in a busy room, one resting a chin on a hand while listening." width="960" height="673" loading="lazy" decoding="async">
+            </picture>
+            <figcaption><span class="home-moment-note">One more idea.</span><span class="home-moment-year">2025</span></figcaption>
+          </figure>
+        </li>
+        <li class="home-moment" style="--r:-2deg;--y:-6px;--fx:60%;--fy:50%">
+          <figure>
+            <picture>
+              <source type="image/avif" srcset="/img/ha26-crowd-above-480.avif 480w, /img/ha26-crowd-above-960.avif 960w, /img/ha26-crowd-above-1600.avif 1600w" sizes="(max-width: 767px) 78vw, 340px">
+              <source type="image/webp" srcset="/img/ha26-crowd-above-480.webp 480w, /img/ha26-crowd-above-960.webp 960w, /img/ha26-crowd-above-1600.webp 1600w" sizes="(max-width: 767px) 78vw, 340px">
+              <img src="/img/ha26-crowd-above-960.jpg" srcset="/img/ha26-crowd-above-480.jpg 480w, /img/ha26-crowd-above-960.jpg 960w" sizes="(max-width: 767px) 78vw, 340px" alt="Rows of seated people seen from above, facing a speaker at a podium." width="1600" height="1067" loading="lazy" decoding="async">
+            </picture>
+            <figcaption><span class="home-moment-note">The start of something.</span><span class="home-moment-year">2026</span></figcaption>
+          </figure>
+        </li>
+        <li class="home-moment" style="--r:1.5deg;--y:8px;--fx:55%;--fy:40%">
+          <figure>
+            <picture>
+              <source type="image/avif" srcset="/img/ha26-mlh-mentor-480.avif 480w, /img/ha26-mlh-mentor-960.avif 960w" sizes="(max-width: 767px) 78vw, 340px">
+              <source type="image/webp" srcset="/img/ha26-mlh-mentor-480.webp 480w, /img/ha26-mlh-mentor-960.webp 960w" sizes="(max-width: 767px) 78vw, 340px">
+              <img src="/img/ha26-mlh-mentor-960.jpg" srcset="/img/ha26-mlh-mentor-480.jpg 480w, /img/ha26-mlh-mentor-960.jpg 960w" sizes="(max-width: 767px) 78vw, 340px" alt="A person in an MLH cap and T-shirt looks on from behind a monitor as one person leans over to a seated teammate." width="960" height="640" loading="lazy" decoding="async">
+            </picture>
+            <figcaption><span class="home-moment-note">Help is never far.</span><span class="home-moment-year">2026</span></figcaption>
+          </figure>
+        </li>
+        <li class="home-moment" style="--r:-2.5deg;--y:-2px;--fx:50%;--fy:50%">
+          <figure>
+            <picture>
+              <source type="image/avif" srcset="/img/ha25-award-handshake-480.avif 480w, /img/ha25-award-handshake-960.avif 960w" sizes="(max-width: 767px) 78vw, 340px">
+              <source type="image/webp" srcset="/img/ha25-award-handshake-480.webp 480w, /img/ha25-award-handshake-960.webp 960w" sizes="(max-width: 767px) 78vw, 340px">
+              <img src="/img/ha25-award-handshake-960.jpg" srcset="/img/ha25-award-handshake-480.jpg 480w, /img/ha25-award-handshake-960.jpg 960w" sizes="(max-width: 767px) 78vw, 340px" alt="People shake hands in front of a screen that reads 'Amazon Prime Marketing Challenge Winners'." width="960" height="657" loading="lazy" decoding="async">
+            </picture>
+            <figcaption><span class="home-moment-note">Made it.</span><span class="home-moment-year">2025</span></figcaption>
+          </figure>
+        </li>
+        <li class="home-moment" style="--r:2deg;--y:6px;--fx:50%;--fy:40%">
+          <figure>
+            <picture>
+              <source type="image/avif" srcset="/img/ha26-judging-480.avif 480w, /img/ha26-judging-960.avif 960w, /img/ha26-judging-1600.avif 1600w" sizes="(max-width: 767px) 78vw, 340px">
+              <source type="image/webp" srcset="/img/ha26-judging-480.webp 480w, /img/ha26-judging-960.webp 960w, /img/ha26-judging-1600.webp 1600w" sizes="(max-width: 767px) 78vw, 340px">
+              <img src="/img/ha26-judging-960.jpg" srcset="/img/ha26-judging-480.jpg 480w, /img/ha26-judging-960.jpg 960w" sizes="(max-width: 767px) 78vw, 340px" alt="People in grey polo shirts, one with a Nuclearn logo, hold clipboards and look at a team's laptop." width="1600" height="1067" loading="lazy" decoding="async">
+            </picture>
+            <figcaption><span class="home-moment-note">Show, don&#39;t tell.</span><span class="home-moment-year">2026</span></figcaption>
+          </figure>
+        </li>
+        <li class="home-moment" style="--r:-1.5deg;--y:-4px;--fx:50%;--fy:50%">
+          <figure>
+            <picture>
+              <source type="image/avif" srcset="/img/ha26-team-countdown-480.avif 480w, /img/ha26-team-countdown-960.avif 960w" sizes="(max-width: 767px) 78vw, 340px">
+              <source type="image/webp" srcset="/img/ha26-team-countdown-480.webp 480w, /img/ha26-team-countdown-960.webp 960w" sizes="(max-width: 767px) 78vw, 340px">
+              <img src="/img/ha26-team-countdown-960.jpg" srcset="/img/ha26-team-countdown-480.jpg 480w, /img/ha26-team-countdown-960.jpg 960w" sizes="(max-width: 767px) 78vw, 340px" alt="Four people stand side by side and grin at the camera, one throwing both arms wide, under a projected countdown that reads 00 39 24." width="960" height="640" loading="lazy" decoding="async">
+            </picture>
+            <figcaption><span class="home-moment-note">Almost there.</span><span class="home-moment-year">2026</span></figcaption>
+          </figure>
+        </li>
+        <li class="home-moment" style="--r:2.5deg;--y:4px;--fx:50%;--fy:50%">
+          <figure>
+            <picture>
+              <source type="image/avif" srcset="/img/ha25-hacking-room-480.avif 480w, /img/ha25-hacking-room-960.avif 960w, /img/ha25-hacking-room-1600.avif 1600w" sizes="(max-width: 767px) 78vw, 340px">
+              <source type="image/webp" srcset="/img/ha25-hacking-room-480.webp 480w, /img/ha25-hacking-room-960.webp 960w, /img/ha25-hacking-room-1600.webp 1600w" sizes="(max-width: 767px) 78vw, 340px">
+              <img src="/img/ha25-hacking-room-960.jpg" srcset="/img/ha25-hacking-room-480.jpg 480w, /img/ha25-hacking-room-960.jpg 960w" sizes="(max-width: 767px) 78vw, 340px" alt="A crowded room of tables and laptops, with the Hack Arizona logo on the screens at the front." width="1600" height="900" loading="lazy" decoding="async">
+            </picture>
+            <figcaption><span class="home-moment-note">A room full of possibilities.</span><span class="home-moment-year">2025</span></figcaption>
+          </figure>
+        </li>
+        <li class="home-moment" style="--r:-2deg;--y:-2px;--fx:50%;--fy:45%">
+          <figure>
+            <picture>
+              <source type="image/avif" srcset="/img/ha26-team-pose-480.avif 480w, /img/ha26-team-pose-960.avif 960w" sizes="(max-width: 767px) 78vw, 340px">
+              <source type="image/webp" srcset="/img/ha26-team-pose-480.webp 480w, /img/ha26-team-pose-960.webp 960w" sizes="(max-width: 767px) 78vw, 340px">
+              <img src="/img/ha26-team-pose-960.jpg" srcset="/img/ha26-team-pose-480.jpg 480w, /img/ha26-team-pose-960.jpg 960w" sizes="(max-width: 767px) 78vw, 340px" alt="Four people stand side by side and smile at the camera, two with arms round each other, projected clocks on the wall behind them." width="960" height="640" loading="lazy" decoding="async">
+            </picture>
+            <figcaption><span class="home-moment-note">Better, together.</span><span class="home-moment-year">2026</span></figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section section-shell" id="sponsors" aria-labelledby="sponsors-title" data-dock-section="sponsor">
+      <div class="section-heading" data-reveal="children">
+        <h2 id="sponsors-title">Thank you to our <em>sponsors.</em></h2>
+        <p class="section-intro">The companies, organisations and University of Arizona units that make Hack Arizona happen.</p>
+      </div>
+      <ul class="home-sponsors" data-reveal>
+        <li><picture><source type="image/webp" srcset="/logos/amazon.webp"><img src="/logos/amazon.png" alt="Amazon Tempe Town Lake Campus" width="113" height="40" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/nuclearn.webp"><img src="/logos/nuclearn.png" alt="Nuclearn" width="141" height="33" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/asua.webp"><img src="/logos/asua.png" alt="Associated Students of the University of Arizona (ASUA)" width="107" height="44" loading="lazy" decoding="async"></picture></li>
+        <li><img src="/logos/general-dynamics-mission-systems.svg" alt="General Dynamics Mission Systems" width="188" height="22" loading="lazy" decoding="async"></li>
+        <li><picture><source type="image/webp" srcset="/logos/github.webp"><img src="/logos/github.png" alt="GitHub" width="126" height="36" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/university-of-arizona.webp"><img src="/logos/university-of-arizona.png" alt="University of Arizona" width="64" height="60" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/university-libraries.webp"><img src="/logos/university-libraries.png" alt="University Libraries" width="166" height="28" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/center-philosophy-of-freedom.webp"><img src="/logos/center-philosophy-of-freedom.png" alt="Center for the Philosophy of Freedom" width="141" height="33" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/honors-college.webp"><img src="/logos/honors-college.png" alt="W.A. Franke Honors College" width="134" height="35" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/tech-launch-arizona.webp"><img src="/logos/tech-launch-arizona.png" alt="Tech Launch Arizona" width="144" height="33" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/startup-wildcats.webp"><img src="/logos/startup-wildcats.png" alt="Startup Wildcats" width="66" height="60" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/information-technology.webp"><img src="/logos/information-technology.png" alt="Information Technology" width="137" height="34" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/office-of-the-provost.webp"><img src="/logos/office-of-the-provost.png" alt="Office of the Provost" width="161" height="28" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/engineering.webp"><img src="/logos/engineering.png" alt="Engineering" width="165" height="28" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/responsible-ai.webp"><img src="/logos/responsible-ai.png" alt="Responsible Artificial Intelligence" width="162" height="28" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/startup-tucson.webp"><img src="/logos/startup-tucson.png" alt="Startup Tucson" width="112" height="41" loading="lazy" decoding="async"></picture></li>
+        <li><picture><source type="image/webp" srcset="/logos/research-innovation-impact.webp"><img src="/logos/research-innovation-impact.png" alt="Research, Innovation &amp; Impact" width="158" height="29" loading="lazy" decoding="async"></picture></li>
+        <li><img src="/logos/veridise.svg" alt="Veridise" width="143" height="33" loading="lazy" decoding="async"></li>
+        <li><picture><source type="image/webp" srcset="/logos/general-education.webp"><img src="/logos/general-education.png" alt="General Education" width="154" height="29" loading="lazy" decoding="async"></picture></li>
+      </ul>
+      <div class="actions">
+        <a class="text-link" href="https://uarizona.co1.qualtrics.com/jfe/form/SV_4Gfk4n0YAVmLR7E">Sponsor, judge or mentor: the interest form <span class="arrow arrow-ne" aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="faq" aria-labelledby="faq-title">
+      <div class="section-heading" data-reveal="children">
+        <h2 id="faq-title">Questions, <em>answered.</em></h2>
+      </div>
+      <div class="faq-list" data-reveal>
+        <details><summary>When and where is Hack Arizona 2027?<span class="faq-icon" aria-hidden="true"></span></summary><p>27 to 28 March 2027, at the Health Sciences Innovation Building (HSIB) on the University of Arizona campus in Tucson (<a href="https://map.arizona.edu/216">campus map</a>). Start and end times will be announced here, in Arizona time (MST all year).</p></details>
+        <details><summary>How do I register?<span class="faq-icon" aria-hidden="true"></span></summary><p>Registration opens in January 2027. Join the <a href="https://discord.gg/8BkZftYGWp">Discord</a> or follow <a href="https://www.instagram.com/hack.arizona/">@hack.arizona</a> to hear when it opens.</p></details>
+        <details><summary>Who can take part?<span class="faq-icon" aria-hidden="true"></span></summary><p>Students at any institute of higher education in the state of Arizona, undergraduate or graduate, from any discipline.</p></details>
+        <details><summary>Is it free?<span class="faq-icon" aria-hidden="true"></span></summary><p>Yes.</p></details>
+        <details><summary>How many people can be on a team?<span class="faq-icon" aria-hidden="true"></span></summary><p>Two to four.</p></details>
+        <details><summary>What should I bring?<span class="faq-icon" aria-hidden="true"></span></summary><p>Your laptop and chargers, a water bottle, a snack, comfortable clothes, your student ID card and an enthusiastic spirit.</p></details>
+        <details><summary>Will food be provided?<span class="faq-icon" aria-hidden="true"></span></summary><p>Yes: lunch and dinner on the first day, breakfast on the second, and snacks through the first day and at midnight.</p></details>
+        <details><summary>Is it overnight?<span class="faq-icon" aria-hidden="true"></span></summary><p>Yes, hacking runs overnight. There are no formal sleeping arrangements, but you may rest or sleep inside the venue.</p></details>
+        <details><summary>What do the challenges look like?<span class="faq-icon" aria-hidden="true"></span></summary><p>In 2026 the challenges centred on themes like sustainability, AI, and outreach and marketing. The 2027 challenges and prizes will be announced closer to the event.</p></details>
+        <details><summary>Is there a code of conduct?<span class="faq-icon" aria-hidden="true"></span></summary><p>Yes. Hack Arizona follows the <a href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md">MLH Code of Conduct</a>.</p></details>
+        <details><summary>Who can I ask?<span class="faq-icon" aria-hidden="true"></span></summary><p>Email the team at <a href="mailto:hackaz@arizona.edu">hackaz@arizona.edu</a>.</p></details>
+      </div>
+    </section>
+
+    <section class="cta grain" id="join" aria-labelledby="join-title">
+      <div class="cta-main" data-reveal="children">
+        <h2 id="join-title">Come build<br><em>with us.</em></h2>
+        <div>
+          <p>Registration opens in January 2027. Join the Discord to hear the moment it does.</p>
+          <div class="actions">
+            <a class="button" href="https://discord.gg/8BkZftYGWp">Join the Discord <span class="arrow arrow-ne" aria-hidden="true">↗</span></a>
+            <a class="text-link" href="mailto:hackaz@arizona.edu">hackaz@arizona.edu <span class="arrow arrow-ne" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+      <p class="note" aria-hidden="true">see you in March</p>
     </section>
     <!-- PAGE CONTENT END -->
   </main>

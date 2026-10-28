@@ -2,6 +2,7 @@
   {
     "id": "general-dynamics-mission-systems",
     "name": "General Dynamics Mission Systems",
+    "official": true,
     "files": {
       "light": {
         "svg": "logos/general-dynamics-mission-systems.svg"
@@ -17,6 +18,7 @@
   {
     "id": "amazon",
     "name": "Amazon Tempe Town Lake Campus",
+    "official": true,
     "files": {
       "light": {
         "png": "logos/amazon.png",
@@ -37,6 +39,7 @@
   {
     "id": "nuclearn",
     "name": "Nuclearn",
+    "official": true,
     "files": {
       "light": {
         "png": "logos/nuclearn.png",
@@ -53,6 +56,7 @@
   {
     "id": "ending-pandemics-academy",
     "name": "Ending Pandemics Academy",
+    "official": false,
     "files": {
       "light": {
         "png": "logos/ending-pandemics-academy.png",
@@ -69,6 +73,7 @@
   {
     "id": "rtx",
     "name": "Raytheon Technologies (RTX)",
+    "official": false,
     "files": {
       "light": {
         "png": "logos/rtx.png",
@@ -84,7 +89,8 @@
   },
   {
     "id": "asua",
-    "name": "ASUA",
+    "name": "Associated Students of the University of Arizona (ASUA)",
+    "official": true,
     "files": {
       "light": {
         "png": "logos/asua.png",
@@ -99,24 +105,9 @@
     "notes": "ASUA-logo.png is the same file. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 0%."
   },
   {
-    "id": "ua-computer-science",
-    "name": "University of Arizona Computer Science",
-    "files": {
-      "light": {
-        "png": "logos/ua-computer-science.png",
-        "webp": "logos/ua-computer-science.webp"
-      }
-    },
-    "width": 452,
-    "height": 128,
-    "aspect": 3.531,
-    "needsPlate": true,
-    "source": "03 Sponsors/Sponsor Logos/uacs.png",
-    "notes": "Logo reads \"Computer Science\" with the block A. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 83%."
-  },
-  {
     "id": "github",
     "name": "GitHub",
+    "official": true,
     "files": {
       "light": {
         "png": "logos/github.png",
@@ -133,6 +124,7 @@
   {
     "id": "mlh",
     "name": "Major League Hacking",
+    "official": false,
     "files": {
       "light": {
         "png": "logos/mlh.png",
@@ -149,6 +141,7 @@
   {
     "id": "responsible-ai",
     "name": "Responsible Artificial Intelligence",
+    "official": true,
     "files": {
       "light": {
         "png": "logos/responsible-ai.png",
@@ -165,6 +158,7 @@
   {
     "id": "center-philosophy-of-freedom",
     "name": "Center for the Philosophy of Freedom",
+    "official": true,
     "files": {
       "light": {
         "png": "logos/center-philosophy-of-freedom.png",
@@ -179,19 +173,209 @@
     "notes": "Lockup with \"The University of Arizona Office of the Provost\". Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 93%."
   },
   {
-    "id": "banner-health",
-    "name": "Banner Health",
+    "id": "university-of-arizona",
+    "name": "University of Arizona",
+    "official": true,
     "files": {
       "light": {
-        "png": "logos/banner-health.png",
-        "webp": "logos/banner-health.webp"
+        "png": "logos/university-of-arizona.png",
+        "webp": "logos/university-of-arizona.webp"
       }
     },
-    "width": 315,
+    "width": 137,
     "height": 128,
-    "aspect": 2.461,
+    "aspect": 1.07,
     "needsPlate": true,
-    "source": "03 Sponsors/Sponsor Logos/Banner.png",
-    "notes": "Low resolution (337x149) web copy with a fake transparency checkerboard baked in; checkerboard removed. Not in the plan's sponsor list: Sai to confirm, and ideally supply a vector file. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 97%."
+    "source": "refs/sponsors-site/university-of-arizona.png",
+    "notes": "Block A over \"The University of Arizona\", stacked. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 68%."
+  },
+  {
+    "id": "university-libraries",
+    "name": "University Libraries",
+    "official": true,
+    "files": {
+      "light": {
+        "png": "logos/university-libraries.png",
+        "webp": "logos/university-libraries.webp"
+      }
+    },
+    "width": 757,
+    "height": 128,
+    "aspect": 5.914,
+    "needsPlate": true,
+    "source": "refs/sponsors-site/university-libraries.png",
+    "notes": "Block A lockup. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 20%."
+  },
+  {
+    "id": "honors-college",
+    "name": "W.A. Franke Honors College",
+    "official": true,
+    "files": {
+      "light": {
+        "png": "logos/honors-college.png",
+        "webp": "logos/honors-college.webp"
+      }
+    },
+    "width": 490,
+    "height": 128,
+    "aspect": 3.828,
+    "needsPlate": true,
+    "source": "refs/sponsors-site/honors-college.png",
+    "notes": "Block A lockup supplied on white; only the white around the logo was removed. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 2%."
+  },
+  {
+    "id": "tech-launch-arizona",
+    "name": "Tech Launch Arizona",
+    "official": true,
+    "files": {
+      "light": {
+        "png": "logos/tech-launch-arizona.png",
+        "webp": "logos/tech-launch-arizona.webp"
+      }
+    },
+    "width": 557,
+    "height": 128,
+    "aspect": 4.352,
+    "needsPlate": true,
+    "source": "refs/sponsors-site/tech-launch-arizona.png",
+    "notes": "Block A lockup supplied on white; only the white around the logo was removed. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 0%."
+  },
+  {
+    "id": "startup-wildcats",
+    "name": "Startup Wildcats",
+    "official": true,
+    "files": {
+      "light": {
+        "png": "logos/startup-wildcats.png",
+        "webp": "logos/startup-wildcats.webp"
+      }
+    },
+    "width": 141,
+    "height": 128,
+    "aspect": 1.102,
+    "needsPlate": true,
+    "source": "refs/sponsors-site/startup-wildcats.png",
+    "notes": "Supplied on white with a light grey square behind the mark; both removed. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 12%."
+  },
+  {
+    "id": "information-technology",
+    "name": "Information Technology",
+    "official": true,
+    "files": {
+      "light": {
+        "png": "logos/information-technology.png",
+        "webp": "logos/information-technology.webp"
+      }
+    },
+    "width": 516,
+    "height": 128,
+    "aspect": 4.031,
+    "needsPlate": true,
+    "source": "refs/sponsors-site/information-technology.png",
+    "notes": "Block A lockup. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 87%."
+  },
+  {
+    "id": "office-of-the-provost",
+    "name": "Office of the Provost",
+    "official": true,
+    "files": {
+      "light": {
+        "png": "logos/office-of-the-provost.png",
+        "webp": "logos/office-of-the-provost.webp"
+      }
+    },
+    "width": 736,
+    "height": 128,
+    "aspect": 5.75,
+    "needsPlate": true,
+    "source": "refs/sponsors-site/office-of-the-provost.png",
+    "notes": "Block A lockup. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 83%."
+  },
+  {
+    "id": "engineering",
+    "name": "Engineering",
+    "official": true,
+    "files": {
+      "light": {
+        "png": "logos/engineering.png",
+        "webp": "logos/engineering.webp"
+      }
+    },
+    "width": 752,
+    "height": 128,
+    "aspect": 5.875,
+    "needsPlate": true,
+    "source": "refs/sponsors-site/engineering.png",
+    "notes": "Block A lockup (College of Engineering). Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 87%."
+  },
+  {
+    "id": "startup-tucson",
+    "name": "Startup Tucson",
+    "official": true,
+    "files": {
+      "light": {
+        "png": "logos/startup-tucson.png",
+        "webp": "logos/startup-tucson.webp"
+      }
+    },
+    "width": 351,
+    "height": 128,
+    "aspect": 2.742,
+    "needsPlate": true,
+    "source": "refs/sponsors-site/startup-tucson.png",
+    "notes": "Supplied on white; only the white around the logo was removed. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 15%."
+  },
+  {
+    "id": "research-innovation-impact",
+    "name": "Research, Innovation & Impact",
+    "official": true,
+    "files": {
+      "light": {
+        "png": "logos/research-innovation-impact.png",
+        "webp": "logos/research-innovation-impact.webp"
+      }
+    },
+    "width": 699,
+    "height": 128,
+    "aspect": 5.461,
+    "needsPlate": true,
+    "source": "refs/sponsors-site/research-innovation-impact.png",
+    "notes": "Block A lockup. The official page captions it \"Rresearch, Innovation & Impact\" (typo). Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 87%."
+  },
+  {
+    "id": "veridise",
+    "name": "Veridise",
+    "official": true,
+    "files": {
+      "light": {
+        "svg": "logos/veridise.svg"
+      },
+      "dark": {
+        "svg": "logos/veridise-dark.svg"
+      }
+    },
+    "width": 555,
+    "height": 128,
+    "aspect": 4.336,
+    "needsPlate": false,
+    "source": "refs/sponsors-site/veridise-dark-text.svg + veridise.svg",
+    "notes": "From veridise.com (the official page shows a thank-you banner, not a logo). Veridise publishes a white wordmark only; the light file is a copy with the wordmark recoloured #0F172A. Ask Veridise for an official version. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 75%; dark file on navy 0%."
+  },
+  {
+    "id": "general-education",
+    "name": "General Education",
+    "official": true,
+    "files": {
+      "light": {
+        "png": "logos/general-education.png",
+        "webp": "logos/general-education.webp"
+      }
+    },
+    "width": 681,
+    "height": 128,
+    "aspect": 5.32,
+    "needsPlate": true,
+    "source": "refs/sponsors-site/general-education.png",
+    "notes": "Block A lockup. Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white 0%, on navy 76%."
   }
 ]

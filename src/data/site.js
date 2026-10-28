@@ -1,5 +1,6 @@
-/* Event config. Every value comes from Sai (PLAN.md "Confirmed by Sai" and the build contract); null means not given
-   yet, and whatever renders it must show a placeholder. Arizona keeps MST all year (no daylight saving). */
+/* Event config. Every value comes from Sai (PLAN.md "Confirmed by Sai" and the build contract) or from the official site
+   https://hack.arizona.edu/, which Sai said to use; null means not given yet, and whatever renders it must show a
+   placeholder. Arizona keeps MST all year (no daylight saving). */
 export const site = {
   event: {
     name: 'Hack Arizona 2027',
@@ -12,8 +13,14 @@ export const site = {
     city: 'Tucson, AZ',
   },
   registration: { opensMonth: '2027-01', url: null, platform: null },
-  links: { email: 'hackaz@arizona.edu', instagram: 'https://www.instagram.com/hack.arizona/', discord: null, codeOfConduct: null },
+  links: { email: 'hackaz@arizona.edu', instagram: 'https://www.instagram.com/hack.arizona/', discord: 'https://discord.gg/8BkZftYGWp', codeOfConduct: 'https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md' },
   mlhMember: null,
+  // The sponsor contact form. Web3Forms delivers each submission to the inbox the key was created for
+  // (hackaz@arizona.edu); the key is public by design. Until it is set, the form opens a pre-filled email instead.
+  forms: { sponsorEndpoint: 'https://api.web3forms.com/submit', sponsorKey: null },
+  // The story film. Until src is set the Story page shows a "coming soon" frame. src may be a video file in public/
+  // (e.g. '/video/our-story.mp4') or a YouTube link; captions (WebVTT, for a file) are optional but recommended.
+  film: { src: null, captions: null },
 };
 
 /** The wall-clock time in a time zone as 'YYYY-MM-DDTHH:MM', so it compares as a string against config dates. */

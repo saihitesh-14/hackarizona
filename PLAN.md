@@ -1,6 +1,6 @@
 # Hack Arizona website: plan
 
-Status: draft for Sai's review. Updated 25 Oct 2026.
+Status: draft for Sai's review. Updated 26 Oct 2026.
 Built with: the `minimal-motion-web` skill (design language, motion, interaction, QA), plus the skills already in `HackAZ/website/.agents/skills` (`frontend-design`, the GSAP set, `web-design-guidelines`, `vercel-react-view-transitions`).
 
 **Confirmed by Sai**
@@ -8,13 +8,25 @@ Built with: the `minimal-motion-web` skill (design language, motion, interaction
 - Hack Arizona 2027: 27 to 28 March 2027, at HSIB (Health Sciences Innovation Building).
 - Registration opens in January 2027.
 - Hack Arizona was founded in 2015; the first hackathon was in 2016.
-- The 3D hero is the Hack Arizona logo itself (a two-sided medallion), not the circuit saguaro.
+- No 3D hero (26 Oct 2026). The hero is a banner of the early-years auditorium (Sai's image) with the logo itself as a 2D motion graphic: it draws itself, sends pulses up the saguaro, leans toward the pointer and replays on click.
+- Participants: 2025, 100; 2026, more than 180. There was no Hack Arizona in 2024 (26 Oct 2026).
+- HackDays are the mini hackathons, usually 7 to 8 hours (26 Oct 2026).
+- Hack Arizona 2027 keeps the 2026 rules: eligibility, free entry, teams of 2 to 4, what to bring, meals, overnight (26 Oct 2026).
+- Do not use the UA Computer Science and Banner Health logos (26 Oct 2026).
+- Use the information on the official site, https://hack.arizona.edu/ (26 Oct 2026).
+- Show every sponsor listed on https://hack.arizona.edu/sponsors (26 Oct 2026).
 
 **Built so far** (in `HackAZ/website`)
 
 - `brand/hackaz-mark.svg`: the circle logo as a vector, traced from the PNG (matches it apart from anti-aliased edge pixels).
 - `prototypes/motion/`: the logo draw-on (loader idea), tested in a browser.
-- The 3D logo medallion: code written; build, browser check and delivery still to do.
+- The 3D logo medallion was written, then dropped at Sai's request on 26 Oct 2026 (the code is in git history, commit 7f00768).
+- The shared shell (header, dock, footer, loader, theme, pause, reveals, cursor, signal spine), colour tokens, optimised photos, logos and headshots.
+- Home page (26 Oct 2026): hero banner (the early-years auditorium) with the logo as a motion graphic, numbers, what Hack Arizona is, "Real skills, polished here" with a panel for people looking for builders (replaced the 2025 challenges at Sai's request), a carousel of tilted photo cards with hand-written notes ("Good ideas. Better company.", after Sai's reference), all 19 sponsors from the official site, questions, and the join block.
+- Sponsor page (27 Oct 2026): who you'll meet, four ways sponsors get value and in-kind options (from the 2026-27 deck), the 19 sponsors, and a contact form (name, email, organisation, interests, message) that emails hackaz@arizona.edu through Web3Forms once its key is in src/data/site.js, and opens a pre-filled email until then.
+- Story page (27 Oct 2026): "We started from zero. *Twice.*", a frame for the film (shows "coming soon" until `site.film.src` in src/data/site.js is set to a video in public/video/ or a YouTube link; it loads only when pressed), the timeline from 2015 to 2027 with the signal trace (red where Hack Arizona ran, dashed grey from 2020 to 2025, a pulse that follows the scroll), and the key organizers named in the official history.
+- Speed (27 Oct 2026): removed the full-screen blend layer, the blur filters on the animated logo and a page-wide `:has()` rule; the logo, banner zoom and number count-ups pause off screen.
+- Events and Team: not built yet (title and placeholder only).
 
 ---
 
@@ -56,7 +68,7 @@ The whole site speaks the language of the logo: **traces and pulses**. Everythin
 
 - Light theme: cool white paper, navy ink, Arizona red as the one accent.
 - Dark theme: "desert night", deep navy surfaces, never black.
-- Hero: the Hack Arizona logo in 3D, as a two-sided medallion (white ring, red to navy enamel, the saguaro raised out of it). Face-on it is exactly the logo. A red signal runs up the saguaro, round the pads and round the ring.
+- Hero: a real photo, the giant lit-up Hack Arizona logo with the team in front of it, faded into the page so it has no hard edge, in either theme.
 - Story page: the trace runs through the years. In 2020 the signal fails and the trace goes dark. In 2025 it reboots.
 
 ### B. Night shift
@@ -98,9 +110,9 @@ Team could fold into Story if you prefer fewer pages. Navigation: a slim header 
 | Tucson, AZ                                      2027 edition |
 |                                                              |
 | (o) Registration opens in January   .-----------------.      |
-|                                     |     3D logo      |     |
-| HACK ARIZONA                        |    medallion     |     |
-| is back.                            |  (sways, glows)  |     |
+|                                     |   hero photo     |     |
+| HACK ARIZONA                        |  (logo wall,     |     |
+| is back.                            |  fades into page)|     |
 |                                     '-----------------'      |
 | 24 hours to build something real.                            |
 | Mar 27 to 28, 2027 | HSIB | 24 hours                         |
@@ -176,7 +188,10 @@ One line per moving thing. Anything that cannot say what it explains gets cut.
 | --- | --- | --- | --- |
 | Loader | First visit only, skippable | The logo draws itself as a trace, pads pop, a pulse climbs the trunk, then a wipe, about 1.8s | This is Hack Arizona; the visual language of the site |
 | Hero headline | Page load | Lines rise from a mask, 1.15s | Where to start reading |
-| 3D logo medallion | Load, idle, cursor, click, scroll | Spins in like a flipped coin landing face up; then sways and floats; leans toward the cursor; spins when flicked and settles face-on; a red signal runs up the saguaro, round the pads and the ring every few seconds, or on click | The brand itself, alive |
+| Hero scroll story | Scroll (wide screens, motion on) | Smooth scrolling (Lenis); the hero pins while the copy lifts away, the logo glides to the centre, a mission line lights up word by word and a dome with words round its edge rises into the next section (after Sai's ERA Residence reference) | Who Hack Arizona is, in one gesture |
+| Hero banner | Always | The auditorium photo drifts and zooms very slowly under a navy wash | Where Hack Arizona comes from |
+| Hero mark | Load (after the loader), then every few seconds; pointer; click | The logo draws itself like the loader, then a pulse climbs the saguaro and lights the pads; orbit rings with dots turn around it; it floats and leans toward the pointer; a click replays the drawing | The brand itself, alive |
+| Moments carousel | Drag, swipe, buttons, keyboard | Tilted photo cards; drag with a short coast; a card straightens and lifts on hover | Invitation to look around |
 | Countdown | Every minute | Digits roll like the projector clock | How long until hacking starts |
 | Signal spine | Scroll | A faint vertical trace on the page edge; a small pulse tracks your position and lights a pad at each section | Where you are on the page |
 | Numbers band | First time in view | Count up once, 1.4s | Scale, at a glance |
@@ -229,10 +244,10 @@ Per `frontend-design`, I reviewed this plan for the looks every generated site l
 ## 7. How it will be built
 
 - **Plain HTML, CSS and JavaScript modules, built with Vite** into a static site. Every word and link works without JavaScript.
-- **Starting point:** the `minimal-motion-web` starter (dock, cursor, theme reveal, reveals, WebGL hero, loader, pause control, QA scripts).
+- **Starting point:** the `minimal-motion-web` starter (dock, cursor, theme reveal, reveals, loader, pause control, QA scripts).
 - **GSAP** (the skills in your website folder) for the Story trace (`MotionPath`, `DrawSVG`), scroll links (`ScrollTrigger`), the board (`Draggable` and `Inertia`), with `gsap.matchMedia()` for reduced motion.
 - **View Transitions:** the native cross-document version (no React needed) for page changes.
-- **3D hero:** three.js. The medallion is built from the traced logo SVG (white body with a rounded rim, enamel disc with the exact gradient, raised saguaro) and lit with a built-in studio environment, so no textures are downloaded. The static SVG logo is the fallback when WebGL is unavailable.
+- **Hero image:** a normal responsive photo (AVIF, WebP, JPEG) with a soft radial mask, so it melts into the paper in both themes. No WebGL and no three.js.
 - **Images:** resized to AVIF and WebP with JPEG fallback; lazy loaded; the photo board uses about 12 photos, not 400.
 - **Hosting:** GitHub Pages or Vercel, your call; custom domain to decide.
 - **QA every round:** `qa-site.cjs` in a real browser, contact sheets in both themes and at phone width, frozen mid-animation frames, `contrast.py`, keyboard pass, Lighthouse.

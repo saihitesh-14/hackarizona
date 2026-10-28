@@ -1,5 +1,7 @@
-// Builds public/logos/ and public/team/ (files + manifest.json) from Sai's read-only asset folders.
+// Builds public/logos/ and public/team/ (files + manifest.json) from Sai's read-only asset folders, plus the sponsor
+// logos taken from the official site (refs/sponsors-site/, see SOURCES.md there).
 // Run: node scripts/optimize-brand-assets.mjs   (re-run after adding or replacing a source file)
+// Without Sai's folders (a cloud checkout), the logos and headshots built from them are kept as last built.
 import sharp from 'sharp';
 import assert from 'node:assert/strict';
 import { mkdir, readFile, readdir, rm, stat, writeFile } from 'node:fs/promises';
@@ -9,6 +11,7 @@ import path from 'node:path';
 const WEB = fileURLToPath(new URL('..', import.meta.url));
 const HACKAZ = path.resolve(WEB, '..');
 const LOGO_SRC = path.join(HACKAZ, '03 Sponsors/Sponsor Logos');
+const SITE_SRC = path.join(WEB, 'refs/sponsors-site');
 const TEAM_SRC = path.join(HACKAZ, '05 Organizers');
 const OUT = path.join(WEB, 'public');
 
@@ -17,30 +20,50 @@ const LOGO_H = 128; // 2x of the 64px display height
 const WHITE = [255, 255, 255];
 const NAVY = [7, 21, 46]; // ~#07152E, dark theme page
 
-// One entry per brand. light/dark = source file names. opaqueBg = the file has a baked-in white background.
+// One entry per brand. light/dark = source file names (in dir, default LOGO_SRC). opaqueBg = the file has a baked-in
+// white background. official = listed on https://hack.arizona.edu/sponsors (Sai: show every one of them). forcePlate =
+// needs a plate on dark although the measure passes (white fringes left by background removal fool it).
+// Sai asked on 26 Oct 2026 not to use the UA Computer Science (uacs.png) and Banner Health (Banner.png) logos.
 const LOGOS = [
-  { id: 'general-dynamics-mission-systems', name: 'General Dynamics Mission Systems', light: 'General_Dynamics_Mission_Systems_logo.svg',
+  { id: 'general-dynamics-mission-systems', name: 'General Dynamics Mission Systems', light: 'General_Dynamics_Mission_Systems_logo.svg', official: true,
     notes: 'SVG chosen over GeneralDynamicsLogo.png (stacked) and general-dynamics-1.png (one line); both PNGs read "General Dynamics" without "Mission Systems". Sai to confirm which name the sponsor uses.' },
-  { id: 'amazon', name: 'Amazon Tempe Town Lake Campus', light: 'amazon_tempe_town_lake_logo_-_transparent.png',
+  { id: 'amazon', name: 'Amazon Tempe Town Lake Campus', light: 'amazon_tempe_town_lake_logo_-_transparent.png', official: true,
     dark: 'amazon_tempe_town_lake_campus_logo_-_white_and_orange_-_transparent.png',
     notes: 'Campus lockup, not the plain Amazon logo. dark = the supplied white-and-orange version. amazon.png.png and amazon.webp are small copies on white, not used.' },
-  { id: 'nuclearn', name: 'Nuclearn', light: '2025 Logo Horizontal(1).png',
+  { id: 'nuclearn', name: 'Nuclearn', light: '2025 Logo Horizontal(1).png', official: true,
     notes: 'Source "2025 Logo Horizontal(1).png" is the Nuclearn logo (transparent). "Nuclearn Logo 2x1.jpg" is an older copy on white, not used.' },
   { id: 'ending-pandemics-academy', name: 'Ending Pandemics Academy', light: 'NEW-EP-ACADEMY-LOGO.png', opaqueBg: 'outside',
     notes: 'Lockup with "The University of Arizona Mel & Enid Zuckerman College of Public Health Global Health Institute". Supplied on white only; only the white around the logo was removed, so the block A\'s white band and the letter counters stay white: keep it on a light surface (paper or plate).' },
   { id: 'rtx', name: 'Raytheon Technologies (RTX)', light: 'RTX_Raytheon_Technologies_logo.svg.png',
     notes: 'The logo itself reads "RTX"; the name comes from the file name. Black only; no white version supplied.' },
-  { id: 'asua', name: 'ASUA', light: 'ASUA.png', notes: 'ASUA-logo.png is the same file.' },
-  { id: 'ua-computer-science', name: 'University of Arizona Computer Science', light: 'uacs.png', notes: 'Logo reads "Computer Science" with the block A.' },
-  { id: 'github', name: 'GitHub', light: 'Git-hub.png',
+  { id: 'asua', name: 'Associated Students of the University of Arizona (ASUA)', light: 'ASUA.png', official: true, notes: 'ASUA-logo.png is the same file.' },
+  { id: 'github', name: 'GitHub', light: 'Git-hub.png', official: true,
     notes: 'Horizontal lockup chosen over GitHub-logo.png (stacked, mostly empty canvas). Black only; no white version supplied.' },
   { id: 'mlh', name: 'Major League Hacking', light: 'mlh-logo-color.png', notes: 'No white version supplied.' },
-  { id: 'responsible-ai', name: 'Responsible Artificial Intelligence', light: 'Responsible-Artificial-Intelligence_WEB.png',
+  { id: 'responsible-ai', name: 'Responsible Artificial Intelligence', light: 'Responsible-Artificial-Intelligence_WEB.png', official: true,
     notes: 'University of Arizona block A lockup. Responsible-Artificial-Intelligence.png is the same file.' },
-  { id: 'center-philosophy-of-freedom', name: 'Center for the Philosophy of Freedom', light: 'PROVOST_Center-for-the-Philosophy-of-Freedom_PRIMARY.png',
+  { id: 'center-philosophy-of-freedom', name: 'Center for the Philosophy of Freedom', light: 'PROVOST_Center-for-the-Philosophy-of-Freedom_PRIMARY.png', official: true,
     notes: 'Lockup with "The University of Arizona Office of the Provost".' },
-  { id: 'banner-health', name: 'Banner Health', light: 'Banner.png', opaqueBg: 'all',
-    notes: 'Low resolution (337x149) web copy with a fake transparency checkerboard baked in; checkerboard removed. Not in the plan\'s sponsor list: Sai to confirm, and ideally supply a vector file.' },
+  // From the official sponsors page. The University of Arizona units come on 1920x1080 canvases; the trim crops them.
+  { id: 'university-of-arizona', name: 'University of Arizona', dir: SITE_SRC, light: 'university-of-arizona.png', official: true,
+    notes: 'Block A over "The University of Arizona", stacked.' },
+  { id: 'university-libraries', name: 'University Libraries', dir: SITE_SRC, light: 'university-libraries.png', official: true, notes: 'Block A lockup.' },
+  { id: 'honors-college', name: 'W.A. Franke Honors College', dir: SITE_SRC, light: 'honors-college.png', opaqueBg: 'outside', official: true, forcePlate: true,
+    notes: 'Block A lockup supplied on white; only the white around the logo was removed.' },
+  { id: 'tech-launch-arizona', name: 'Tech Launch Arizona', dir: SITE_SRC, light: 'tech-launch-arizona.png', opaqueBg: 'outside', official: true, forcePlate: true,
+    notes: 'Block A lockup supplied on white; only the white around the logo was removed.' },
+  { id: 'startup-wildcats', name: 'Startup Wildcats', dir: SITE_SRC, light: 'startup-wildcats.png', opaqueBg: 'outside', official: true,
+    notes: 'Supplied on white with a light grey square behind the mark; both removed.' },
+  { id: 'information-technology', name: 'Information Technology', dir: SITE_SRC, light: 'information-technology.png', official: true, notes: 'Block A lockup.' },
+  { id: 'office-of-the-provost', name: 'Office of the Provost', dir: SITE_SRC, light: 'office-of-the-provost.png', official: true, notes: 'Block A lockup.' },
+  { id: 'engineering', name: 'Engineering', dir: SITE_SRC, light: 'engineering.png', official: true, notes: 'Block A lockup (College of Engineering).' },
+  { id: 'startup-tucson', name: 'Startup Tucson', dir: SITE_SRC, light: 'startup-tucson.png', opaqueBg: 'outside', official: true,
+    notes: 'Supplied on white; only the white around the logo was removed.' },
+  { id: 'research-innovation-impact', name: 'Research, Innovation & Impact', dir: SITE_SRC, light: 'research-innovation-impact.png', official: true,
+    notes: 'Block A lockup. The official page captions it "Rresearch, Innovation & Impact" (typo).' },
+  { id: 'veridise', name: 'Veridise', dir: SITE_SRC, light: 'veridise-dark-text.svg', dark: 'veridise.svg', official: true,
+    notes: 'From veridise.com (the official page shows a thank-you banner, not a logo). Veridise publishes a white wordmark only; the light file is a copy with the wordmark recoloured #0F172A. Ask Veridise for an official version.' },
+  { id: 'general-education', name: 'General Education', dir: SITE_SRC, light: 'general-education.png', official: true, notes: 'Block A lockup.' },
 ];
 
 // Square crops [left, top, side] in source pixels, set by eye: face centred, head about half the frame.
@@ -59,6 +82,9 @@ const TEAM_DIRS = { current: 'current_organizres_headshots', previous: 'previous
 
 const slug = (s) => s.toLowerCase().replace(/'/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const rel = (...p) => p.join('/'); // manifest paths are relative to the site root (public/)
+const exists = (p) => stat(p).then(() => true, () => false);
+const readManifest = async (dir) => (await exists(path.join(dir, 'manifest.json'))) ? JSON.parse(await readFile(path.join(dir, 'manifest.json'), 'utf8')) : [];
+const filePaths = (o) => (typeof o === 'string' ? [o] : Object.values(o).flatMap(filePaths));
 
 // --- colour helpers -------------------------------------------------------
 const LIN = Array.from({ length: 256 }, (_, c) => (c /= 255) <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
@@ -134,7 +160,7 @@ const rawRGBA = (img) => img.toColourspace('srgb').ensureAlpha().raw().toBuffer(
 
 // Raster logo -> trimmed PNG + WebP at LOGO_H. Returns the output size and its pixels for measuring.
 async function rasterLogo(file, opaqueBg, outBase) {
-  const { data, info } = await rawRGBA(sharp(path.join(LOGO_SRC, file)));
+  const { data, info } = await rawRGBA(sharp(file));
   assert.equal(info.channels, 4);
   if (opaqueBg) clearBackground(data, info.width, info.height, opaqueBg);
   const pixels = await sharp(data, { raw: { width: info.width, height: info.height, channels: 4 } })
@@ -148,7 +174,7 @@ async function rasterLogo(file, opaqueBg, outBase) {
 
 // SVG -> same paths, viewBox tightened to the drawn area, XML prolog/doctype/empty groups dropped.
 async function svgLogo(file, outBase) {
-  const src = await readFile(path.join(LOGO_SRC, file), 'utf8');
+  const src = await readFile(file, 'utf8');
   const vb = src.match(/viewBox="([^"]+)"/)[1].trim().split(/[\s,]+/).map(Number);
   const big = await rawRGBA(sharp(Buffer.from(src), { density: 288 }));
   const k = big.info.width / vb[2], b = alphaBox(big.data, big.info.width, big.info.height);
@@ -163,35 +189,52 @@ async function svgLogo(file, outBase) {
 
 async function buildLogos() {
   const dir = path.join(OUT, 'logos');
-  await rm(dir, { recursive: true, force: true }); await mkdir(dir, { recursive: true });
-  const manifest = [];
+  await mkdir(dir, { recursive: true });
+  const previous = await readManifest(dir), manifest = [], kept = [];
   for (const L of LOGOS) {
-    const isSvg = L.light.endsWith('.svg');
-    const light = isSvg ? await svgLogo(L.light, path.join(dir, L.id)) : await rasterLogo(L.light, L.opaqueBg, path.join(dir, L.id));
-    const dark = L.dark && await rasterLogo(L.dark, false, path.join(dir, `${L.id}-dark`));
+    const src = L.dir ?? LOGO_SRC;
+    if (!(await exists(path.join(src, L.light)))) {
+      const old = previous.find((p) => p.id === L.id);
+      assert.ok(old, `${L.id}: ${path.join(src, L.light)} not found, and there is no earlier build to keep`);
+      const { id, name, official, ...built } = old;
+      manifest.push({ id: L.id, name: L.name, official: Boolean(L.official), ...built });
+      kept.push(L.id);
+      continue;
+    }
+    const isSvg = L.light.endsWith('.svg'), darkSvg = L.dark?.endsWith('.svg');
+    const light = isSvg ? await svgLogo(path.join(src, L.light), path.join(dir, L.id)) : await rasterLogo(path.join(src, L.light), L.opaqueBg, path.join(dir, L.id));
+    const dark = L.dark && (darkSvg ? await svgLogo(path.join(src, L.dark), path.join(dir, `${L.id}-dark`))
+      : await rasterLogo(path.join(src, L.dark), false, path.join(dir, `${L.id}-dark`)));
     const lightOnWhite = weakShare(light.pixels, WHITE), lightOnNavy = weakShare(light.pixels, NAVY);
     const darkOnNavy = dark && weakShare(dark.pixels, NAVY);
     const pct = (n) => `${Math.round(n * 100)}%`;
     const files = { light: isSvg ? { svg: rel('logos', `${L.id}.svg`) } : { png: rel('logos', `${L.id}.png`), webp: rel('logos', `${L.id}.webp`) } };
-    if (dark) files.dark = { png: rel('logos', `${L.id}-dark.png`), webp: rel('logos', `${L.id}-dark.webp`) };
+    if (dark) files.dark = darkSvg ? { svg: rel('logos', `${L.id}-dark.svg`) } : { png: rel('logos', `${L.id}-dark.png`), webp: rel('logos', `${L.id}-dark.webp`) };
     const check = `Contrast check (share of the outline under 2:1, 5% or more = weak): light file on white ${pct(lightOnWhite)}, on navy ${pct(lightOnNavy)}` +
       (dark ? `; dark file on navy ${pct(darkOnNavy)}.` : '.');
     if (lightOnWhite >= 0.05) console.warn(`! ${L.id}: light file is weak on white (${pct(lightOnWhite)})`);
     manifest.push({
-      id: L.id, name: L.name, files, width: light.width, height: light.height,
+      id: L.id, name: L.name, official: Boolean(L.official), files, width: light.width, height: light.height,
       aspect: Math.round(light.width / light.height * 1000) / 1000,
-      needsPlate: dark ? darkOnNavy >= 0.05 : lightOnNavy >= 0.05,
-      source: rel('03 Sponsors/Sponsor Logos', L.light) + (L.dark ? ` + ${L.dark}` : ''),
+      needsPlate: Boolean(L.forcePlate) || (dark ? darkOnNavy >= 0.05 : lightOnNavy >= 0.05),
+      source: (L.dir ? path.relative(WEB, path.join(L.dir, L.light)).split(path.sep).join('/') : rel('03 Sponsors/Sponsor Logos', L.light)) + (L.dark ? ` + ${L.dark}` : ''),
       notes: `${L.notes} ${check}`,
     });
     if (dark && Math.abs(dark.width - light.width) > 2) console.warn(`! ${L.id}: dark file is ${dark.width}px wide, light ${light.width}px`);
   }
+  const used = new Set(manifest.flatMap((m) => filePaths(m.files)).map((p) => path.basename(p)));
+  for (const f of await readdir(dir)) if (f !== 'manifest.json' && !used.has(f)) await rm(path.join(dir, f));
+  if (kept.length) console.log(`logos kept as last built (source not found): ${kept.join(', ')}`);
   await writeFile(path.join(dir, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
   return manifest;
 }
 
 async function buildTeam() {
   const dir = path.join(OUT, 'team');
+  if (!(await exists(TEAM_SRC))) {
+    console.log('team kept as last built (source not found)');
+    return readManifest(dir);
+  }
   await rm(dir, { recursive: true, force: true }); await mkdir(dir, { recursive: true });
   const manifest = [];
   for (const [group, sub] of Object.entries(TEAM_DIRS)) {
@@ -224,8 +267,7 @@ async function buildTeam() {
 
 // Self-check: every manifest file exists and is non-empty; headshots are square, metadata-free and the listed size.
 async function verify(logos, team) {
-  const paths = (o) => (typeof o === 'string' ? [o] : Object.values(o).flatMap(paths));
-  for (const L of logos) for (const p of paths(L.files)) assert.ok((await stat(path.join(OUT, p))).size > 0, p);
+  for (const L of logos) for (const p of filePaths(L.files)) assert.ok((await stat(path.join(OUT, p))).size > 0, p);
   for (const T of team) for (const [, byW] of Object.entries(T.files)) for (const [w, p] of Object.entries(byW)) {
     const m = await sharp(path.join(OUT, p)).metadata();
     assert.ok(m.width === +w && m.height === +w && !m.exif && !m.xmp, `${p}: ${m.width}x${m.height}, exif ${!!m.exif}`);
