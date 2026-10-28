@@ -356,7 +356,7 @@
   {
     "id": "ha25-team-logo-wall",
     "slots": [
-      "story:2025"
+      "spare"
     ],
     "year": 2025,
     "event": "Hack Arizona 2025",
@@ -382,7 +382,7 @@
   {
     "id": "ha26-red-wall-room",
     "slots": [
-      "story:2026"
+      "home-skills"
     ],
     "year": 2026,
     "event": "Hack Arizona 2026",
@@ -408,7 +408,7 @@
   {
     "id": "ha25-crowd-screen",
     "slots": [
-      "story:extra"
+      "story:2025"
     ],
     "year": 2025,
     "event": "Hack Arizona 2025",
@@ -737,6 +737,57 @@
     "focal": {
       "x": 0.5,
       "y": 0.45
+    }
+  },
+  {
+    "id": "ha26-group-stage",
+    "slots": [
+      "story:2026"
+    ],
+    "year": 2026,
+    "event": "Hack Arizona 2026",
+    "width": 1600,
+    "height": 526,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "More than a hundred participants and organizers stand in a long row on a stage, waving, under a big screen that reads Hack Arizona 2026.",
+    "caption": "Hack Arizona 2026",
+    "source": "refs/photos-sai/ha26-group-stage.jpg",
+    "focal": {
+      "x": 0.5,
+      "y": 0.5
+    }
+  },
+  {
+    "id": "ha18-recap-still",
+    "slots": [
+      "story:2018-video"
+    ],
+    "year": 2018,
+    "event": "Hack Arizona 2018",
+    "width": 960,
+    "height": 540,
+    "widths": [
+      480,
+      960
+    ],
+    "jpgWidths": [
+      480,
+      960
+    ],
+    "alt": "A still from the Hack Arizona 2018 recap video: a student listens to a man in a grey jacket in a crowded hall.",
+    "caption": "Hack Arizona 2018 Official Recap",
+    "source": "refs/photos-sai/ha18-recap-still.jpg",
+    "focal": {
+      "x": 0.5,
+      "y": 0.5
     }
   }
 ]

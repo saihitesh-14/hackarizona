@@ -145,7 +145,7 @@
     {
       "id": "ha25-team-logo-wall",
       "source": "04 Event Photos & Video/2025 Photos/Organizer Team Photos/IMG_1043.jpeg",
-      "slots": ["story:2025"],
+      "slots": ["spare"],
       "year": 2025,
       "event": "Hack Arizona 2025",
       "alt": "A group, most in maroon Hack Arizona T-shirts, stands in front of a giant lit-up Hack Arizona logo.",
@@ -155,7 +155,7 @@
     {
       "id": "ha26-red-wall-room",
       "source": "04 Event Photos & Video/HACKARIZONA 2026/IMG_6060.JPG",
-      "slots": ["story:2026"],
+      "slots": ["home-skills"],
       "year": 2026,
       "event": "Hack Arizona 2026",
       "alt": "A team works at laptops around white tables in a bright room with a red wall.",
@@ -165,7 +165,7 @@
     {
       "id": "ha25-crowd-screen",
       "source": "04 Event Photos & Video/2025 Photos/Judging and Presentation/IMG_0991.jpeg",
-      "slots": ["story:extra"],
+      "slots": ["story:2025"],
       "year": 2025,
       "event": "Hack Arizona 2025",
       "alt": "A crowd stands and talks in front of a large screen showing the Hack Arizona logo and the dates March 22-23.",
@@ -292,6 +292,26 @@
       "alt": "A busy room of students at laptops and talking in groups, under a big screen that reads The University of Arizona, Hack Arizona, March 22-23.",
       "caption": "Hack Arizona 2025",
       "focal": { "x": 0.5, "y": 0.45 }
+    },
+    {
+      "id": "ha26-group-stage",
+      "source": "refs/photos-sai/ha26-group-stage.jpg",
+      "slots": ["story:2026"],
+      "year": 2026,
+      "event": "Hack Arizona 2026",
+      "alt": "More than a hundred participants and organizers stand in a long row on a stage, waving, under a big screen that reads Hack Arizona 2026.",
+      "caption": "Hack Arizona 2026",
+      "focal": { "x": 0.5, "y": 0.5 }
+    },
+    {
+      "id": "ha18-recap-still",
+      "source": "refs/photos-sai/ha18-recap-still.jpg",
+      "slots": ["story:2018-video"],
+      "year": 2018,
+      "event": "Hack Arizona 2018",
+      "alt": "A still from the Hack Arizona 2018 recap video: a student listens to a man in a grey jacket in a crowded hall.",
+      "caption": "Hack Arizona 2018 Official Recap",
+      "focal": { "x": 0.5, "y": 0.5 }
     }
   ]
 }

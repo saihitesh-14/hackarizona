@@ -14,3 +14,10 @@ applied, every bit of metadata removed (EXIF, GPS location, maker notes) and the
 
 Sai also pasted about twenty photos straight into the chat. Pasted images are not saved as files in the build session,
 so they could not be used; they need to be attached as files (or committed to this folder) to reach the site.
+
+Added 28 Oct 2026 (Sai attached both in the build chat; saved as new JPEGs, so no metadata):
+
+| File | Upload | Taken |
+| --- | --- | --- |
+| `ha26-group-stage.jpg` | `18.jpg`, for the Story page's 2026 chapter ("Stronger") | Hack Arizona 2026 (the screen reads Hack Arizona 2026), 2000 x 657 |
+| `ha18-recap-still.jpg` | the 1280 x 720 thumbnail of Hack Arizona's own "Hack Arizona 2018 Official Recap" (https://www.youtube.com/watch?v=5P_cnY0tABo), the poster for that video on the Story page | Hack Arizona 2018 |

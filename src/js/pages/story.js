@@ -59,6 +59,30 @@ function initTrace(track) {
 }
 
 // The film: a play button that loads the video (a file, with captions if given, or a YouTube embed) only when pressed.
+/** A YouTube player (privacy-enhanced domain) that starts playing at once; made only after a press. */
+function youtubePlayer(id, title) {
+  const player = document.createElement('iframe');
+  player.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+  player.title = title;
+  player.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+  player.allowFullscreen = true;
+  return player;
+}
+
+// Chapter videos ([data-youtube]): the link to YouTube becomes an in-place player when pressed.
+function initVideos(scope) {
+  scope.querySelectorAll('[data-youtube]').forEach(box => {
+    const link = box.querySelector('.story-video-play');
+    link?.addEventListener('click', event => {
+      event.preventDefault();
+      const player = youtubePlayer(box.dataset.youtube, box.dataset.youtubeTitle || 'Video');
+      box.append(player);
+      link.remove();
+      player.focus();
+    }, { once: true });
+  });
+}
+
 function initFilm(box) {
   if (!box || !site.film.src) return;
   const label = box.querySelector('[data-film-label]');
@@ -73,11 +97,7 @@ function initFilm(box) {
     const youtube = site.film.src.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
     let player;
     if (youtube) {
-      player = document.createElement('iframe');
-      player.src = `https://www.youtube-nocookie.com/embed/${youtube[1]}?autoplay=1&rel=0`;
-      player.title = 'Hack Arizona: our story';
-      player.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-      player.allowFullscreen = true;
+      player = youtubePlayer(youtube[1], 'Hack Arizona: our story');
     } else {
       player = document.createElement('video');
       player.src = site.film.src;
@@ -98,3 +118,4 @@ function initFilm(box) {
 
 initTrace(document.querySelector('[data-story-track]'));
 initFilm(document.querySelector('[data-film]'));
+initVideos(document);

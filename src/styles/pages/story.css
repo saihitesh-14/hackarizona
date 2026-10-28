@@ -19,6 +19,22 @@ button.story-film-label{cursor:pointer}
 button.story-film-label:hover .story-film-play{background:var(--logo-red);border-color:var(--logo-red)}
 .story-film video,.story-film iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:var(--banner-bg)}
 
+/* A chapter video (2016 to 2020: the 2018 recap): the still with a play button; story.js swaps in the YouTube player
+   only when pressed. Without JavaScript the button is a plain link to the video on YouTube. */
+.story-video{position:relative;overflow:hidden;aspect-ratio:16/9;border-radius:16px;background:var(--banner-bg);color:var(--banner-ink)}
+.story-video picture{position:absolute;inset:0}
+.story-video img{width:100%;height:100%;max-height:none;border-radius:0;object-fit:cover;opacity:.8}
+.story-video-play{position:absolute;inset:0;display:flex;align-items:flex-end;gap:16px;padding:clamp(16px,3vw,26px);background:linear-gradient(to top,color-mix(in srgb,var(--banner-bg) 82%,transparent),transparent 62%);color:inherit}
+.story-video-play .story-film-play{width:58px;transition:background .25s ease,border-color .25s ease}
+.story-video-text{display:grid;gap:2px;text-align:left}
+.story-video-play strong{font-size:20px;font-weight:500;letter-spacing:-.03em}
+.story-video-text>span{font-size:15px;color:var(--banner-text)}
+.story-video-play:hover .story-film-play{background:var(--logo-red);border-color:var(--logo-red)}
+.story-video-play:focus-visible{outline:2px solid var(--banner-ink);outline-offset:-6px;border-radius:12px}
+/* links.js marks external links with ↗; this one plays in place, so the mark would mislead. */
+.story-video-play .arrow{display:none}
+.story-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
 /* Timeline: a year column, the signal trace with a pad per chapter, and the chapter itself. A pulse runs down the
    trace with the scroll (story.js moves the pulse and the fill, and sets the chapter states). The trace is red where the signal has
    been, except from 2020 to 2025, where it is a dashed grey line: the years Hack Arizona was off. */
@@ -60,6 +76,10 @@ button.story-film-label:hover .story-film-play{background:var(--logo-red);border
   .story-people{grid-template-columns:1fr}
 }
 @media(max-width:767px){
+  .story-video-play{gap:12px;padding:14px}
+  .story-video-play .story-film-play{width:44px}
+  .story-video-play strong{font-size:17px}
+  .story-video-text>span{display:none}
   .story-track{--year:0px;--gap:0px;--trace-x:9px}
   .story-chapter{grid-template-columns:1fr;padding-left:40px}
   .story-year{text-align:left;font-size:30px;margin-bottom:10px}
