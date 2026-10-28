@@ -15,6 +15,7 @@ Built with: the `minimal-motion-web` skill (design language, motion, interaction
 - Do not use the UA Computer Science and Banner Health logos (26 Oct 2026).
 - Use the information on the official site, https://hack.arizona.edu/ (26 Oct 2026).
 - Show every sponsor listed on https://hack.arizona.edu/sponsors (26 Oct 2026).
+- Sai's title on the Team page is President (28 Oct 2026), not "Lead" as the official site still says.
 
 **Built so far** (in `HackAZ/website`)
 
