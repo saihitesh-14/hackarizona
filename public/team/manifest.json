@@ -172,8 +172,8 @@
       }
     },
     "role": null,
-    "source": "05 Organizers/./Headshot .jpeg",
-    "nativePx": 470
+    "source": "refs/team/sai-hitesh.jpg",
+    "nativePx": 560
   },
   {
     "id": "santiago-vargas-roldan",
@@ -350,5 +350,49 @@
     "role": null,
     "source": "05 Organizers/previous-organizers-headshots/Screenshot 2026-10-24 at 19-07-04 Om Jariwala Hack Arizona.png",
     "nativePx": 253
+  },
+  {
+    "id": "mayra-vargas",
+    "name": "Mayra Vargas",
+    "group": "advisor",
+    "files": {
+      "avif": {
+        "400": "team/mayra-vargas-400.avif",
+        "800": "team/mayra-vargas-800.avif"
+      },
+      "webp": {
+        "400": "team/mayra-vargas-400.webp",
+        "800": "team/mayra-vargas-800.webp"
+      },
+      "jpg": {
+        "400": "team/mayra-vargas-400.jpg",
+        "800": "team/mayra-vargas-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "refs/team/mayra-vargas.jpg",
+    "nativePx": 400
+  },
+  {
+    "id": "ben-richmond",
+    "name": "Ben Richmond",
+    "group": "advisor",
+    "files": {
+      "avif": {
+        "400": "team/ben-richmond-400.avif",
+        "800": "team/ben-richmond-800.avif"
+      },
+      "webp": {
+        "400": "team/ben-richmond-400.webp",
+        "800": "team/ben-richmond-800.webp"
+      },
+      "jpg": {
+        "400": "team/ben-richmond-400.jpg",
+        "800": "team/ben-richmond-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "refs/team/ben-richmond.jpg",
+    "nativePx": 520
   }
 ]

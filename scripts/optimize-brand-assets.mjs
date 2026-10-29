@@ -79,8 +79,15 @@ const CROPS = {
   'Om Jariwala': [89, 51, 253], "Hidoyat Odilbek o'g'li Ruzmetov": [99, 112, 238], 'Olivia Grace Sobczak': [138, 30, 167],
   'Dongyoung Yang': [44, 49, 323], 'Kory M Smith': [0, 0, 414],
 };
-// Unnamed file; Sai confirmed in chat (25 Oct 2026) that it is their headshot.
+// Unnamed file; Sai confirmed in chat (25 Oct 2026) that it is their headshot. Replaced by the one in REPO_HEADSHOTS.
 const EXTRA_HEADSHOTS = [{ f: 'Headshot .jpeg', sub: '.', name: 'Sai Hitesh', group: 'current' }];
+// Headshots Sai sent in chat, kept in this repository (refs/team/, see SOURCES.md there), so they build on any checkout.
+// Each replaces the same person's headshot from the folder above. crop is [left, top, side], like CROPS.
+const REPO_HEADSHOTS = [
+  { f: 'sai-hitesh.jpg', name: 'Sai Hitesh', group: 'current', crop: [55, 0, 560] },
+  { f: 'mayra-vargas.jpg', name: 'Mayra Vargas', group: 'advisor', crop: [0, 0, 400] },
+  { f: 'ben-richmond.jpg', name: 'Ben Richmond', group: 'advisor', crop: [135, 40, 520] },
+];
 const TEAM_DIRS = { current: 'current_organizres_headshots', previous: 'previous-organizers-headshots' };
 
 const slug = (s) => s.toLowerCase().replace(/'/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -235,8 +242,8 @@ async function buildLogos() {
 async function buildTeam() {
   const dir = path.join(OUT, 'team');
   if (!(await exists(TEAM_SRC))) {
-    console.log('team kept as last built (source not found)');
-    return readManifest(dir);
+    console.log('team kept as last built (source not found), apart from the headshots in refs/team');
+    return finishTeam(dir, await readManifest(dir));
   }
   await rm(dir, { recursive: true, force: true }); await mkdir(dir, { recursive: true });
   const manifest = [];
@@ -247,22 +254,36 @@ async function buildTeam() {
       .sort((a, b) => a.name.localeCompare(b.name));
     for (const { f, name, sub: own } of people) {
       const crop = CROPS[name]; assert.ok(crop, `no crop set for "${name}" (${f})`);
-      const [left, top, side] = crop, id = slug(name);
-      const src = path.join(TEAM_SRC, own ?? sub, f), meta = await sharp(src).metadata();
-      assert.ok(left + side <= meta.width && top + side <= meta.height, `crop outside image for ${name}`);
-      // Sources are 414px wide: 800 is always an upscale of the `nativePx` crop (400 too when nativePx < 400).
-      // Swap in the original photos to get real detail at 800.
-      const widths = [400, 800];
-      const out = { avif: {}, webp: {}, jpg: {} };
-      for (const w of widths) {
-        const base = sharp(src).extract({ left, top, width: side, height: side }).resize(w, w, { kernel: 'lanczos3' }).removeAlpha().toColourspace('srgb');
-        await base.clone().avif({ quality: 55, effort: 6 }).toFile(path.join(dir, `${id}-${w}.avif`));
-        await base.clone().webp({ quality: 80, effort: 6 }).toFile(path.join(dir, `${id}-${w}.webp`));
-        await base.clone().jpeg({ quality: 82, mozjpeg: true }).toFile(path.join(dir, `${id}-${w}.jpg`));
-        for (const fmt of ['avif', 'webp', 'jpg']) out[fmt][w] = rel('team', `${id}-${w}.${fmt}`);
-      }
-      manifest.push({ id, name, group, files: out, role: null, source: rel('05 Organizers', own ?? sub, f), nativePx: side });
+      manifest.push(await headshot(dir, path.join(TEAM_SRC, own ?? sub, f), name, group, crop, rel('05 Organizers', own ?? sub, f)));
     }
+  }
+  return finishTeam(dir, manifest);
+}
+
+// One headshot: the square crop at 400 and 800 in AVIF, WebP and JPEG.
+async function headshot(dir, src, name, group, [left, top, side], source) {
+  const id = slug(name), meta = await sharp(src).metadata();
+  assert.ok(left + side <= meta.width && top + side <= meta.height, `crop outside image for ${name}`);
+  // Folder sources are 414px wide: 800 is always an upscale of the `nativePx` crop (400 too when nativePx < 400).
+  // Swap in the original photos to get real detail at 800.
+  const out = { avif: {}, webp: {}, jpg: {} };
+  for (const w of [400, 800]) {
+    const base = sharp(src).extract({ left, top, width: side, height: side }).resize(w, w, { kernel: 'lanczos3' }).removeAlpha().toColourspace('srgb');
+    await base.clone().avif({ quality: 55, effort: 6 }).toFile(path.join(dir, `${id}-${w}.avif`));
+    await base.clone().webp({ quality: 80, effort: 6 }).toFile(path.join(dir, `${id}-${w}.webp`));
+    await base.clone().jpeg({ quality: 82, mozjpeg: true }).toFile(path.join(dir, `${id}-${w}.jpg`));
+    for (const fmt of ['avif', 'webp', 'jpg']) out[fmt][w] = rel('team', `${id}-${w}.${fmt}`);
+  }
+  return { id, name, group, files: out, role: null, source, nativePx: side };
+}
+
+// The repository headshots replace (or join) the folder ones; then the manifest is written.
+async function finishTeam(dir, manifest) {
+  for (const h of REPO_HEADSHOTS) {
+    const src = path.join(WEB, 'refs/team', h.f);
+    const built = await headshot(dir, src, h.name, h.group, h.crop, path.relative(WEB, src).split(path.sep).join('/'));
+    const at = manifest.findIndex((m) => m.id === built.id);
+    if (at >= 0) manifest[at] = built; else manifest.push(built);
   }
   await writeFile(path.join(dir, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
   return manifest;

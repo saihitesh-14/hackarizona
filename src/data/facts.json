@@ -3607,7 +3607,7 @@
       "year": 2026,
       "source": "Sai, in chat, 29 Oct 2026 (advisors); titles and work emails from https://hack.arizona.edu/about/contact",
       "confidence": "confirmed-by-sai",
-      "notes": "Shown on the Team page with their work emails, as on the official contact page."
+      "notes": "Shown on the Team page with their work emails, as on the official contact page, and the headshots Sai sent on 29 Oct 2026 (refs/team/; which photo is whose is to confirm with Sai)."
     },
     {
       "id": "sai-president",
@@ -3625,10 +3625,10 @@
     {
       "id": "sai-headshot",
       "topic": "people",
-      "statement": "\"05 Organizers/Headshot .jpeg\" is Sai Hitesh's headshot.",
-      "value": "/Users/saihitesh/Desktop/HackAZ/05 Organizers/Headshot .jpeg",
+      "statement": "Sai Hitesh's headshot on the site is the one Sai sent in chat on 29 Oct 2026 (refs/team/sai-hitesh.jpg); it replaces \"05 Organizers/Headshot .jpeg\".",
+      "value": "refs/team/sai-hitesh.jpg",
       "year": null,
-      "source": "Sai, in chat, 25 Oct 2026",
+      "source": "Sai, in chat, 25 Oct 2026 (the first headshot) and 29 Oct 2026 (this one)",
       "confidence": "confirmed-by-sai",
       "notes": ""
     },

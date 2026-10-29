@@ -3,10 +3,9 @@
 .team-intro .lead{max-width:640px;font-size:clamp(18px,1.5vw,21px);color:var(--ink)}
 .team-intro .status-pill{font-size:15px;color:var(--ink)}
 
-/* Headshot cards: the photo, then name, role and area. They tilt toward the pointer (data-tilt, shell cursor).
+/* Headshot cards (directors, organizers, former organizers): the photo, then name, role and area. They tilt toward the pointer (data-tilt, shell cursor).
    Anyone without a headshot yet gets their initials on a tinted square. */
-.team-group-label{margin:clamp(28px,4vw,44px) 0 16px;font-size:14px;font-weight:500;letter-spacing:.02em;color:var(--muted)}
-.team-group-label:first-of-type{margin-top:8px}
+.team-group-label{margin:0 0 16px;font-size:14px;font-weight:500;letter-spacing:.02em;color:var(--muted)}
 .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(208px,1fr));gap:16px;margin:0;padding:0;list-style:none}
 .team-card{display:flex;flex-direction:column;gap:14px;padding:12px 12px 18px;border:1px solid var(--line);border-radius:20px;background:var(--card);transition:border-color .3s ease,box-shadow .4s ease}
 .team-card>div{padding:0 6px}
@@ -23,12 +22,22 @@
 .team-grid-small{grid-template-columns:repeat(auto-fill,minmax(168px,1fr))}
 .team-grid-small .team-name{font-size:17px}
 
+/* The president: one wide card, the headshot beside the name. */
+.team-president{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);align-items:center;gap:20px clamp(28px,5vw,64px);max-width:980px;padding:14px;border:1px solid var(--line);border-radius:26px;background:var(--card);transition:border-color .3s ease,box-shadow .4s ease}
+.team-president .team-photo{border-radius:18px}
+.team-president-label{margin:0;font-size:14px;font-weight:500;letter-spacing:.02em;color:var(--accent-ink)}
+.team-president-name{margin-top:10px;font-size:clamp(38px,4.4vw,60px);font-weight:500;line-height:1.02;letter-spacing:-.055em}
+.team-president-line{max-width:420px;margin-top:16px;font-size:17px;color:var(--text-strong)}
+@media(hover:hover) and (pointer:fine){
+  .team-president:hover{border-color:var(--line-accent);box-shadow:0 18px 40px var(--soft-shadow)}
+  .team-president:hover .team-photo img{scale:1.03}
+}
+
 /* Advisors: heading beside two contact cards. */
 .team-split{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:24px clamp(28px,5vw,72px);align-items:start}
 .team-advisors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0;padding:0;list-style:none}
-.team-advisor{padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--card);transition:border-color .3s ease,box-shadow .4s ease}
-.team-advisor .team-name{font-size:22px}
-.team-email{display:inline-block;margin-top:14px;border-bottom:1px solid var(--line-accent);font-size:15px;color:var(--ink);overflow-wrap:anywhere}
+.team-advisor .team-name{font-size:21px}
+.team-email{display:inline-block;margin-top:12px;border-bottom:1px solid var(--line-accent);font-size:15px;color:var(--ink);overflow-wrap:anywhere}
 .team-email:hover{border-bottom-color:var(--accent)}
 
 /* Name lists: former organizers without a headshot, and the key organizers over the years. */
@@ -38,7 +47,6 @@
 
 /* Before the pandemic: the 2020 roster (name and role) beside the key organizers. */
 .team-before{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:32px clamp(28px,5vw,72px);align-items:start}
-.team-before .team-group-label{margin-top:0}
 .team-roster{margin:0;padding:0;list-style:none}
 .team-roster li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:4px 20px;padding:11px 0;border-top:1px solid var(--line);font-size:16px}
 .team-roster li span:first-child{color:var(--ink)}
@@ -50,6 +58,8 @@
   .team-split,.team-before{grid-template-columns:1fr}
 }
 @media(max-width:767px){
+  .team-president{grid-template-columns:1fr;padding:10px 10px 22px;border-radius:20px}
+  .team-president>div{padding:0 10px}
   .team-grid,.team-grid-small{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
   .team-card{gap:10px;padding:8px 8px 14px;border-radius:16px}
   .team-card>div{padding:0 4px}

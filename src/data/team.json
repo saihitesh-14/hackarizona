@@ -1,7 +1,7 @@
 {
   "source": "Sai, in chat, 25 Oct 2026, with areas and advisors added 29 Oct 2026 (confirmed-by-sai). Full names come from the headshot filenames in 05 Organizers/current_organizres_headshots.",
   "current": [
-    { "name": "Sai Hitesh", "role": "President", "headshot": "sai-hitesh", "headshotSource": "05 Organizers/Headshot .jpeg", "notes": "Sai confirmed this headshot is theirs; optimise it into public/team after round 1 (that folder is owned by the running logos+team stage)" },
+    { "name": "Sai Hitesh", "role": "President", "headshot": "sai-hitesh", "headshotSource": "refs/team/sai-hitesh.jpg", "notes": "Sai sent this headshot on 29 Oct 2026; it replaces 05 Organizers/Headshot .jpeg" },
     { "name": "Nandika Barjatya", "role": "Director of Marketing", "headshot": "nandika-barjatya" },
     { "name": "Thrupthi Ananth Byadarahalli", "role": "Director of Technology", "headshot": "thrupthi-ananth-byadarahalli" },
     { "name": "Deevanshi Malhotra", "role": "Director of Operations", "headshot": "deevanshi-malhotra" },
@@ -24,8 +24,8 @@
     { "name": "Kory M Smith", "role": null, "headshot": "kory-m-smith" }
   ],
   "advisors": [
-    { "name": "Ben Richmond", "title": "Manager, Undergraduate Education Initiatives", "unit": "Division of Undergraduate Education", "email": "brichmond@arizona.edu" },
-    { "name": "Mayra Vargas", "title": "Coordinator, Undergraduate Education Initiatives", "unit": "Division of Undergraduate Education", "email": "mayravargas@arizona.edu" }
+    { "name": "Ben Richmond", "title": "Manager, Undergraduate Education Initiatives", "unit": "Division of Undergraduate Education", "email": "brichmond@arizona.edu", "headshot": "ben-richmond" },
+    { "name": "Mayra Vargas", "title": "Coordinator, Undergraduate Education Initiatives", "unit": "Division of Undergraduate Education", "email": "mayravargas@arizona.edu", "headshot": "mayra-vargas" }
   ],
   "advisorsSource": "Sai, in chat, 29 Oct 2026 (Ben and Mayra are the advisors); titles and emails from https://hack.arizona.edu/about/contact"
 }
