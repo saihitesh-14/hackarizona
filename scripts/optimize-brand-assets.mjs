@@ -87,6 +87,8 @@ const REPO_HEADSHOTS = [
   { f: 'sai-hitesh.jpg', name: 'Sai Hitesh', group: 'current', crop: [55, 0, 560] },
   { f: 'mayra-vargas.jpg', name: 'Mayra Vargas', group: 'advisor', crop: [0, 0, 400] },
   { f: 'ben-richmond.jpg', name: 'Ben Richmond', group: 'advisor', crop: [135, 40, 520] },
+  { f: 'fabiola.jpg', name: 'Fabiola', group: 'current', crop: [140, 120, 900] },
+  { f: 'arfan.jpg', name: 'Arfan', group: 'current', crop: [60, 0, 700] },
 ];
 const TEAM_DIRS = { current: 'current_organizres_headshots', previous: 'previous-organizers-headshots' };
 

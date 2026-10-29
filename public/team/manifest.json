@@ -394,5 +394,49 @@
     "role": null,
     "source": "refs/team/ben-richmond.jpg",
     "nativePx": 520
+  },
+  {
+    "id": "fabiola",
+    "name": "Fabiola",
+    "group": "current",
+    "files": {
+      "avif": {
+        "400": "team/fabiola-400.avif",
+        "800": "team/fabiola-800.avif"
+      },
+      "webp": {
+        "400": "team/fabiola-400.webp",
+        "800": "team/fabiola-800.webp"
+      },
+      "jpg": {
+        "400": "team/fabiola-400.jpg",
+        "800": "team/fabiola-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "refs/team/fabiola.jpg",
+    "nativePx": 900
+  },
+  {
+    "id": "arfan",
+    "name": "Arfan",
+    "group": "current",
+    "files": {
+      "avif": {
+        "400": "team/arfan-400.avif",
+        "800": "team/arfan-800.avif"
+      },
+      "webp": {
+        "400": "team/arfan-400.webp",
+        "800": "team/arfan-800.webp"
+      },
+      "jpg": {
+        "400": "team/arfan-400.jpg",
+        "800": "team/arfan-800.jpg"
+      }
+    },
+    "role": null,
+    "source": "refs/team/arfan.jpg",
+    "nativePx": 700
   }
 ]

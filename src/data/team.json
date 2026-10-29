@@ -11,9 +11,9 @@
     { "name": "Santiago Vargas Roldan", "role": "Director of Judging", "headshot": "santiago-vargas-roldan" },
     { "name": "Fatih Bozdogan", "role": "Director of Judging", "headshot": "fatih-bozdogan", "notes": "Sai wrote 'Faith'; the headshot file says 'Fatih Bozdogan' (unconfirmed spelling)" },
     { "name": "Naomi", "role": "Organizer", "headshot": null, "area": "Marketing" },
-    { "name": "Fabiola", "role": "Organizer", "headshot": null, "area": "Marketing" },
+    { "name": "Fabiola", "role": "Organizer", "headshot": "fabiola", "area": "Marketing" },
     { "name": "Jesus Manuel Mercado", "role": "Organizer", "headshot": "jesus-manuel-mercado", "area": "Operations" },
-    { "name": "Arfan", "role": "The OG organizer", "headshot": null, "notes": "Sai's words (25 and 29 Oct 2026): 'The OG organizer'. Not stated as a founder." },
+    { "name": "Arfan", "role": "The OG organizer", "headshot": "arfan", "notes": "Sai's words (25 and 29 Oct 2026): 'The OG organizer'. Not stated as a founder." },
     { "name": "Siddhartha Singh", "role": "Organizer", "headshot": "siddhartha-singh", "area": "Technical support and on-site support" }
   ],
   "previous": [
