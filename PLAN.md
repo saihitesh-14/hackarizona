@@ -27,7 +27,8 @@ Built with: the `minimal-motion-web` skill (design language, motion, interaction
 - Sponsor page (27 Oct 2026): who you'll meet, four ways sponsors get value and in-kind options (from the 2026-27 deck), the 18 sponsors, and a contact form (name, email, organisation, interests, message) that emails hackaz@arizona.edu through Web3Forms once its key is in src/data/site.js, and opens a pre-filled email until then.
 - Story page (27 Oct 2026): "We started from zero. *Twice.*", a frame for the film (shows "coming soon" until `site.film.src` in src/data/site.js is set to a video in public/video/ or a YouTube link; it loads only when pressed), the timeline from 2015 to 2027 (2016 to 2020 plays Hack Arizona's 2018 recap from YouTube, loaded only when pressed; 2025 and 2026 use the photos Sai picked on 28 Oct 2026) with the signal trace (red where Hack Arizona ran, dashed grey from 2020 to 2025, a pulse that follows the scroll), and the key organizers named in the official history.
 - Speed (27 Oct 2026): removed the full-screen blend layer, the blur filters on the animated logo and a page-wide `:has()` rule; the logo, banner zoom and number count-ups pause off screen.
-- Events and Team: not built yet (title and placeholder only).
+- Team page (29 Oct 2026): this year's team with Sai's roles (President, directors, organizers; initials where there is no headshot yet), the advisors Ben Richmond and Mayra Vargas, the former organizers from hack.arizona.edu, and before the pandemic: the 2020 team (from the Hack Arizona 2020 website) and the key organizers over the years.
+- Events: not built yet (title and placeholder only).
 
 ---
 

@@ -1,1 +1,61 @@
 /* Team page styles, owned by the team stage. Colours only through the tokens in src/styles/tokens.css. */
+
+.team-intro .lead{max-width:640px;font-size:clamp(18px,1.5vw,21px);color:var(--ink)}
+.team-intro .status-pill{font-size:15px;color:var(--ink)}
+
+/* Headshot cards: the photo, then name, role and area. They tilt toward the pointer (data-tilt, shell cursor).
+   Anyone without a headshot yet gets their initials on a tinted square. */
+.team-group-label{margin:clamp(28px,4vw,44px) 0 16px;font-size:14px;font-weight:500;letter-spacing:.02em;color:var(--muted)}
+.team-group-label:first-of-type{margin-top:8px}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(208px,1fr));gap:16px;margin:0;padding:0;list-style:none}
+.team-card{display:flex;flex-direction:column;gap:14px;padding:12px 12px 18px;border:1px solid var(--line);border-radius:20px;background:var(--card);transition:border-color .3s ease,box-shadow .4s ease}
+.team-card>div{padding:0 6px}
+.team-photo{display:block;overflow:hidden;aspect-ratio:1;border-radius:14px;background:var(--panel)}
+.team-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:scale .6s var(--ease-out)}
+.team-monogram{display:grid;place-items:center;background:var(--accent-soft);font-family:var(--serif);font-style:italic;font-size:clamp(44px,5vw,64px);line-height:1;letter-spacing:-.02em;color:var(--accent)}
+.team-name{font-size:19px;font-weight:500;line-height:1.25;letter-spacing:-.025em}
+.team-role{margin-top:4px;font-size:15px;color:var(--text-strong)}
+.team-area{margin-top:2px;font-size:14px;color:var(--muted)}
+@media(hover:hover) and (pointer:fine){
+  .team-card:hover,.team-advisor:hover{border-color:var(--line-accent);box-shadow:0 18px 40px var(--soft-shadow)}
+  .team-card:hover .team-photo img{scale:1.04}
+}
+.team-grid-small{grid-template-columns:repeat(auto-fill,minmax(168px,1fr))}
+.team-grid-small .team-name{font-size:17px}
+
+/* Advisors: heading beside two contact cards. */
+.team-split{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:24px clamp(28px,5vw,72px);align-items:start}
+.team-advisors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0;padding:0;list-style:none}
+.team-advisor{padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--card);transition:border-color .3s ease,box-shadow .4s ease}
+.team-advisor .team-name{font-size:22px}
+.team-email{display:inline-block;margin-top:14px;border-bottom:1px solid var(--line-accent);font-size:15px;color:var(--ink);overflow-wrap:anywhere}
+.team-email:hover{border-bottom-color:var(--accent)}
+
+/* Name lists: former organizers without a headshot, and the key organizers over the years. */
+.team-names{columns:4 180px;column-gap:28px;margin:24px 0 0;padding:0;list-style:none}
+.team-names li{break-inside:avoid;padding:11px 0;border-top:1px solid var(--line);font-size:16.5px;color:var(--ink)}
+.team-names-tight{columns:2 160px;margin-top:0}
+
+/* Before the pandemic: the 2020 roster (name and role) beside the key organizers. */
+.team-before{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:32px clamp(28px,5vw,72px);align-items:start}
+.team-before .team-group-label{margin-top:0}
+.team-roster{margin:0;padding:0;list-style:none}
+.team-roster li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:4px 20px;padding:11px 0;border-top:1px solid var(--line);font-size:16px}
+.team-roster li span:first-child{color:var(--ink)}
+.team-roster li span:last-child{color:var(--muted)}
+.team-source{margin-top:14px;font-size:14px;color:var(--muted)}
+.team-source a{border-bottom:1px solid var(--line-accent);color:var(--ink)}
+
+@media(max-width:900px){
+  .team-split,.team-before{grid-template-columns:1fr}
+}
+@media(max-width:767px){
+  .team-grid,.team-grid-small{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .team-card{gap:10px;padding:8px 8px 14px;border-radius:16px}
+  .team-card>div{padding:0 4px}
+  .team-name,.team-grid-small .team-name{font-size:16px}
+  .team-role{font-size:14px}
+  .team-area{font-size:13px}
+  .team-advisors{grid-template-columns:1fr}
+  .team-roster li{grid-template-columns:1fr;gap:0}
+}

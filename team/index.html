@@ -3,7 +3,7 @@
 <head>
   <!-- @include partials/head-meta.html -->
   <title>Team | Hack Arizona</title>
-  <meta name="description" content="The people who organize Hack Arizona.">
+  <meta name="description" content="The students who run Hack Arizona, our advisors, and the organizers who came before us.">
   <link rel="stylesheet" href="/src/styles/base.css">
   <link rel="stylesheet" href="/src/styles/pages/team.css">
   <script type="module" src="/src/js/shell.js"></script>
@@ -15,11 +15,134 @@
   <!-- @include partials/dock.html -->
   <main id="main">
     <!-- PAGE CONTENT START: the team stage owns everything between START and END (and src/styles/pages/team.css, src/js/pages/team.js). -->
-    <section class="page-intro section-shell entrance" id="intro" aria-labelledby="page-title">
-      <h1 class="display" id="page-title"><span class="line"><span>Team</span></span></h1>
+    <!-- People and roles: src/data/team.json (Sai, 25 and 29 Oct 2026); former organizers and the 2020 team: src/data/facts.json. -->
+    <section class="page-intro section-shell entrance team-intro" id="intro" aria-labelledby="page-title">
+      <p class="status-pill"><span class="status-dot" aria-hidden="true"></span>The 2026 to 2027 team</p>
+      <h1 class="display" id="page-title"><span class="line"><span>The people</span></span><span class="line"><span><em>behind it.</em></span></span></h1>
+      <p class="lead">Hack Arizona is run by students, with support from the Division of Undergraduate Education. Meet this year's team, our advisors, and the organizers who came before us.</p>
     </section>
-    <section class="section section-shell" id="todo" aria-label="Page content to come">
-      <p data-placeholder="team page content">[TBC: the team page stage fills this page]</p>
+
+    <section class="section section-shell" id="team" aria-labelledby="team-title">
+      <div class="section-heading" data-reveal="children">
+        <h2 id="team-title">This year's <em>team.</em></h2>
+        <p class="section-intro">The students planning Hack Arizona 2027.</p>
+      </div>
+      <h3 class="team-group-label" data-reveal>President and directors</h3>
+      <ul class="team-grid" data-reveal="children">
+          <li class="team-card" data-tilt><picture class="team-photo"><source type="image/avif" srcset="/team/sai-hitesh-400.avif 400w, /team/sai-hitesh-800.avif 800w" sizes="(max-width: 767px) 44vw, 240px"><source type="image/webp" srcset="/team/sai-hitesh-400.webp 400w, /team/sai-hitesh-800.webp 800w" sizes="(max-width: 767px) 44vw, 240px"><img src="/team/sai-hitesh-400.jpg" srcset="/team/sai-hitesh-400.jpg 400w, /team/sai-hitesh-800.jpg 800w" sizes="(max-width: 767px) 44vw, 240px" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><div><h3 class="team-name">Sai Hitesh</h3><p class="team-role">President</p></div></li>
+          <li class="team-card" data-tilt><picture class="team-photo"><source type="image/avif" srcset="/team/nandika-barjatya-400.avif 400w, /team/nandika-barjatya-800.avif 800w" sizes="(max-width: 767px) 44vw, 240px"><source type="image/webp" srcset="/team/nandika-barjatya-400.webp 400w, /team/nandika-barjatya-800.webp 800w" sizes="(max-width: 767px) 44vw, 240px"><img src="/team/nandika-barjatya-400.jpg" srcset="/team/nandika-barjatya-400.jpg 400w, /team/nandika-barjatya-800.jpg 800w" sizes="(max-width: 767px) 44vw, 240px" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><div><h3 class="team-name">Nandika Barjatya</h3><p class="team-role">Director of Marketing</p></div></li>
+          <li class="team-card" data-tilt><picture class="team-photo"><source type="image/avif" srcset="/team/thrupthi-ananth-byadarahalli-400.avif 400w, /team/thrupthi-ananth-byadarahalli-800.avif 800w" sizes="(max-width: 767px) 44vw, 240px"><source type="image/webp" srcset="/team/thrupthi-ananth-byadarahalli-400.webp 400w, /team/thrupthi-ananth-byadarahalli-800.webp 800w" sizes="(max-width: 767px) 44vw, 240px"><img src="/team/thrupthi-ananth-byadarahalli-400.jpg" srcset="/team/thrupthi-ananth-byadarahalli-400.jpg 400w, /team/thrupthi-ananth-byadarahalli-800.jpg 800w" sizes="(max-width: 767px) 44vw, 240px" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><div><h3 class="team-name">Thrupthi Ananth Byadarahalli</h3><p class="team-role">Director of Technology</p></div></li>
+          <li class="team-card" data-tilt><picture class="team-photo"><source type="image/avif" srcset="/team/deevanshi-malhotra-400.avif 400w, /team/deevanshi-malhotra-800.avif 800w" sizes="(max-width: 767px) 44vw, 240px"><source type="image/webp" srcset="/team/deevanshi-malhotra-400.webp 400w, /team/deevanshi-malhotra-800.webp 800w" sizes="(max-width: 767px) 44vw, 240px"><img src="/team/deevanshi-malhotra-400.jpg" srcset="/team/deevanshi-malhotra-400.jpg 400w, /team/deevanshi-malhotra-800.jpg 800w" sizes="(max-width: 767px) 44vw, 240px" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><div><h3 class="team-name">Deevanshi Malhotra</h3><p class="team-role">Director of Operations</p></div></li>
+          <li class="team-card" data-tilt><picture class="team-photo"><source type="image/avif" srcset="/team/luis-fernando-angulo-400.avif 400w, /team/luis-fernando-angulo-800.avif 800w" sizes="(max-width: 767px) 44vw, 240px"><source type="image/webp" srcset="/team/luis-fernando-angulo-400.webp 400w, /team/luis-fernando-angulo-800.webp 800w" sizes="(max-width: 767px) 44vw, 240px"><img src="/team/luis-fernando-angulo-400.jpg" srcset="/team/luis-fernando-angulo-400.jpg 400w, /team/luis-fernando-angulo-800.jpg 800w" sizes="(max-width: 767px) 44vw, 240px" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><div><h3 class="team-name">Luis Fernando Angulo</h3><p class="team-role">Director of Sponsorships</p></div></li>
+          <li class="team-card" data-tilt><picture class="team-photo"><source type="image/avif" srcset="/team/eva-jarvis-400.avif 400w, /team/eva-jarvis-800.avif 800w" sizes="(max-width: 767px) 44vw, 240px"><source type="image/webp" srcset="/team/eva-jarvis-400.webp 400w, /team/eva-jarvis-800.webp 800w" sizes="(max-width: 767px) 44vw, 240px"><img src="/team/eva-jarvis-400.jpg" srcset="/team/eva-jarvis-400.jpg 400w, /team/eva-jarvis-800.jpg 800w" sizes="(max-width: 767px) 44vw, 240px" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><div><h3 class="team-name">Eva Jarvis</h3><p class="team-role">Director of Industry Relations</p></div></li>
+          <li class="team-card" data-tilt><picture class="team-photo"><source type="image/avif" srcset="/team/eramus-poleate-400.avif 400w, /team/eramus-poleate-800.avif 800w" sizes="(max-width: 767px) 44vw, 240px"><source type="image/webp" srcset="/team/eramus-poleate-400.webp 400w, /team/eramus-poleate-800.webp 800w" sizes="(max-width: 767px) 44vw, 240px"><img src="/team/eramus-poleate-400.jpg" srcset="/team/eramus-poleate-400.jpg 400w, /team/eramus-poleate-800.jpg 800w" sizes="(max-width: 767px) 44vw, 240px" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><div><h3 class="team-name">Eramus Poleate</h3><p class="team-role">Director of Industry Relations</p></div></li>
+          <li class="team-card" data-tilt><picture class="team-photo"><source type="image/avif" srcset="/team/santiago-vargas-roldan-400.avif 400w, /team/santiago-vargas-roldan-800.avif 800w" sizes="(max-width: 767px) 44vw, 240px"><source type="image/webp" srcset="/team/santiago-vargas-roldan-400.webp 400w, /team/santiago-vargas-roldan-800.webp 800w" sizes="(max-width: 767px) 44vw, 240px"><img src="/team/santiago-vargas-roldan-400.jpg" srcset="/team/santiago-vargas-roldan-400.jpg 400w, /team/santiago-vargas-roldan-800.jpg 800w" sizes="(max-width: 767px) 44vw, 240px" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><div><h3 class="team-name">Santiago Vargas Roldan</h3><p class="team-role">Director of Judging</p></div></li>
+          <li class="team-card" data-tilt><picture class="team-photo"><source type="image/avif" srcset="/team/fatih-bozdogan-400.avif 400w, /team/fatih-bozdogan-800.avif 800w" sizes="(max-width: 767px) 44vw, 240px"><source type="image/webp" srcset="/team/fatih-bozdogan-400.webp 400w, /team/fatih-bozdogan-800.webp 800w" sizes="(max-width: 767px) 44vw, 240px"><img src="/team/fatih-bozdogan-400.jpg" srcset="/team/fatih-bozdogan-400.jpg 400w, /team/fatih-bozdogan-800.jpg 800w" sizes="(max-width: 767px) 44vw, 240px" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><div><h3 class="team-name">Fatih Bozdogan</h3><p class="team-role">Director of Judging</p></div></li>
+      </ul>
+      <h3 class="team-group-label" data-reveal>Organizers</h3>
+      <ul class="team-grid" data-reveal="children">
+          <li class="team-card" data-tilt><span class="team-photo team-monogram" aria-hidden="true">N</span><div><h3 class="team-name">Naomi</h3><p class="team-role">Organizer</p><p class="team-area">Marketing</p></div></li>
+          <li class="team-card" data-tilt><span class="team-photo team-monogram" aria-hidden="true">F</span><div><h3 class="team-name">Fabiola</h3><p class="team-role">Organizer</p><p class="team-area">Marketing</p></div></li>
+          <li class="team-card" data-tilt><picture class="team-photo"><source type="image/avif" srcset="/team/jesus-manuel-mercado-400.avif 400w, /team/jesus-manuel-mercado-800.avif 800w" sizes="(max-width: 767px) 44vw, 240px"><source type="image/webp" srcset="/team/jesus-manuel-mercado-400.webp 400w, /team/jesus-manuel-mercado-800.webp 800w" sizes="(max-width: 767px) 44vw, 240px"><img src="/team/jesus-manuel-mercado-400.jpg" srcset="/team/jesus-manuel-mercado-400.jpg 400w, /team/jesus-manuel-mercado-800.jpg 800w" sizes="(max-width: 767px) 44vw, 240px" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><div><h3 class="team-name">Jesus Manuel Mercado</h3><p class="team-role">Organizer</p><p class="team-area">Operations</p></div></li>
+          <li class="team-card" data-tilt><span class="team-photo team-monogram" aria-hidden="true">A</span><div><h3 class="team-name">Arfan</h3><p class="team-role">The OG organizer</p></div></li>
+          <li class="team-card" data-tilt><picture class="team-photo"><source type="image/avif" srcset="/team/siddhartha-singh-400.avif 400w, /team/siddhartha-singh-800.avif 800w" sizes="(max-width: 767px) 44vw, 240px"><source type="image/webp" srcset="/team/siddhartha-singh-400.webp 400w, /team/siddhartha-singh-800.webp 800w" sizes="(max-width: 767px) 44vw, 240px"><img src="/team/siddhartha-singh-400.jpg" srcset="/team/siddhartha-singh-400.jpg 400w, /team/siddhartha-singh-800.jpg 800w" sizes="(max-width: 767px) 44vw, 240px" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><div><h3 class="team-name">Siddhartha Singh</h3><p class="team-role">Organizer</p><p class="team-area">Technical support and on-site support</p></div></li>
+      </ul>
+    </section>
+
+    <section class="section section-shell" id="advisors" aria-labelledby="advisors-title">
+      <div class="team-split">
+        <div class="section-heading" data-reveal="children">
+          <h2 id="advisors-title">Our <em>advisors.</em></h2>
+          <p class="section-intro">Staff in the Division of Undergraduate Education, which supports the student team in planning Hack Arizona.</p>
+        </div>
+        <ul class="team-advisors" data-reveal="children">
+          <li class="team-advisor" data-tilt><div><h3 class="team-name">Ben Richmond</h3><p class="team-role">Manager, Undergraduate Education Initiatives</p><p class="team-area">Division of Undergraduate Education</p><a class="team-email" href="mailto:brichmond@arizona.edu">brichmond@arizona.edu</a></div></li>
+          <li class="team-advisor" data-tilt><div><h3 class="team-name">Mayra Vargas</h3><p class="team-role">Coordinator, Undergraduate Education Initiatives</p><p class="team-area">Division of Undergraduate Education</p><a class="team-email" href="mailto:mayravargas@arizona.edu">mayravargas@arizona.edu</a></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="former" aria-labelledby="former-title">
+      <div class="section-heading" data-reveal="children">
+        <h2 id="former-title">The team that <em>brought it back.</em></h2>
+        <p class="section-intro">Former organizers, who rebuilt Hack Arizona after the pandemic.</p>
+      </div>
+      <ul class="team-grid team-grid-small" data-reveal="children">
+          <li class="team-card" data-tilt><picture class="team-photo"><source type="image/avif" srcset="/team/om-jariwala-400.avif 400w, /team/om-jariwala-800.avif 800w" sizes="(max-width: 767px) 44vw, 240px"><source type="image/webp" srcset="/team/om-jariwala-400.webp 400w, /team/om-jariwala-800.webp 800w" sizes="(max-width: 767px) 44vw, 240px"><img src="/team/om-jariwala-400.jpg" srcset="/team/om-jariwala-400.jpg 400w, /team/om-jariwala-800.jpg 800w" sizes="(max-width: 767px) 44vw, 240px" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><div><h3 class="team-name">Om Jariwala</h3><p class="team-role">Lead</p></div></li>
+          <li class="team-card" data-tilt><picture class="team-photo"><source type="image/avif" srcset="/team/hidoyat-odilbek-ogli-ruzmetov-400.avif 400w, /team/hidoyat-odilbek-ogli-ruzmetov-800.avif 800w" sizes="(max-width: 767px) 44vw, 240px"><source type="image/webp" srcset="/team/hidoyat-odilbek-ogli-ruzmetov-400.webp 400w, /team/hidoyat-odilbek-ogli-ruzmetov-800.webp 800w" sizes="(max-width: 767px) 44vw, 240px"><img src="/team/hidoyat-odilbek-ogli-ruzmetov-400.jpg" srcset="/team/hidoyat-odilbek-ogli-ruzmetov-400.jpg 400w, /team/hidoyat-odilbek-ogli-ruzmetov-800.jpg 800w" sizes="(max-width: 767px) 44vw, 240px" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><div><h3 class="team-name">Hidoyat Odilbek o&#x27;g&#x27;li Ruzmetov</h3></div></li>
+          <li class="team-card" data-tilt><picture class="team-photo"><source type="image/avif" srcset="/team/olivia-grace-sobczak-400.avif 400w, /team/olivia-grace-sobczak-800.avif 800w" sizes="(max-width: 767px) 44vw, 240px"><source type="image/webp" srcset="/team/olivia-grace-sobczak-400.webp 400w, /team/olivia-grace-sobczak-800.webp 800w" sizes="(max-width: 767px) 44vw, 240px"><img src="/team/olivia-grace-sobczak-400.jpg" srcset="/team/olivia-grace-sobczak-400.jpg 400w, /team/olivia-grace-sobczak-800.jpg 800w" sizes="(max-width: 767px) 44vw, 240px" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><div><h3 class="team-name">Olivia Grace Sobczak</h3></div></li>
+          <li class="team-card" data-tilt><picture class="team-photo"><source type="image/avif" srcset="/team/dongyoung-yang-400.avif 400w, /team/dongyoung-yang-800.avif 800w" sizes="(max-width: 767px) 44vw, 240px"><source type="image/webp" srcset="/team/dongyoung-yang-400.webp 400w, /team/dongyoung-yang-800.webp 800w" sizes="(max-width: 767px) 44vw, 240px"><img src="/team/dongyoung-yang-400.jpg" srcset="/team/dongyoung-yang-400.jpg 400w, /team/dongyoung-yang-800.jpg 800w" sizes="(max-width: 767px) 44vw, 240px" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><div><h3 class="team-name">Dongyoung Yang</h3></div></li>
+          <li class="team-card" data-tilt><picture class="team-photo"><source type="image/avif" srcset="/team/kory-m-smith-400.avif 400w, /team/kory-m-smith-800.avif 800w" sizes="(max-width: 767px) 44vw, 240px"><source type="image/webp" srcset="/team/kory-m-smith-400.webp 400w, /team/kory-m-smith-800.webp 800w" sizes="(max-width: 767px) 44vw, 240px"><img src="/team/kory-m-smith-400.jpg" srcset="/team/kory-m-smith-400.jpg 400w, /team/kory-m-smith-800.jpg 800w" sizes="(max-width: 767px) 44vw, 240px" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><div><h3 class="team-name">Kory M Smith</h3></div></li>
+      </ul>
+      <ul class="team-names" data-reveal>
+        <li>Andrew K. Pongrátz</li>
+        <li>Jacob Ishak-Boushaki</li>
+        <li>Harshit Khatwani</li>
+        <li>Briana Curley</li>
+        <li>Daniel Gallardo</li>
+        <li>Rony Macwan</li>
+        <li>Famesh Patel</li>
+        <li>Asadkhon Rasulov</li>
+      </ul>
+    </section>
+
+    <section class="section section-shell" id="before" aria-labelledby="before-title">
+      <div class="section-heading" data-reveal="children">
+        <h2 id="before-title">Before the <em>pandemic.</em></h2>
+        <p class="section-intro">From 2015 to 2020 Hack Arizona grew into the largest hackathon in the Southwest. Thank you to everyone who built it.</p>
+      </div>
+      <div class="team-before">
+        <div data-reveal>
+          <h3 class="team-group-label">The 2020 team</h3>
+          <ul class="team-roster">
+            <li><span>Jeremy Bernick</span><span>Co-Executive Director</span></li>
+            <li><span>Andrew Morales</span><span>Co-Executive Director</span></li>
+            <li><span>Royce Viklund</span><span>Director of Logistics</span></li>
+            <li><span>Margherita (Maggie) Berti</span><span>Director of Sponsorship</span></li>
+            <li><span>Martin Valencia</span><span>Director of Web Development</span></li>
+            <li><span>Anita Chavarin</span><span>Co-Director of Social Media</span></li>
+            <li><span>Aaron Nach</span><span>Sponsorship Committee</span></li>
+            <li><span>Alex Siegel</span><span>Director of Ceremonies</span></li>
+            <li><span>Carson Bock</span><span>Director of Budgeting</span></li>
+            <li><span>Chauncey Delos Santos</span><span>Director of Volunteers</span></li>
+            <li><span>Kalista Torres</span><span>Director of Activities</span></li>
+            <li><span>Colton Flowers</span><span>Director of Education</span></li>
+            <li><span>Connor Brett</span><span>Director of Esports</span></li>
+            <li><span>Rachel Lindzon</span><span>Director of Logistics</span></li>
+            <li><span>Makayla Kaiser</span><span>Director of Media</span></li>
+            <li><span>Javaughn Gray</span><span>Co-Director of Social Media</span></li>
+            <li><span>Ben Watchman</span><span>Director of Design</span></li>
+            <li><span>Antonia Maher</span><span>Director of Scheduling</span></li>
+            <li><span>Zachary Jimenez</span><span>Director of Technology</span></li>
+            <li><span>Stephanie Silva</span><span>Director of Media</span></li>
+          </ul>
+          <p class="team-source">As listed on the Hack Arizona 2020 website.</p>
+        </div>
+        <div data-reveal>
+          <h3 class="team-group-label">Key organizers over the years</h3>
+          <ul class="team-names team-names-tight">
+            <li>Ian Tracey</li>
+            <li>Dillon Walker</li>
+            <li>Nick Morin</li>
+            <li>Jordan Singer</li>
+            <li>David Bresnick</li>
+            <li>Travis Woodrow</li>
+            <li>Ben Hastings</li>
+            <li>Brittany Iniguez</li>
+            <li>Emily Beiser</li>
+            <li>Anthony Middleton</li>
+            <li>Hazaa Alkaabi</li>
+            <li>Andrew Morales</li>
+            <li>Cooper Kunz</li>
+            <li>Erika Kess</li>
+            <li>Austin Mutschler</li>
+            <li>Jeremy Bernick</li>
+            <li>Colton Flowers</li>
+            <li>Rachel Lindzon</li>
+          </ul>
+          <p class="team-source">From the history on hack.arizona.edu. More of the story is on the <a href="{{root}}story/">Story page</a>.</p>
+        </div>
+      </div>
     </section>
     <!-- PAGE CONTENT END -->
   </main>

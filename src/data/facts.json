@@ -2744,7 +2744,7 @@
       "year": 2020,
       "source": "https://web.archive.org/web/20200804194655/https://hackaz.io/team.html",
       "confidence": "public-web",
-      "notes": "Public web; needs Sai's confirmation. Fact check: Source pinned to the exact capture."
+      "notes": "Public web; needs Sai's confirmation. Fact check: Source pinned to the exact capture. Sai asked on 29 Oct 2026 for the organizers before the pandemic on the Team page; shown there as \"The 2020 team\" with this source. The roster itself is not confirmed by Sai."
     },
     {
       "id": "organizers-2017-2018-press",
@@ -3511,7 +3511,7 @@
     {
       "id": "team-roles-2026-27",
       "topic": "people",
-      "statement": "Current Hack Arizona team and roles as confirmed by Sai: Sai Hitesh (President); Directors of Marketing, Technology, Operations, Sponsorships, Industry Relations (two) and Judging (two); and five Organizers.",
+      "statement": "Current Hack Arizona team and roles as confirmed by Sai: Sai Hitesh (President); Directors of Marketing, Technology, Operations, Sponsorships, Industry Relations (two) and Judging (two); Organizers Naomi and Fabiola (Marketing), Jesus (Operations) and Siddhartha (technical and on-site support); and Arfan, \"The OG organizer\".",
       "value": {
         "current": [
           {
@@ -3552,23 +3552,27 @@
           },
           {
             "name": "Naomi",
-            "role": "Organizer"
+            "role": "Organizer",
+            "area": "Marketing"
           },
           {
             "name": "Fabiola",
-            "role": "Organizer"
+            "role": "Organizer",
+            "area": "Marketing"
           },
           {
             "name": "Jesus Manuel Mercado",
-            "role": "Organizer"
+            "role": "Organizer",
+            "area": "Operations"
           },
           {
             "name": "Arfan",
-            "role": "Organizer"
+            "role": "The OG organizer"
           },
           {
             "name": "Siddhartha Singh",
-            "role": "Organizer"
+            "role": "Organizer",
+            "area": "Technical support / on-site support"
           }
         ],
         "previous": [
@@ -3580,9 +3584,30 @@
         ]
       },
       "year": 2026,
-      "source": "Sai, in chat, 25 Oct 2026; recorded in /Users/saihitesh/Desktop/HackAZ/website/src/data/team.json",
+      "source": "Sai, in chat, 25 Oct 2026 and 29 Oct 2026 (areas); recorded in src/data/team.json",
       "confidence": "confirmed-by-sai",
       "notes": "Full names come from the headshot filenames in /Users/saihitesh/Desktop/HackAZ/05 Organizers/current_organizres_headshots/. Sai wrote \"Faith\"; the headshot file says \"Fatih Bozdogan\" (spelling unconfirmed). Naomi, Fabiola and Arfan are first names only and have no headshot. Sai called Arfan \"The OG organizer\"; that is not a founder claim. Previous organizers have no roles here."
+    },
+    {
+      "id": "advisors-2026-27",
+      "topic": "people",
+      "statement": "Hack Arizona's advisors are Ben Richmond (Manager, Undergraduate Education Initiatives) and Mayra Vargas (Coordinator, Undergraduate Education Initiatives), both in the Division of Undergraduate Education.",
+      "value": [
+        {
+          "name": "Ben Richmond",
+          "title": "Manager, Undergraduate Education Initiatives",
+          "email": "brichmond@arizona.edu"
+        },
+        {
+          "name": "Mayra Vargas",
+          "title": "Coordinator, Undergraduate Education Initiatives",
+          "email": "mayravargas@arizona.edu"
+        }
+      ],
+      "year": 2026,
+      "source": "Sai, in chat, 29 Oct 2026 (advisors); titles and work emails from https://hack.arizona.edu/about/contact",
+      "confidence": "confirmed-by-sai",
+      "notes": "Shown on the Team page with their work emails, as on the official contact page."
     },
     {
       "id": "sai-president",

@@ -1,5 +1,5 @@
 {
-  "source": "Sai, in chat, 25 Oct 2026 (confirmed-by-sai). Full names come from the headshot filenames in 05 Organizers/current_organizres_headshots.",
+  "source": "Sai, in chat, 25 Oct 2026, with areas and advisors added 29 Oct 2026 (confirmed-by-sai). Full names come from the headshot filenames in 05 Organizers/current_organizres_headshots.",
   "current": [
     { "name": "Sai Hitesh", "role": "President", "headshot": "sai-hitesh", "headshotSource": "05 Organizers/Headshot .jpeg", "notes": "Sai confirmed this headshot is theirs; optimise it into public/team after round 1 (that folder is owned by the running logos+team stage)" },
     { "name": "Nandika Barjatya", "role": "Director of Marketing", "headshot": "nandika-barjatya" },
@@ -10,11 +10,11 @@
     { "name": "Eramus Poleate", "role": "Director of Industry Relations", "headshot": "eramus-poleate" },
     { "name": "Santiago Vargas Roldan", "role": "Director of Judging", "headshot": "santiago-vargas-roldan" },
     { "name": "Fatih Bozdogan", "role": "Director of Judging", "headshot": "fatih-bozdogan", "notes": "Sai wrote 'Faith'; the headshot file says 'Fatih Bozdogan' (unconfirmed spelling)" },
-    { "name": "Naomi", "role": "Organizer", "headshot": null },
-    { "name": "Fabiola", "role": "Organizer", "headshot": null },
-    { "name": "Jesus Manuel Mercado", "role": "Organizer", "headshot": "jesus-manuel-mercado" },
-    { "name": "Arfan", "role": "Organizer", "headshot": null, "notes": "Sai's words: 'The OG organizer'. Not stated as a founder." },
-    { "name": "Siddhartha Singh", "role": "Organizer", "headshot": "siddhartha-singh" }
+    { "name": "Naomi", "role": "Organizer", "headshot": null, "area": "Marketing" },
+    { "name": "Fabiola", "role": "Organizer", "headshot": null, "area": "Marketing" },
+    { "name": "Jesus Manuel Mercado", "role": "Organizer", "headshot": "jesus-manuel-mercado", "area": "Operations" },
+    { "name": "Arfan", "role": "The OG organizer", "headshot": null, "notes": "Sai's words (25 and 29 Oct 2026): 'The OG organizer'. Not stated as a founder." },
+    { "name": "Siddhartha Singh", "role": "Organizer", "headshot": "siddhartha-singh", "area": "Technical support and on-site support" }
   ],
   "previous": [
     { "name": "Om Jariwala", "role": null, "headshot": "om-jariwala" },
@@ -22,5 +22,10 @@
     { "name": "Olivia Grace Sobczak", "role": null, "headshot": "olivia-grace-sobczak" },
     { "name": "Dongyoung Yang", "role": null, "headshot": "dongyoung-yang" },
     { "name": "Kory M Smith", "role": null, "headshot": "kory-m-smith" }
-  ]
+  ],
+  "advisors": [
+    { "name": "Ben Richmond", "title": "Manager, Undergraduate Education Initiatives", "unit": "Division of Undergraduate Education", "email": "brichmond@arizona.edu" },
+    { "name": "Mayra Vargas", "title": "Coordinator, Undergraduate Education Initiatives", "unit": "Division of Undergraduate Education", "email": "mayravargas@arizona.edu" }
+  ],
+  "advisorsSource": "Sai, in chat, 29 Oct 2026 (Ben and Mayra are the advisors); titles and emails from https://hack.arizona.edu/about/contact"
 }
