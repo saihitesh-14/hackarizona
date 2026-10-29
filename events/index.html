@@ -3,7 +3,7 @@
 <head>
   <!-- @include partials/head-meta.html -->
   <title>Events | Hack Arizona</title>
-  <meta name="description" content="Hack Arizona events, upcoming and past: AgX HackDay on 15 November 2026 and Hack Arizona 2027 on 27 to 28 March 2027.">
+  <meta name="description" content="Hack Arizona events: the AgX HackDay on 15 November 2026, Hack Arizona 2027 on 27 to 28 March 2027, and past events.">
   <link rel="stylesheet" href="/src/styles/base.css">
   <link rel="stylesheet" href="/src/styles/pages/events.css">
   <script type="module" src="/src/js/shell.js"></script>
@@ -15,11 +15,185 @@
   <!-- @include partials/dock.html -->
   <main id="main">
     <!-- PAGE CONTENT START: the events stage owns everything between START and END (and src/styles/pages/events.css, src/js/pages/events.js). -->
-    <section class="page-intro section-shell entrance" id="intro" aria-labelledby="page-title">
-      <h1 class="display" id="page-title"><span class="line"><span>Events</span></span></h1>
+    <!-- Every fact here is in src/data/facts.json. Dates drive the status pills and the countdown (src/js/pages/events.js). -->
+    <section class="page-intro section-shell entrance events-intro" id="intro" aria-labelledby="page-title">
+      <p class="status-pill"><span class="status-dot" aria-hidden="true"></span>Two kinds of event</p>
+      <h1 class="display" id="page-title"><span class="line"><span>Where builders</span></span><span class="line"><span><em>meet.</em></span></span></h1>
+      <p class="lead">Hack Arizona runs a flagship hackathon every spring and HackDays, mini hackathons, through the year. Here is what is coming up and what has happened so far.</p>
+      <ul class="events-formats">
+        <li><strong>Hack Arizona</strong><span>The flagship: 24 hours, once a year, students from every discipline.</span></li>
+        <li><strong>HackDays</strong><span>Mini hackathons of 7 to 8 hours, through the year.</span></li>
+      </ul>
     </section>
-    <section class="section section-shell" id="todo" aria-label="Page content to come">
-      <p data-placeholder="events page content">[TBC: the events page stage fills this page]</p>
+
+    <section class="section section-shell" id="next" aria-labelledby="next-title">
+      <div class="section-heading" data-reveal="children">
+        <h2 id="next-title">Up <em>next.</em></h2>
+      </div>
+      <article class="event-feature" data-event data-start="2026-11-15T09:00" data-end="2026-11-15T16:00" data-reveal>
+        <div class="event-feature-art" aria-hidden="true"><span class="event-feature-rows"></span><span class="event-feature-mark">AgX</span></div>
+        <div class="event-feature-body">
+          <p class="event-kicker"><span class="event-status" data-event-status>Upcoming</span>HackDay</p>
+          <h3 class="event-title">Hack Arizona AgX</h3>
+          <p class="event-subtitle">Hacking the Future of Agriculture</p>
+          <ul class="event-facts">
+            <li><time datetime="2026-11-15T09:00-07:00">Sunday 15 November 2026, 9:00 am</time></li>
+            <li>Grand Challenges Research Building</li>
+            <li>7 hours</li>
+          </ul>
+          <p>Hack Arizona partners with the Arizona Hub for Agricultural Innovation to host the AgX Arizona Summit. Challenges are revealed at kickoff, and the best teams pitch at the summit to producers, industry leaders, researchers and policymakers from ASU, the University of Arizona and NAU.</p>
+          <p class="event-who"><strong>Who it is for:</strong> developers, designers, data scientists, engineers and anyone curious about agriculture. No farming experience is needed.</p>
+          <ul class="event-gets">
+            <li>Real problem statements, revealed on the day</li>
+            <li>Mentorship from industry and university experts</li>
+            <li>Meals, swag and connections with Arizona's agtech community</li>
+          </ul>
+          <div class="event-countdown" data-event-countdown hidden><strong class="tabular" data-countdown-value>0</strong> <span data-countdown-unit>days</span> to go</div>
+          <div class="actions">
+            <a class="button" href="https://getconnecto.app/agx-hackday" data-event-register data-magnetic>Register on Connecto <span class="arrow arrow-ne" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="event-card" data-event data-start="2027-03-27T00:00" data-end="2027-03-28T24:00" data-reveal>
+        <div class="event-card-head">
+          <p class="event-kicker"><span class="event-status" data-event-status>Upcoming</span>The flagship</p>
+          <h3 class="event-title">Hack Arizona 2027</h3>
+          <ul class="event-facts">
+            <li><time datetime="2027-03-27">27 to 28 March 2027</time></li>
+            <li>HSIB, University of Arizona</li>
+            <li>24 hours</li>
+          </ul>
+          <p>Registration opens in January 2027. Get updates and we will tell you the moment it does.</p>
+          <div class="actions"><a class="button" href="#updates" data-register data-magnetic>Get updates <span class="arrow arrow-se" aria-hidden="true">↘</span></a></div>
+        </div>
+        <div class="event-know">
+          <h4>What to know</h4>
+          <dl>
+            <div><dt>Cost</dt><dd>Free.</dd></div>
+            <div><dt>Who</dt><dd>Students at any institute of higher education in Arizona.</dd></div>
+            <div><dt>Teams</dt><dd>2 to 4 people.</dd></div>
+            <div><dt>Bring</dt><dd>Your laptop, chargers, a water bottle, a snack, comfortable clothes and your student ID.</dd></div>
+            <div><dt>Food</dt><dd>Lunch and dinner on the first day, breakfast on the second, and snacks through the day and at midnight.</dd></div>
+            <div><dt>Overnight</dt><dd>It runs through the night. There is nowhere formal to sleep, but you can rest inside the venue.</dd></div>
+          </dl>
+          <p class="event-note">As in 2026; the 2027 details follow when registration opens.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section section-shell" id="past" aria-labelledby="past-title">
+      <div class="section-heading" data-reveal="children">
+        <h2 id="past-title">Past <em>events.</em></h2>
+        <p class="section-intro">Newest first.</p>
+      </div>
+      <div class="event-chapters">
+        <article class="event-chapter" id="hack-arizona-2026" data-reveal>
+          <figure class="event-photo"><picture><source type="image/avif" srcset="/img/ha26-group-photo-480.avif 480w, /img/ha26-group-photo-960.avif 960w, /img/ha26-group-photo-1600.avif 1600w" sizes="(max-width: 900px) 100vw, 560px"><source type="image/webp" srcset="/img/ha26-group-photo-480.webp 480w, /img/ha26-group-photo-960.webp 960w, /img/ha26-group-photo-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 560px"><img src="/img/ha26-group-photo-960.jpg" srcset="/img/ha26-group-photo-480.jpg 480w, /img/ha26-group-photo-960.jpg 960w" sizes="(max-width: 900px) 100vw, 560px" alt="A large group poses at the front of a hall under a big screen showing the Hack Arizona 2026 title, rows of empty chairs in front of them." width="1600" height="734" loading="lazy" decoding="async"></picture></figure>
+          <div class="event-chapter-body">
+            <p class="event-kicker">The flagship</p>
+            <h3 class="event-title">Hack Arizona 2026</h3>
+            <ul class="event-facts"><li><time datetime="2026-04-25">25 to 26 April 2026</time></li><li>Health Sciences Innovation Building</li></ul>
+            <ul class="event-stats">
+              <li><strong data-count>180+</strong><span>participants</span></li>
+              <li><strong data-count>24</strong><span>hours</span></li>
+              <li><strong data-count>8</strong><span>sponsors and partners</span></li>
+            </ul>
+            <p>Challenges around sustainability, AI, and outreach and marketing.</p>
+            <a class="text-link" href="https://www.instagram.com/p/DXqdOFiFbBR/">See the recap on Instagram <span class="arrow arrow-ne" aria-hidden="true">↗</span></a>
+          </div>
+          <div class="event-schedule-box">
+            <h4 class="event-schedule-title">The 2026 schedule</h4>
+            <div class="tab-list" role="tablist" aria-label="Hack Arizona 2026 schedule days">
+            <button class="tab" type="button" role="tab" id="tab-sat" aria-controls="panel-sat" aria-selected="true">Saturday</button>
+            <button class="tab" type="button" role="tab" id="tab-sun" aria-controls="panel-sun" aria-selected="false" tabindex="-1">Sunday</button>
+            </div>
+            <div class="tab-panel" id="panel-sat" role="tabpanel" aria-labelledby="tab-sat" tabindex="0">
+              <h4 class="event-day">Saturday, April 25th</h4>
+              <ol class="event-schedule">
+                <li><time>8:30 AM - 10:00 AM</time><div><p>Check-In &amp; Networking Tables Open</p><p class="event-room">Forum (1st Floor)</p></div></li>
+                <li><time>10:00 AM - 11:00 AM</time><div><p>Opening Ceremony</p><p class="event-room">Forum (1st Floor)</p></div></li>
+                <li><time>11:00 AM</time><div><p>Hackathon Commences; Tech Support Tables Open</p><p class="event-room">Room 305/306</p></div></li>
+                <li><time>11:15 AM - 4:45 PM</time><div><p>Workshop Sessions</p></div></li>
+                <li><time>12:00 PM - 5:00 PM</time><div><p>Mentor Tables Open</p></div></li>
+                <li><time>12:00 PM - 12:45 PM</time><div><p>Lunch</p><p class="event-room">Room 305/306</p></div></li>
+                <li><time>3:00 PM - 5:30 PM</time><div><p>Afternoon Snacks Served</p><p class="event-room">Room 305/306/370</p></div></li>
+                <li><time>6:30 PM - 7:30 PM</time><div><p>Dinner</p><p class="event-room">Room 305/306</p></div></li>
+                <li><time>9:00 PM - 10:00 PM</time><div><p>Fun Activities</p></div></li>
+              </ol>
+            </div>
+            <div class="tab-panel" id="panel-sun" role="tabpanel" aria-labelledby="tab-sun" tabindex="0">
+              <h4 class="event-day">Sunday, April 26th</h4>
+              <ol class="event-schedule">
+                <li><time>12:00 AM - 12:30 AM</time><div><p>Midnight Snacks Served</p><p class="event-room">Room 305/306</p></div></li>
+                <li><time>8:00 AM - 8:30 AM</time><div><p>Coffee / Tea &amp; Bread Service</p></div></li>
+                <li><time>8:00 AM - 11:00 AM</time><div><p>Tech Support Tables Open</p></div></li>
+                <li><time>10:00 AM - 11:00 AM</time><div><p>Project Submission Hard Deadline</p></div></li>
+                <li><time>11:00 AM - 1:00 PM</time><div><p>Judging Commences</p></div></li>
+                <li><time>1:00 PM - 2:00 PM</time><div><p>Evaluation Rounds</p></div></li>
+                <li><time>1:00 PM - 2:00 PM</time><div><p>Mini Fun Challenges / Nintendo Room</p></div></li>
+                <li><time>2:00 PM - 3:00 PM</time><div><p>Closing Ceremony</p><p class="event-room">Forum (1st Floor)</p></div></li>
+              </ol>
+            </div>
+          </div>
+        </article>
+
+        <article class="event-chapter" id="hackday-2026" data-reveal>
+          <figure class="event-photo"><picture><source type="image/avif" srcset="/img/hackday-team-480.avif 480w, /img/hackday-team-960.avif 960w, /img/hackday-team-1600.avif 1600w" sizes="(max-width: 900px) 100vw, 560px"><source type="image/webp" srcset="/img/hackday-team-480.webp 480w, /img/hackday-team-960.webp 960w, /img/hackday-team-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 560px"><img src="/img/hackday-team-960.jpg" srcset="/img/hackday-team-480.jpg 480w, /img/hackday-team-960.jpg 960w" sizes="(max-width: 900px) 100vw, 560px" alt="A group, most in maroon Hack Arizona T-shirts and some sitting on the floor, poses next to a screen reading &#x27;Welcome to Hack Day&#x27;." width="1600" height="1069" loading="lazy" decoding="async"></picture></figure>
+          <div class="event-chapter-body">
+            <p class="event-kicker">HackDay</p>
+            <h3 class="event-title">HackDay 2026</h3>
+            <ul class="event-facts"><li><time datetime="2026-02">February 2026</time></li><li>Grand Challenges Research Building</li></ul>
+            <ul class="event-stats">
+              <li><strong data-count>52</strong><span>students</span></li>
+              <li><strong data-count>22</strong><span>projects</span></li>
+              <li><strong data-count>7</strong><span>hours</span></li>
+            </ul>
+            <p>A warm-up for Hack Arizona 2026, with Major League Hacking. Teams built with AI and the Google Gemini API.</p>
+            <a class="text-link" href="https://www.instagram.com/p/DVJsha9EmZa/">See the recap on Instagram <span class="arrow arrow-ne" aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="event-chapter" id="hack-arizona-2025" data-reveal>
+          <figure class="event-photo"><picture><source type="image/avif" srcset="/img/ha25-hacking-room-480.avif 480w, /img/ha25-hacking-room-960.avif 960w, /img/ha25-hacking-room-1600.avif 1600w" sizes="(max-width: 900px) 100vw, 560px"><source type="image/webp" srcset="/img/ha25-hacking-room-480.webp 480w, /img/ha25-hacking-room-960.webp 960w, /img/ha25-hacking-room-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 560px"><img src="/img/ha25-hacking-room-960.jpg" srcset="/img/ha25-hacking-room-480.jpg 480w, /img/ha25-hacking-room-960.jpg 960w" sizes="(max-width: 900px) 100vw, 560px" alt="A crowded room of tables and laptops, with the Hack Arizona logo on the screens at the front." width="1600" height="900" loading="lazy" decoding="async"></picture></figure>
+          <div class="event-chapter-body">
+            <p class="event-kicker">The flagship</p>
+            <h3 class="event-title">Hack Arizona 2025</h3>
+            <ul class="event-facts"><li><time datetime="2025-03-22">22 to 23 March 2025</time></li><li>Back after the pandemic</li></ul>
+            <ul class="event-stats">
+              <li><strong data-count>100</strong><span>participants</span></li>
+              <li><strong data-count>4</strong><span>challenges</span></li>
+            </ul>
+            <p>Hack Arizona returned ten years after it began. The winners of each challenge:</p>
+            <details class="event-winners">
+              <summary>Amazon AWS Challenge</summary>
+              <ol><li><span>1st</span>Hidoyat Ruzmetov, Haper Gibbs, and Brandon Knox</li><li><span>2nd</span>Garegin Mazmanyan and Ulugbek Muslitdinov</li><li><span>3rd</span>Venkata Satya Murali Krishna Chittlu, Anudeep Appikatla, Raja Sekhar Malireddy, and Abhay Kumara Sri Krishna Nandiraju</li></ol>
+            </details>
+            <details class="event-winners">
+              <summary>Amazon Prime Marketing Challenge</summary>
+              <ol><li><span>1st</span>Calliope Casey, Jack McNelius, Supriya Roy, and Shaurya Chauhan</li><li><span>2nd</span>Rodrigo Torres Cande</li><li><span>3rd</span>Ajeet Singh and Anuj Jokhani</li></ol>
+            </details>
+            <details class="event-winners">
+              <summary>Biosphere 2 Challenge</summary>
+              <ol><li><span>1st</span>Daniel Fraijo, Darryl Mercado, Pranav Chiploonkar, and Isabella Ducey</li><li><span>2nd</span>John Martin Encinas, Yaqing Su, Daniel Huang, and Lucas Tobon</li><li><span>3rd</span>Reika Fitzpatrick, Diego Torres, Cynthia Navarro, and Jose Santiago Campa Morales</li></ol>
+            </details>
+            <details class="event-winners">
+              <summary>Improve UA Challenge</summary>
+              <ol><li><span>1st</span>Noel Liyon, Aryaman Mehra, and Syed Muhammad Huzaifa Alam</li><li><span>2nd</span>Karan Salot</li><li><span>3rd</span>Mason Njos, Ernesto Martinez, and Nicholas Roman</li></ol>
+            </details>
+          </div>
+        </article>
+
+        <article class="event-chapter" id="early-years" data-reveal>
+          <figure class="event-photo"><picture><source type="image/avif" srcset="/img/early-auditorium-480.avif 480w, /img/early-auditorium-960.avif 960w, /img/early-auditorium-1600.avif 1600w" sizes="(max-width: 900px) 100vw, 560px"><source type="image/webp" srcset="/img/early-auditorium-480.webp 480w, /img/early-auditorium-960.webp 960w, /img/early-auditorium-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 560px"><img src="/img/early-auditorium-960.jpg" srcset="/img/early-auditorium-480.jpg 480w, /img/early-auditorium-960.jpg 960w" sizes="(max-width: 900px) 100vw, 560px" alt="A packed auditorium seen from the balcony, with the Hack Arizona logo on the big screen and a sound desk in the foreground." width="1600" height="686" loading="lazy" decoding="async"></picture></figure>
+          <div class="event-chapter-body">
+            <p class="event-kicker">2016 to 2020</p>
+            <h3 class="event-title">The early years</h3>
+            <p>From the first hackathon in 2016, Hack Arizona grew into the largest hackathon in the Southwestern United States, until the pandemic stopped it in 2020.</p>
+            <a class="text-link" href="{{root}}story/">Read the story and watch the 2018 recap <span class="arrow arrow-se" aria-hidden="true">↘</span></a>
+          </div>
+        </article>
+      </div>
     </section>
     <!-- PAGE CONTENT END -->
   </main>

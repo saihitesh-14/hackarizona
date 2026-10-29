@@ -28,7 +28,7 @@ Built with: the `minimal-motion-web` skill (design language, motion, interaction
 - Story page (27 Oct 2026): "We started from zero. *Twice.*", a frame for the film (shows "coming soon" until `site.film.src` in src/data/site.js is set to a video in public/video/ or a YouTube link; it loads only when pressed), the timeline from 2015 to 2027 (2016 to 2020 plays Hack Arizona's 2018 recap from YouTube, loaded only when pressed; 2025 and 2026 use the photos Sai picked on 28 Oct 2026) with the signal trace (red where Hack Arizona ran, dashed grey from 2020 to 2025, a pulse that follows the scroll), and the key organizers named in the official history.
 - Speed (27 Oct 2026): removed the full-screen blend layer, the blur filters on the animated logo and a page-wide `:has()` rule; the logo, banner zoom and number count-ups pause off screen.
 - Team page (29 Oct 2026): the president, the directors and the organizers in their own sections, with Sai's roles (initials where there is no headshot yet), the advisors Ben Richmond and Mayra Vargas with their headshots, the former organizers from hack.arizona.edu, and before the pandemic: the 2020 team (from the Hack Arizona 2020 website) and the key organizers over the years.
-- Events: not built yet (title and placeholder only).
+- Events page (29 Oct 2026): the two kinds of event, up next (the AgX HackDay on 15 Nov 2026 with a countdown and the Connecto registration link, and Hack Arizona 2027 with what to know), then past events newest first: Hack Arizona 2026 (with its schedule in two tabs), HackDay 2026, Hack Arizona 2025 (with the winners) and the early years. Status pills follow the dates.
 
 ---
 

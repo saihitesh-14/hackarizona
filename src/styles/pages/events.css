@@ -1,1 +1,95 @@
 /* Events page styles, owned by the events stage. Colours only through the tokens in src/styles/tokens.css. */
+
+.events-intro .lead{max-width:640px;font-size:clamp(18px,1.5vw,21px);color:var(--ink)}
+.events-intro .status-pill{font-size:15px;color:var(--ink)}
+.events-formats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:760px;margin:clamp(28px,4vw,44px) 0 0;padding:0;list-style:none}
+.events-formats li{display:grid;gap:4px;padding:18px 20px;border:1px solid var(--line);border-radius:18px;background:var(--card)}
+.events-formats strong{font-size:19px;font-weight:500;letter-spacing:-.03em}
+.events-formats span{font-size:15.5px;color:var(--text-strong)}
+
+/* Shared event text. */
+.event-kicker{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0;font-size:14px;font-weight:500;color:var(--muted)}
+.event-status{display:inline-flex;align-items:center;gap:7px;padding:4px 11px;border-radius:999px;background:var(--accent-soft);color:var(--accent-ink);font-size:13px}
+.event-status:before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor}
+.event-status.is-live:before{animation:event-live 1.6s ease-in-out infinite}
+.event-status.is-past{background:var(--panel);color:var(--muted)}
+@keyframes event-live{50%{opacity:.25}}
+.event-title{margin-top:12px;font-size:clamp(30px,3.2vw,44px);font-weight:500;line-height:1.05;letter-spacing:-.05em}
+.event-subtitle{margin-top:6px;font-family:var(--serif);font-style:italic;font-size:clamp(21px,2vw,27px);color:var(--accent)}
+.event-facts{display:flex;flex-wrap:wrap;gap:6px 0;margin:16px 0 0;padding:0;list-style:none;font-size:16px;color:var(--text-strong)}
+.event-facts li+li:before{content:'•';margin:0 12px;color:var(--muted)}
+.event-feature-body>p:not(.event-kicker):not(.event-subtitle),.event-card-head>p:not(.event-kicker),.event-chapter-body>p:not(.event-kicker){margin-top:16px;max-width:600px;font-size:16.5px;color:var(--text-strong)}
+.event-feature-body .actions,.event-card-head .actions{margin-top:24px}
+
+/* Up next: AgX. No photo yet, so the art is a field of crop rows on the brand fill with the event mark. */
+.event-feature{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);overflow:hidden;border:1px solid var(--line);border-radius:26px;background:var(--card)}
+.event-feature-art{position:relative;overflow:hidden;min-height:320px;background:var(--brand-fill);color:var(--on-fill)}
+.event-feature-rows{position:absolute;inset:-40% -60% 0;will-change:translate;background:repeating-linear-gradient(90deg,color-mix(in srgb,var(--on-fill) 22%,transparent) 0 2px,transparent 2px 46px);transform:perspective(320px) rotateX(58deg);transform-origin:50% 100%;animation:event-rows 14s linear infinite}
+/* translate, not background-position, so the drift stays on the compositor. */
+@keyframes event-rows{to{translate:46px 0}}
+.event-feature-mark{position:absolute;left:clamp(22px,3vw,36px);bottom:clamp(18px,3vw,30px);font-family:var(--serif);font-style:italic;font-size:clamp(72px,9vw,128px);line-height:.9;letter-spacing:-.04em}
+.event-feature-body{padding:clamp(24px,3.4vw,44px)}
+.event-who{font-size:16px}
+.event-who strong{font-weight:500;color:var(--ink)}
+.event-gets{display:grid;gap:8px;margin:16px 0 0;padding:0;list-style:none}
+.event-gets li{position:relative;padding-left:22px;font-size:16px;color:var(--text-strong)}
+.event-gets li:before{content:'';position:absolute;left:2px;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.event-countdown{margin-top:22px;font-size:16px;color:var(--text-strong)}
+.event-countdown strong{font-size:30px;font-weight:500;letter-spacing:-.04em;color:var(--ink)}
+
+/* Hack Arizona 2027: the details beside what to know. */
+.event-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px clamp(28px,5vw,64px);margin-top:16px;padding:clamp(24px,3.4vw,44px);border:1px solid var(--line);border-radius:26px;background:var(--card)}
+.event-know h4,.event-schedule-title{font-size:14px;font-weight:500;color:var(--muted)}
+.event-know dl{margin:12px 0 0}
+.event-know dl>div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;padding:11px 0;border-top:1px solid var(--line)}
+.event-know dt{font-size:15px;font-weight:500;color:var(--ink)}
+.event-know dd{margin:0;font-size:15.5px;color:var(--text-strong)}
+.event-note{margin-top:12px;font-size:14px;color:var(--muted)}
+
+/* Past events: photo beside the chapter; 2026 also carries its schedule in two tabs. */
+.event-chapters{display:grid;gap:clamp(48px,7vw,96px)}
+.event-chapter{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px clamp(28px,5vw,64px);align-items:start}
+.event-chapter:nth-child(even) .event-photo{order:2}
+.event-photo{margin:0}
+.event-photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:20px;background:var(--panel)}
+.event-chapter-body{padding-top:4px}
+.event-chapter-body .text-link{margin-top:20px}
+.event-stats{display:flex;flex-wrap:wrap;gap:0 clamp(24px,3vw,40px);margin:22px 0 0;padding:0;list-style:none}
+.event-stats li{display:grid;gap:2px;padding-top:14px;border-top:1px solid var(--line-strong)}
+.event-stats strong{font-size:clamp(34px,3.4vw,48px);font-weight:500;line-height:1;letter-spacing:-.06em}
+.event-stats span{font-size:14.5px;color:var(--muted)}
+.event-winners{margin-top:10px;border-top:1px solid var(--line)}
+.event-winners:last-of-type{border-bottom:1px solid var(--line)}
+.event-winners summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0;cursor:pointer;list-style:none;font-size:16px;font-weight:500;color:var(--ink)}
+.event-winners summary::-webkit-details-marker{display:none}
+.event-winners summary:after{content:'+';font-size:20px;line-height:1;color:var(--muted);transition:rotate .25s var(--ease-out)}
+.event-winners[open] summary:after{rotate:45deg}
+.event-winners ol{display:grid;gap:8px;margin:0 0 16px;padding:0;list-style:none}
+.event-winners li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:10px;font-size:15px;color:var(--text-strong)}
+.event-winners li span{font-weight:500;color:var(--accent-ink)}
+.event-schedule-box{grid-column:1 / -1;padding:clamp(22px,3vw,36px);border:1px solid var(--line);border-radius:22px;background:var(--card)}
+.event-schedule-box .tab-list{margin-top:14px}
+.event-schedule-box .tab-panel{margin-top:20px}
+.event-day{font-size:20px;font-weight:500;letter-spacing:-.03em}
+html.js .event-day{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+/* Columns, not a grid, so the times read down each column in order. */
+.event-schedule{columns:2;column-gap:clamp(24px,4vw,48px);margin:12px 0 0;padding:0;list-style:none}
+.event-schedule li{display:grid;break-inside:avoid;grid-template-columns:184px minmax(0,1fr);gap:14px;padding:12px 0;border-top:1px solid var(--line)}
+.event-schedule time{white-space:nowrap;font-size:14.5px;font-variant-numeric:tabular-nums;color:var(--muted)}
+.event-schedule p{margin:0;font-size:15.5px;color:var(--ink)}
+.event-schedule .event-room{margin-top:2px;font-size:13.5px;color:var(--muted)}
+
+:root[data-motion='paused'] .event-feature-rows{animation:none}
+
+@media(max-width:900px){
+  .event-feature,.event-card,.event-chapter{grid-template-columns:1fr}
+  .event-feature-art{min-height:200px}
+  .event-chapter:nth-child(even) .event-photo{order:0}
+  .event-schedule{columns:1}
+}
+@media(max-width:767px){
+  .events-formats{grid-template-columns:1fr}
+  .event-know dl>div{grid-template-columns:1fr;gap:2px}
+  .event-schedule li{grid-template-columns:1fr;gap:2px}
+  .event-feature,.event-card{border-radius:20px}
+}
